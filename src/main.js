@@ -1,9 +1,6 @@
 import './style.css'
 
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import Typed from 'typed.js';
-import { ACESFilmicToneMapping, PerspectiveCamera } from 'three';
 
 
 const renderer = new THREE.WebGLRenderer({
@@ -47,7 +44,7 @@ const jupiter = addPlanet('2k_jupiter.jpg', 5, 32);
 
 const saturn = addPlanet('2k_saturn.jpg', 4.5, 32);
 const saturnRing = new THREE.RingGeometry(6, 11);
-const saturnRingTexture = new THREE.TextureLoader().load('https://tinyurl.com/saturn-rings');
+const saturnRingTexture = new THREE.TextureLoader().load('2k_saturn_rings.png');
 const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
 const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
 const saturnGroup = new THREE.Group();
@@ -95,8 +92,6 @@ function addStar(spread, starGeometry, starMaterial) {
   scene.add(star)
 }
 
-const starTexture = new THREE.TextureLoader().load('2k_ceres_fictional.jpg')
-
 const starGeometry = new THREE.DodecahedronGeometry(0.25, 32, 32)
 const starMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff })
 
@@ -127,12 +122,12 @@ function updatePlanets() {
   saturn.rotation.x += 0.00013;
   saturn.rotation.y += 0.008;
   saturnGroup.rotation.x += 0.0001;
-  saturnGroup.rotation.y += 0.0008;
-  saturnRings.rotation.y += 0.0003;
+  saturnGroup.rotation.y += 0.003;
+  saturnRings.rotation.y += 0.00005;
 
   uranus.rotation.y += 0.007;
   uranus.rotation.z += 0.0002;
-  uranusGroup.rotation.y += 0.0007;
+  uranusGroup.rotation.y += 0.0005;
   uranusGroup.rotation.z += 0.0001;
   uranusRings.rotation.y += 0.0003;
 
