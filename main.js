@@ -95,8 +95,6 @@ function addStar(spread, starGeometry, starMaterial) {
   scene.add(star)
 }
 
-const starTexture = new THREE.TextureLoader().load('2k_ceres_fictional.jpg')
-
 const starGeometry = new THREE.DodecahedronGeometry(0.25, 32, 32)
 const starMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff })
 
@@ -127,12 +125,12 @@ function updatePlanets() {
   saturn.rotation.x += 0.00013;
   saturn.rotation.y += 0.008;
   saturnGroup.rotation.x += 0.0001;
-  saturnGroup.rotation.y += 0.0008;
-  saturnRings.rotation.y += 0.0003;
+  saturnGroup.rotation.y += 0.003;
+  saturnRings.rotation.y += 0.00005;
 
   uranus.rotation.y += 0.007;
   uranus.rotation.z += 0.0002;
-  uranusGroup.rotation.y += 0.0007;
+  uranusGroup.rotation.y += 0.0005;
   uranusGroup.rotation.z += 0.0001;
   uranusRings.rotation.y += 0.0003;
 
