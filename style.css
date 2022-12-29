@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-
+  button.active {
+    @apply bg-transparent
+  }
 }
 
 .bloom {
