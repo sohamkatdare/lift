@@ -14,13 +14,13 @@
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="absolute min-h-[50vh] top-[25vh] bottom-[25vh] z-40">
     <nav class="fixed align-center z-50">
-      <ul class="steps steps-vertical z-100 bg-black/25 pl-2 pr-4 rounded-md mx-2 select-none">
-        <li class="step step-primary">Earth</li>
-        <li class="step">Mars</li>
-        <li class="step">Jupiter</li>
-        <li class="step">Saturn</li>
-        <li class="step">Uranus</li>
-        <li class="step">Neptune</li>
+      <ul class="steps steps-vertical z-100 bg-black/25 pl-2 pr-4 rounded-md mx-2 select-none" id="steps">
+        <li class="transition-all step step-primary">Earth</li>
+        <li class="transition-all step">Mars</li>
+        <li class="transition-all step">Jupiter</li>
+        <li class="transition-all step">Saturn</li>
+        <li class="transition-all step">Uranus</li>
+        <li class="transition-all step">Neptune</li>
       </ul>
 
     </nav>
@@ -33,7 +33,7 @@
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
         </h1>
         <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
-        <button id="gstar" class="btn btn-primary" onclick="document.getElementById('section1').scrollIntoView()">Get
+        <button id="gstar" class="btn btn-primary">Get
           Started</button>
       </div>
     </div>
@@ -42,7 +42,7 @@
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
         </h1>
         <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
-        <button id="gstar1" class="btn btn-primary" onclick="document.getElementById('section1').scrollIntoView()">Get
+        <button id="gstar1" class="btn btn-primary">Get
           Started</button>
       </div>
     </div>

@@ -10,39 +10,51 @@ const moveCursor = (e) => {
     const mouseX = e.clientX;
     customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
     let width = window.innerWidth;
-    isLeft = mouseX <= width / 2
-    console.log(isLeft);
+    isLeft = (mouseX <= width / 2);
 }
 
 document.addEventListener('mousemove', moveCursor)
 
-let section = 1;
+let section = 0;
+function updateSteps() {
+    const steps = document.getElementById('steps');
+    let i = 0;
+    for (const step of steps.children) {
+        console.log(step);
+        if (i <= section) {
+            console.log('Primary');
+            step.className = 'transition-all step step-primary';
+        }else{
+            step.className = 'transition-all step';
+        }
+        i++;
+    }
+}
+
 function scrollSection() {
+    updateSteps();
     document.getElementById('section' + String(section)).scrollIntoView()
 }
 
 function scrollBefore() {
-    scrollSection();
     if (section > 0) {
         section--;
     }
+    scrollSection();
 }
 
 function scrollNext() {
-    scrollSection();
-    if (section < 9) {
+    if (section < 5) {
         section++;
     }
+    scrollSection();
 }
 
 function cursorClick(e) {
     const t = e.target;
-    console.log(t);
-    if (t == document.getElementsByTagName('button')) {
+    if (t.tagName == 'BUTTON') {
         t.click()
     } else {
-        const mouseX = e.clientX;
-        console.log('Other');
         if (isLeft) {
             scrollNext();
         } else {
@@ -52,6 +64,10 @@ function cursorClick(e) {
 }
 
 document.onclick = cursorClick;
+document.getElementById('gstar1').onclick = function() {
+    section = 1;
+    scrollSection();
+};
 
 // Detect if section is seen manually.
 function elementInViewport(element) {
