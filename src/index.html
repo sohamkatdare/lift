@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="luxury">
+<html lang="en" data-theme="luxury" class="scroll-smooth">
 
-<head class="scroll-smooth">
+<head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,150 +10,153 @@
   <title>LIFT - Home</title>
 </head>
 
-<body>
+<body class="cursor-none">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
-  <!-- <div class="absolute min-w-100">
-        <div class="relative left-[25%]  navbar max-w-sm mx-auto rounded-xl fixed bg-base-100 ">
-          <div class="navbar-start">
-            <div class="dropdown">
-              <label tabindex="0" class="btn btn-ghost btn-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-              </label>
-              <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>Homepage</a></li>
-                <li><a>Portfolio</a></li>
-                <li><a>About</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="navbar-center">
-            <a class="btn btn-ghost normal-case text-2xl">LIFT</a>
-          </div>
-        </div>
-      </div> -->
+  <div class="absolute min-h-[50vh] top-[25vh] bottom-[25vh] z-40">
+    <nav class="fixed align-center z-50">
+      <ul class="steps steps-vertical z-100 bg-black/25 pl-2 pr-4 rounded-md mx-2 select-none" id="steps">
+        <li class="transition-all step step-primary">Earth</li>
+        <li class="transition-all step">Mars</li>
+        <li class="transition-all step">Jupiter</li>
+        <li class="transition-all step">Saturn</li>
+        <li class="transition-all step">Uranus</li>
+        <li class="transition-all step">Neptune</li>
+      </ul>
 
-  <div class="hero min-h-screen bg-base-200">
+    </nav>
+  </div>
+
+
+  <div class="hero min-h-screen bg-base-200 select-none" id="section0">
+    <div class="hero-content text-center blur-sm">
+      <div class="max-w-md">
+        <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
+        </h1>
+        <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
+        <button id="gstar" class="btn btn-primary">Get
+          Started</button>
+      </div>
+    </div>
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom">LIFT</span>.</h1>
+        <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
+        </h1>
         <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
-        <button id="gstar" class="btn btn-primary"><a href="">Get Started</a></button>
+        <button id="gstar1" class="btn btn-primary">Get
+          Started</button>
       </div>
     </div>
   </div>
 
-  <div class="absolute grid grid-cols-12 opacity-70">
-    <section class="rounded-lg bg-black p-5 col-start-6 col-span-6 m mt-[25rem] mb-[25rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-5 col-span-4 m my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-5 col-span-7 m my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-4 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-6 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-6 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-6 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-6 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
-    <section class="rounded-lg bg-black p-5 col-start-2 col-span-6 my-[12.5rem]">
-      <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
-      <br>
-      <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales arcu,
-        lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-        Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-        tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-        enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis vulputate.
-        Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-        dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-        vitae cursus est interdum a.</p>
-    </section>
+  <div class="absolute grid grid-cols-12">
+    <div id="section1" class="col-start-6 col-span-6">
+      <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[25rem]">
+        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <br>
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
+          arcu,
+          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
+          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
+          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
+          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
+          vulputate.
+          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
+          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
+          vitae cursus est interdum a.</p>
+        <a href="products/"><button class="my-5 btn btn-primary">Learn More</button></a>
+      </section>
+    </div>
+    <div id="section2" class="col-start-6 col-span-6">
+      <section class="rounded-lg bg-black/50 p-5 mt-[30rem] my-[12.5rem]">
+        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <br>
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
+          arcu,
+          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
+          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
+          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
+          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
+          vulputate.
+          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
+          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
+          vitae cursus est interdum a.</p>
+        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+      </section>
+    </div>
+    <div id="section3" class="col-start-2 col-span-6">
+      <section class="rounded-lg bg-black/50 p-5 mt-[110rem] my-[12.5rem]">
+        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <br>
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
+          arcu,
+          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
+          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
+          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
+          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
+          vulputate.
+          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
+          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
+          vitae cursus est interdum a.</p>
+        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+      </section>
+    </div>
+    <div id="section4" class="col-start-6 col-span-6">
+      <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[25rem]">
+        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <br>
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
+          arcu,
+          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
+          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
+          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
+          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
+          vulputate.
+          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
+          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
+          vitae cursus est interdum a.</p>
+        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+      </section>
+    </div>
+    <div id="section5" class="col-start-2 col-end-11">
+      <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[25rem]">
+        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <br>
+        <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
+          arcu,
+          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
+          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
+          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
+          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
+          vulputate.
+          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
+          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
+          vitae cursus est interdum a.</p>
+        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+      </section>
+    </div>
   </div>
-
+  <div class="fixed top-0 left-0 block pointer-events-none">
+    <!-- circle -->
+    <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px]">
+      <div class="absolute left-0 top-0 w-full h-full box-border opacity-90 transition-opacity bg-gray-50 rounded-full scale-[0.08] bloom-cursor" id="cursor" style="transform: translate3d(100px, 100px, 100px); contain: strict;">
+      </div>
+    </div>
+    <!-- pointer -->
+    <!-- <div class="js_pointer_arw">
+        <div class="js_pointer_arwInner">
+            <div class="js_pointer_arwBody">
+                <div class="js_img" data-img="1" data-append="1">
+                    <noscript>
+                        <img src="/futurecube/assets/img/common/ponter-arrow.svg" alt=""/>
+                    </noscript>
+                    <span class="h_pc" data-src-pc="assets/img/common/ponter-arrow.svg" style="padding-top:80%"></span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  </div>
   <script type="module" src="./main.js"></script>
+  <script type="module" src="./cursor.js"></script>
 </body>
 
 
