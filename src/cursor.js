@@ -8,8 +8,6 @@ function lerp(start, end, amount) {
 const moveCursor = (e) => {
     const mouseY = e.clientY;
     const mouseX = e.clientX;
-    const lerpedMouseX = lerp(customCursor.x, mouseX, 0.1)
-    const lerpedMouseY = lerp(customCursor.y, mouseY, 0.1)
     customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
     let width = window.innerWidth;
     isLeft = mouseX <= width / 2
@@ -45,7 +43,7 @@ function cursorClick(e) {
     } else {
         const mouseX = e.clientX;
         console.log('Other');
-        if (mouseX <= (window.innerWidth / 2)) {
+        if (isLeft) {
             scrollNext();
         } else {
             scrollBefore();

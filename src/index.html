@@ -10,7 +10,7 @@
   <title>LIFT - Home</title>
 </head>
 
-<body class="">
+<body class="cursor-none">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="absolute min-h-[50vh] top-[25vh] bottom-[25vh] z-40">
     <nav class="fixed align-center z-50">
@@ -27,7 +27,7 @@
   </div>
 
 
-  <div class="hero min-h-screen bg-base-200" id="section0">
+  <div class="hero min-h-screen bg-base-200 select-none" id="section0">
     <div class="hero-content text-center blur-sm">
       <div class="max-w-md">
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
@@ -63,7 +63,7 @@
           Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
           dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
           vitae cursus est interdum a.</p>
-        <a href="info/"><button class="my-5 btn btn-primary">Learn More</button></a>
+        <a href="products/"><button class="my-5 btn btn-primary">Learn More</button></a>
       </section>
     </div>
     <div id="section2" class="col-start-6 col-span-6">
@@ -135,9 +135,10 @@
       </section>
     </div>
   </div>
-  <div class="js_pointer is_visible">
-    <div class="js_pointer_inner">
-      <div class="js_pointer_body" id="cursor" style="transform: translate3d(100px, 100px, 100px); contain: strict;">
+  <div class="fixed top-0 left-0 block pointer-events-none">
+    <!-- circle -->
+    <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px]">
+      <div class="absolute left-0 top-0 w-full h-full box-border opacity-90 transition-opacity bg-gray-50 rounded-full scale-[0.08] bloom-cursor" id="cursor" style="transform: translate3d(100px, 100px, 100px); contain: strict;">
       </div>
     </div>
     <!-- pointer -->
