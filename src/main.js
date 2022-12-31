@@ -162,4 +162,4 @@ document.body.onscroll = moveCamera
 const spaceTexture = new THREE.TextureLoader().load('2k_stars_milky_way.jpg');
 scene.background = spaceTexture;
 
-animate()
+animate();

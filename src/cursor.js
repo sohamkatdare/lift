@@ -24,7 +24,7 @@ function updateSteps() {
         if (i <= section) {
             console.log('Primary');
             step.className = 'transition-all step step-primary';
-        }else{
+        } else {
             step.className = 'transition-all step';
         }
         i++;
@@ -32,8 +32,7 @@ function updateSteps() {
 }
 
 function scrollSection() {
-    updateSteps();
-    document.getElementById('section' + String(section)).scrollIntoView()
+    document.getElementById('section' + String(section)).scrollIntoView();
 }
 
 function scrollBefore() {
@@ -64,27 +63,43 @@ function cursorClick(e) {
 }
 
 document.onclick = cursorClick;
-document.getElementById('gstar1').onclick = function() {
+document.getElementById('gstar1').onclick = function () {
     section = 1;
     scrollSection();
 };
 
 // Detect if section is seen manually.
 function elementInViewport(element) {
+    var rect = element.getBoundingClientRect();
 
-    var bounding = document.getElementById(element).getBoundingClientRect();
-
-    return bounding.top >= -myElementHeight && bounding.left >= -myElementWidth && bounding.right <= (window.innerWidth || document.documentElement.clientWidth) + myElementWidth && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) + myElementHeight;
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
 }
 
 function changeSection(num) {
     const id = 'section' + String(num);
-    console.log(num);
-    if (elementInViewport(id)) {
+    if (elementInViewport(document.getElementById(id).firstElementChild)) {
         section = num;
+        updateSteps();
     }
 }
 
-// for (let i = 0; i < 10; i++) {
-//     document.getElementById('section' + String(i)).addEventListener('mousemove', function () { changeSection(i); });
-// }
+const onScrollBefore = document.body.onscroll;
+
+const detectScrollChanges = function () {
+    onScrollBefore();
+    for (let i = 0; i < 6; i++) {
+        changeSection(i);
+    }
+};
+
+document.body.onscroll = detectScrollChanges;
+
+// Before Page Load
+document.onreadystatechange = function (e) {
+    detectScrollChanges();
+};
