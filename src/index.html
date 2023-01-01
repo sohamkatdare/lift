@@ -13,7 +13,7 @@
 <body class="cursor-none">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="absolute min-h-[50vh] top-[25vh] bottom-[25vh] z-40">
-    <nav class="fixed align-center z-50">
+    <nav class="fixed align-center z-40">
       <ul class="steps steps-vertical z-100 bg-black/25 pl-2 pr-4 rounded-md mx-2 select-none" id="steps">
         <li class="transition-all step step-primary">Earth</li>
         <li class="transition-all step">Mars</li>
@@ -26,6 +26,8 @@
     </nav>
   </div>
 
+  
+
 
   <div class="hero min-h-screen bg-base-200 select-none" id="section0">
     <div class="hero-content text-center blur-sm">
@@ -33,8 +35,7 @@
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
         </h1>
         <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
-        <button id="gstar" class="btn btn-primary">Get
-          Started</button>
+        <button id="gstar" class="btn btn-primary">Take a trip!</button>
       </div>
     </div>
     <div class="hero-content text-center">
@@ -42,14 +43,13 @@
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
         </h1>
         <p class="py-6 text-primary">Above and beyond is only a few clicks away.</p>
-        <button id="gstar1" class="btn btn-primary">Get
-          Started</button>
+        <button id="gstar1" class="btn btn-primary">Take a trip!</button>
       </div>
     </div>
   </div>
 
   <div class="absolute grid grid-cols-12">
-    <div id="section1" class="col-start-6 col-span-6">
+    <section id="section1" class="col-start-6 col-span-6">
       <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[65rem]">
         <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
         <br>
@@ -65,8 +65,8 @@
           vitae cursus est interdum a.</p>
         <a href="products/"><button class="my-5 btn btn-primary">Learn More</button></a>
       </section>
-    </div>
-    <div id="section2" class="col-start-6 col-span-6">
+    </section>
+    <section id="section2" class="col-start-6 col-span-6">
       <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[92.5rem]">
         <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
         <br>
@@ -82,8 +82,8 @@
           vitae cursus est interdum a.</p>
         <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
       </section>
-    </div>
-    <div id="section3" class="col-start-2 col-span-5">
+    </section>
+    <section id="section3" class="col-start-2 col-span-5">
       <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[10rem]">
         <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
         <br>
@@ -99,8 +99,8 @@
           vitae cursus est interdum a.</p>
         <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
       </section>
-    </div>
-    <div id="section4" class="col-start-6 col-span-6">
+    </section>
+    <section id="section4" class="col-start-6 col-span-6">
       <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[55rem]">
         <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
         <br>
@@ -116,8 +116,8 @@
           vitae cursus est interdum a.</p>
         <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
       </section>
-    </div>
-    <div id="section5" class="col-start-2 col-end-7">
+    </section>
+    <section id="section5" class="col-start-2 col-end-7">
       <section class="rounded-lg bg-black/50 p-5 mt-[10rem] mb-[15rem]">
         <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
         <br>
@@ -133,26 +133,26 @@
           vitae cursus est interdum a.</p>
         <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
       </section>
-    </div>
+    </section>
   </div>
-  <div class="fixed top-0 left-0 block pointer-events-none">
-    <!-- circle -->
-    <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px]" id="cursor">
-      <div class="absolute left-0 top-0 w-full h-full box-border opacity-90 transition-opacity bg-gray-50 rounded-full scale-[0.08] bloom-cursor mt[-32px] ml-[28px]"  style="transform: translate3d(100px, 100px, 100px); contain: strict;">
-        <span class="text-gray-50 text-4xl" style="padding-top:80%"> <!--  -->
-          >
-        </span>
+
+  <aside class="toast toast-top toast-end hidden p-2" id="scroll-info">
+    <aside class="alert alert-info bg-info/25 p-1 ">
+      <div>
+        <button class="btn btn-sm btn-ghost text-white pr-0.5 pl-2" id="scroll-info-btn">X</button>
+        <span class="text-xs text-white/75 mr-3">Click on either side of the screen to go forward or backward</span>
       </div>
-    </div>
-    <!-- pointer so then ill delete this stuff?-->
-    <div class="arrow-pointer-container absolute left-0 top-0 " style="contain: layout strict;" id="pointer">
-        <div class="arrow-pointer-inner absolute left-0 top-0 transition-transform" >
-            <div class="arrow-pointer-body absolute left-0 top-0 w-[80px]  opacity-90 ">
-                <div class="js_img" data-img="1" data-append="1">
-                    
-                </div>
-            </div>
-        </div>
+    </aside>
+  </aside>
+
+  <div class="fixed top-0 left-0 block pointer-events-none z-50">
+    <!-- circle -->
+    <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px] opacity-90" style="" id="cursor"> 
+      <div class="absolute left-0 top-0 w-full h-full box-border bg-gray-50 rounded-full bloom-cursor "  style="contain: strict;">
+      </div>
+      <!-- pointer -->
+      <span class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5rem] blur-md ">></span> 
+      <span class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all " id="pointer">></span> 
     </div>
   </div>
   <script type="module" src="./main.js"></script>

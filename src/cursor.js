@@ -1,6 +1,9 @@
+// const { info } = require("daisyui/src/colors");
+
 const customCursor = document.querySelector('#cursor');
-const customPointer = document.querySelector('#pointer');
+const customPointers = document.querySelectorAll('.pointer');
 let isLeft = false;
+let isButtonHover= false;
 
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
@@ -12,40 +15,42 @@ function isTouchDevice() {
        (navigator.msMaxTouchPoints > 0));
 }
 
-{/* <div class="fixed top-0 left-0 block pointer-events-none">
-    <!-- circle -->
-    <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px]" id="cursor">
-      <div class="absolute left-0 top-0 w-full h-full box-border opacity-90 transition-opacity bg-gray-50 rounded-full scale-[0.08] bloom-cursor mt[-32px] ml-[28px]"  style="transform: translate3d(100px, 100px, 100px); contain: strict;">
-        <span class="text-gray-50 text-4xl" style="padding-top:80%"> <!--  -->
-          >
-        </span>
-      </div>
-    </div>
-    <!-- pointer so then ill delete this stuff?-->
-    <div class="arrow-pointer-container absolute left-0 top-0 " style="contain: layout strict;" id="pointer">
-        <div class="arrow-pointer-inner absolute left-0 top-0 transition-transform" >
-            <div class="arrow-pointer-body absolute left-0 top-0 w-[80px]  opacity-90 ">
-                <div class="js_img" data-img="1" data-append="1">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-  </div> */}
+const animateCursor = function () {
+    if (isLeft) {
+        if (section == 5 || isButtonHover) {
+            customPointers.forEach(function (customPointer) {
+                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180 opacity-0 transition-all duration-1000';
+            });
+        } else{
+            customPointers.forEach(function (customPointer) {
+                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180 transition-all duration-1000';
+            });
+        }
+    } else {
+        if (section == 0 || isButtonHover){
+            customPointers.forEach(function (customPointer) {
+                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] opacity-0 transition-all duration-1000';
+            });
+        } else{
+            customPointers.forEach(function (customPointer) {
+                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all duration-1000';
+            });
+        }
+    }
+}
 
 const moveCursor = (e) => {
     if(isTouchDevice()) {
         console.log("hidden")
         customCursor.style.display = "none";
-        customPointer.style.display = "none";
         return
     }
     const mouseY = e.clientY;
     const mouseX = e.clientX;
     customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
-    customPointer.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
     let width = window.innerWidth;
     isLeft = (mouseX <= width / 2);
+    animateCursor();
 }
 
 document.addEventListener('mousemove', moveCursor)
@@ -55,9 +60,7 @@ function updateSteps() {
     const steps = document.getElementById('steps');
     let i = 0;
     for (const step of steps.children) {
-        console.log(step);
         if (i <= section) {
-            console.log('Primary');
             step.className = 'transition-all step step-primary';
         } else {
             step.className = 'transition-all step';
@@ -86,9 +89,13 @@ function scrollNext() {
 
 function cursorClick(e) {
     const t = e.target;
-    if (t.tagName == 'BUTTON') {
+    
+    
+    
+    if (t.tagName == 'BUTTON' || t.tagName == 'A') {
         t.click()
     } else {
+        if(infoShown) toastInfo.classList = 'hidden'
         if (isLeft) {
             scrollNext();
         } else {
@@ -97,10 +104,33 @@ function cursorClick(e) {
     }
 }
 
+function cursorHover(e) {
+    const t = e.target;
+    if (t.tagName == 'BUTTON' || t.tagName == 'A' ||  t.tagName == "CODE" ||t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" ||  t.tagName == "NAV" || t.tagName == "ASIDE") {
+        isButtonHover = true;
+    } else {
+        isButtonHover = false;
+    }
+}
+
 document.onclick = cursorClick;
+document.onmouseover = cursorHover;
+
+var infoShown = false
+const toastInfo = document.getElementById('scroll-info')
+
 document.getElementById('gstar1').onclick = function () {
     section = 1;
     scrollSection();
+    //if the button has not been clicked before
+    if(!infoShown) {
+        toastInfo.classList = 'toast toast-top toast-end p-2'
+        infoShown = true
+    }
+};
+
+document.getElementById('scroll-info-btn').onclick = function () {
+    toastInfo.classList = "hidden"
 };
 
 // Detect if section is seen manually.
@@ -130,6 +160,7 @@ const detectScrollChanges = function () {
     for (let i = 0; i < 6; i++) {
         changeSection(i);
     }
+    animateCursor();
 };
 
 document.body.onscroll = detectScrollChanges;
