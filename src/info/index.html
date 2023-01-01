@@ -7,39 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet">
   <link href="../style.css" rel="stylesheet">
+  <script src="../components/navbar.js" type="text/javascript" defer></script>
   <title>LIFT - Info</title>
 </head>
 
 <body>
-  <div class="navbar fixed bg-base-200 opacity-90">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
-        </label>
-        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="index.html">Homepage</a></li>
-          <li><a href="info.html">About</a></li>
-          <li><a>About</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-2xl">LIFT</a>
-    </div>
-    <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
-    </div>
-  </div>
+  <navbar-component></navbar-component>
 
-  <div class="hero min-h-screen" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
+  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md">
@@ -82,7 +57,8 @@
 
     </div>
     <div class="col-start-9 col-end-12">
-      <img src="https://picsum.photos/id/537/2000/3000" class="rounded-xl drop-shadow-lg">
+      <img src="https://picsum.photos/id/537/2000/3000" class="mask mask-triangle drop-shadow-lg mb-[-65%] mt-[-35%]">
+      <img src="https://picsum.photos/id/120/2000/3000" class="mask mask-triangle-2 drop-shadow-lg mt[-65%] mb-[-35%]">
     </div>
 
     <div class="col-span-12 flex items-center grid grid-cols-12">
