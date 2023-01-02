@@ -16,25 +16,26 @@ function isTouchDevice() {
 }
 
 const animateCursor = function () {
+    const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
+    const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
+    const right = ' translate-y-[-5.25rem]'
+    const invisible = ' opacity-0'
+    const bloom = ' blur-md'
     if (isLeft) {
         if (section == 5 || isButtonHover) {
-            customPointers.forEach(function (customPointer) {
-                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180 opacity-0 transition-all duration-1000';
-            });
+            customPointers[0].className = standard + left + invisible
+            customPointers[1].className = standard + left + invisible + bloom
         } else{
-            customPointers.forEach(function (customPointer) {
-                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180 transition-all duration-1000';
-            });
+            customPointers[0].className = standard + left
+            customPointers[1].className = standard + left + bloom
         }
     } else {
         if (section == 0 || isButtonHover){
-            customPointers.forEach(function (customPointer) {
-                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] opacity-0 transition-all duration-1000';
-            });
-        } else{
-            customPointers.forEach(function (customPointer) {
-                customPointer.className = 'pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all duration-1000';
-            });
+            customPointers[0].className = standard + right + invisible
+            customPointers[1].className = standard + right + invisible + bloom
+        } else {
+            customPointers[0].className = standard + right + invisible
+            customPointers[1].className = standard + right + invisible + bloom
         }
     }
 }
@@ -88,10 +89,7 @@ function scrollNext() {
 }
 
 function cursorClick(e) {
-    const t = e.target;
-    
-    
-    
+    const t = e.target;    
     if (t.tagName == 'BUTTON' || t.tagName == 'A') {
         t.click()
     } else {
