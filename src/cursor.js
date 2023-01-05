@@ -58,16 +58,16 @@ document.addEventListener('mousemove', moveCursor)
 
 let section = 0;
 function updateSteps() {
-    const steps = document.getElementById('steps');
-    let i = 0;
-    for (const step of steps.children) {
-        if (i <= section) {
-            step.className = 'transition-all step step-primary';
-        } else {
-            step.className = 'transition-all step';
-        }
-        i++;
-    }
+    // const steps = document.getElementById('steps');
+    // let i = 0;
+    // for (const step of steps.children) {
+    //     if (i <= section) {
+    //         step.className = 'transition-all step step-primary';
+    //     } else {
+    //         step.className = 'transition-all step';
+    //     }
+    //     i++;
+    // }
 }
 
 function scrollSection() {
@@ -147,7 +147,7 @@ function changeSection(num) {
     const id = 'section' + String(num);
     if (elementInViewport(document.getElementById(id).firstElementChild)) {
         section = num;
-        updateSteps();
+        // updateSteps();
     }
 }
 

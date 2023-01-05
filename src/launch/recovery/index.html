@@ -7,43 +7,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../output.css" rel="stylesheet">
   <link href="../../style.css" rel="stylesheet">
+  <script src="../../components/navbar.js" type="text/javascript" defer></script>
+  <script src="../../components/footer.js" type="text/javascript" defer></script>
   <title>LIFT - Recovery</title>
 </head>
 
 <body>
-  <div class="navbar fixed bg-base-100">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
-        </label>
-        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Homepage</a></li>
-          <li><a>Portfolio</a></li>
-          <li><a>About</a></li>
-        </ul>
+  <navbar-component></navbar-component>
+
+  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-center text-neutral-content">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">I reach for the stars, on my tippy toes.</h1>
+        <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+          quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
       </div>
     </div>
-    <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-2xl">LIFT</a>
+
+  </div>
+  <br>
+  <div class="grid grid-cols-12 bg-base-200 py-10">
+    <div class="col-start-2 col-end-9 inline-block pr-5">
+      <h1 class="text-xl text-orange-100"><strong>What does LIFT do?</strong></h1>
+      <br>
+      <p class="text-orange-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Amet nisl purus in mollis
+        nunc sed id. Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Facilisis sed odio morbi quis
+        commodo. Adipiscing elit pellentesque habitant morbi tristique senectus et. In cursus turpis massa tincidunt dui
+        ut ornare. Cursus sit amet dictum sit amet justo donec enim. Odio ut enim blandit volutpat maecenas volutpat.
+        Neque egestas congue quisque egestas diam in arcu cursus euismod. Posuere lorem ipsum dolor sit amet. Quisque id
+        diam vel quam elementum. Quis lectus nulla at volutpat.
+        <br><br>
+        Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Interdum velit euismod
+        in pellentesque massa placerat duis. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Arcu
+        non sodales neque sodales ut etiam sit amet nisl. Enim ut sem viverra aliquet eget. In nibh mauris cursus mattis
+        molestie. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Phasellus egestas tellus rutrum tellus
+        pellentesque eu tincidunt. Tellus elementum sagittis vitae et leo duis ut. Nisl tincidunt eget nullam non nisi.
+        Dictum non consectetur a erat nam at lectus urna. Pharetra sit amet aliquam id diam maecenas ultricies. Eu
+        volutpat odio facilisis mauris sit. Nunc non blandit massa enim nec. Ipsum consequat nisl vel pretium lectus.
+        Tincidunt lobortis feugiat vivamus at augue eget.
+        <br><br>
+        Condimentum id venenatis a condimentum vitae sapien pellentesque. Dictumst quisque sagittis purus sit. Non enim
+        praesent elementum facilisis leo vel fringilla est ullamcorper. Facilisis magna etiam tempor orci eu. Amet
+        consectetur adipiscing elit duis tristique. Facilisis sed odio morbi quis commodo. Sed pulvinar proin gravida
+        hendrerit lectus a. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Aliquet sagittis id
+        consectetur purus. Gravida quis blandit turpis cursus in hac habitasse platea dictumst. At tempor commodo
+        ullamcorper a lacus vestibulum sed arcu non.
+      </p>
+
     </div>
-    <div class="navbar-end">
-      <button class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
+    <div class="col-start-9 col-end-12">
+      <img src="https://picsum.photos/id/537/2000/3000" class="mask mask-triangle drop-shadow-lg mb-[-65%] mt-[-35%]">
+      <img src="https://picsum.photos/id/120/2000/3000" class="mask mask-triangle-2 drop-shadow-lg mt[-65%] mb-[-35%]">
     </div>
+
+    <div class="col-span-12 flex items-center grid grid-cols-12">
+      <div class="col-start-1 col-end-6 text-center">
+        <ul class="steps steps-vertical">
+          <li class=" step step-accent text-accent-content">Register</li>
+          <li class="step step-accent text-accent-content">Choose plan</li>
+          <li class="step step-accent text-accent-content">Purchase</li>
+          <li class="step step-accent text-accent-content">Receive Product</li>
+        </ul>
+      </div>
+
+      <div class="col-start-6 col-end-12 mt-10">
+        <p class="text-xl text-orange-100"><strong>How does it work?</strong></p>
+        <p class="text-orange-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
+          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
+          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
+          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
+          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
+          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
+          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
+          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
+          dui sapien eget mi proin sed.</p>
+        <br>
+      </div>
+    </div>
+
   </div>
 
-
-
-
-
-  <script type="module" src="../../main.js"></script>
+  <footer-component></footer-component>
 </body>
 
 </html>
