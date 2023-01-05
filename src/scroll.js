@@ -15,7 +15,7 @@ main.style.left = 0;
 
 
 // Bind a scroll function
-window.addEventlistener('scroll', easeScroll);
+window.addEventListener('scroll', easeScroll);
 
 
 function easeScroll() {
