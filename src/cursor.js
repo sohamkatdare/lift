@@ -34,8 +34,8 @@ const animateCursor = function () {
             customPointers[0].className = standard + right + invisible
             customPointers[1].className = standard + right + invisible + bloom
         } else {
-            customPointers[0].className = standard + right + invisible
-            customPointers[1].className = standard + right + invisible + bloom
+            customPointers[0].className = standard + right
+            customPointers[1].className = standard + right + bloom
         }
     }
 }
