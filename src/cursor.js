@@ -54,6 +54,7 @@ const moveCursor = (e) => {
     animateCursor();
 }
 
+moveCursor();
 document.addEventListener('mousemove', moveCursor)
 
 let section = 0;

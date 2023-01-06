@@ -34,3 +34,15 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.card-text-responsive{
+  display: block;
+}
+
+@media (max-width: 900px) 
+{
+  .card-text-responsive
+  {
+      display: none;
+  }
+}
+

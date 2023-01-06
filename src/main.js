@@ -7,13 +7,14 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 // Listen for window.resize
-window.addEventListener('resize', resize);
 function resize() {
   console.log("resizing")
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  location.reload();
 }
-resize()
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+window.onresize = resize;
+
 const scene = new THREE.Scene();
 
 function addPlanet(mapTexture, size, detail) {
