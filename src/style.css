@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {}
+@layer components {
+  .hero-btn :hover {
+    @apply backdrop-blur-sm bg-white/[0.125] text-white border-none;
+  }
+}
 
 .bloom {
   text-shadow:
@@ -29,3 +33,4 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+

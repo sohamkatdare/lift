@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
               <li><a href="../">Homepage</a></li>
               <li><a href="../info/">About</a></li>
               <li><a href="../products/">Products</a></li>
-              <li><a href="../promotions/">Promotions</a></li>
+              <li><a href="../promotion/">Promotions</a></li>
               <li><a href="../launch/">Launch</a></li>
             </ul>
           </div>

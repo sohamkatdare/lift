@@ -104,7 +104,7 @@ function cursorClick(e) {
 
 function cursorHover(e) {
     const t = e.target;
-    if (t.tagName == 'BUTTON' || t.tagName == 'A' ||  t.tagName == "CODE" ||t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" ||  t.tagName == "NAV" || t.tagName == "ASIDE") {
+    if (t.tagName == 'BUTTON' || t.tagName == 'A' ||  t.tagName == "CODE" ||t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" ||  t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
         isButtonHover = true;
     } else {
         isButtonHover = false;
