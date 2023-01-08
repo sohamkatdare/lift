@@ -3,7 +3,7 @@
 const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
 let isLeft = false;
-let isButtonHover= false;
+let isButtonHover = false;
 
 function lerp(start, end, amount) {
     return (1 - amount) * start + amount * end
@@ -23,12 +23,12 @@ const animateCursor = function () {
         if (section == 5 || isButtonHover) {
             customPointers[0].className = standard + left + invisible
             customPointers[1].className = standard + left + invisible + bloom
-        } else{
+        } else {
             customPointers[0].className = standard + left
             customPointers[1].className = standard + left + bloom
         }
     } else {
-        if (section == 0 || isButtonHover){
+        if (section == 0 || isButtonHover) {
             customPointers[0].className = standard + right + invisible
             customPointers[1].className = standard + right + invisible + bloom
         } else {
@@ -39,8 +39,7 @@ const animateCursor = function () {
 }
 
 const moveCursor = (e) => {
-    if(isTouchDevice()) {
-        console.log("hidden")
+    if (isTouchDevice()) {
         customCursor.style.display = "none";
         return
     }
@@ -88,11 +87,11 @@ function scrollNext() {
 }
 
 function cursorClick(e) {
-    const t = e.target;    
+    const t = e.target;
     if (t.tagName == 'BUTTON' || t.tagName == 'A') {
         t.click()
     } else {
-        if(infoShown) toastInfo.classList = 'hidden'
+        if (infoShown) toastInfo.classList = 'hidden'
         if (isLeft) {
             scrollNext();
         } else {
@@ -103,7 +102,7 @@ function cursorClick(e) {
 
 function cursorHover(e) {
     const t = e.target;
-    if (t.tagName == 'BUTTON' || t.tagName == 'A' ||  t.tagName == "CODE" ||t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" ||  t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
+    if (t.tagName == 'BUTTON' || t.tagName == 'A' || t.tagName == "CODE" || t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" || t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
         isButtonHover = true;
     } else {
         isButtonHover = false;
@@ -120,7 +119,7 @@ document.getElementById('gstar1').onclick = function () {
     section = 1;
     scrollSection();
     //if the button has not been clicked before
-    if(!infoShown) {
+    if (!infoShown) {
         toastInfo.classList = 'toast toast-top toast-end p-2'
         infoShown = true
     }
@@ -165,4 +164,5 @@ document.body.onscroll = detectScrollChanges;
 // Before Page Load
 document.onreadystatechange = function (e) {
     detectScrollChanges();
+    moveCursor();
 };

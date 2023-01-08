@@ -33,6 +33,10 @@ button:hover {
   scrollbar-width: none;  /* Firefox */
 }
 
+@font-face {
+  font-family: Oranienbaum;
+  src: url(public/Oranienbaum-Regular.ttf);
+}
 .card-text-responsive{
   display: block;
 }
