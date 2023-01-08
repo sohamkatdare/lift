@@ -38,3 +38,15 @@
   font-family: Oranienbaum;
   src: url(public/Oranienbaum-Regular.ttf);
 }
+.card-text-responsive{
+  display: block;
+}
+
+@media (max-width: 900px) 
+{
+  .card-text-responsive
+  {
+      display: none;
+  }
+}
+
