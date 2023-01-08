@@ -1,25 +1,29 @@
 import './style.css'
 
 import * as THREE from 'three';
-import isTouchDevice from 'cursor';
+import isTouchDevice from './util';
 
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
-// Listen for window.resize
-function resize() {
-  if (!isTouchDevice()){
-    console.log("resizing")
-    location.reload();
-  }
-}
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
 
-window.onresize = resize;
+renderer.setPixelRatio(window.devicePixelRatio);
+if (isTouchDevice()) {
+  if (window.orientation == 90 || window.orientation == -90) {
+    renderer.setSize(screen.height, screen.width); // Includes space for the address bar and tabs.
+  } else {
+    renderer.setSize(screen.width, screen.height); // Includes space for the address bar and tabs.
+  }
+} else {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
 
 const scene = new THREE.Scene();
+
+const spaceTexture = new THREE.TextureLoader().load('2k_stars_milky_way.jpg');
+scene.background = spaceTexture;
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -168,8 +172,5 @@ function moveCamera() {
 
 }
 document.body.onscroll = moveCamera
-
-const spaceTexture = new THREE.TextureLoader().load('2k_stars_milky_way.jpg');
-scene.background = spaceTexture;
 
 animate();

@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet">
   <link href="../style.css" rel="stylesheet">
-  <script src="../components/navbar.js" type="text/javascript" defer></script>
-  <script src="../components/footer.js" type="text/javascript" defer></script>
   <title>LIFT - Info</title>
 </head>
 
@@ -25,15 +23,8 @@
     </div>
 
   </div>
-  <br>
-  <div class="grid grid-cols-12 bg-base-200 py-10">
-    <div class="col-start-2 col-end-10 inline-block pr-5 mb-14">
-      <h1 class="text-xl text-base-400"><strong> About us </strong></h1>
-        <p class="text-base-400">
-          An exciting and mysterious realm full of wonders and mysteries that we are only now beginning to comprehend lies in a realm full of wonders beyond our imaginations. LIFT is a space travel company that aims to make space travel more accessible and safe. We are dedicated to pushing the boundaries of human exploration and driving innovation in the field of space exploration. Our team is committed to delivering the highest quality service to our customers and to expanding the frontiers of knowledge and understanding through the exploration of the universe. Through the tours and services we provide, we strive for affordable space travel for all.
-        </p>        
-    </div>
-    <div class="col-start-10 col-end-12">
+  <div class="p-4 lg:grid lg:grid-cols-12 lg:bg-base-200 lg:py-10">
+    <div class="my-3 lg:col-start-2 lg:col-end-5">
       <!-- <img src="https://picsum.photos/id/537/2000/1000" class="rounded-lg drop-shadow-lg"> -->
       <div class="stat bg-white/[0.05] backdrop-blur-sm rounded-lg">
         <div class="stat-figure text-secondary">
@@ -47,7 +38,21 @@
       </div>
     </div>
 
-    <div class="col-start-2 col-end-4">
+    <div class="mb-7 lg:col-start-5 lg:col-end-12 lg:pl-5 lg:mb-14 lg:inline-block">
+      <h1 class="text-xl text-base-400"><strong> About us </strong></h1>
+        <p class="text-base-400">
+          An exciting and mysterious realm full of wonders and mysteries that we are only now beginning to comprehend lies in a realm full of wonders beyond our imaginations. LIFT is a space travel company that aims to make space travel more accessible and safe. We are dedicated to pushing the boundaries of human exploration and driving innovation in the field of space exploration. Our team is committed to delivering the highest quality service to our customers and to expanding the frontiers of knowledge and understanding through the exploration of the universe. Through the tours and services we provide, we strive for affordable space travel for all.
+        </p>        
+    </div>
+
+    <div class="mb-7 lg:col-start-2 lg:col-end-9 lg:inline-block lg:pr-5">
+      <h1 class="text-xl text-base-400"><strong>Mission</strong></h1>
+      <p class="text-base-400">
+        At LIFT, our mission is to provide safe and accessible space travel experiences for all. Through innovation, we foresee a future where space travel can be achieved at an affordable price. Space travel has the power to bring people and nations together, and we are excited to help lead the charge in this exciting new era of space exploration. 
+      </p>
+    </div>
+
+    <div class="my-3 lg:col-start-9 lg:col-end-12">
       <div class="stat bg-white/[0.05] backdrop-blur-sm rounded-lg">
         <div class="stat-figure text-secondary">
           <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-warning"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -58,16 +63,7 @@
       </div>
     </div>
 
-    <div class="col-start-4 col-end-12 inline-block pl-5">
-      <h1 class="text-xl text-base-400"><strong>Mission</strong></h1>
-      <p class="text-base-400">
-        At LIFT, our mission is to provide safe and accessible space travel experiences for all. Through innovation, we foresee a future where space travel can be achieved at an affordable price. Space travel has the power to bring people and nations together, and we are excited to help lead the charge in this exciting new era of space exploration. 
-      </p>
-    </div>
-
-
-
-      <div class="col-start-2 col-end-10 mt-10">
+      <div class="lg:col-start-2 lg:col-end-10 lg:mt-10">
         <h1 class="text-xl text-base-400 pr-5"><strong> Starting Up </strong></h1>
         <p class="text-base-400 pr-5">
           LIFT was founded  with the vision to harness space technology for international development while pursuing space science research and planetary exploration. Our company began with the advancement of space technology through the testing of rockets and space travel. We worked on perfecting a rocket model that would be able to effectively transport people into space.
@@ -80,7 +76,7 @@
           At LIFT, our mission is to provide safe and accessible space travel experiences for all. Through innovation, we foresee a future where space travel can be achieved at an affordable price. Space travel has the power to bring people and nations together, and we are excited to help lead the charge in this exciting new era of space exploration. 
         </p>
       </div>
-      <div class="col-start-10 col-end-12 inline-block">
+      <div class="lg:col-start-10 lg:col-end-12 lg:inline-block">
         <img src="https://picsum.photos/id/537/2000/3000" class="mt-9 ml-12 h-96 rounded-lg drop-shadow-lg">
       </div>
     </div> <!-- end grid -->
@@ -90,6 +86,8 @@
   </div>
 
   <footer-component></footer-component>
+  <script src="../navbar.js" type="text/javascript"></script>
+  <script src="../footer.js" type="text/javascript"></script>
 </body>
 
 </html>

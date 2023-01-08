@@ -117,3 +117,7 @@ h1 {
 .filling-button-transparent:hover {
   background-position: left bottom;
 }
+
+.body-black {
+  background-color: black;
+}
