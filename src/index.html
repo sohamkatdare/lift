@@ -10,7 +10,7 @@
   <title>LIFT - Home</title>
 </head>
 
-<body class="cursor-none no-scrollbar" id="main">
+<body class="cursor-none no-scrollbar scroll-smooth" id="main">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="absolute min-h-[50vh] top-[25vh] bottom-[25vh] ">
     <!-- <nav class="fixed align-center z-40">
@@ -28,7 +28,7 @@
 
 
 
-  <div class="hero min-h-screen bg-base-200 select-none" id="section0">
+  <div class="hero min-h-screen bg-base-200 select-none snap-y" id="section0">
     <div class="hero-content text-center blur-sm">
       <div class="max-w-md">
         <h1 class="text-5xl title font-bold text-primary">Welcome to <span class="bloom"><strong>LIFT</strong></span>.
@@ -47,82 +47,46 @@
     </div>
   </div>
 
-  <div class="absolute grid grid-cols-12">
-    <section id="section1" class="col-start-6 col-span-6">
+  <div class="absolute grid grid-cols-12 snap-y snap-proximity">
+    <section id="section1" class="col-start-6 col-span-6 snap-center">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[65rem]">
-        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT?</code></strong></h2>
+        <h2 class="text-2xl basic-info text-white">Our <strong class="text-primary"><code>Mission</code></strong></h2>
         <br>
         <p class="text-white card-text-responsive">At LIFT, our mission is to provide safe and accessible space travel experiences for all. Through innovation, we foresee a future where space travel can be achieved at an affordable price. We believe that space travel has the power to bring people and nations together, and we are excited to help lead the charge in this exciting new era of space exploration. 
         </p>
-        <a href="products/"><button class="my-5 btn btn-primary">Learn More</button></a>
+        <a href="info/"><button class="my-5 btn btn-primary">Learn More</button></a>
       </section>
     </section>
-    <section id="section2" class="col-start-6 col-span-6">
+    <section id="section2" class="col-start-6 col-span-6 snap-center">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[92.5rem]">
-        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT? - products</code></strong></h2>
+        <h2 class="text-2xl basic-info text-white">Check out our <strong class="text-primary"><code>Products</code></strong></h2>
         <br>
-        <p class="text-white card-text-responsive">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
-          arcu,
-          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
-          vulputate.
-          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-          vitae cursus est interdum a.</p>
-        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+        <p class="text-white card-text-responsive">We offer four different products here at Lift that you can buy to travel all throughout space. Each package contains a trip to some of the most mesmerizing places within our universe.</p>
+        <button class="my-5 btn btn-primary"><a href="products/">Learn More</a></button>
       </section>
     </section>
-    <section id="section3" class="col-start-2 col-span-5">
+    <section id="section3" class="col-start-2 col-span-5 snap-center">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[10rem]">
-        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT? - launch safety</code></strong></h2>
+        <h2 class="text-2xl basic-info text-white">How do we <strong class="text-primary"><code>Launch?</code></strong></h2>
         <br>
-        <p class="text-white card-text-responsive">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
-          arcu,
-          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
-          vulputate.
-          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-          vitae cursus est interdum a.</p>
-        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+        <p class="text-white card-text-responsive">To ensure your safe flight, we strictly follow all safety regulations and rules when launching into outer space. Our thorough training program thoroughly teaches all of the safety regulations. With our state-of-the-art technology, we conduct the launch experience perfectly.</p>
+        <button class="my-5 btn btn-primary"><a href="launch/safety/">Learn More</a></button>
       </section>
     </section>
-    <section id="section4" class="col-start-6 col-span-6">
+    <section id="section4" class="col-start-6 col-span-6 snap-center">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[55rem]">
-        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT? - launch procedure</code></strong></h2>
+        <h2 class="text-2xl basic-info text-white"><strong class="text-primary"><code>SpaceCamp™️</code></strong></h2>
         <br>
-        <p class="text-white card-text-responsive">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
-          arcu,
-          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
-          vulputate.
-          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-          vitae cursus est interdum a.</p>
-        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+        <p class="text-white card-text-responsive">The training required of our customers is designed to be challenging but intuitive to prepare them for the demands of our wonderful trip. </p>
+        <button class="my-5 btn btn-primary"><a href="launch/training/">Learn More</a></button>
       </section>
     </section>
-    <section id="section5" class="col-start-2 col-end-7">
+    <section id="section5" class="col-start-2 col-end-7 snap-center">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[15rem]">
-        <h2 class="text-2xl basic-info text-white">What is <strong class="text-primary"><code>LIFT? - vehicles</code></strong></h2>
+        <h2 class="text-2xl basic-info text-white">What do we <strong class="text-primary"><code>Launch</code></strong> in?</h2>
         <br>
-        <p class="text-white card-text-responsive">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ullamcorper sodales
-          arcu,
-          lacinia aliquet tellus sollicitudin maximus. Cras consectetur diam libero, eu vulputate sapien tincidunt sed.
-          Pellentesque erat enim, ultricies ut mauris non, iaculis volutpat arcu. Mauris efficitur mi mi. Morbi lacus
-          tortor, suscipit nec orci congue, ornare aliquet diam. Vestibulum ac ante lorem. Ut at ligula rutrum, sodales
-          enim vitae, commodo velit. Vivamus mollis eget arcu ac lobortis. Integer iaculis velit non convallis
-          vulputate.
-          Donec sagittis, leo non iaculis vehicula, leo diam fringilla nunc, in efficitur magna metus vel purus. Morbi
-          dapibus quam quis dolor bibendum tristique. Pellentesque convallis rhoncus ligula. Duis pretium iaculis nunc,
-          vitae cursus est interdum a.</p>
-        <button class="my-5 btn btn-primary"><a href="info/">Learn More</a></button>
+        <p class="text-white card-text-responsive">We have multiple different vehicles that all fulfill. Our vehicles range from different types of rockets to rovers which can be used to explore the surfaces of the places we explore.</p>
+        <button class="my-5 btn btn-primary"><a href="launch/vehicles/">Learn More</a></button>
       </section>
     </section>
   </div>
@@ -142,8 +106,8 @@
       <div class="absolute left-0 top-0 w-full h-full box-border bg-slate-50/75 backdrop-blur-[1.5px] rounded-full "  style="contain: strict;">
       </div>
       <!-- pointer -->
-      <span class="pointer absolute top-0 ml-[20px] text-white-50 text-[7rem] translate-y-[-5rem] blur-md ">></span> 
-      <span class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all " id="pointer">></span> 
+      <span class="pointer absolute top-0 ml-[20px] text-white-50 text-[7rem] translate-y-[-5rem] blur-md font-lighter font-thin">></span> 
+      <span class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all font-thin" id="pointer">></span> 
     </div>
   </div>
   <script type="module" src="./main.js"></script>

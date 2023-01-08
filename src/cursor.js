@@ -10,9 +10,7 @@ function lerp(start, end, amount) {
 }
 
 function isTouchDevice() {
-    return (('ontouchstart' in window) ||
-    //    (navigator.maxTouchPoints > 0) ||
-       (navigator.msMaxTouchPoints > 0));
+    return (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
 }
 
 const animateCursor = function () {
@@ -46,15 +44,15 @@ const moveCursor = (e) => {
         customCursor.style.display = "none";
         return
     }
-    const mouseY = e.clientY;
     const mouseX = e.clientX;
+    const mouseY = e.clientY;
     customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
     let width = window.innerWidth;
     isLeft = (mouseX <= width / 2);
     animateCursor();
 }
 
-moveCursor();
+// moveCursor();
 document.addEventListener('mousemove', moveCursor)
 
 let section = 0;

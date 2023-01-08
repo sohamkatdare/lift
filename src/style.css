@@ -18,10 +18,9 @@
     0px 0px 10px 2px rgb(255, 255, 255);
 }
 
-.pointer button:hover {
-  display: none
+button:hover {
+  cursor: none;
 }
-
 /* we should use futura or aileron as our font, maybe space mono for the <code> tag  */
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
@@ -46,3 +45,37 @@
   }
 }
 
+@font-face {
+  font-family: Oranienbaum;
+  src: url(/fonts/Oranienbaum-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: Moon-Thick;
+  src: url(fonts/Moon\ Bold.otf) format('opentype');
+}
+@font-face {
+  font-family: Moon-Thin;
+  src: url(fonts/Moon\ Light.otf) format('opentype');
+}
+@font-face {
+  font-family: Nova;
+  src: url(/fonts/NovaSquare-Regular.ttf) format('truetype');
+}
+
+code {  font-family: Nova;  }
+
+/* span {  font-family: Nova;  } */
+h1 {  font-family: Moon-Thin;  }
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: url(https://picsum.photos/id/903/3000/2000);
+  background-size: cover;
+  transform: translateZ(-1px);
+  min-height: 100%;
+  z-index: -2;
+}
