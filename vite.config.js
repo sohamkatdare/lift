@@ -11,7 +11,6 @@ export default defineConfig({
                 main: resolve(__dirname, 'src/index.html'),
                 info: resolve(__dirname, 'src/info/index.html'),
                 products: resolve(__dirname, 'src/products/index.html'),
-                promotion: resolve(__dirname, 'src/promotion/index.html'),
                 launch: resolve(__dirname, 'src/launch/index.html'),
                 launch_launch: resolve(__dirname, 'src/launch/launch/index.html'),
                 launch_recovery: resolve(__dirname, 'src/launch/recovery/index.html'),
