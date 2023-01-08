@@ -72,7 +72,7 @@ code {  font-family: Nova;  }
 h1 {  font-family: Moon-Thin;  }
 
 
-.hero::before {
+.bg-hero-space::before {
   content: '';
   position: absolute;
   inset: 0;

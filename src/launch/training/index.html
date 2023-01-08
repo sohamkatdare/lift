@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="luxury">
+<html lang="en" data-theme="night">
 
 <head>
   <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <navbar-component></navbar-component>
+  <navbar-launch-component></navbar-launch-component>
 
   <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
     <div class="hero-overlay bg-opacity-60"></div>
@@ -27,11 +27,11 @@
 
   </div>
   <br>
-  <div class="grid grid-cols-12 grid-rows-5 bg-base-200 py-10">
+  <div class="grid grid-cols-12 bg-base-200 py-10">
     <div class="col-start-4 col-end-10 inline-block pr-5 text-center">
-      <h1 class="text-xl text-orange-100"><strong>What is the point of training?</strong></h1>
+      <h1 class="text-xl text-base-400"><strong>What is the point of training?</strong></h1>
       <br>
-      <p class="text-orange-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Amet nisl purus in mollis
         nunc sed id. Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Facilisis sed odio morbi quis
         commodo. Adipiscing elit pellentesque habitant morbi tristique senectus et. In cursus turpis massa tincidunt dui
@@ -40,12 +40,14 @@
         diam vel quam elementum. Quis lectus nulla at volutpat.
       </p>
     </div>
-    <div class="col-start-1 col-end-13 overflow-x-auto my-10 text-center">
-      <ul class="steps text-orange-100">
+  </div>
+  <div class="grid grid-cols-12 bg-secondary py-10">
+    <div class="col-start-1 col-end-13 overflow-x-auto text-center">
+      <ul class="steps text-secondary-content">
         <li class="step">start</li>
-        <li class="step step-secondary">2</li>
-        <li class="step step-secondary">3</li>
-        <li class="step step-secondary">4</li>
+        <li class="step step-success">2</li>
+        <li class="step step-success">3</li>
+        <li class="step step-success">4</li>
         <li class="step">5</li>
         <li class="step step-accent">6</li>
         <li class="step step-accent">7</li>
@@ -67,25 +69,36 @@
         <li class="step step-warning">23</li>
         <li class="step step-warning">end</li>
       </ul>
-      <p class="mt-5 text-orange-100"><i>24-day training regimen</i></p>
+      <p class="mt-5 text-secondary-content"><i>24-day training regimen</i></p>
       <br>
     </div>
 
     <div class="col-start-2 col-span-12 grid grid-cols-4">
-      <div class="bg-secondary card-body items-center text-center text-secondary-content card p-1 w-72">
-        <p class="card-title">Training step 1</p>
+      <div class="tooltip" data-tip="Brief explanation of Training step 1.">
+        <div class="bg-success border-2 border-success-content card-body items-center text-center text-success-content card p-5 w-72">
+          <p class="card-title">Training step 1</p>
+        </div>
       </div>
-      <div class="bg-accent card-body items-center text-center text-accent-content card p-1 w-72">
-        <p class="card-title text-center">Training step 2</p>
+      
+      <div class="tooltip" data-tip="Brief explanation of Training step 2.">  
+        <div class="bg-accent card-body border-2 border-accent-content items-center text-center text-accent-content card p-5 w-72">
+          <p class="card-title text-center">Training step 2</p>
+        </div>
       </div>
-      <div class="bg-error card-body items-center text-center text-error-content card p-1 w-72">
-        <p class="card-title text-center">Training step 3</p>
+
+      <div class="tooltip" data-tip="Brief explanation of Training step 3.">  
+        <div class="bg-error card-body border-2 border-error-content items-center text-center text-error-content card p-5 w-72">
+          <p class="card-title text-center">Training step 3</p>
+        </div>
       </div>
-      <div class="bg-warning card-body items-center text-center text-warning-content card p-1 w-72">
-        <p class="card-title text-center">Training step 4</p>
+      <div class="tooltip" data-tip="Brief explanation of Training step 4.">
+        <div class="bg-warning card-body border-2 border-warning-content items-center text-center text-warning-content card p-5 w-72">
+          <p class="card-title text-center">Training step 4</p>
+        </div>
       </div>
-      <div></div>
     </div>
+  </div>
+  <div class="grid grid-cols-12 bg-base-200 py-10 gap-y-7">
 
     <!-- <div class="col-start-9 col-end-12">
       <img src="https://picsum.photos/id/537/2000/3000" class="mask mask-triangle drop-shadow-lg mb-[-65%] mt-[-35%]">
@@ -102,9 +115,12 @@
         </ul>
       </div> -->
 
+      <div class="col-start-2 col-end-6">
+        <img class="rounded-lg" src="https://picsum.photos/600/200" alt="">
+      </div>
       <div class="col-start-6 col-end-12">
-        <p class="text-xl text-orange-100"><strong>How does it work?</strong></p>
-        <p class="text-orange-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        <p class="text-xl text-base-400"><strong>Training step 1</strong></p>
+        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
           sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
           duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
@@ -114,8 +130,62 @@
           egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
           Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
           dui sapien eget mi proin sed.</p>
-        <br>
       </div>
+
+      <div class="col-start-2 col-end-8 p-3">
+        <p class="text-xl text-base-400"><strong>Training step 2</strong></p>
+        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
+          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
+          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
+          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
+          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
+          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
+          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
+          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
+          dui sapien eget mi proin sed.</p>
+      </div>
+
+      <div class="col-start-8 col-span-4">
+        <img class="rounded-lg" src="https://picsum.photos/600/200" alt="">
+      </div>
+
+      <div class="col-start-2 col-end-6">
+        <img class="rounded-lg" src="https://picsum.photos/600/200" alt="">
+      </div>
+
+      <div class="col-start-6 col-end-12">
+        <p class="text-xl text-base-400"><strong>Training step 3</strong></p>
+        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
+          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
+          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
+          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
+          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
+          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
+          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
+          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
+          dui sapien eget mi proin sed.</p>
+      </div>
+
+      <div class="col-start-2 col-end-8 p-3">
+        <p class="text-xl text-base-400"><strong>Training step 4</strong></p>
+        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
+          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
+          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
+          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
+          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
+          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
+          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
+          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
+          dui sapien eget mi proin sed.</p>
+      </div>
+
+      <div class="col-start-8 col-span-4">
+        <img class="rounded-lg" src="https://picsum.photos/600/200" alt="">
+      </div>
+      
     </div>
 
   </div>
