@@ -1,6 +1,7 @@
 import './style.css'
 
 import * as THREE from 'three';
+import isTouchDevice from 'cursor';
 
 
 const renderer = new THREE.WebGLRenderer({
@@ -8,11 +9,14 @@ const renderer = new THREE.WebGLRenderer({
 });
 // Listen for window.resize
 function resize() {
-  console.log("resizing")
-  location.reload();
+  if (!isTouchDevice()){
+    console.log("resizing")
+    location.reload();
+  }
 }
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
+
 window.onresize = resize;
 
 const scene = new THREE.Scene();
