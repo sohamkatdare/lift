@@ -21,6 +21,7 @@
 button:hover {
   cursor: none;
 }
+
 /* we should use futura or aileron as our font, maybe space mono for the <code> tag  */
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
@@ -29,23 +30,24 @@ button:hover {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 @font-face {
   font-family: Oranienbaum;
   src: url(public/Oranienbaum-Regular.ttf);
 }
-.card-text-responsive{
+
+.card-text-responsive {
   display: block;
 }
 
-@media (max-width: 900px) 
-{
-  .card-text-responsive
-  {
-      display: none;
+@media (max-width: 900px) {
+  .card-text-responsive {
+    display: none;
   }
 }
 
@@ -53,23 +55,30 @@ button:hover {
   font-family: Oranienbaum;
   src: url(/fonts/Oranienbaum-Regular.ttf) format('truetype');
 }
+
 @font-face {
   font-family: Moon-Thick;
   src: url(fonts/Moon\ Bold.otf) format('opentype');
 }
+
 @font-face {
   font-family: Moon-Thin;
   src: url(fonts/Moon\ Light.otf) format('opentype');
 }
+
 @font-face {
   font-family: Nova;
   src: url(/fonts/NovaSquare-Regular.ttf) format('truetype');
 }
 
-code {  font-family: Nova;  }
+code {
+  font-family: Nova;
+}
 
 /* span {  font-family: Nova;  } */
-h1 {  font-family: Moon-Thin;  }
+h1 {
+  font-family: Moon-Thin;
+}
 
 
 .bg-hero-space::before {
@@ -82,4 +91,29 @@ h1 {  font-family: Moon-Thin;  }
   transform: translateZ(-1px);
   min-height: 100%;
   z-index: -2;
+}
+
+.filling-button {
+  border: 0;
+  background: linear-gradient(to right, black 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.filling-button:hover {
+  color: white;
+  background-position: left bottom;
+}
+
+.filling-button-transparent {
+  border: 0;
+  background: linear-gradient(to right, black 50%, rgba(255, 255, 255, 0.125) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.filling-button-transparent:hover {
+  background-position: left bottom;
 }

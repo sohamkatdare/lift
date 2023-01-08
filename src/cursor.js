@@ -166,3 +166,5 @@ document.onreadystatechange = function (e) {
     detectScrollChanges();
     moveCursor();
 };
+
+export default isTouchDevice;

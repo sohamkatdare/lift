@@ -17,6 +17,7 @@
   "dependencies": {
     "daisyui": "^2.46.0",
     "three": "^0.148.0",
-    "typed.js": "^2.0.12"
+    "typed.js": "^2.0.12",
+    "vercel": "^28.10.3"
   }
 }
