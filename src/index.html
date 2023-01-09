@@ -13,6 +13,10 @@
 <body class="cursor-none no-scrollbar scroll-smooth body-black" id="main">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
 
+  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+    <img src="spinner.svg" alt="spinner">
+  </div>
+
   <div class="hero min-h-screen bg-base-200 select-none snap-y" id="section0">
     <div class="hero-content text-center blur-sm">
       <div class="max-w-md">
@@ -131,6 +135,7 @@
   </div>
   <script type="module" src="./main.js"></script>
   <script type="module" src="./cursor.js"></script>
+  <script type="module" src="./loader.js"></script>
 </body>
 
 

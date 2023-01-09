@@ -36,10 +36,7 @@ button:hover {
   /* Firefox */
 }
 
-@font-face {
-  font-family: Oranienbaum;
-  src: url(public/Oranienbaum-Regular.ttf);
-}
+
 
 .card-text-responsive {
   display: block;
@@ -58,12 +55,12 @@ button:hover {
 
 @font-face {
   font-family: Moon-Thick;
-  src: url(fonts/Moon\ Bold.otf) format('opentype');
+  src: url(/fonts/MoonBold.otf) format('opentype');
 }
 
 @font-face {
   font-family: Moon-Thin;
-  src: url(fonts/Moon\ Light.otf) format('opentype');
+  src: url(/fonts/MoonLight.otf) format('opentype');
 }
 
 @font-face {
@@ -73,6 +70,8 @@ button:hover {
 
 code {
   font-family: Nova;
+  font-size: 2rem; 
+  line-height: 2.375rem;
 }
 
 /* span {  font-family: Nova;  } */
