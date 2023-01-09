@@ -18,9 +18,7 @@
     0px 0px 10px 2px rgb(255, 255, 255);
 }
 
-button:hover {
-  cursor: none;
-}
+
 
 /* we should use futura or aileron as our font, maybe space mono for the <code> tag  */
 /* Hide scrollbar for Chrome, Safari and Opera */
