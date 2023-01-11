@@ -35,7 +35,7 @@
       <br>
     </div>
 
-    <div class="col-span-12 flex flex-col md:flex-row md:gap-x-7 lg:gap-y-7 place-content-center max-w-full">
+    <div class="col-span-12 flex flex-col md:flex-row md:gap-x-7 gap-y-7 place-content-center max-w-full">
       <div class="inline-block card w-full lg:w-96 bg-base-300 shadow-xl">
         <figure>
           <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
@@ -91,7 +91,7 @@
             <li>Oort Cloud refuel stop</li>
           </ul>
           <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+            <button class="btn btn-primary">Read more</button>
           </div>
         </div>
       </div>
@@ -101,18 +101,34 @@
       <div class="text-xl divider"><strong class="text-orange-100">Terrestrial Planet Exploration</strong></div>
       <br>
     </div>
-    <div class="col-start-2 col-end-7">
+    <div class="col-start-2 lg:col-end-7 col-end-12 ">
       <h1 class="text-xl">Itinerary</h1>
       <br>
-      <p><strong>Day 1: </strong>Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.<br><br>
-        <strong>Day 100:</strong> Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.<br><br>
-        <strong>Day 120:</strong> Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.<br><br>
-        <strong>Day 220:</strong> Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.<br><br>
-        <strong>Day 240:</strong> Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.<br><br>
-        <strong>Day 440:</strong> Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.<br><br>
-        <strong>Day 460:</strong> Depart Mars and begin the journey back to Earth. The trip will take about 6 months.<br><br>
-        <strong>Day 660:</strong> Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!</p>
-    </div> <br>
+      <div class="divider">Day 1</div>
+      <p>Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
+        <div class="divider">Day 100</div>
+        Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
+        <div class="divider">Day 120</div>
+        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
+        <div class="divider">Day 220</div>
+        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
+        <div class="divider">Day 240</div>
+        Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
+        <div class="divider">Day 440</div>
+        Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
+        <div class="divider">Day 460</div>
+        Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
+        <div class="divider">Day 600</div>
+        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+      </p>
+        <br><br>
+    </div>
+    <div class="hidden lg:relative col-start-7 col-end-12 lg:grid place-content-center grid-rows-3 bg-secondary/25 rounded-lg p-5">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg absolute left-[6.25rem] top-[1.25rem]">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg absolute left-[29.75rem] top-[12rem]">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg absolute left-[6.25rem] top-[22.75rem]">        
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg absolute left-[29.75rem] top-[33.5rem]">        
+    </div>
   </div>
 
   <footer-component></footer-component>
@@ -121,4 +137,6 @@
   <script src="../footer.js" type="module"></script>
 </body>
 
-</html>
+<!-- </html>top-[4rem]
+top-[17.75rem]
+top-[32.5rem] -->
