@@ -4,7 +4,7 @@ class Navbar extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-      <nav class="navbar fixed bg-base-200/[0.125] backdrop-blur-sm z-50">
+      <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
         <div class="navbar-start w-[47.5%]">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ class Navbar extends HTMLElement {
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
         </div>
       </nav>
-      <nav class="navbar fixed bg-base-200/[0.125] backdrop-blur-sm z-50">
+      <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
         <div class="navbar-start w-[47.5%]">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -116,7 +116,7 @@ class NavbarLaunch extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-      <nav class="navbar fixed bg-base-200/[0.125] backdrop-blur-sm z-50">
+      <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
         <div class="navbar-start w-[47.5%]">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -165,7 +165,7 @@ class NavbarLaunch extends HTMLElement {
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
         </div>
       </nav>
-      <nav class="navbar fixed bg-base-200/[0.125] backdrop-blur-sm z-50">
+      <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
         <div class="navbar-start w-[47.5%]">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
