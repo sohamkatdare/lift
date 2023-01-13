@@ -14,8 +14,8 @@
 <body>
   <navbar-launch-component></navbar-launch-component>
 
-  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="spinner.svg" alt="spinner">
+  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999] user-select-none pointer-events-none" style="transition: opacity 0.3s linear ;" id="preloader">
+    <img src="../../spinner.svg" alt="spinner">
   </div>
 
   <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
@@ -23,85 +23,34 @@
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md">
         <h1 class="mb-5 text-5xl font-bold">Preparing you for an out-of-this-world experience.</h1>
-        <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p class="mb-5">Scroll down to find out more!</p>
       </div>
     </div>
 
   </div>
   <br>
-  <div class="grid grid-cols-12 py-10">
-    <div class="col-start-4 col-end-10 inline-block pr-5 text-center">
+  <div class="grid grid-cols-12 py-10 bg-base-300">
+    <div class="lg:col-start-4 lg:col-end-10 col-span-12 inline-block pr-5 text-center">
       <h1 class="text-xl text-base-400"><strong>What is the point of training?</strong></h1>
       <br>
-      <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Egestas dui id ornare arcu odio ut sem. Amet nisl purus in mollis
-        nunc sed id. Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Facilisis sed odio morbi quis
-        commodo. Adipiscing elit pellentesque habitant morbi tristique senectus et. In cursus turpis massa tincidunt dui
-        ut ornare. Cursus sit amet dictum sit amet justo donec enim. Odio ut enim blandit volutpat maecenas volutpat.
-        Neque egestas congue quisque egestas diam in arcu cursus euismod. Posuere lorem ipsum dolor sit amet. Quisque id
-        diam vel quam elementum. Quis lectus nulla at volutpat.
+      <p class="text-base-400">
+        The training required of our customers is designed to be challenging but intuitive to prepare them for the demands of our wonderful trip. Lift space training, also known as SpaceCamp TM ️, is a 4-week program that takes place at the Galileo facilities in San Diego, California, or Parris Island, South Carolina. The training includes physical conditioning, cardiovascular training, and instruction in our unique and innovative Lift spacecraft. After completing SpaceCamp™️, some individuals may receive additional training. This training is to make sure everyone is ready for the exciting adventure ahead. This training may be technical, such as learning how to operate and function within space, but the goal of this mandatory training is to ensure that our customers have a better experience during their LIFT trip. 
       </p>
     </div>
   </div>
   <div class="grid grid-cols-12 py-10">
-    <div class="col-start-1 col-end-13 overflow-x-auto text-center">
+    <div class="col-start-1 col-end-13 overflow-x-auto text-center ">
       <ul class="steps text-base-400">
-        <li class="step">start</li>
-        <li class="step step-success">2</li>
-        <li class="step step-success">3</li>
-        <li class="step step-success">4</li>
-        <li class="step">5</li>
-        <li class="step step-accent">6</li>
-        <li class="step step-accent">7</li>
-        <li class="step">8</li>
-        <li class="step step-error">9</li>
-        <li class="step step-error">10</li>
-        <li class="step step-error">11</li>
-        <li class="step step-error">12</li>
-        <li class="step step-error">13</li>
-        <li class="step step-error">14</li>
-        <li class="step step-error">15</li>
-        <li class="step step-error">16</li>
-        <li class="step step-error">17</li>
-        <li class="step">18</li>
-        <li class="step step-warning">19</li>
-        <li class="step step-warning">20</li>
-        <li class="step step-warning">21</li>
-        <li class="step step-warning">22</li>
-        <li class="step step-warning">23</li>
-        <li class="step step-warning">end</li>
+        <li class="step">Fitness Screening</li>
+        <li class="step">Basic Training</li>
+        <li class="step">Emergency Training</li>
+        <li class="step">Low-Grav Training</li>
       </ul>
-      <p class="mt-5 text-secondary-content"><i>24-day training regimen</i></p>
+      <p class="mt-5 text-white"><i>24-day training regimen</i></p>
       <br>
     </div>
-
-    <div class="col-start-2 col-span-12 grid grid-cols-4">
-      <div class="tooltip" data-tip="Brief explanation of Training step 1.">
-        <div class="bg-success card-body items-center text-center text-success-content card p-5 w-72">
-          <p class="card-title">Training step 1</p>
-        </div>
-      </div>
-      
-      <div class="tooltip" data-tip="Brief explanation of Training step 2.">  
-        <div class="bg-accent card-body items-center text-center text-accent-content card p-5 w-72">
-          <p class="card-title text-center">Training step 2</p>
-        </div>
-      </div>
-
-      <div class="tooltip" data-tip="Brief explanation of Training step 3.">  
-        <div class="bg-error card-body items-center text-center text-error-content card p-5 w-72">
-          <p class="card-title text-center">Training step 3</p>
-        </div>
-      </div>
-      <div class="tooltip" data-tip="Brief explanation of Training step 4.">
-        <div class="bg-warning card-body items-center text-center text-warning-content card p-5 w-72">
-          <p class="card-title text-center">Training step 4</p>
-        </div>
-      </div>
-    </div>
   </div>
-  <div class="grid grid-cols-12 py-10 gap-y-7">
+  <div class="grid grid-cols-12 py-10 gap-y-7 gap-x-4">
 
     <!-- <div class="col-start-9 col-end-12">
       <img src="https://picsum.photos/id/537/2000/3000" class="mask mask-triangle drop-shadow-lg mb-[-65%] mt-[-35%]">
@@ -122,32 +71,18 @@
         <img class="rounded-lg px-4 hidden: lg:contents" src="https://picsum.photos/600/200" alt="">
         <img class="rounded-lg px-4 lg:hidden" src="https://picsum.photos/200/400" alt="">
       </div>
-      <div class="col-start-6 col-end-12">
-        <h1 class="text-lg text-base-400"><strong>Training step 1</strong></h1>
-        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
-          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
-          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
-          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
-          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
-          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
-          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
-          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
-          dui sapien eget mi proin sed.</p>
+      <div class="lg:col-start-6 col-start-2 col-end-12 ">
+        <h1 class="text-lg text-base-400 px-10 lg:px-0"><strong>Training step 1</strong></h1>
+        <p class="text-base-400 px-10 lg:px-0">
+          All medical screening for each participant traveling must be completed during the first part of training. This medical screening will include different physical tests that ensure that the traveler is capable of flying safely without any complications. The list of tests that will be present during this stage will be a basic screening of physical attributes, including height, weight, vision, etc. Additionally, a fitness screening will also be conducted for each participant, testing their level of endurance, strength, and flexibility to make sure that they are capable of space travel. These different tests are necessary for the training as they make sure that each participant is capable of flying through space over a prolonged period of time.
+        </p>
       </div>
 
-      <div class="col-start-2 col-end-8 p-3 bg-secondary rounded-l-lg">
-        <h1 class="text-lg text-secondary-content"><strong>Training step 2</strong></h1>
-        <p class="text-secondary-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
-          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
-          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
-          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
-          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
-          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
-          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
-          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
-          dui sapien eget mi proin sed.</p>
+      <div class="col-start-2 lg:col-end-8 col-end-12 p-3 bg-base-300 rounded-l-lg">
+        <h1 class="text-lg text-base-content"><strong>Training step 2</strong></h1>
+        <p class="text-base-content">
+          The next step of space training will include basic space travel training.  Space tourists will need to receive basic training in the principles of space travel, including the effects of microgravity on the body and safety protocols. Participants must be prepared for the effects of space on the body. Additionally, the participants will go through mission-specific training in which they will receive special training for the particular mission or package they choose. Space tourists will need to know how to operate any equipment or perform any tasks that may be required during their space travel experience.
+        </p>
       </div>
 
       <div class="col-start-8 col-span-4 bg-secondary rounded-r-lg grid place-content-center">
@@ -158,32 +93,18 @@
         <img class="rounded-lg px-4" src="https://picsum.photos/600/200" alt="">
       </div>
 
-      <div class="col-start-6 col-end-12">
+      <div class="lg:col-start-6 col-start-2 col-end-12">
         <h1 class="text-lg text-base-400"><strong>Training step 3</strong></h1>
-        <p class="text-base-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
-          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
-          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
-          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
-          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
-          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
-          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
-          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
-          dui sapien eget mi proin sed.</p>
+        <p class="text-base-400">
+          In the third stage of training, we will train the participants to be ready for space and its environment. This includes different simulations that will portray different possible scenarios in the case of an emergency.  It's important that space tourists know how to respond in the event of an emergency while in space. Training may include simulations of various emergency scenarios and drills to practice emergency procedures. This emergency training consists of different simulations that depict a real-like scene in which the tourist must be able to perform the correct duties in the case of an emergency.
+        </p>
       </div>
 
-      <div class="col-start-2 col-end-8 p-3 bg-secondary rounded-l-lg">
-        <h1 class="text-lg text-secondary-content"><strong>Training step 4</strong></h1>
-        <p class="text-secondary-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Cras
-          sed felis eget velit aliquet sagittis. Ac tincidunt vitae semper quis lectus nulla at. Erat nam at lectus urna
-          duis convallis convallis. Risus quis varius quam quisque id diam vel quam elementum. Ut morbi tincidunt augue
-          interdum velit. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Pretium quam vulputate dignissim
-          suspendisse in est ante in nibh. Risus ultricies tristique nulla aliquet enim tortor at auctor urna.
-          Suspendisse sed nisi lacus sed viverra tellus in. Porttitor rhoncus dolor purus non enim praesent. Velit
-          egestas dui id ornare arcu odio ut sem. Tincidunt augue interdum velit euismod in pellentesque massa placerat.
-          Sit amet commodo nulla facilisi nullam vehicula ipsum a. Tellus elementum sagittis vitae et leo. Nec ultrices
-          dui sapien eget mi proin sed.</p>
+      <div class="col-start-2 lg:col-end-8 col-end-12 p-3 bg-base-300 rounded-l-lg">
+        <h1 class="text-lg text-base-content"><strong>Training step 4</strong></h1>
+        <p class="text-base-content">
+          In the last part of the training, the tourists will undergo more simulations that depict the gravity-less environment of space. This last part of the training will include a full review of the training program as well as a rehearsal of the actual launch. This will ensure that all the participants are ready for the launch on the specified date.
+        </p>
       </div>
 
       <div class="col-start-8 col-span-4 bg-secondary rounded-r-lg grid place-content-center">

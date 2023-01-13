@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  .hero-btn :hover {
-    @apply backdrop-blur-sm bg-white/[0.125] text-white border-none;
-  }
+    /* .hero-btn :hover {
+      @apply backdrop-blur-sm bg-white/[0.125] text-white border-none;
+    } */
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
   }

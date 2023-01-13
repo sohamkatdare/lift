@@ -5,9 +5,10 @@ const fadeEffect = setInterval(() => {
     if (!preloader.style.opacity) preloader.style.opacity = 1;
     if (preloader.style.opacity > 0) {
        preloader.style.opacity -= 0.1; 
-       preloader.classList += ' hidden'
-    } 
+    } else if(preloader.style.opacity <= 0 && !preloader.classList.contains("hidden")) {  
+        preloader.classList += ' hidden'
+    }
     else clearInterval(fadeEffect);
 }, 100);
 
-window.addEventListener('load', fadeEffect);
+window.addEventListener("load", fadeEffect);

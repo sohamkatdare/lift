@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en" data-theme="night" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
   <navbar-component></navbar-component>
 
   <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="spinner.svg" alt="spinner">
+    <img src="/spinner.svg" alt="spinner">
   </div>
 
   <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/122/3000/2000');">
@@ -22,44 +22,43 @@
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md">
         <h1 class="mb-5 text-5xl font-bold">Find the perfect trip for you.</h1>
-        <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p class="mb-5">Take the stress out of planning your trips with our perfectly crafted itineraries.</p>
       </div>
     </div>
 
   </div>
   <br>
-  <div class="grid grid-cols-11 gap-x-8 bg-base-200 py">
+  <div class="grid grid-cols-11 gap-x-8 bg-base-300 py">
     <div class="col-span-12 text-center">
       <div class="text-xl divider"><strong class="text-orange-100">Check out our various trip plans below!</strong></div>
       <br>
     </div>
 
-    <div class="col-span-12 flex flex-col md:flex-row md:gap-x-7 gap-y-20 place-content-center max-w-full">
-      <div class="inline-block card w-full px-20 lg:px-0 lg:w-96 bg-base-300 shadow-xl">
+    <div class="col-span-12 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
+      <div class="inline-block card w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src="https://placeimg.com/400/425/arch" alt="Shoes" class="hidden md:flex" />
-          <img src="https://placeimg.com/800/225/arch" alt="Shoes" class="md:hidden" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="hidden md:flex" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="md:hidden" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Gas Giant Exploration</h2>
           <p>Observe the mysterious beauty of the biggest planets of the solar system!</p>
             <p class="hidden lg:font-bold lg:block">What's included:</p>
-            <ul class="hidden lg:list-disc lg:block">
+            <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
               <li>Jupiter surface-level flyby</li>
               <li>Io, Ganymede, and Europa surface tours</li>
               <li>Saturn surface-level flyby</li>
               <li>Titan surface exploration</li>
             </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Read More</button>
+          <div class="card-actions justify-end align-end">
+            <a href="#Gas"><button class="btn btn-primary">Read More</button></a>
           </div>
         </div>
       </div>
       <div class="card lg:w-96 w-full px-20 lg:px-0 bg-base-300 lg:border-4 lg:border-info-content shadow-xl">
         <figure>
-          <img src="https://placeimg.com/400/425/arch" alt="Shoes" class="hidden md:flex" />
-          <img src="https://placeimg.com/800/225/arch" alt="Shoes" class="md:hidden" />
+          <img src="https://starwalk.space/gallery/images/mars-the-ultimate-guide/1920x1080.jpg" alt="Shoes" class="hidden md:flex" />
+          <img src="https://starwalk.space/gallery/images/mars-the-ultimate-guide/1920x1080.jpg" alt="Shoes" class="md:hidden" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Terrestrial Planet Exploration
@@ -67,104 +66,100 @@
           </h2>
           <p>Take a trip to the rocky planets of the inner solar system!</p>
           <p class="hidden lg:font-bold lg:block">What's included:</p>
-          <ul class="hidden lg:list-disc lg:block">
+          <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
             <li>Mercury surface tour</li>
             <li>Venus surface tour</li>
             <li>Asteroid belt and Ceres flyby</li>
             <li>Mars surface tour</li>
           </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Read more</button>
+          <div class="card-actions justify-center mt-5">
+            <a href="#Terrestrial"><button class="btn btn-primary justify-start">Read more</button></a>
+            <a href="#Terrestrial"><button class="btn btn-primary justify-end">Read more</button></a>
           </div>
         </div>
       </div>
-      <div class="card w-full px-20 lg:px-0 lg:w-96 bg-base-300 shadow-xl">
+      <div class="card w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src="https://placeimg.com/400/425/arch" alt="Shoes" class="hidden md:flex" />
-          <img src="https://placeimg.com/800/225/arch" alt="Shoes" class="md:hidden" />
+          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="hidden md:flex" />
+          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="md:hidden" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Ice Giant and Trans-Neptune Expedition</h2>
           <p>Explore the distant wonders of the lonely ice giants and the Kuiper Belt!</p>
-          <p class="hidden lg:font-bold lg:block">What's included:</p>
-          <ul class="hidden lg:list-disc lg:block">
+          <p class="hidden lg:font-bold lg:inline-block">What's included:</p>
+          <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
             <li>Uranus surface-level flyby</li>
             <li>Neptune surface-level</li>
             <li>Asteroid belt and Ceres flyby</li>
             <li>Oort Cloud refuel stop</li>
           </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Read more</button>
+          <div class="card-actions justify-center">
+            <button class="btn btn-primary btn-disabled" justify-start>$???</button>
+            <button class="btn btn-primary btn-disabled justify-end">Coming soon</button>
           </div>
         </div>
       </div>
     </div>
     <br>
     <div class="col-span-12 text-center">
-      <div class="text-xl divider"><strong class="text-orange-100">Terrestrial Planet Exploration</strong></div>
+      <div class="text-xl divider"><strong class="text-orange-100" id="Terrestrial">Terrestrial Planet Exploration</strong></div>
       <br>
     </div>
     <div class="col-start-2 lg:col-end-7 mb-5 col-end-12 ">
-      <h1 class="text-xl">Itinerary</h1>
-      <br>
+ 
       <div class="divider">Day 1</div>
       <p>Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
-        <div class="divider">Day 100</div>
+        <div class="divider">Day 10</div>
         Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
-        <div class="divider">Day 120</div>
+        <div class="divider">Day 12</div>
         Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
-        <div class="divider">Day 220</div>
+        <div class="divider">Day 22</div>
         Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
-        <div class="divider">Day 240</div>
+        <div class="divider">Day 24</div>
         Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
-        <div class="divider">Day 440</div>
+        <div class="divider">Day 44</div>
         Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
-        <div class="divider">Day 460</div>
+        <div class="divider">Day 46</div>
         Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
-        <div class="divider">Day 600</div>
+        <div class="divider">Day 60</div>
         Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
       </p>
         <br><br>
     </div>
-    <div class="hidden col-start-7 mb-5 col-end-12 lg:grid grid-cols-2 place-content-center grid-rows-4 bg-secondary/25 rounded-lg p-5">
+    <div class="hidden col-start-7 mb-5 col-end-12 lg:grid grid-cols-2 place-content-center grid-rows-4 bg-base-100 rounded-lg p-5">
         <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg">
-        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg col-start-2 row-start-2">
-        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg row-start-3">
-        <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg col-start-2 row-start-4">
+        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg" class="rounded-lg drop-shadow-lg col-start-2 row-start-2">
+        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg" class="rounded-lg drop-shadow-lg row-start-3">
+        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg" class="rounded-lg drop-shadow-lg col-start-2 row-start-4">
         
     </div>
 
 
     <div class="col-span-12 text-center">
-      <div class="text-xl divider"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
+      <div class="text-xl divider" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
       <br>
     </div>
 
-    <div class="hidden col-start-1 ml-5 col-end-6 lg:grid grid-cols-2 place-content-center grid-rows-4 bg-secondary/25 rounded-lg p-5">
-      <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg">
-      <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg col-start-2 row-start-2">
-      <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg row-start-3">
-      <img src="https://media.cnn.com/api/v1/images/stellar/prod/210809154253-01-venus-flyby-bepicolombo.jpg?q=x_0,y_0,h_1080,w_1919,c_fill/h_270,w_480" class="rounded-lg drop-shadow-lg col-start-2 row-start-4">
+    <div class="hidden col-start-1 ml-5 col-end-6 lg:grid grid-cols-2 place-content-center grid-rows-4 bg-base-100 rounded-lg p-5">
+      <img src="https://i.ytimg.com/vi/dwDvVLN2OVI/maxresdefault.jpg" class="rounded-lg drop-shadow-lg col-start-2">
+      <img src="https://europa.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2tFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f35ab2d7715a967b6a15b24051e203a7a69da6f/europa_artist_concept_1600px.jpg" class="rounded-lg drop-shadow-lg row-start-2">
+      <img src="https://cdn.sci.news/images/2017/03/image_4742_1-Titan-Electric-Sands.jpg" class="rounded-lg drop-shadow-lg col-start-2 row-start-3">
+      <img src="https://cdn.sci.news/images/enlarge5/image_6492_1e-Cassini-Grand-Finale-Science.jpg" class="rounded-lg drop-shadow-lg row-start-4">
     </div>
 
     <div class="col-start-2 lg:col-start-6 col-end-12 ">
-      <h1 class="text-xl">Itinerary</h1>
-      <br>
       <div class="divider">Day 1</div>
-      <p>Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
-        <div class="divider">Day 100</div>
-        Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
-        <div class="divider">Day 120</div>
-        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
-        <div class="divider">Day 220</div>
-        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
-        <div class="divider">Day 240</div>
-        Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
-        <div class="divider">Day 440</div>
-        Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
-        <div class="divider">Day 460</div>
-        Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
-        <div class="divider">Day 600</div>
+      <p>
+        Our journey begins at Jupiter, the largest planet in our solar system. Using advanced propulsion systems, we will enter orbit around the planet and have the opportunity to study its famous Great Red Spot and observe the colorful bands of clouds that circle the planet.
+        <div class="divider">Day 13</div>
+        Next, we will visit Io, the most volcanically active object in the solar system. Using specialized spacecraft, we will safely fly through the intense radiation belts and approach the moon's surface to witness volcanic eruptions and explore volcanic caldera.
+        <div class="divider">Day 21</div>
+        Afterwards we will travel to Europa, one of Jupiter's icy moons, scientists believe that beneath its icy crust there is a subsurface ocean, we will fly over its icy surface, using special equipments to scan the moon for signs of potential subsurface water and the potential for life.
+        <div class="divider">Day 31</div>
+        Afterwards we will travel to Saturn, the second largest planet in our solar system and famous for its rings. We will fly through the rings and get a close-up view of the planet's diverse moons, including Titan, which we will explore next.
+        <div class="divider">Day 44</div>
+        Our final destination is Titan, Saturn's largest moon, which has a thick atmosphere and a unique methane cycle. We will use landers to explore the surface and study the moon's geology, atmosphere, and potential for life.
+        <div class="divider">Day 50</div>
         Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
       </p>
         <br><br>
