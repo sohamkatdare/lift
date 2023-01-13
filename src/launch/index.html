@@ -17,9 +17,8 @@
   <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="../spinner.svg" alt="spinner">
   </div>
-
   <div class="hero min-h-screen select-none">
-    <video autoplay loop muted>
+    <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-w-none">
       <source src="/rocket-launch.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay bg-opacity-60"></div>
@@ -29,36 +28,35 @@
         <p class="mb-5">Check out the following resources to understand how launch works at LIFT.</p>
       </div>
     </div>
-  </div>
-
-  <div class="grid justify-center bg-base-200 p-5">
-    <div class="grid grid-cols-3 justify-center gap-x-5">
-      <div class="card w-96 bg-base-100 border- shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">Vehicles</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+    <div class="grid justify-center p-5 relative top-60">
+      <div class="grid grid-cols-3 justify-center gap-x-5">
+        <div class="card col-start-1 col-end-1 bg-base-100">
+          <div class="card-body">
+            <h2 class="card-title justify-center">Vehicles</h2>
+            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary w-full">Learn More</button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="card w-96 bg-base-100 border- shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">Training</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+  
+        <div class="card col-start-2 col-end-2 bg-base-100">
+          <div class="card-body">
+            <h2 class="card-title justify-center">Training</h2>
+            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary w-full">Learn More</button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="card w-96 bg-base-100 border- shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">Safety</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+  
+        <div class="card col-start-3 col-end-3 bg-base-100">
+          <div class="card-body">
+            <h2 class="card-title justify-center">Safety</h2>
+            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-primary w-full">Learn More</button>
+            </div>
           </div>
         </div>
       </div>
