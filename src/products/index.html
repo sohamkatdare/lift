@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en" data-theme="night" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -34,7 +34,7 @@
       <br>
     </div>
 
-    <div class="col-span-12 flex flex-col md:flex-row md:gap-x-7 gap-y-20 place-content-center max-w-full">
+    <div class="col-span-12 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
       <div class="inline-block card w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
         <figure>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="hidden md:flex" />
@@ -44,14 +44,14 @@
           <h2 class="card-title">Gas Giant Exploration</h2>
           <p>Observe the mysterious beauty of the biggest planets of the solar system!</p>
             <p class="hidden lg:font-bold lg:block">What's included:</p>
-            <ul class="hidden lg:list-disc lg:block">
+            <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
               <li>Jupiter surface-level flyby</li>
               <li>Io, Ganymede, and Europa surface tours</li>
               <li>Saturn surface-level flyby</li>
               <li>Titan surface exploration</li>
             </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Read More</button>
+          <div class="card-actions justify-end align-end">
+            <a href="#Gas"><button class="btn btn-primary">Read More</button></a>
           </div>
         </div>
       </div>
@@ -66,14 +66,15 @@
           </h2>
           <p>Take a trip to the rocky planets of the inner solar system!</p>
           <p class="hidden lg:font-bold lg:block">What's included:</p>
-          <ul class="hidden lg:list-disc lg:block">
+          <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
             <li>Mercury surface tour</li>
             <li>Venus surface tour</li>
             <li>Asteroid belt and Ceres flyby</li>
             <li>Mars surface tour</li>
           </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Read more</button>
+          <div class="card-actions justify-center mt-5">
+            <a href="#Terrestrial"><button class="btn btn-primary justify-start">Read more</button></a>
+            <a href="#Terrestrial"><button class="btn btn-primary justify-end">Read more</button></a>
           </div>
         </div>
       </div>
@@ -85,22 +86,23 @@
         <div class="card-body">
           <h2 class="card-title">Ice Giant and Trans-Neptune Expedition</h2>
           <p>Explore the distant wonders of the lonely ice giants and the Kuiper Belt!</p>
-          <p class="hidden lg:font-bold lg:block">What's included:</p>
-          <ul class="hidden lg:list-disc lg:block">
+          <p class="hidden lg:font-bold lg:inline-block">What's included:</p>
+          <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
             <li>Uranus surface-level flyby</li>
             <li>Neptune surface-level</li>
             <li>Asteroid belt and Ceres flyby</li>
             <li>Oort Cloud refuel stop</li>
           </ul>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary btn-disabled">Coming soon</button>
+          <div class="card-actions justify-center">
+            <button class="btn btn-primary btn-disabled" justify-start>$???</button>
+            <button class="btn btn-primary btn-disabled justify-end">Coming soon</button>
           </div>
         </div>
       </div>
     </div>
     <br>
     <div class="col-span-12 text-center">
-      <div class="text-xl divider"><strong class="text-orange-100">Terrestrial Planet Exploration</strong></div>
+      <div class="text-xl divider"><strong class="text-orange-100" id="Terrestrial">Terrestrial Planet Exploration</strong></div>
       <br>
     </div>
     <div class="col-start-2 lg:col-end-7 mb-5 col-end-12 ">
@@ -134,7 +136,7 @@
 
 
     <div class="col-span-12 text-center">
-      <div class="text-xl divider"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
+      <div class="text-xl divider" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
       <br>
     </div>
 
