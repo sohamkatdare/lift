@@ -15,7 +15,7 @@ export default defineConfig({
                 launch_recovery: resolve(__dirname, 'src/launch/recovery/index.html'),
                 launch_safety: resolve(__dirname, 'src/launch/safety/index.html'),
                 launch_training: resolve(__dirname, 'src/launch/training/index.html'),
-                launch_vehicles: resolve(__dirname, 'src/launch/vehicles/index.html'),
+                references: resolve(__dirname, 'src/references/index.html'),
             },
         },
     },

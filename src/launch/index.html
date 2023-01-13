@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="main.css" rel="stylesheet">
   <link href="../output.css" rel="stylesheet">
   <link href="../style.css" rel="stylesheet">
 
@@ -18,44 +19,55 @@
     <img src="../spinner.svg" alt="spinner">
   </div>
   <div class="hero min-h-screen select-none">
-    <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-w-none">
-      <source src="/rocket-launch.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-overlay brightness-50">
+      <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-h-none max-w-none">
+        <source src="/rocket-launch.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md text-white">
-        <h1 class="mb-5 text-5xl font-bold">Ready for launch!</h1>
+        <h1 class="mb-5 text-5xl font-bold text-white">Ready for launch!</h1>
         <p class="mb-5">Check out the following resources to understand how launch works at LIFT.</p>
       </div>
     </div>
     <div class="grid justify-center p-5 relative top-60">
-      <div class="grid grid-cols-3 justify-center gap-x-5">
-        <div class="card col-start-1 col-end-1">
-          <div class="card-body bg-base-100/25 background-blur-md text-white">
+      <div class="grid grid-cols-4 justify-center gap-x-5">
+        <div class="card col-start-1 hover:border border-secondary col-end-1 bg-base-100/25 background-blur-md text-white">
+          <div class="card-body">
             <h2 class="card-title justify-center">Vehicles</h2>
-            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary w-full">Learn More</button>
+            <p class="hidden md:block text-center">Check out the vehicles we use to ensure that your trip is as safe as possible.</p>
+            <div class="card-actions justify-center">
+              <a href="vehicles/"><button class="btn btn-secondary w-full">Learn More</button></a>
             </div>
           </div>
         </div>
   
-        <div class="card col-start-2 col-end-2 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-2 hover:border border-secondary col-end-2 bg-base-100/25 background-blur-md text-white">
           <div class="card-body">
             <h2 class="card-title justify-center">Training</h2>
-            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary w-full">Learn More</button>
+            <p class="hidden md:block text-center">Learn how we prepare you to endure the alien physics of space.</p>
+            <div class="card-actions justify-center">
+              <a href="training/"><button class="btn btn-secondary w-full">Learn More</button></a>
             </div>
           </div>
         </div>
   
-        <div class="card col-start-3 col-end-3 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-3 hover:border border-secondary col-end-3 bg-base-100/25 background-blur-md text-white">
           <div class="card-body">
             <h2 class="card-title justify-center">Safety</h2>
-            <p class="hidden md:block">If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary w-full">Learn More</button>
+            <p class="hidden md:block text-center">Learn how our technology keeps you safe through the harshest conditions of space</p>
+            <div class="card-actions justify-center">
+              <a href="safety/"><button class="btn btn-secondary w-full">Learn More</button></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col-start-4 hover:border border-secondary col-end-4 bg-base-100/25 background-blur-md text-white">
+          <div class="card-body">
+            <h2 class="card-title justify-center">Recovery</h2>
+            <p class="hidden md:block text-center">Instructions on how re-entry into Earth is conducted.</p>
+            <div class="card-actions justify-center">
+              <a href="recovery/"><button class="btn btn-secondary w-full">Learn More</button></a>
             </div>
           </div>
         </div>
