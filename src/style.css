@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 @layer components {
-    /* .hero-btn :hover {
+
+  /* .hero-btn :hover {
       @apply backdrop-blur-sm bg-white/[0.125] text-white border-none;
     } */
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
   }
+
   .card-text-responsive {
     @apply block;
   }
@@ -70,7 +72,7 @@
 
 code {
   font-family: Nova;
-  font-size: 2rem; 
+  font-size: 2rem;
   line-height: 2.375rem;
 }
 
@@ -97,7 +99,10 @@ h1 {
   background: linear-gradient(to right, black 50%, white 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 .filling-button:hover {
@@ -110,7 +115,10 @@ h1 {
   background: linear-gradient(to right, black 50%, rgba(255, 255, 255, 0.125) 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 .filling-button-transparent:hover {
