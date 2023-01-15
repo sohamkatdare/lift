@@ -5,7 +5,7 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
-        <div class="navbar-start w-[47.5%]">
+        <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -52,9 +52,10 @@ class Navbar extends HTMLElement {
         <div class="navbar-center">
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
         </div>
+        <div class="navbar-end"></div>
       </nav>
       <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
-        <div class="navbar-start w-[47.5%]">
+        <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -101,6 +102,7 @@ class Navbar extends HTMLElement {
         <div class="navbar-center">
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code> </a>
         </div>
+        <div class="navbar-end"></div>
       </nav>
     `;
   }
@@ -117,7 +119,7 @@ class NavbarLaunch extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
-        <div class="navbar-start w-[47.5%]">
+        <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -164,9 +166,10 @@ class NavbarLaunch extends HTMLElement {
         <div class="navbar-center">
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
         </div>
+        <div class="navbar-end"></div>
       </nav>
       <nav class="navbar fixed bg-base-200/[0.125] drop-shadow-lg backdrop-blur-sm z-50">
-        <div class="navbar-start w-[47.5%]">
+        <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -213,6 +216,7 @@ class NavbarLaunch extends HTMLElement {
         <div class="navbar-center">
           <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code> </a>
         </div>
+        <div class="navbar-end"></div>
       </nav>
     `;
   }
