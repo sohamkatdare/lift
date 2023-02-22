@@ -2,7 +2,18 @@ import './style.css'
 
 import * as THREE from 'three';
 import isTouchDevice from './util';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+const loader = new GLTFLoader();
+
+// loader.load( 'black_hole.glb', function ( gltf ) {
+//   scene.add(gltf.scene) 
+
+// }, undefined, function ( error ) {
+
+// 	console.error( error );
+
+// } );
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
@@ -27,7 +38,7 @@ scene.background = spaceTexture;
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
-  const geometry = new THREE.DodecahedronGeometry(size, detail, detail);
+  const geometry = new THREE.SphereGeometry(size, detail, detail);
   const material = new THREE.MeshBasicMaterial({ map: texture });
   const planet = new THREE.Mesh(geometry, material);
   return planet
