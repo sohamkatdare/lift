@@ -4,13 +4,22 @@ const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
 let isLeft = false;
 let isButtonHover = false;
+let isInverted = false;
 
 const animateCursor = function () {
     const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
     const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
     const right = ' translate-y-[-5.25rem]'
     const invisible = ' opacity-0'
-    const bloom = ' blur-md'
+    const bloom = 'blur-md'
+
+    const standardCursor = "absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px] opacity-100 scale-[0.5]"
+    const circle = customCursor.children[0];
+    console.log(isInverted)
+    if(isInverted) {
+        circle.classList.replace('bg-slate-50/75', 'bg-white')
+        customCursor.classList.replace('scale-[0.5]', 'scale-[1]')
+    }
     if (isLeft) {
         if (section == 5 || isButtonHover) {
             customPointers[0].className = standard + left + invisible
@@ -86,6 +95,13 @@ function cursorClick(e) {
 
 function cursorHover(e) {
     const t = e.target;
+    if(t.classList.contains('cursor-hover')) {
+        t.classList.replace('text-white', 'text-black');
+        isInverted = true;
+    } else {
+        t.classList.replace('text-black', 'text-white');
+        isInverted = false;
+    }
     if (t.tagName == 'BUTTON' || t.tagName == 'A' || t.tagName == "CODE" || t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" || t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
         isButtonHover = true;
     } else {
