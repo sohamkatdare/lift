@@ -75,7 +75,18 @@ code {
   font-size: 2rem;
   line-height: 2.375rem;
 }
-
+.nova {
+  font-family: Nova;
+}
+.oranienbaum {
+  font-family: Oranienbaum;
+}
+.moon-thick {
+  font-family: Moon-Thick;
+}
+.moon-thin {
+  font-family: Moon-Thin;
+}
 /* span {  font-family: Nova;  } */
 h1 {
   font-family: Moon-Thin;

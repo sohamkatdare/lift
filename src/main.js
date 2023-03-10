@@ -6,20 +6,28 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const loader = new GLTFLoader();
 
-// loader.load( 'black_hole.glb', function ( gltf ) {
-//   scene.add(gltf.scene) 
 
-// }, undefined, function ( error ) {
+// This is code I copied from an example to optimize threejs
+// let pixelRatio = window.devicePixelRatio
+// let useAntiAliasing = true
+// if (pixelRatio > 1) {
+//   useAntiAliasing = false
+// }
 
-// 	console.error( error );
-
-// } );
+// this.renderer = new THREE.WebGLRenderer({
+//   antialias: useAntiAliasing,
+//   powerPreference: "high-performance",
+// })
+// const renderer = new THREE.WebGLRenderer({
+//   canvas: document.querySelector("#bg"),
+// });
+// 
+// renderer.setPixelRatio(window.devicePixelRatio);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
 });
 
-renderer.setPixelRatio(window.devicePixelRatio);
 if (isTouchDevice()) {
   if (window.orientation == 90 || window.orientation == -90) {
     renderer.setSize(screen.height, screen.width); // Includes space for the address bar and tabs.
@@ -30,11 +38,10 @@ if (isTouchDevice()) {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-
 const scene = new THREE.Scene();
-
 const spaceTexture = new THREE.TextureLoader().load('2k_stars_milky_way.jpg');
 scene.background = spaceTexture;
+renderer.setClearColor(0xffffff, 0) // makes the background match
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -53,56 +60,79 @@ function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
   return planet
 }
 
-renderer.setClearColor(0xffffff, 0) // makes the background match
+// Earth
+  const moon = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 3, 32, '2k_earth_normal.jpeg');
+  const earth = addPlanet('2k_moon.jpg', 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+  earth.position.set(4.5, 0, 0)
 
-const moon = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 3, 32, '2k_earth_normal.jpeg');
-const earth = addPlanet('2k_moon.jpg', 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
-earth.position.set(4.5, 0, 0)
-
-const earthGroup = new THREE.Group();
-earthGroup.add(earth)
-earthGroup.add(moon)
-earthGroup.position.set(3, 0.2, -10)
+  const earthGroup = new THREE.Group();
+  earthGroup.add(earth)
+  earthGroup.add(moon)
 
 const mars = addPlanet('2k_mars.jpg', 2, 32);
+
 const jupiter = addPlanet('2k_jupiter.jpg', 5, 32);
 
-const saturn = addPlanet('2k_saturn.jpg', 4.5, 32);
-const saturnRing = new THREE.RingGeometry(6, 11);
-const saturnRingTexture = new THREE.TextureLoader().load('2k_saturn_rings.png');
-const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
-const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
-const saturnGroup = new THREE.Group();
-saturnGroup.add(saturn);
-saturnGroup.add(saturnRings);
+// Saturn
+  const saturn = addPlanet('2k_saturn.jpg', 4.5, 32);
+  const saturnRing = new THREE.RingGeometry(6, 11);
+  const saturnRingTexture = new THREE.TextureLoader().load('2k_saturn_rings.png');
+  const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
+  const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
+  const saturnGroup = new THREE.Group();
+  saturnGroup.add(saturn);
+  saturnGroup.add(saturnRings);
 
-const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
-const uranusRing = new THREE.RingGeometry(5, 6);
-const uranusRingTexture = new THREE.TextureLoader().load('uranus_ring_texture.jpeg');
-const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingTexture, side: THREE.DoubleSide })
-uranusRingMaterial.opacity = 0.5;
-const uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
-const uranusGroup = new THREE.Group();
-uranusGroup.add(uranus);
-uranusGroup.add(uranusRings);
+// Uranus
+  const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
+  const uranusRing = new THREE.RingGeometry(5, 6);
+  const uranusRingTexture = new THREE.TextureLoader().load('uranus_ring_texture.jpeg');
+  const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingTexture, side: THREE.DoubleSide })
+  uranusRingMaterial.opacity = 0.5;
+  const uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
+  const uranusGroup = new THREE.Group();
+  uranusGroup.add(uranus);
+  uranusGroup.add(uranusRings);
+
 const neptune = addPlanet('2k_neptune.jpg', 4, 32);
 
-
-mars.position.set(-3, 5, 5);
-jupiter.position.set(-18, -2, 10);
-saturnGroup.position.set(-35, 5, 20);
+function addToScene(planet, x, y, z) {
+  planet.position.set(x, y, z);
+  scene.add(planet)
+}
 saturnRings.rotation.set(67.5, 0, 0);
-uranusGroup.position.set(-30, -5, 70);
-neptune.position.set(0, 0, 70);
+addToScene(earthGroup, 3, 0.2, -10);
+addToScene(mars, -3, 5, 5);
+addToScene(jupiter, -18, -2, 10);
+addToScene(saturnGroup, -35, 5, 20);
+addToScene(uranusGroup, -30, -5, 70);
+addToScene(neptune, 0, 0, 70);
 
-scene.add(earthGroup);
-scene.add(mars);
-scene.add(jupiter);
-scene.add(saturnGroup);
-scene.add(uranusGroup);
-scene.add(neptune);
+// same with this
+// let fieldOfView
+// let renderDistanceMax
+// let renderDistanceMin = 400
 
+// // Mobile camera
+// if (window.innerWidth <= 768) {
+//   fieldOfView = 50
+//   renderDistanceMax = 1200
+//   // 769px - 1080px screen width camera
+// } else if (window.innerWidth >= 769 && window.innerWidth <= 1080) {
+//   fieldOfView = 50
+//   renderDistanceMax = 1475
+//   // > 1080px screen width res camera
+// } else {
+//   fieldOfView = 40
+//   renderDistanceMax = 1800
+// }
 
+// this.camera = new THREE.PerspectiveCamera(
+//   fieldOfView,
+//   window.innerWidth / window.innerHeight,
+//   renderDistanceMin,
+//   renderDistanceMax
+// )
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.setZ(0);
 // const controls = new OrbitControls(camera, renderer.domElement)
@@ -162,24 +192,26 @@ function updatePlanets() {
 
 function moveCamera() {
   const speedMultiplier = 1.8
-  const t = document.body.getBoundingClientRect().top * speedMultiplier
-  camera.rotation.y = t * -0.0002
-  camera.position.z = t * -0.005
-  earthGroup.position.y = t * -0.001
-  mars.position.y = 2 + t * 0.0015
-  jupiter.position.y = 7 + t * 0.002
+  const scrollOffset = document.body.getBoundingClientRect().top * speedMultiplier
 
-  saturnGroup.position.x = -105 - t * 0.009
-  saturnGroup.position.y = -4 - t * 0.001
-  saturnGroup.position.z = -10 - t * 0.005
+  camera.rotation.y = scrollOffset * -0.0002
+  camera.position.z = scrollOffset * -0.005
 
-  uranusGroup.position.x = 25 + t * 0.006
-  uranusGroup.position.y = -20 - t * 0.002
+  earthGroup.position.y = scrollOffset * -0.001
+  mars.position.y = 2 + scrollOffset * 0.0015
+  jupiter.position.y = 7 + scrollOffset * 0.002
+
+  saturnGroup.position.x = -105 - scrollOffset * 0.009
+  saturnGroup.position.y = -4 - scrollOffset * 0.001
+  saturnGroup.position.z = -10 - scrollOffset * 0.005
+
+  uranusGroup.position.x = 25 + scrollOffset * 0.006
+  uranusGroup.position.y = -20 - scrollOffset * 0.002
   uranusGroup.position.z = 25 - t * 0.004
 
-  neptune.position.x = 65 + t * 0.008
-  neptune.position.y = -30 - t * 0.0023
-  neptune.position.z = 25 - t * 0.005
+  neptune.position.x = 65 + scrollOffset * 0.008
+  neptune.position.y = -30 - scrollOffset * 0.0023
+  neptune.position.z = 25 - scrollOffset * 0.005
 
 }
 document.body.onscroll = moveCamera
