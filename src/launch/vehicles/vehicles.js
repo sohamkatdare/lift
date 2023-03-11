@@ -1,7 +1,7 @@
-import '../style.css'
+import '../../style.css'
 
 import * as THREE from 'three';
-import isTouchDevice from '../util';
+import isTouchDevice from '../../util';
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
@@ -49,17 +49,8 @@ function addToScene(planet, x, y, z) {
 
 renderer.setClearColor(0xffffff, 0) // makes the background match
 
-const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
-const saturnRing = new THREE.RingGeometry(6, 11);
-const saturnRingTexture = new THREE.TextureLoader().load('/2k_saturn_rings.png');
-const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
-const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
-const saturnGroup = new THREE.Group();
-saturnGroup.add(saturn);
-saturnGroup.add(saturnRings);
-
-saturnRings.rotation.set(67.5, 0, 0);
-addToScene(saturnGroup, 0, 0, -20);
+const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
+addToScene(neptune, 0, 0, -15);
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.setZ(0);
@@ -117,11 +108,7 @@ function animate() {
 }
 
 function updatePlanets() {
-  saturn.rotation.x += 0.00013;
-  saturn.rotation.y += 0.008;
-  saturnGroup.rotation.x += 0.0001;
-  saturnGroup.rotation.y += 0.003;
-  saturnRings.rotation.y += 0.00005;
+    neptune.rotation.y += 0.006;
 }
 
 animate();

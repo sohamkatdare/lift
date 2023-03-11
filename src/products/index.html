@@ -16,14 +16,26 @@
   <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="/spinner.svg" alt="spinner">
   </div>
-  <div class="grid grid-cols-11 gap-x-8 bg-base-300 py">
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+      
+    <div class="hero-overlay bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg"></canvas>
+    </div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-2xl">
+        <h1 class="mb-5 text-5xl">Customize your trip to meet your needs!</h1>
+        <h2>Make sure your travel is perfect for you.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-11 gap-x-8 bg-gradient-to-b from-black to-base-100">
     <div class="col-span-12 text-center">
       <div class="mt-20 text-xl divider"><strong class="text-4xl text-orange-100">Check out our various trip plans!</strong></div>
       <br>
     </div>
 
     <div class="col-span-12 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
-      <div class="inline-block card w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
+      <div class="inline-block card lg:border-4 lg:border-info-content w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
         <figure>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="hidden md:flex" />
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="md:hidden" />
@@ -48,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="card lg:w-96 w-full px-20 lg:px-0 bg-base-300 lg:border-4 lg:border-info-content shadow-xl">
+      <div class="card lg:w-96 w-full px-20 lg:px-0 bg-base-300 lg:border-4 lg:border-primary shadow-xl">
         <figure>
           <img src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600" alt="Mars spacewalk" class="hidden md:flex" />
           <img src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600" alt="Mars spacewalk" class="md:hidden" />
@@ -71,7 +83,7 @@
           </div>
         </div>
       </div>
-      <div class="card w-full px-20 lg:px-0 lg:w-96 bg-base-100 shadow-xl">
+      <div class="card w-full px-20 lg:px-0 lg:w-96 bg-base-100 lg:border-4 lg:border-info-content shadow-xl">
         <figure>
           <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="hidden md:flex" />
           <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="md:hidden" />
@@ -166,6 +178,7 @@
   <script src="../navbar.js" type="module"></script>
   <script src="../loader.js" type="module"></script>
   <script src="../footer.js" type="module"></script>
+  <script src="products.js" type="module"></script>
 </body>
 
 <!-- </html>top-[4rem]

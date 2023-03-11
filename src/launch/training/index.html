@@ -18,18 +18,20 @@
     <img src="../../spinner.svg" alt="spinner">
   </div>
 
-  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Preparing you for an out-of-this-world experience.</h1>
-        <p class="mb-5">Scroll down to find out more!</p>
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+      
+    <div class="hero-overlay bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg-uranus"></canvas>
+    </div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-2xl">
+        <h1 class="mb-5 text-5xl">Preparing you for the trip of your life.</h1>
+        <p>Training makes sure you are safe during your long voyage through alien environments.</p>
       </div>
     </div>
 
   </div>
-  <br>
-  <div class="grid grid-cols-12 py-10 bg-base-300">
+  <div class="grid grid-cols-12 py-10 bg-gradient-to-b from-black to-base-100">
     <div class="lg:col-start-4 lg:col-end-10 col-span-12 inline-block text-center">
       <h1 class="text-xl text-base-400"><strong>What is the point of training?</strong></h1>
       <br>
@@ -120,6 +122,7 @@
   <script src="../../navbar.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>
   <script src="../../loader.js" type="module"></script>
+  <script src="training.js" type="module"></script>
 </body>
 
 </html>

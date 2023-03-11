@@ -2,20 +2,6 @@ import './style.css'
 
 import * as THREE from 'three';
 import isTouchDevice from './util';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-const loader = new GLTFLoader();
-
-let car;
-loader.load( 'tesla_roadster_2020.glb', function ( gltf ) {
-  car = gltf.scene
-  scene.add(car)
-
-}, undefined, function ( error ) {
-
-	console.error( error );
-
-} );
 
 // This is code I copied from an example to optimize threejs
 // let pixelRatio = window.devicePixelRatio
@@ -196,6 +182,7 @@ function animate() {
   // controls.update();
   updatePlanets();
   renderer.render(scene, camera);
+  moveCamera();
 }
 
 function updatePlanets() {
@@ -225,10 +212,6 @@ function updatePlanets() {
 
   neptune.rotation.x += 0.0002;
   neptune.rotation.y += 0.006;
-
-  car.rotation.x += 0.0002;
-  car.rotation.y += 0.006;
-  car.rotation.z += 0.0001;
 }
 
 function moveCamera() {
@@ -248,13 +231,12 @@ function moveCamera() {
 
   uranusGroup.position.x = 25 + scrollOffset * 0.006
   uranusGroup.position.y = -20 - scrollOffset * 0.002
-  uranusGroup.position.z = 25 - t * 0.004
+  uranusGroup.position.z = 25 - scrollOffset * 0.004
 
   neptune.position.x = 65 + scrollOffset * 0.008
   neptune.position.y = -30 - scrollOffset * 0.0023
   neptune.position.z = 25 - scrollOffset * 0.005
 
 }
-document.body.onscroll = moveCamera
 
 animate();

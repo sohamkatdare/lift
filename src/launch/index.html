@@ -18,11 +18,9 @@
   <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="../spinner.svg" alt="spinner">
   </div>
-  <div class="hero min-h-screen select-none">
-    <div class="hero-overlay brightness-50">
-      <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-h-none max-w-none">
-        <source src="/rocket-launch.mp4" type="video/mp4" />
-      </video>
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+    <div class="hero-overlay brightness-50 bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md text-white">
@@ -85,6 +83,7 @@
   <script src="../loader.js" type="module"></script>
   <script src="../navbar.js" type="module"></script>
   <script src="../footer.js" type="module"></script>
+  <script src="launch.js" type="module"></script>
 </body>
 
 </html>

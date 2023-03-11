@@ -11,24 +11,24 @@ const animateCursor = function () {
     const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
     const right = ' translate-y-[-5.25rem]'
     const invisible = ' opacity-0'
-    const bloom = 'blur-md'
+    const bloom = ' blur-md'
 
-    const standardCursor = "absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px] opacity-100 scale-[0.5]"
-    const circle = customCursor.children[0];
-    console.log(isInverted)
-    if(isInverted) {
-        circle.classList.replace('bg-slate-50/75', 'bg-white')
-        customCursor.classList.replace('scale-[0.5]', 'scale-[1]')
-    }
-    if (isLeft) {
-        if (section == 5 || isButtonHover) {
+    // const standardCursor = "absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px] opacity-100 scale-[0.5]"
+    // const circle = customCursor.children[0];
+    // console.log(isInverted)
+    // if(isInverted) {
+    //     circle.classList.replace('bg-slate-50/75', 'bg-white')
+    //     customCursor.classList.replace('scale-[0.5]', 'scale-[1]')
+    // }
+    if (isLeft) { // When the cursor is on the left half of the screen
+        if (section == 5 || isButtonHover) { // When the cursor is on the last slide, so can only go right
             customPointers[0].className = standard + left + invisible
             customPointers[1].className = standard + left + invisible + bloom
-        } else {
+        } else { // any time when there is another slide to go to
             customPointers[0].className = standard + left
             customPointers[1].className = standard + left + bloom
         }
-    } else {
+    } else { // When the cursor is on the right half of the screen
         if (section == 0 || isButtonHover) {
             customPointers[0].className = standard + right + invisible
             customPointers[1].className = standard + right + invisible + bloom
@@ -95,13 +95,14 @@ function cursorClick(e) {
 
 function cursorHover(e) {
     const t = e.target;
-    if(t.classList.contains('cursor-hover')) {
-        t.classList.replace('text-white', 'text-black');
-        isInverted = true;
-    } else {
-        t.classList.replace('text-black', 'text-white');
-        isInverted = false;
-    }
+    // if time, make inverting the arrow work
+    // if(t.classList.contains('cursor-hover')) {
+    //     t.classList.replace('text-white', 'text-black');
+    //     isInverted = true;
+    // } else {
+    //     t.classList.replace('text-black', 'text-white');
+    //     isInverted = false;
+    // }
     if (t.tagName == 'BUTTON' || t.tagName == 'A' || t.tagName == "CODE" || t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" || t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
         isButtonHover = true;
     } else {
@@ -151,7 +152,7 @@ function changeSection(num) {
 const onScrollBefore = document.body.onscroll;
 
 const detectScrollChanges = function () {
-    onScrollBefore();
+    // onScrollBefore();
     for (let i = 0; i < 6; i++) {
         changeSection(i);
     }

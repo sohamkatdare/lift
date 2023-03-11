@@ -1,10 +1,10 @@
-import '../style.css'
+  import '../../style.css'
 
 import * as THREE from 'three';
-import isTouchDevice from '../util';
+import isTouchDevice from '../../util';
 
 const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector("#bg"),
+  canvas: document.querySelector("#bg-uranus"),
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -41,58 +41,40 @@ function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
   return planet
 }
 
-function addToScene(planet, x, y, z) {
-  planet.position.set(x, y, z);
-  scene.add(planet)
-  console.log("hello")
-}
-
 renderer.setClearColor(0xffffff, 0) // makes the background match
 
-const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
-const saturnRing = new THREE.RingGeometry(6, 11);
-const saturnRingTexture = new THREE.TextureLoader().load('/2k_saturn_rings.png');
-const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
-const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
-const saturnGroup = new THREE.Group();
-saturnGroup.add(saturn);
-saturnGroup.add(saturnRings);
+const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
+const uranusRing = new THREE.RingGeometry(5.25, 5.75);
+const uranusRingTexture = new THREE.TextureLoader().load('/uranus_ring_texture.jpeg');
+const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingTexture, side: THREE.DoubleSide })
+uranusRingMaterial.opacity = 0.5;
+const uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
+const uranusGroup = new THREE.Group();
+uranusGroup.add(uranus);
+uranusGroup.add(uranusRings);
 
-saturnRings.rotation.set(67.5, 0, 0);
-addToScene(saturnGroup, 0, 0, -20);
+
+uranusGroup.position.set(0, 0, -20);
+scene.add(uranusGroup);
+
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.setZ(0);
-// const controls = new OrbitControls(camera, renderer.domElement)
 
 const ambientLight = new THREE.AmbientLight(0xffffff)
 scene.add(ambientLight)
 
-// Old Star Generation
-  // function addStar(spread, starGeometry, starMaterial) {
-  //   const star = new THREE.Mesh(starGeometry, starMaterial)
-  //   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(spread))
-  //   star.position.set(x, y, z)
-  //   scene.add(star)
-  // }
-
-  // const starGeometry = new THREE.DodecahedronGeometry(0.25, 32, 32)
-  // const starMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff })
-
-  // Array(75).fill().forEach(() => addStar(100, starGeometry, starMaterial))
-  // Array(100).fill().forEach(() => addStar(200, starGeometry, starMaterial))
-  // Array(100).fill().forEach(() => addStar(1000, starGeometry, starMaterial))
-
-// NEW Star Generation 
 function starForge() {
 
   var starQty = 45000;
   var vertices = [];
   for (var i = 0; i < starQty; i++) {		
+
     const spread = i/2 + 500;
     const x = THREE.MathUtils.randFloatSpread( spread );
     const y = THREE.MathUtils.randFloatSpread( spread );
     const z = THREE.MathUtils.randFloatSpread( spread );
+
 
     vertices.push(x, y, z);
 
@@ -109,7 +91,6 @@ function starForge() {
   scene.add(stars);
 }
 starForge();
-
 function animate() {
   requestAnimationFrame(animate);
   updatePlanets();
@@ -117,11 +98,10 @@ function animate() {
 }
 
 function updatePlanets() {
-  saturn.rotation.x += 0.00013;
-  saturn.rotation.y += 0.008;
-  saturnGroup.rotation.x += 0.0001;
-  saturnGroup.rotation.y += 0.003;
-  saturnRings.rotation.y += 0.00005;
+    uranus.rotation.y += 0.007;
+    uranus.rotation.z += 0.0002;
+    uranusGroup.rotation.y += 0.0007;
+    uranusGroup.rotation.z += 0.0001;
 }
 
 animate();
