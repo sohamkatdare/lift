@@ -124,6 +124,7 @@ document.getElementById('gstar1').onclick = function () {
         toastInfo.classList = 'toast toast-top toast-end p-2'
         infoShown = true
     }
+    document.getElementById('gstar1').style.display = "none"
 };
 
 document.getElementById('scroll-info-btn').onclick = function () {
@@ -181,3 +182,4 @@ function resize() {
     }
 }
 window.onresize = resize;
+
