@@ -46,7 +46,13 @@ const moveCursor = (e) => {
     }
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
+    customCursor.animate({
+        transform: `translate3d(${mouseX}px, ${mouseY}px, 100px)`
+    }, {
+        duration: 1750,
+        fill: 'forwards'
+    })
+    // customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
     let width = window.innerWidth;
     isLeft = (mouseX <= width / 2);
     animateCursor();
@@ -76,6 +82,9 @@ function scrollNext() {
 
 function cursorClick(e) {
     const t = e.target;
+    if(document.body.animate) {
+        pop(e)
+    }
     if (t.tagName == 'BUTTON' || t.tagName == 'A') {
         t.click()
     } else {
@@ -92,6 +101,70 @@ function cursorClick(e) {
         }
     }
 }
+function pop(e) {
+    for (let i = 0; i < 30; i++) {
+        createParticle(e.clientX, e.clientY)
+    }
+}
+function createParticle(x, y) {
+    const particle = document.createElement('particle')
+    document.body.appendChild(particle)
+
+    particle.style.opacity = '0'
+    const size = Math.floor(Math.random() * 20 + 5)
+    particle.style.width = `${size}px`
+    particle.style.height = `${size}px`
+    particle.style.background = `hsl(${Math.random() + 90 + 180}, 70%, 60%)`
+
+    const destinationX = x + (Math.random() - 0.5) * 2 * 75;
+    const destinationY = y + (Math.random() - 0.5) * 2 * 75;
+    
+    const animation = particle.animate([
+        {
+            transform: `translate(${x - (size / 2)}px, ${y - (size / 2)}px)`,
+            opacity: 1
+        },
+        {
+            transform: `translate(${destinationX}px, ${destinationY}px)`,
+            opacity: 0
+        }
+    ], {
+        duration: 500 + Math.random() * 1000,
+        easing: 'cubic-bezier(0, 0.9, 0.57, 1)',
+        delay: Math.random() * 200
+    })
+
+    animation.onfinish = () => {
+        particle.remove();
+    }
+}
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.";
+
+let interval = null;
+document.querySelector(".hacker-text").onmouseover = event => {  
+    let iteration = 0;
+    
+    clearInterval(interval);
+    
+    interval = setInterval(() => {
+      event.target.innerText = event.target.innerText
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration) {
+            return event.target.dataset.value[index];
+          }
+        
+          return letters[Math.floor(Math.random() * 26)]
+        })
+        .join("");
+      
+      if(iteration >= event.target.dataset.value.length){ 
+        clearInterval(interval);
+      }
+      
+      iteration += 1 / 3;
+    }, 30);
+  }
 
 function cursorHover(e) {
     const t = e.target;

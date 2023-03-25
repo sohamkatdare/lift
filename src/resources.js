@@ -1,8 +1,12 @@
 import * as THREE from 'three';
 import isTouchDevice from './util';
-
+import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 // renderer setup
 export function rendererSetup() {
+    // const renderer = new CSS2DRenderer({
+    //   canvas: document.querySelector("#bg"),
+    // });
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#bg"),
     });
@@ -24,7 +28,7 @@ export function sceneSetup(renderer, backgroundPath) {
     const scene = new THREE.Scene();
     const bgTexture = new THREE.TextureLoader().load(backgroundPath);
     scene.background = bgTexture;
-    renderer.setClearColor(0xffffff, 0) // makes the background match
+    // renderer.setClearColor(0xffffff, 0) // makes the background match
     return scene;
 }
 
@@ -53,7 +57,6 @@ export const earthGroup = new THREE.Group();
 earthGroup.add(earth);
 earthGroup.add(moon);
 earth.position.set(0, 0, 4)
-console.log(earth)
 
 export const mars = addPlanet('2k_mars.jpg', 2, 32);
 
