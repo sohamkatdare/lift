@@ -82,9 +82,7 @@ function scrollNext() {
 
 function cursorClick(e) {
     const t = e.target;
-    if(document.body.animate) {
-        pop(e)
-    }
+    
     if (t.tagName == 'BUTTON' || t.tagName == 'A') {
         t.click()
     } else {
@@ -101,6 +99,10 @@ function cursorClick(e) {
         }
     }
 }
+
+if(document.body.animate) {
+    document.querySelector('button').addEventListener('click', pop);
+}
 function pop(e) {
     for (let i = 0; i < 30; i++) {
         createParticle(e.clientX, e.clientY)
@@ -110,7 +112,7 @@ function createParticle(x, y) {
     const particle = document.createElement('particle')
     document.body.appendChild(particle)
 
-    particle.style.opacity = '0'
+    
     const size = Math.floor(Math.random() * 20 + 5)
     particle.style.width = `${size}px`
     particle.style.height = `${size}px`

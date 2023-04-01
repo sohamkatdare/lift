@@ -48,7 +48,9 @@ button:hover {
 
 
 
-
+.particle {
+  opacity: 0;
+}
 
 @media (max-width: 900px) {
   .card-text-responsive {
