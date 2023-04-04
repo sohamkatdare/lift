@@ -13,8 +13,11 @@
 <body>
   <navbar-component></navbar-component>
 
-  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="/spinner.svg" alt="spinner">
+  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full" style="transition: opacity 0.3s linear;" id="preloader">
+    <video width="320" height="240" autoplay muted>
+      <source src="infovid1.mp4">
+    Your browser does not support the video tag.
+    </video>
   </div>
   <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
@@ -107,69 +110,89 @@
       </div>
     </div>
     <br>
-    <div class="col-span-12 text-center">
-      <div class="text-xl divider"><strong class="text-orange-100" id="Terrestrial">Terrestrial Planet Exploration</strong></div>
+    <div class="col-span-12 text-center pt-9">
+      <div class="text-4xl divider"><strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet Exploration</strong></div>
       <br>
     </div>
-    <div class="col-start-2 lg:col-end-7 mb-5 col-end-12 ">
- 
-      <div class="divider">Day 1</div>
-      <p>Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
-        <div class="divider">Day 10</div>
-        Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
-        <div class="divider">Day 12</div>
-        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
-        <div class="divider">Day 22</div>
-        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
-        <div class="divider">Day 24</div>
-        Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
-        <div class="divider">Day 44</div>
-        Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
-        <div class="divider">Day 46</div>
-        Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
-        <div class="divider">Day 60</div>
-        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+    <div class="col-start-2 lg:col-end-7 col-end-12">
+      <div class="divider text-2xl font-semibold">Day 1</div>
+      <p class="text-xl">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
+        <div class="divider text-2xl font-semibold">Day 10</div>
+        <p class="text-xl">
+          Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
+        </p>
+        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pr-9 pb-9">
+        <div class="divider text-2xl font-semibold">Day 24</div>
+        <p class="text-xl">
+          Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
+        </p>
+        <div class="divider text-2xl font-semibold">Day 44</div>
+        <p class="text-xl">
+          Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
+        </p>
+        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pt-9 pb-9 pr-9">
       </p>
         <br><br>
     </div>
-    <div class="hidden col-start-7 mb-5 col-end-12 lg:grid grid-cols-3 place-content-center bg-base-100 rounded-lg p-5">
-        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4">
-        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3">
-        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4">
-        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3">
-        
+    <div class="col-start-7 mb-5 col-end-12">
+      <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
+      <div class="divider text-2xl font-semibold">Day 12</div>
+      <p class="text-xl">
+        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
+      </p>
+      <div class="divider text-2xl font-semibold">Day 22</div>
+      <p class="text-xl">
+        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
+      </p>
+      <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pl-6">
+      <div class="divider text-2xl font-semibold">Day 46</div>
+      <p class="text-xl">
+        Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
+      </p>
+      <div class="divider text-2xl font-semibold">Day 60</div>
+      <p class="text-xl">
+        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+      </p>
     </div>
 
     <div class="col-span-12 text-center">
-      <div class="text-xl divider" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
+      <div class="text-4xl divider mb-5" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
       <br>
     </div>
 
-    <div class="hidden col-start-1 ml-5 col-end-6 lg:grid grid-cols-3 justify-center gap-x-5 place-content-center bg-base-100 mb-10 rounded-lg p-5">
-      <img src="https://i.ytimg.com/vi/dwDvVLN2OVI/maxresdefault.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3">
-      <img src="https://europa.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2tFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f35ab2d7715a967b6a15b24051e203a7a69da6f/europa_artist_concept_1600px.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4">
-      <img src="https://cdn.sci.news/images/2017/03/image_4742_1-Titan-Electric-Sands.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3">
-      <img src="https://cdn.sci.news/images/enlarge5/image_6492_1e-Cassini-Grand-Finale-Science.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4">
+    <div class="col-start-2 lg:col-end-7 col-end-12"><div class="divider text-2xl font-semibold">Day 1</div>
+    <p class="text-xl">
+      Our journey begins at Jupiter, the largest planet in our solar system. Using advanced propulsion systems, we will enter orbit around the planet and have the opportunity to study its famous Great Red Spot and observe the colorful bands of clouds that circle the planet.
+    </p>
+    <div class="divider text-2xl font-semibold">Day 13</div>
+    <p class="text-xl">
+      Next, we will visit Io, the most volcanically active object in the solar system. Using specialized spacecraft, we will safely fly through the intense radiation belts and approach the moon's surface to witness volcanic eruptions and explore volcanic caldera.
+    </p>
+      <img src="https://europa.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2tFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f35ab2d7715a967b6a15b24051e203a7a69da6f/europa_artist_concept_1600px.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pr-9">
+      <div class="divider text-2xl font-semibold">Day 44</div>
+      <p class="text-xl">
+        Our final destination is Titan, Saturn's largest moon, which has a thick atmosphere and a unique methane cycle. We will use landers to explore the surface and study the moon's geology, atmosphere, and potential for life.
+      </p>
+      <div class="divider text-2xl font-semibold">Day 50</div>
+      <p class="text-xl">
+        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+      </p>
     </div>
     <!-- <div class="col-start-1 ml-5 col-end-6 grid grid-cols-3 place-content-center bg-base-100 mb-10 rounded-lg p-5">
       
     </div> -->
 
-    <div class="col-start-2 lg:col-start-6 col-end-12 ">
-      <div class="divider">Day 1</div>
-      <p>
-        Our journey begins at Jupiter, the largest planet in our solar system. Using advanced propulsion systems, we will enter orbit around the planet and have the opportunity to study its famous Great Red Spot and observe the colorful bands of clouds that circle the planet.
-        <div class="divider">Day 13</div>
-        Next, we will visit Io, the most volcanically active object in the solar system. Using specialized spacecraft, we will safely fly through the intense radiation belts and approach the moon's surface to witness volcanic eruptions and explore volcanic caldera.
-        <div class="divider">Day 21</div>
-        Afterwards we will travel to Europa, one of Jupiter's icy moons, scientists believe that beneath its icy crust there is a subsurface ocean, we will fly over its icy surface, using special equipments to scan the moon for signs of potential subsurface water and the potential for life.
-        <div class="divider">Day 31</div>
-        Afterwards we will travel to Saturn, the second largest planet in our solar system and famous for its rings. We will fly through the rings and get a close-up view of the planet's diverse moons, including Titan, which we will explore next.
-        <div class="divider">Day 44</div>
-        Our final destination is Titan, Saturn's largest moon, which has a thick atmosphere and a unique methane cycle. We will use landers to explore the surface and study the moon's geology, atmosphere, and potential for life.
-        <div class="divider">Day 50</div>
-        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
-      </p>
+    <div class="col-start-7 mb-5 col-end-12">
+      <img src="https://i.ytimg.com/vi/dwDvVLN2OVI/maxresdefault.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
+        <div class="divider text-2xl font-semibold">Day 21</div>
+        <p class="text-xl">
+          Afterwards we will travel to Europa, one of Jupiter's icy moons, scientists believe that beneath its icy crust there is a subsurface ocean, we will fly over its icy surface, using special equipments to scan the moon for signs of potential subsurface water and the potential for life.
+        </p>
+        <div class="divider text-2xl font-semibold">Day 31</div>
+        <p class="text-xl">
+          Afterwards we will travel to Saturn, the second largest planet in our solar system and famous for its rings. We will fly through the rings and get a close-up view of the planet's diverse moons, including Titan, which we will explore next.
+        </p>
+        <img src="https://cdn.sci.news/images/enlarge5/image_6492_1e-Cassini-Grand-Finale-Science.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pl-6">
         <br><br>
     </div>
   </div>

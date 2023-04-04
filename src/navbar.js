@@ -50,7 +50,7 @@ class Navbar extends HTMLElement {
           
         </div>
         <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
+          <a class="btn btn-ghost normal-case text-3xl" href="/"><code>LIFT</code></a>
         </div>
         <div class="navbar-end"></div>
       </nav>
@@ -100,7 +100,7 @@ class Navbar extends HTMLElement {
           
         </div>
         <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code> </a>
+          <a class="btn btn-ghost normal-case text-3xl" href="/"><code>LIFT</code> </a>
         </div>
         <div class="navbar-end"></div>
       </nav>
@@ -164,7 +164,7 @@ class NavbarLaunch extends HTMLElement {
           
         </div>
         <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code></a>
+          <a class="btn btn-ghost normal-case text-3xl" href="/"><code>LIFT</code></a>
         </div>
         <div class="navbar-end"></div>
       </nav>
@@ -214,7 +214,7 @@ class NavbarLaunch extends HTMLElement {
           
         </div>
         <div class="navbar-center">
-          <a class="btn btn-ghost normal-case text-xl" href="/"><code>LIFT</code> </a>
+          <a class="btn btn-ghost normal-case text-3xl" href="/"><code>LIFT</code> </a>
         </div>
         <div class="navbar-end"></div>
       </nav>

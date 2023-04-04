@@ -18,30 +18,43 @@
     <img src="../../spinner.svg" alt="spinner">
   </div>
 
-  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
+
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+      
+    <div class="hero-overlay bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg"></canvas>
+    </div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-2xl">
         <h1 class="mb-5 text-5xl font-bold">A safe return after a long voyage is the most important part of all.</h1>
         <p class="mb-5">Our methods of recovery ensure that you can rest easy as you re-enter the Earth's atmosphere.</p>
       </div>
     </div>
 
   </div>
-  <br>
-  <div class="grid grid-cols-12 bg-base-200 py-10">
-    <div class="col-start-2 col-end-9 inline-block pr-5">
-      <h1 class="text-2xl text-base-400"><strong>What can I do to keep myself safe?</strong></h1>
+  <div class="grid grid-cols-12 py-10 bg-gradient-to-b from-black to-base-100">
+    <div class="lg:col-start-4 lg:col-end-10 col-span-12 inline-block text-center">
+      <h1 class="text-xl text-base-400"><strong>Making your recovery as safe as possible</strong></h1>
       <br>
-      <p class="text-base-400 text-lg">
-        <strong>Follow the instructions of the spacecraft crew and listen to any announcements that are made.</strong> The crew will be responsible for managing the spacecraft's systems and ensuring a safe return to Earth.
-        <br><br>
-        <strong>Stay seated and strapped in during the descent back to Earth.</strong> The spacecraft will experience high G-forces during re-entry, and it's important to remain in your seat to avoid injury.
-        <br><br>
-        <strong>Stay calm and try to relax.</strong> The return journey can be stressful, but it's important to remain calm and follow the crew's instructions.
+      <p class="text-base-400 p-5">
+        We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.
       </p>
-
     </div>
+  </div>
+  <div class="grid grid-cols-12 py-10">
+    <div class="col-start-1 col-end-13 overflow-x-auto text-center ">
+      <ul class="steps">
+        <li class="step step-accent">Re-Entry</li>
+        <li class="step step-accent">Medical Evaluation</li>
+        <li class="step step-accent">Rest and Recovery</li>
+        <li class="step step-accent">Zero-Grav Training</li>
+        <li class="step step-accent">Rehabilitation</li>
+        <li class="step step-accent">Support and Guidance</li>
+        <li class="step step-accent">Reintegration</li>
+      </ul>
+      <br>
+    </div>
+  </div>
     <div class="col-start-9 col-end-12">
       
     </div>
@@ -65,6 +78,7 @@
   <script src="../../navbar.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>
   <script src="../../loader.js" type="module"></script>
+  <script src="recovery.js" type="module"></script>
 </body>
 
 </html>

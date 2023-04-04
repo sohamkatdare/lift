@@ -49,7 +49,7 @@ const moveCursor = (e) => {
     customCursor.animate({
         transform: `translate3d(${mouseX}px, ${mouseY}px, 100px)`
     }, {
-        duration: 1750,
+        duration: 1000,
         fill: 'forwards'
     })
     // customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
@@ -63,7 +63,9 @@ document.addEventListener('mousemove', moveCursor)
 let section = 0;
 
 function scrollSection() {
-    document.getElementById('section' + String(section)).scrollIntoView();
+    const sectionString = 'section' + String(section)
+    console.log()
+    document.getElementById(sectionString).scrollIntoView();
 }
 
 function scrollBefore() {
@@ -103,81 +105,73 @@ function cursorClick(e) {
 // if(document.body.animate) {
 //     document.querySelector('button').addEventListener('click', pop);
 // }
-function pop(e) {
-    for (let i = 0; i < 30; i++) {
-        createParticle(e.clientX, e.clientY)
-    }
-}
-function createParticle(x, y) {x
-    const particle = document.createElement('particle')
-    document.body.appendChild(particle)
+// function pop(e) {
+//     for (let i = 0; i < 30; i++) {
+//         createParticle(e.clientX, e.clientY)
+//     }
+// }
+// function createParticle(x, y) {
+//     const particle = document.createElement('particle')
+//     document.body.appendChild(particle)
 
     
-    const size = Math.floor(Math.random() * 20 + 5)
-    particle.style.width = `${size}px`
-    particle.style.height = `${size}px`
-    particle.style.background = `hsl(${Math.random() + 90 + 180}, 70%, 60%)`
+//     const size = Math.floor(Math.random() * 20 + 5)
+//     particle.style.width = `${size}px`
+//     particle.style.height = `${size}px`
+//     particle.style.background = `hsl(${Math.random() + 90 + 180}, 70%, 60%)`
 
-    const destinationX = x + (Math.random() - 0.5) * 2 * 75;
-    const destinationY = y + (Math.random() - 0.5) * 2 * 75;
+//     const destinationX = x + (Math.random() - 0.5) * 2 * 75;
+//     const destinationY = y + (Math.random() - 0.5) * 2 * 75;
     
-    const animation = particle.animate([
-        {
-            transform: `translate(${x - (size / 2)}px, ${y - (size / 2)}px)`,
-            opacity: 1
-        },
-        {
-            transform: `translate(${destinationX}px, ${destinationY}px)`,
-            opacity: 0
-        }
-    ], {
-        duration: 500 + Math.random() * 1000,
-        easing: 'cubic-bezier(0, 0.9, 0.57, 1)',
-        delay: Math.random() * 200
-    })
+//     const animation = particle.animate([
+//         {
+//             transform: `translate(${x - (size / 2)}px, ${y - (size / 2)}px)`,
+//             opacity: 1
+//         },
+//         {
+//             transform: `translate(${destinationX}px, ${destinationY}px)`,
+//             opacity: 0
+//         }
+//     ], {
+//         duration: 500 + Math.random() * 1000,
+//         easing: 'cubic-bezier(0, 0.9, 0.57, 1)',
+//         delay: Math.random() * 200
+//     })
 
-    animation.onfinish = () => {
-        particle.remove();
-    }
-}
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.";
+//     animation.onfinish = () => {
+//         particle.remove();
+//     }
+// }
+// const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.";
 
-let interval = null;
-document.querySelector(".hacker-text").onmouseover = event => {  
-    let iteration = 0;
+// let interval = null;
+// document.querySelector(".hacker-text").onmouseover = event => {  
+//     let iteration = 0;
     
-    clearInterval(interval);
+//     clearInterval(interval);
     
-    interval = setInterval(() => {
-      event.target.innerText = event.target.innerText
-        .split("")
-        .map((letter, index) => {
-          if(index < iteration) {
-            return event.target.dataset.value[index];
-          }
+//     interval = setInterval(() => {
+//       event.target.innerText = event.target.innerText
+//         .split("")
+//         .map((letter, index) => {
+//           if(index < iteration) {
+//             return event.target.dataset.value[index];
+//           }
         
-          return letters[Math.floor(Math.random() * 26)]
-        })
-        .join("");
+//           return letters[Math.floor(Math.random() * 26)]
+//         })
+//         .join("");
       
-      if(iteration >= event.target.dataset.value.length){ 
-        clearInterval(interval);
-      }
+//       if(iteration >= event.target.dataset.value.length){ 
+//         clearInterval(interval);
+//       }
       
-      iteration += 1 / 3;
-    }, 30);
-  }
+//       iteration += 1 / 3;
+//     }, 30);
+//   }
 
 function cursorHover(e) {
     const t = e.target;
-    // if time, make inverting the arrow work
-    // if(t.classList.contains('cursor-hover')) {
-    //     t.classList.replace('text-white', 'text-black');
-    //     isInverted = true;
-    // } else {
-    //     t.classList.replace('text-black', 'text-white');
-    //     isInverted = false;
-    // }
     if (t.tagName == 'BUTTON' || t.tagName == 'A' || t.tagName == "CODE" || t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" || t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
         isButtonHover = true;
     } else {
@@ -192,6 +186,7 @@ var infoShown = false
 const toastInfo = document.getElementById('scroll-info')
 
 document.getElementById('gstar1').onclick = function () {
+    console.log('jsdf')
     section = 1;
     scrollSection();
     //if the button has not been clicked before
@@ -199,7 +194,6 @@ document.getElementById('gstar1').onclick = function () {
         toastInfo.classList = 'toast toast-top toast-end p-2'
         infoShown = true
     }
-    document.getElementById('gstar1').style.display = "none"
 };
 
 document.getElementById('scroll-info-btn').onclick = function () {

@@ -77,11 +77,26 @@ button:hover {
   font-family: Nova;
   src: url(/fonts/NovaSquare-Regular.ttf) format('truetype');
 }
+@font-face {
+  font-family: Audiowide-Regular;
+  src: url(/fonts/Audiowide-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(/fonts/Inter.ttf) format('truetype');
+}
+
+.rubik {
+  font-family: "Rubik";
+}
+
+.audiowide {
+  font-family: Audiowide-Regular;
+}
 
 code {
   font-family: Nova;
-  font-size: 2rem;
-  line-height: 2.375rem;
 }
 .nova {
   font-family: Nova;
@@ -95,11 +110,13 @@ code {
 .moon-thin {
   font-family: Moon-Thin;
 }
-/* span {  font-family: Nova;  } */
-h1 {
-  font-family: Moon-Thin;
+.inter {
+  font-family: Inter;
 }
-
+/* span {  font-family: Nova;  } */
+h1, h2, h3, h4, h5, h6, p {
+  font-family: Inter;
+}
 
 .bg-hero-space::before {
   content: '';
