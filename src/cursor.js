@@ -100,15 +100,15 @@ function cursorClick(e) {
     }
 }
 
-if(document.body.animate) {
-    document.querySelector('button').addEventListener('click', pop);
-}
+// if(document.body.animate) {
+//     document.querySelector('button').addEventListener('click', pop);
+// }
 function pop(e) {
     for (let i = 0; i < 30; i++) {
         createParticle(e.clientX, e.clientY)
     }
 }
-function createParticle(x, y) {
+function createParticle(x, y) {x
     const particle = document.createElement('particle')
     document.body.appendChild(particle)
 
