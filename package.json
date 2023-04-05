@@ -18,6 +18,7 @@
   "dependencies": {
     "atropos": "^1.0.2",
     "daisyui": "^2.46.0",
+    "stats.js": "^0.17.0",
     "three": "^0.148.0",
     "typed.js": "^2.0.12",
     "vercel": "^28.12.4"

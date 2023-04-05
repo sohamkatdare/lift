@@ -1,6 +1,10 @@
 import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
+import Stats from 'three/examples/jsm/libs/stats.module''
+
+const stats = new Stats()
+document.body.appendChild(stats.dom)
 
 const renderer = rsc.rendererSetup();
 
@@ -35,6 +39,7 @@ function animate() {
   updatePlanets();
   rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0))
   renderer.render(scene, camera);
+  stats.update()
 }
 
 function updatePlanets() {

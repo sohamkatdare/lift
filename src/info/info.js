@@ -33,7 +33,7 @@ if (isTouchDevice()) {
 
 const scene = new THREE.Scene();
 
-const spaceTexture = new THREE.TextureLoader().load('../../public/2k_stars_milky_way.jpg');
+const spaceTexture = new THREE.TextureLoader().load('/2k_stars_milky_way.jpg');
 scene.background = spaceTexture;
 
 function addPlanet(mapTexture, size, detail) {
@@ -55,7 +55,7 @@ function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
 
 renderer.setClearColor(0xffffff, 0) // makes the background match
 
-const mars = addPlanet('../../public/2k_mars.jpg', 2, 32);
+const mars = addPlanet('/2k_mars.jpg', 2, 32);
 
 mars.position.set(0, 0, -7);
 scene.add(mars);
