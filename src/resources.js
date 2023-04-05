@@ -207,7 +207,6 @@ export function updateCameraPosition(camera, planet, offset) {
     sphere.setFromPoints(vertices);
     sphere.radius *= planet.scale.x;
     planetRadius.set(sphere.radius, sphere.radius, sphere.radius);
-    console.log(planetRadius)
 
   
     // Calculate the desired position of the camera relative to the planet

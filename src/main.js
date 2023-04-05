@@ -15,7 +15,7 @@ camera.position.set(0, 20, 40);
 camera.rotation.set(50, 0, 0);
 
 rsc.addToScene(scene, rsc.solarSystem, 0, 0, 0);
-const selectedPlanet = rsc.saturn;
+const selectedPlanet = rsc.moon;
 
 function radiansToDegrees(radians) {
   var degrees = radians * (180 / Math.PI);
