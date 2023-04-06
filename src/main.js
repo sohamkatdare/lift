@@ -20,17 +20,10 @@ const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
 camera.position.set(0, 200, 400);
 camera.rotation.set(50, 0, 0);
 
-rsc.addToScene(scene, rsc.solarSystem, 0, 0, 0);
-const selectedPlanet = rsc.moon;
 
-function radiansToDegrees(radians) {
-  var degrees = radians * (180 / Math.PI);
-  return degrees;
-}
-function degreesToRadians(degrees) {
-  var radians = degrees * (Math.PI / 180);
-  return radians;
-}
+let selectedPlanet;
+
+
 
 rsc.starForge(scene)
 
@@ -39,9 +32,16 @@ function animate() {
   requestAnimationFrame(animate);
   // controls.update();
   updatePlanets();
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0), 0.005)
+  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 5), 0.005)
   renderer.render(scene, camera);
   stats.update()
+  console.log('done')
+}
+
+async function init() {
+  await rsc.addSolarSystem(scene);
+  selectedPlanet = rsc.moon;
+  animate()
 }
 
 function updatePlanets() {
@@ -115,4 +115,4 @@ function updatePlanets() {
 
 // }
 
-animate();
+init();
