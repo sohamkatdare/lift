@@ -55,25 +55,10 @@
   }
 }
 
-@font-face {
-  font-family: Oranienbaum;
-  src: url(/fonts/Oranienbaum-Regular.ttf) format('truetype');
-}
 
-@font-face {
-  font-family: Moon-Thick;
-  src: url(/fonts/MoonBold.otf) format('opentype');
-}
 
-@font-face {
-  font-family: Moon-Thin;
-  src: url(/fonts/MoonLight.otf) format('opentype');
-}
 
-@font-face {
-  font-family: Nova;
-  src: url(/fonts/NovaSquare-Regular.ttf) format('truetype');
-}
+
 @font-face {
   font-family: Audiowide-Regular;
   src: url(/fonts/Audiowide-Regular.ttf) format('truetype');
@@ -92,9 +77,7 @@
   font-family: Audiowide-Regular;
 }
 
-code {
-  font-family: Nova;
-}
+
 .nova {
   font-family: Nova;
 }

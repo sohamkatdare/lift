@@ -62,25 +62,25 @@ const uranusDistanceFromSun = 82
 const neptuneDistanceFromSun = 90
 
 
-export const sun = addPlanet('/2k_sun.jpg', 10, 32);
+export const sun = addPlanet('/minified/2k_sun-min.jpg', 10, 32);
 export let solarSystem = new THREE.Group();
 
-export const mercury = addPlanet('/2k_mercury.jpg', 1, 32);
+export const mercury = addPlanet('/minified/2k_mercury-min.jpg', 1, 32);
 export const mercuryOrbitRing = new THREE.RingGeometry(14.9, 15.1)
 export const mercuryRotationGroup = new THREE.Group();
 mercuryRotationGroup.add(mercury);
 mercuryRotationGroup.add(mercuryOrbitRing);
 mercury.position.set(0, 0, mercuryDistanceFromSun);
 solarSystem.add(mercuryRotationGroup);
-
-export const venus = addPlanet('/2k_venus_atmosphere.jpg', 3, 32);
+console.log(mercury.material)
+export const venus = addPlanet('/minified/2k_venus_atmosphere-min.jpg', 3, 32);
 export const venusRotationGroup = new THREE.Group();
 venusRotationGroup.add(venus);
 venus.position.set(0, 0, venusDistanceFromSun);
 solarSystem.add(venusRotationGroup);
 
-export const moon = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 3, 32, '/2k_earth_normal.jpeg');
-export const earth = addPlanet('/2k_moon.jpg', 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+export const moon = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 3, 32, '/minified/2k_earth_normal-min.jpeg');
+export const earth = addPlanet('/minified/2k_moon-min.jpg', 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
 export let earthGroup = new THREE.Group();
 earthGroup.add(earth);
 earthGroup.add(moon);
@@ -90,19 +90,19 @@ earthRotationGroup.add(earthGroup);
 earthGroup.position.set(0, 0, earthDistanceFromSun);
 solarSystem.add(earthRotationGroup);
 
-export const mars = addPlanet('/2k_mars.jpg', 2, 32);
+export const mars = addPlanet('/minified/2k_mars-min.jpg', 2, 32);
 export const marsRotationGroup = new THREE.Group();
 marsRotationGroup.add(mars);
 mars.position.set(0, 0, marsDistanceFromSun);
 solarSystem.add(marsRotationGroup);
 
-export const jupiter = addPlanet('/2k_jupiter.jpg', 5, 32);
+export const jupiter = addPlanet('/minified/2k_jupiter-min.jpg', 5, 32);
 export const jupiterRotationGroup = new THREE.Group();
 jupiterRotationGroup.add(jupiter);
 jupiter.position.set(0, 0, jupiterDistanceFromSun);
 solarSystem.add(jupiterRotationGroup);
 
-export const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
+export const saturn = addPlanet('/minified/2k_saturn-min.jpg', 4.5, 32);
 const saturnRing = new THREE.RingGeometry(6, 11);
 const saturnRingTexture = new THREE.TextureLoader().load('/2k_saturn_rings.png');
 const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
@@ -132,7 +132,7 @@ uranusGroup.position.set(0, 0, uranusDistanceFromSun);
 mercuryRotationGroup.add(uranusGroup);
 solarSystem.add(uranusRotationGroup);
 
-export const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
+export const neptune = addPlanet('/minified/2k_neptune-min.jpg', 4, 32);
 export const neptuneRotationGroup = new THREE.Group();
 neptuneRotationGroup.add(neptune);
 neptune.position.set(0, 0, neptuneDistanceFromSun);

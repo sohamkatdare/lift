@@ -39,7 +39,7 @@ function animate() {
   requestAnimationFrame(animate);
   // controls.update();
   updatePlanets();
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0), 0.01)
+  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0), 0.005)
   renderer.render(scene, camera);
   stats.update()
 }
