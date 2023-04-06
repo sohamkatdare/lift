@@ -17,7 +17,7 @@ const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight,
 // cameraRotationGroup.add(camera);
 
 const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
-camera.position.set(0, 200, 400);
+camera.position.set(0, 200, 800);
 camera.rotation.set(50, 0, 0);
 
 
@@ -28,19 +28,21 @@ let selectedPlanet;
 rsc.starForge(scene)
 
 
+
 function animate() {
   requestAnimationFrame(animate);
+
   // controls.update();
   updatePlanets();
+
   rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 5), 0.005)
   renderer.render(scene, camera);
   stats.update()
-  console.log('done')
 }
 
 async function init() {
   await rsc.addSolarSystem(scene);
-  selectedPlanet = rsc.moon;
+  selectedPlanet = rsc.mars;
   animate()
 }
 

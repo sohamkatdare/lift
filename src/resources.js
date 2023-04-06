@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import isTouchDevice from './util';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 // renderer setup
@@ -45,7 +44,7 @@ export function addPlanet(texture, size, detail, normalMapTexture) {
 
 const textureLoader = new THREE.TextureLoader();
 
-async function loadPlanetTextures() {
+async function loadPlanetTexturesAsync() {
     return await Promise.all([
         textureLoader.loadAsync('/minified/2k_sun-min.jpg'),
         textureLoader.loadAsync('/minified/2k_mercury-min.jpg'),
@@ -63,11 +62,28 @@ async function loadPlanetTextures() {
     ]);
 }
 
+function loadPlanetTextures() {
+    return [
+        textureLoader.load('/minified/2k_sun-min.jpg'),
+        textureLoader.load('/minified/2k_mercury-min.jpg'),
+        textureLoader.load('/minified/2k_venus_atmosphere-min.jpg'),
+        textureLoader.load('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg'),
+        textureLoader.load('/minified/2k_earth_normal-min.jpeg'),
+        textureLoader.load('/minified/2k_moon-min.jpg'),
+        textureLoader.load('/minified/2k_mars-min.jpg'),
+        textureLoader.load('/minified/2k_jupiter-min.jpg'),
+        textureLoader.load('/minified/2k_saturn-min.jpg'),
+        textureLoader.load('/minified/2k_saturn_rings-min.png'),
+        textureLoader.load('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png'),
+        textureLoader.load('/minified/uranus_ring_texture-min.jpeg'),
+        textureLoader.load('/minified/2k_neptune-min.jpg'),
+    ]
+}
+
 
 let sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, saturnRings, uranus, uranusGroup, uranusRings, neptune;
 let solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup;
 export async function setup() {
-    const textures = await loadPlanetTextures()
     const [
         sunTexture,
         mercuryTexture,
@@ -82,7 +98,7 @@ export async function setup() {
         uranusTexture,
         uranusRingsTexture,
         neptuneTexture
-    ] = textures;
+    ] = await loadPlanetTexturesAsync();
     const multiplier = 8;
     const mercuryDistanceFromSun = 3.5 * multiplier;
     const venusDistanceFromSun = 6.7 * multiplier;
@@ -160,7 +176,7 @@ export async function setup() {
     uranusGroup.add(uranus);
     uranusGroup.add(uranusRings);
     uranusGroup.position.set(0, 0, uranusDistanceFromSun);
-    mercuryRotationGroup.add(uranusGroup);
+    uranusRotationGroup.add(uranusGroup);
     solarSystem.add(uranusRotationGroup);
 
     neptune = addPlanet(neptuneTexture, 4, 32);
@@ -171,8 +187,64 @@ export async function setup() {
     solarSystem.add(sun);
 }
 
-setup()
+function setupNormal() {
+    const [
+        sunTexture,
+        mercuryTexture,
+        venusTexture,
+        earthTexture,
+        earthNormalTexture,
+        moonTexture,
+        marsTexture,
+        jupiterTexture,
+        saturnTexture,
+        saturnRingsTexture,
+        uranusTexture,
+        uranusRingsTexture,
+        neptuneTexture
+    ] = loadPlanetTextures();
+    sun = addPlanet(sunTexture, 10, 32);
 
+    mercury = addPlanet(mercuryTexture, 1, 32);
+    venus = addPlanet(venusTexture, 3, 32);
+
+    moon = addPlanet(earthTexture, 3, 32, earthNormalTexture);
+    earth = addPlanet(moonTexture, 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+    earthGroup = new THREE.Group();
+    earthGroup.add(earth);
+    earthGroup.add(moon);
+    earth.position.set(0, 0, 4);
+
+
+    mars = addPlanet(marsTexture, 2, 32);
+    jupiter = addPlanet(jupiterTexture, 5, 32);
+
+
+    saturn = addPlanet(saturnTexture, 4.5, 32);
+    const saturnRing = new THREE.RingGeometry(6, 11);
+    const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingsTexture, side: THREE.DoubleSide })
+    saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
+    saturnRings.rotation.set(67.5, 0, 0);
+    saturnGroup = new THREE.Group();
+    saturnGroup.add(saturn);
+    saturnGroup.add(saturnRings);
+
+
+    uranus = addPlanet(uranusTexture, 4, 32);
+    const uranusRing = new THREE.RingGeometry(5, 6);
+    const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingsTexture, side: THREE.DoubleSide })
+    uranusRingMaterial.opacity = 0.5;
+    uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
+    uranusGroup = new THREE.Group();
+    uranusGroup.add(uranus);
+    uranusGroup.add(uranusRings);
+
+
+
+    neptune = addPlanet(neptuneTexture, 4, 32);
+}
+
+setupNormal()
 export {
     sun, 
     mercury, 
@@ -199,12 +271,8 @@ export {
     saturnRings, 
     uranusRings, 
 }
-
-
-
-
-
 export function addToScene(scene, planet, x, y, z) {
+    setupNormal()
     planet.position.set(x, y, z);
     scene.add(planet)
 }
@@ -258,14 +326,13 @@ export function starForge(scene) {
 
     var starMaterial = new THREE.PointsMaterial({
         size: 1.0, 
-        opacity: 0.7
+        opacity: 0.7,
     });
 
     var stars = new THREE.Points(starGeometry, starMaterial);
     scene.add(stars);
 }
-const maxVelocity = 5; // Set a maximum velocity based on your requirements
-const lerpCoefficient = 0.1; // Adjust this value to control the smoothness of camera movement
+
 
 export function updateCameraPosition(camera, planet, offset, dampingFactor) {
     // Get the planet's position in world space
@@ -289,9 +356,17 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor) {
     // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);
 
+
     // Use lerp to gradually move the camera towards the desired position
     camera.position.lerp(desiredPosition, dampingFactor);
 
     // Make the camera look at the planet in world space
     camera.lookAt(planetWorldPosition);
 }
+
+
+
+export function isTouchDevice() {
+    return (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+}
+
