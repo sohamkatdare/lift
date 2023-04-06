@@ -1,12 +1,11 @@
 import '../../style.css'
 
 import * as THREE from 'three';
-import isTouchDevice from '../../util';
 import * as rsc from '../../resources'
 
 const renderer = rsc.rendererSetup();
 
-const scene = rsc.sceneSetup(renderer, "/2k_stars_milky_way.jpg");
+const scene = rsc.sceneSetup(renderer, "/minified/2k_stars_milky_way-min.jpg");
 
 rsc.addToScene(scene, rsc.earthGroup, 3, 0.2, -10);
 
