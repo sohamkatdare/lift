@@ -51,6 +51,17 @@ function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
     return planet
 }
 
+
+const mercuryDistanceFromSun = 15
+const venusDistanceFromSun = 21
+const earthDistanceFromSun = 29
+const marsDistanceFromSun = 37
+const jupiterDistanceFromSun = 48
+const saturnDistanceFromSun = 66
+const uranusDistanceFromSun = 82
+const neptuneDistanceFromSun = 90
+
+
 export const sun = addPlanet('/2k_sun.jpg', 10, 32);
 export let solarSystem = new THREE.Group();
 
@@ -59,13 +70,13 @@ export const mercuryOrbitRing = new THREE.RingGeometry(14.9, 15.1)
 export const mercuryRotationGroup = new THREE.Group();
 mercuryRotationGroup.add(mercury);
 mercuryRotationGroup.add(mercuryOrbitRing);
-mercury.position.set(0, 0, 15);
+mercury.position.set(0, 0, mercuryDistanceFromSun);
 solarSystem.add(mercuryRotationGroup);
 
 export const venus = addPlanet('/2k_venus_atmosphere.jpg', 3, 32);
 export const venusRotationGroup = new THREE.Group();
 venusRotationGroup.add(venus);
-venus.position.set(0, 0, 19+2);
+venus.position.set(0, 0, venusDistanceFromSun);
 solarSystem.add(venusRotationGroup);
 
 export const moon = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 3, 32, '/2k_earth_normal.jpeg');
@@ -76,19 +87,19 @@ earthGroup.add(moon);
 earth.position.set(0, 0, 4);
 export const earthRotationGroup = new THREE.Group();
 earthRotationGroup.add(earthGroup);
-earthGroup.position.set(0, 0, 27+2);
+earthGroup.position.set(0, 0, earthDistanceFromSun);
 solarSystem.add(earthRotationGroup);
 
 export const mars = addPlanet('/2k_mars.jpg', 2, 32);
 export const marsRotationGroup = new THREE.Group();
 marsRotationGroup.add(mars);
-mars.position.set(0, 0, 35+2);
+mars.position.set(0, 0, marsDistanceFromSun);
 solarSystem.add(marsRotationGroup);
 
 export const jupiter = addPlanet('/2k_jupiter.jpg', 5, 32);
 export const jupiterRotationGroup = new THREE.Group();
 jupiterRotationGroup.add(jupiter);
-jupiter.position.set(0, 0, 46+2);
+jupiter.position.set(0, 0, jupiterDistanceFromSun);
 solarSystem.add(jupiterRotationGroup);
 
 export const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
@@ -103,7 +114,7 @@ saturnGroup.add(saturn);
 saturnGroup.add(saturnRings);
 export const saturnRotationGroup = new THREE.Group();
 saturnRotationGroup.add(saturnGroup);
-    saturnGroup.position.set(0, 0, 64+2);
+    saturnGroup.position.set(0, 0, saturnDistanceFromSun);
 solarSystem.add(saturnRotationGroup);
 
 export const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
@@ -117,14 +128,14 @@ export let uranusGroup = new THREE.Group();
 uranusGroup.add(uranus);
 uranusGroup.add(uranusRings);
 export const uranusRotationGroup = new THREE.Group();
-uranusGroup.position.set(0, 0, 80+2);
+uranusGroup.position.set(0, 0, uranusDistanceFromSun);
 mercuryRotationGroup.add(uranusGroup);
 solarSystem.add(uranusRotationGroup);
 
 export const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
 export const neptuneRotationGroup = new THREE.Group();
 neptuneRotationGroup.add(neptune);
-neptune.position.set(0, 0, 88+2);
+neptune.position.set(0, 0, neptuneDistanceFromSun);
 solarSystem.add(neptuneRotationGroup);
 
 solarSystem.add(sun);
@@ -189,7 +200,7 @@ export function starForge(scene) {
 const maxVelocity = 5; // Set a maximum velocity based on your requirements
 const lerpCoefficient = 0.1; // Adjust this value to control the smoothness of camera movement
 
-export function updateCameraPosition(camera, planet, offset) {
+export function updateCameraPosition(camera, planet, offset, dampingFactor) {
     // Get the planet's position in world space
     const planetWorldPosition = new THREE.Vector3();
     planet.getWorldPosition(planetWorldPosition);
@@ -208,23 +219,12 @@ export function updateCameraPosition(camera, planet, offset) {
     sphere.radius *= planet.scale.x;
     planetRadius.set(sphere.radius, sphere.radius, sphere.radius);
 
-  
     // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);
-  
-    // Calculate the vector from the current camera position to the desired position
-    const moveVector = new THREE.Vector3().subVectors(desiredPosition, camera.position);
-  
-    // Limit the velocity to the maximum allowed
-    const moveDistance = Math.min(moveVector.length(), maxVelocity * lerpCoefficient);
-  
-    // Normalize the move vector and scale it by the move distance
-    moveVector.normalize().multiplyScalar(moveDistance);
-  
-    // Move the camera towards the desired position
-    camera.position.add(moveVector);
-  
+
+    // Use lerp to gradually move the camera towards the desired position
+    camera.position.lerp(desiredPosition, dampingFactor);
+
     // Make the camera look at the planet in world space
     camera.lookAt(planetWorldPosition);
-    // console.log(`(${planet.position.x}, ${planet.position.y}, ${planet.position.z}) - (${camera.position.x},${camera.position.y},${camera.position.z}) = ${new THREE.Vector3().subVectors(planet.position, camera.position)}`)
-  }
+}

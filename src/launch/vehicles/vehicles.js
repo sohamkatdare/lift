@@ -112,3 +112,22 @@ function updatePlanets() {
 }
 
 animate();
+
+
+// * THREEJS COMPLETE
+// Get all accordion buttons
+const accordionButtons = document.querySelectorAll("[id^='toggle']");
+
+// Attach click event listeners to accordion buttons
+accordionButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Get the accordion body associated with the clicked button
+    const accordionBody = document.querySelector(`#${button.id.replace("toggle", "accordion")}`);
+    
+    // Toggle the visibility of the accordion body
+    accordionBody.classList.toggle("hidden");
+    
+    // Toggle the "aria-expanded" attribute of the button
+    button.setAttribute("aria-expanded", button.getAttribute("aria-expanded") === "true" ? "false" : "true");
+  });
+});

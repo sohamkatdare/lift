@@ -1,7 +1,7 @@
 import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
-import Stats from 'three/examples/jsm/libs/stats.module''
+import Stats from 'three/examples/jsm/libs/stats.module'
 
 const stats = new Stats()
 document.body.appendChild(stats.dom)
@@ -10,12 +10,14 @@ const renderer = rsc.rendererSetup();
 
 const scene = rsc.sceneSetup(renderer, "/2k_stars_milky_way.jpg");
 
-
+   //sadasdasd   
 
 const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
 // const cameraRotationGroup = new THREE.Group();
 // cameraRotationGroup.add(camera);
-camera.position.set(0, 20, 40);
+
+const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
+camera.position.set(0, 200, 400);
 camera.rotation.set(50, 0, 0);
 
 rsc.addToScene(scene, rsc.solarSystem, 0, 0, 0);
@@ -37,7 +39,7 @@ function animate() {
   requestAnimationFrame(animate);
   // controls.update();
   updatePlanets();
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0))
+  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 10, 0), 0.01)
   renderer.render(scene, camera);
   stats.update()
 }
