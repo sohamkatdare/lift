@@ -21,7 +21,7 @@ const animateCursor = function () {
     //     customCursor.classList.replace('scale-[0.5]', 'scale-[1]')
     // }
     if (isLeft) { // When the cursor is on the left half of the screen
-        if (section == 5 || isButtonHover) { // When the cursor is on the last slide, so can only go right
+        if (section == 0 || isButtonHover) { // When the cursor is on the last slide, so can only go right
             customPointers[0].className = standard + left + invisible
             customPointers[1].className = standard + left + invisible + bloom
         } else { // any time when there is another slide to go to
@@ -29,7 +29,7 @@ const animateCursor = function () {
             customPointers[1].className = standard + left + bloom
         }
     } else { // When the cursor is on the right half of the screen
-        if (section == 0 || isButtonHover) {
+        if (section == 5 || isButtonHover) {
             customPointers[0].className = standard + right + invisible
             customPointers[1].className = standard + right + invisible + bloom
         } else {
@@ -103,9 +103,9 @@ function cursorClick(e) {
                 infoShown = false
             }
             if (isLeft) {
-                scrollNext();
-            } else {
                 scrollBefore();
+            } else {
+                scrollNext();
             }
         }
     }

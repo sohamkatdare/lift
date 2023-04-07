@@ -125,7 +125,7 @@ accordionButtons.forEach(button => {
     const accordionBody = document.querySelector(`#${button.id.replace("toggle", "accordion")}`);
     
     // Toggle the visibility of the accordion body
-    accordionBody.classList.toggle("hidden");
+    accordionBody.classList.toggle("active");
     
     // Toggle the "aria-expanded" attribute of the button
     button.setAttribute("aria-expanded", button.getAttribute("aria-expanded") === "true" ? "false" : "true");

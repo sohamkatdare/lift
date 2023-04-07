@@ -11,14 +11,22 @@
   <title>LIFT - Vehicles</title>
   <style>
     /* Set border on first item to avoid a double border */
+    
     div:first-child button {
       border-top: 1px solid #e2e8f0;
     }
-
-
+    
     /* Flip arrow when item is open */
     [aria-expanded="true"] svg {
       transform: rotate(180deg);
+    }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-body.active {
+      max-height: 500px;
     }
   </style>
 </head>
@@ -44,57 +52,36 @@
   </div>
 
   <div class="grid max-w-full grid-cols-12 bg-gradient-to-b from-black to-base-100 py-10">
-    <div class="col-start-2 col-end-12 lg:col-end-9 inline-block mt-5 pr-5">
-      <h1 class="text-3xl text-base-400"><strong>Launch vehicles</strong></h1>
+    <div class="lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
+      <h1 class="text-3xl text-base-400"><strong>Launch Vehicles</strong></h1>
       <br>
-    
-      <div class="flex flex-col">
-        <div class="w-full">
-          <button class="rounded-t-lg w-full border border-white bg-black text-left p-4" id="toggle1">
-            <div class="text-2xl font-semibold text-white">Engine</div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-right inline w-4 h-4 ml-1 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
-          </button>
-          <div class="hidden py-3 w-full text-gray-700 border border-white divide-dashed bg-black" id="accordion1">
-            <div class="tab-contents">
-              <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the world. This machinery is one of the most complex designs that surpass the complexity of other great machines. Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting in a double-layered and robust final product.
-            </div>
-          </div>
+      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-box transition-all">
+        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
+          Engine
         </div>
-      
-        <div class="w-full">
-          <button class="rounded-t-lg w-full border border-white bg-black text-left p-4" id="toggle2">
-            <div class="text-2xl font-semibold text-white">Thruster</div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
-          </button>
-          <div class="hidden py-3 text-gray-700 border border-white divide-dashed bg-black" id="accordion2">
-            <div class="tab-contents">
-              <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally, high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven track record of producing high-quality rocket thrusters in order to ensure the success of your space mission. Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess through over 20 flights, some of which reached 2 years long.
-            </div>
-          </div>
+        <div class="collapse-content transition-all">
+          <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the world. This machinery is one of the most complex designs that surpass the complexity of other great machines. Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting in a double-layered and robust final product.
         </div>
-      
-        <div class="w-full">
-          <button class="rounded-t-lg w-full border border-white bg-black text-left p-4" id="toggle2">
-            <div class="text-2xl font-semibold text-white">Orbiter</div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
-          </button>
-          <div class="hidden py-3 text-gray-700 border border-white bg-black" id="accordion2">
-            <div class="tab-contents">
-              <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us to study planets and other celestial bodies from a stable and long-term perspective. A company that produces high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in designing, manufacturing and testing of their orbiters is investing in the future of space exploration and technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and have successfully entered the orbits of every planet in the solar system.
-            </div>
-          </div>
+      </div>
+      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-box transition-all">
+        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
+          Thruster
         </div>
-      
+        <div class="collapse-content transition-all">
+          <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally, high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven track record of producing high-quality rocket thrusters in order to ensure the success of your space mission. Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess through over 20 flights, some of which reached 2 years long.
+        </div>
+      </div>
+      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-box transition-all">
+        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
+          Orbiter
+        </div>
+        <div class="collapse-content transition-all">
+          <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us to study planets and other celestial bodies from a stable and long-term perspective. A company that produces high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in designing, manufacturing and testing of their orbiters is investing in the future of space exploration and technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and have successfully entered the orbits of every planet in the solar system.
+        </div>
       </div>
     </div>
-    <div class="col-span-12 mt-10 align-items justify-center lg:col-start-9 lg:col-end-12 px-7">
-      <iframe class="rounded-lg drop-shadow-md w-[100%] h-[150%] lg:h-[60%]" title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe>
+    <div class="col-span-12 mt-20 align-items justify-center lg:col-start-8 lg:col-end-12 px-7">
+      <iframe class="rounded-lg drop-shadow-md w-[100%] h-[150%] lg:h-[200%]" title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe>
     </div>
 
     <div class="col-start-3 col-end-11 mt-10">

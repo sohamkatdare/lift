@@ -18,7 +18,7 @@ const renderer = rsc.rendererSetup(scene, camera);
 
 const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
 camera.position.set(0, 200, 800);
-camera.rotation.set(50, 0, 0);
+camera.rotation.set(10, 0, 0);
 
 
 let selectedPlanet;
@@ -35,7 +35,7 @@ function animate() {
   // controls.update();
   updatePlanets();
 
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(5, 0, 0), 0.005)
+  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 0, 0), 0.008, 40)
   renderer.render(scene, camera);
   stats.update()
 }

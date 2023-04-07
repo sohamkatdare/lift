@@ -29,7 +29,7 @@ export function rendererSetup(scene, camera) {
     composer.addPass(fxaaPass);
 
     // Add bloom pass
-    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.0, 0.4, 0.85);
     composer.addPass(bloomPass);
 
     // Add less common effects
@@ -202,6 +202,10 @@ export async function setup() {
     solarSystem.add(neptuneRotationGroup);
 
     solarSystem.add(sun);
+
+    const light = new THREE.PointLight( 0xff0000, 1);
+    light.position.set(0, 0, 0 );
+    solarSystem.add( light );
 }
 
 function setupNormal() {
@@ -351,7 +355,7 @@ export function starForge(scene) {
 }
 
 
-export function updateCameraPosition(camera, planet, offset, dampingFactor) {
+export function updateCameraPosition(camera, planet, offset, dampingFactor, fov) {
     // Get the planet's position in world space
     const planetWorldPosition = new THREE.Vector3();
     planet.getWorldPosition(planetWorldPosition);
@@ -373,9 +377,15 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor) {
     // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);
 
-
     // Use lerp to gradually move the camera towards the desired position
     camera.position.lerp(desiredPosition, dampingFactor);
+
+
+    // Update camera FOV and aspect ratio to match viewport
+    const aspectRatio = window.innerWidth / window.innerHeight;
+    camera.fov = fov;
+    camera.aspect = aspectRatio;
+    camera.updateProjectionMatrix();
 
     // Make the camera look at the planet in world space
     camera.lookAt(planetWorldPosition);
