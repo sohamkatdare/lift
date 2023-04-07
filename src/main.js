@@ -45,7 +45,7 @@ async function init() {
   selectedPlanet = rsc.mars;
   animate()
 }
-
+const planets = [rsc.sun, rsc.mercury, rsc.venus, rsc.moon, rsc.mars, rsc.jupiter, rsc.saturnGroup, rsc.uranusGroup, rsc.neptune]
 function updatePlanets() {
   rsc.sun.rotation.y += 0.001;
   rsc.mercury.rotation.y += 0.01;
