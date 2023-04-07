@@ -1,19 +1,46 @@
 import * as THREE from 'three';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import { FXAAShader } from "three/examples/jsm/shaders/FXAAShader";
+import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 // renderer setup
-export function rendererSetup() {
-    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg") });
+export function rendererSetup(scene, camera) {
+    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
     
     if (isTouchDevice()) {
         if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width); 
         else renderer.setSize(screen.width, screen.height); 
     } else renderer.setSize(window.innerWidth, window.innerHeight);
 
-    return renderer
+    // Add post-processing settings
+    const composer = new EffectComposer(renderer);
+
+    // Add render pass
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    // Add FXAA pass
+    const fxaaPass = new ShaderPass(FXAAShader);
+    fxaaPass.material.uniforms["resolution"].value.set(1 / window.innerWidth, 1 / window.innerHeight);
+    composer.addPass(fxaaPass);
+
+    // Add bloom pass
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+    composer.addPass(bloomPass);
+
+    // Add less common effects
+    // Example: Film pass
+    // const filmPass = new FilmPass(0.8, 0.325, 256, false);
+    // composer.addPass(filmPass);
+
+    return composer ;
 }
 
-export function sceneSetup(renderer, backgroundPath) {
+export function sceneSetup(backgroundPath) {
     const scene = new THREE.Scene();
     const bgTexture = new THREE.TextureLoader().load(backgroundPath);
     scene.background = bgTexture;
@@ -94,10 +121,10 @@ export async function setup() {
     const venusDistanceFromSun = 6.7 * multiplier;
     const earthDistanceFromSun = 9.3 * multiplier;
     const marsDistanceFromSun = 14.2 * multiplier;
-    const jupiterDistanceFromSun = 48.4 * multiplier;
-    const saturnDistanceFromSun = 88.9 * multiplier;
-    const uranusDistanceFromSun = 179 * multiplier;
-    const neptuneDistanceFromSun = 288 * multiplier;
+    const jupiterDistanceFromSun = 28.4 * multiplier;
+    const saturnDistanceFromSun = 38.9 * multiplier;
+    const uranusDistanceFromSun = 89 * multiplier;
+    const neptuneDistanceFromSun = 118 * multiplier;
 
     solarSystem = new THREE.Group();
     mercuryRotationGroup = new THREE.Group();
