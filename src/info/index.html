@@ -14,7 +14,7 @@
   <!-- <div class="absolute w-full" id="main"> -->
     <navbar-component></navbar-component>
 
-    <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+    <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
       <img src="/spinner.svg" alt="spinner">
     </div>
 
@@ -32,8 +32,8 @@
 
     </div>
     <!-- gradient code: bg-gradient-to-b from-black  to-[#3b1111]  -->
-    <div class="p-4 lg:grid lg:grid-cols-12 bg-black lg:py-10">
-      <div class="my-3 lg:col-start-2 hidden md:block lg:col-end-7 grid place-content-center">
+    <div class="pt-4 lg:grid lg:grid-cols-12 bg-black lg:py-10">
+      <div class="lg:my-3 order-2 lg:order-none lg:col-start-2 hidden md:block lg:col-end-7 lg:grid place-content-center">
         <!-- <div class="stat bg-white/[0.05] backdrop-blur-sm rounded-lg">
           <div class="stat-figure text-white">
             <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 122.88 122.89" class="inline-block w-8 h-8 stroke-warning fill-warning">
@@ -50,8 +50,8 @@
         </video>
       </div>
 
-      <div class="mb-7 lg:col-start-7 lg:col-end-12 lg:pl-5 lg:mb-14 lg:inline-block grid place-content-center">
-        <div class="px-10 py-5 relative md:right-[20%] md:top-[50%] bg-pink-900 drop-shadow-xl grid place-content-center rounded-lg">
+      <div class="mb-7 order-1 lg:order-none lg:col-start-7 lg:col-end-12 lg:pl-5 lg:mb-14 lg:inline-block grid place-content-center">
+        <div class="px-10 py-5 relative lg:right-[20%] md:top-[50%] bg-pink-900/50 shadow-xl grid place-content-center md:mb-24 lg:rounded-xl mix-blend-lighten">
           <p class="text-pink-100 text-2xl">
             An exciting and mysterious frontier full of wonders and mysteries that we are only now beginning to comprehend lies just in our grasp.
           </p>
@@ -59,25 +59,43 @@
       </div>
 
       <div class="mb-7 lg:col-start-2 lg:col-end-9 lg:inline-block lg:pr-5">
-        <h1 class="text-2xl text-white underline decoration-pink-500 underline-offset-4"><strong>Mission</strong></h1>
+        <h1 class="text-4xl text-white underline decoration-pink-500 underline-offset-4"><strong>Mission</strong></h1>
         <p class="text-white text-lg">
           At LIFT, our mission is to provide safe and accessible space travel experiences for all. Through innovation, we foresee a future where space travel can be achieved at an affordable price. Space travel has the power to bring people and nations together, and we are excited to help lead the charge in this exciting new era of space exploration. 
         </p>
       </div>
 
       <div class="my-3 lg:col-start-9 lg:col-end-12">
-        <div class="stat bg-white/[0.05] backdrop-blur-sm rounded-lg">
-          <div class="stat-figure text-white">
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-warning"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <div class="stats lg:stats-vertical">
+          <div class="stat  bg-white/[0.05] backdrop-blur-sm rounded-lg">
+            <div class="stat-figure text-white border-none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-pink-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div class="stat-title text-white border-none">Completed Launches</div>
+            <div class="stat-value text-white border-none">27</div>
+            <div class="stat-desc text-white border-none">↗︎ 30%</div>
           </div>
-          <div class="stat-title text-white">Completed Flights</div>
-          <div class="stat-value text-white">27</div>
-          <div class="stat-desc text-white">↗︎ 30%</div>
+          <div class="stat  bg-white/[0.05] backdrop-blur-sm rounded-lg">
+            <div class="stat-figure text-white border-none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-pink-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div class="stat-title text-white border-none">Completed Flights</div>
+            <div class="stat-value text-white border-none">27</div>
+            <div class="stat-desc text-white border-none">↗︎ 30%</div>
+          </div>
+          <div class="stat  bg-white/[0.05] backdrop-blur-sm rounded-lg">
+            <div class="stat-figure text-white border-none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-pink-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div class="stat-title text-white border-none">Completed Landings</div>
+            <div class="stat-value text-white border-none">27</div>
+            <div class="stat-desc text-white border-none">↗︎ 30%</div>
+          </div>
         </div>
       </div>
 
         <div class="lg:col-start-2 lg:col-end-8 lg:mt-10">
-          <h1 class="text-2xl text-white pr-5 underline decoration-pink-500 underline-offset-4"><strong> Starting Up </strong></h1>
+          <h1 class="text-4xl text-white pr-5 mb-1 underline decoration-pink-500 underline-offset-4  "><strong> Starting Up </strong></h1>
           <p class="text-white text-lg pr-5">
             LIFT was founded  with the vision to harness space technology for international development while pursuing space science research and planetary exploration. Our company began with the advancement of space technology through the testing of rockets and space travel. We worked on perfecting a rocket model that would be able to effectively transport people into space.
             <br><br>

@@ -13,7 +13,7 @@ const fadeEffect = setInterval(() => {
 
 const oldLoadFunction = window.load;
 const loadFunction = function(){
-    oldLoadFunction();
     fadeEffect();
+    oldLoadFunction();
 }
 window.addEventListener("onload", loadFunction);

@@ -3,22 +3,12 @@ import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 // renderer setup
 export function rendererSetup() {
-    // const renderer = new CSS2DRenderer({
-    //   canvas: document.querySelector("#bg"),
-    // });
-    const renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#bg"),
-    });
+    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg") });
     
     if (isTouchDevice()) {
-        if (window.orientation == 90 || window.orientation == -90) {
-            renderer.setSize(screen.height, screen.width); // Includes space for the address bar and tabs.
-        } else {
-            renderer.setSize(screen.width, screen.height); // Includes space for the address bar and tabs.
-        }
-    } else {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }
+        if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width); 
+        else renderer.setSize(screen.width, screen.height); 
+    } else renderer.setSize(window.innerWidth, window.innerHeight);
 
     return renderer
 }
@@ -321,7 +311,7 @@ export function starForge(scene) {
         vertices.push(x, y, z);
 
     }
-    var starGeometry = new THREE.SphereGeometry(1000, 100, 50);
+    var starGeometry = new THREE.SphereGeometry(200, 100, 50);
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
     var starMaterial = new THREE.PointsMaterial({

@@ -61,11 +61,16 @@ const moveCursor = (e) => {
 document.addEventListener('mousemove', moveCursor)
 
 let section = 0;
+let listenToScroll = true;
 
 function scrollSection() {
+    listenToScroll = false;
     const sectionString = 'section' + String(section)
     console.log()
     document.getElementById(sectionString).scrollIntoView();
+    setTimeout(function() {
+        canListenScroll = true;
+      }, 1000);
 }
 
 function scrollBefore() {
@@ -81,6 +86,10 @@ function scrollNext() {
     }
     scrollSection();
 }
+
+
+
+
 
 function cursorClick(e) {
     const t = e.target;

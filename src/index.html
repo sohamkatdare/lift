@@ -20,11 +20,11 @@
 <body class="cursor-none no-scrollbar scroll-smooth body-black" id="main">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
 
-  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+  <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="spinner.svg" alt="spinner">
   </div>
 
-  <div class="hero min-h-screen bg-transparent select-none snap-y relative" id="section0">
+  <div class="hero min-h-screen bg-transparent select-none  relative" id="section0">
     <!-- <div class="hero-content text-center blur-md">
       <div class="max-w-md">
         <h1 class="text-5xl title font-bold text-primary bg-white/[0.025] background-blur-sm p-2 rounded-lg">Welcome to <span class="bloom"><strong>LIFT.</strong></span>
@@ -40,15 +40,15 @@
         <p class="py-6 text-white">Above and beyond is only a few clicks away.</p>
       </div>
     </div>
-    <button id="gstar1"  class="bg-transparent text-white border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
+    <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
       </svg>
     </button>
   </div>
 
-  <div class="absolute grid grid-cols-12 snap-y snap-proximity">
-    <section id="section1" class="col-start-6 col-span-6 snap-center">
+  <div class="absolute grid grid-cols-12 snap-mandatory snap-y">
+    <section id="section1" class="col-start-6 col-span-6 snap-start snap-always">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[65rem]">
         <h2 class="text-2xl basic-info text-white">Our <strong class="text-white"><code>Mission</code></strong></h2>
         <br>
@@ -60,7 +60,7 @@
         <a href="info/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
-    <section id="section2" class="col-start-6 col-span-6 snap-center">
+    <section id="section2" class="col-start-6 col-span-6 snap-start snap-always">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[92.5rem]">
         <h2 class="text-2xl basic-info text-white">Check out our <strong class="text-white"><code>Products</code></strong></h2>
         <br>
@@ -68,7 +68,7 @@
         <a href="products/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
-    <section id="section3" class="col-start-2 col-span-5 snap-center">
+    <section id="section3" class="col-start-2 col-span-5 snap-start snap-always">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[10rem]">
         <h2 class="text-2xl basic-info text-white">Get ready for <strong class="text-white"><code>Launch!</code></strong></h2>
         <br>
@@ -79,7 +79,7 @@
         <a href="launch/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
-    <section id="section4" class="col-start-6 col-span-6 snap-center">
+    <section id="section4" class="col-start-6 col-span-6 snap-start snap-always">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[55rem]">
         <h2 class="text-2xl basic-info text-white"><strong class="text-white"><code>SpaceCamp™️</code></strong></h2>
         <br>
@@ -87,7 +87,7 @@
         <a href="launch/training/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
-    <section id="section5" class="col-start-2 col-end-7 snap-center">
+    <section id="section5" class="col-start-2 col-end-7 snap-start snap-always">
       <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 mt-[10rem] mb-[15rem]">
         <h2 class="text-2xl basic-info text-white">Check out our <strong class="text-white"><code>Vehicles!</code></strong></h2>
         <br>
