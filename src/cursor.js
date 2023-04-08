@@ -249,18 +249,6 @@ document.onreadystatechange = function (e) {
 };
 
 // Listen for window.resize
-var orientation = window.orientation;
-function resize() {
-    if(!isTouchDevice()) {  // if not touch device
-        console.log("resizing")
-        location.reload();
-    } else {
-        if (orientation !== window.orientation) {
-            location.reload();
-        }
-        orientation = window.orientation;
-    }
-}
-window.onresize = resize;
+
 
 export { section };

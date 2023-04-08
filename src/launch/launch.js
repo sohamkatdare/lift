@@ -18,6 +18,18 @@ if (isTouchDevice()) {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
 
 const scene = new THREE.Scene();
 

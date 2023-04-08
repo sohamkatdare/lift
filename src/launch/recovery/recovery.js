@@ -38,6 +38,18 @@ const renderer = rsc.rendererSetup(scene, camera)
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
 
 
 const earth = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 5, 32, '/minified/2k_earth_normal-min.jpeg');
@@ -67,7 +79,7 @@ function updatePlanets() {
   moon.rotation.y += 0.01
   earth.rotation.y += 0.01
 }
-
+window.onresize = rsc.resize();
 animate();
 
 // * THREEJS COMPLETE

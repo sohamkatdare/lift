@@ -77,7 +77,7 @@ function switchPlanet(sectionNumber) {
   
   requestAnimationFrame(updateCameraPosition);
 }
-
+window.onresize = rsc.resize();
 function updatePlanets() {
   rsc.sun.rotation.y += 0.001;
   rsc.mercury.rotation.y += 0.01;

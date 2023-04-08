@@ -15,6 +15,19 @@ function addPlanet(mapTexture, size, detail) {
   return planet
 }
 
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
+
 
 function addToScene(planet, x, y, z) {
   planet.position.set(x, y, z);

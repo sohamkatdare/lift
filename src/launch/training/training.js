@@ -2,7 +2,7 @@
 
 import * as THREE from 'three';
 import isTouchDevice from '../../util';
-
+import * as rsc from '../../resources';
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg-uranus"),
 });
@@ -17,6 +17,18 @@ if (isTouchDevice()) {
 } else {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
 
 
 const scene = new THREE.Scene();

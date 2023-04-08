@@ -24,7 +24,18 @@ function addToScene(planet, x, y, z) {
 }
 const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = rsc.rendererSetup(scene, camera)
-
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
 
 
 const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
