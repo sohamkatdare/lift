@@ -2,6 +2,7 @@ import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
 import Stats from 'three/examples/jsm/libs/stats.module'
+import { section } from './cursor';
 
 const stats = new Stats()
 document.body.appendChild(stats.dom)
@@ -18,14 +19,15 @@ const renderer = rsc.rendererSetup(scene, camera);
 
 const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
 camera.position.set(0, 200, 800);
-camera.rotation.set(10, 0, 0);
+camera.rotation.set(5, 0, 0);
 
 
 let selectedPlanet;
 
 
 
-rsc.starForge(scene)
+let stars = rsc.starForge(scene)
+scene.add(stars)
 
 
 
@@ -34,18 +36,48 @@ function animate() {
 
   // controls.update();
   updatePlanets();
-
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(10, 0, 0), 0.008, 40)
+  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(3, 2, 3), 0.008, 20)
   renderer.render(scene, camera);
   stats.update()
 }
 
+let planets;
+
 async function init() {
   await rsc.addSolarSystem(scene);
-  selectedPlanet = rsc.moon;
+  planets = [rsc.moon, rsc.mars, rsc.jupiter, rsc.saturn, rsc.uranus, rsc.neptune]
+  selectedPlanet = planets[section];
   animate()
 }
-const planets = [rsc.sun, rsc.mercury, rsc.venus, rsc.moon, rsc.mars, rsc.jupiter, rsc.saturnGroup, rsc.uranusGroup, rsc.neptune]
+
+
+function switchPlanet(sectionNumber) {
+  console.log("switching planet");
+  console.log(selectedPlanet);
+  console.log(sectionNumber);
+  const startPlanet = selectedPlanet;
+  selectedPlanet = planets[sectionNumber];
+  console.log(selectedPlanet);
+  
+  const startPosition = camera.position.clone();
+  const endPosition = selectedPlanet.position.clone().add(new THREE.Vector3(3, 2, 3));
+  const duration = 2000; // milliseconds
+  const startTime = performance.now();
+  
+  function updateCameraPosition() {
+    const elapsed = performance.now() - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const newPosition = new THREE.Vector3().lerpVectors(startPosition, endPosition, progress);
+    rsc.updateCameraPosition(camera, startPlanet, newPosition, 0.006, 20);
+    renderer.render(scene, camera);
+    if (progress < 1) {
+      requestAnimationFrame(updateCameraPosition);
+    }
+  }
+  
+  requestAnimationFrame(updateCameraPosition);
+}
+
 function updatePlanets() {
   rsc.sun.rotation.y += 0.001;
   rsc.mercury.rotation.y += 0.01;
@@ -59,7 +91,8 @@ function updatePlanets() {
   rsc.earth.rotation.y += 0.01
 
   rsc.mars.rotation.y += 0.005;
-  rsc.mars.rotation.z += 0.0004;
+  rsc.mars.rotation.x = Math.PI / 8; 
+  rsc.mars.rotation.z = Math.PI / 12;
 
   rsc.jupiter.rotation.x += 0.0002;
   rsc.jupiter.rotation.y += 0.003;
@@ -87,8 +120,12 @@ function updatePlanets() {
   rsc.saturnRotationGroup.rotation.y += 0.0003;
   rsc.uranusRotationGroup.rotation.y += 0.0002;
   rsc.neptuneRotationGroup.rotation.y += 0.0001;
+
+  stars.rotation.y -= 0.0002;
 }
 
 
 
 init();
+
+export { switchPlanet };

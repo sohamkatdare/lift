@@ -1,4 +1,5 @@
 import isTouchDevice from './util';
+import { switchPlanet } from './main';
 
 const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
@@ -66,16 +67,16 @@ let listenToScroll = true;
 function scrollSection() {
     listenToScroll = false;
     const sectionString = 'section' + String(section)
-    console.log()
     document.getElementById(sectionString).scrollIntoView();
     setTimeout(function() {
-        canListenScroll = true;
+        listenToScroll = true;
       }, 1000);
 }
 
 function scrollBefore() {
     if (section > 0) {
         section--;
+        switchPlanet(section);
     }
     scrollSection();
 }
@@ -83,6 +84,7 @@ function scrollBefore() {
 function scrollNext() {
     if (section < 5) {
         section++;
+        switchPlanet(section);
     }
     scrollSection();
 }
@@ -261,3 +263,4 @@ function resize() {
 }
 window.onresize = resize;
 
+export { section };

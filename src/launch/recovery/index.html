@@ -9,7 +9,21 @@
   <link href="../../style.css" rel="stylesheet">
 
   <title>LIFT - Recovery</title>
-
+  <style>
+    img {
+        animation-name: fadein;
+        animation-duration: 10s;
+    }
+    
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    </style>
 </head>
 
 <body class="scroll-smooth no-scrollbar">
@@ -57,7 +71,7 @@
     <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
       <h1 class="text-4xl text-base-400 w-full" id="#section1"><strong>Step 1 : Rehabilitation </strong>
         <br><br>
-        <p class=" text-xl font-light ">Re-entry into Earth's atmosphere can be a challenging process for astronauts returning from space. The transition from the microgravity environment of space to Earth's gravity and atmospheric pressure can have a significant impact on the body, causing physical and emotional challenges. However, with advanced technology and expert guidance, the process can be made smoother and less stressful</p>
+        <p class=" text-2xl font-light ">Re-entry into Earth's atmosphere can be a challenging process for astronauts returning from space. The transition from the microgravity environment of space to Earth's gravity and atmospheric pressure can have a significant impact on the body, causing physical and emotional challenges. However, with advanced technology and expert guidance, the process can be made smoother and less stressful</p>
       </h1>
       <br>
       <div class="tabs w-full px-10" id="tabs">
@@ -79,7 +93,7 @@
     <div class="my-36"></div>
 
     
-      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] backdrop-blur-sm rounded-box">
+      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] backdrop-blur-sm rounded-box mt-2">
         <div class="collapse-title text-xl font-medium">
           Try Meditation!
         </div>
@@ -122,19 +136,33 @@
         <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 2: Medical evaluation
         </strong>
         <br><br>
-        <p class=" text-xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
-
+        <p class=" text-2xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
+<br>
       </h1>
-      <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] b backdrop-blur-sm rounded-box">
         <div class="collapse-title text-xl font-medium">
           
-          Our medical proffesionals
+          Our medical profesionals
         </div>
         <div class="collapse-content">
           <div class="flex w-full">
-            <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">content</div>
-            <div class="divider divider-horizontal">OR</div>
-            <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">content</div>
+            <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">Doctor Expert in Human Recovery from Space: <br> <br> 
+              Name: Dr. John Smith <br>  Qualifications: PhD in Aerospace Medicine<br>Specialization: Human Recovery from Space<br>
+            <br> Dr. John Smith is a leading expert in the field of human recovery from space. He holds a PhD in Aerospace Medicine and has dedicated his career to understanding the effects of space travel on the human body and developing strategies to help astronauts recover after long-duration missions.<br>
+            Dr. Smith has conducted extensive research on the physiological changes that occur in the body during spaceflight, including bone loss, muscle atrophy, and cardiovascular changes. He has also studied the psychological effects of isolation and confinement that astronauts experience during space missions.
+
+          <br>Dr. Smith has developed several rehabilitation protocols for astronauts returning to Earth after long-duration space missions. These protocols include exercises to help restore bone density and muscle mass, as well as strategies to address the psychological challenges of readjusting to life on Earth.<br>
+          Dr. Smith is highly respected in his field and has published numerous research papers and articles on the subject of human recovery from space. He is frequently invited to speak at international conferences and has advised NASA and other space agencies on issues related to astronaut health and safety.
+        </div>
+            <div class="divider divider-horizontal">and</div>
+            <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">Doctor Specialized in Muscle Tissue: <br> <br> 
+              Name: Dr. Sarah Lee <br>  Qualifications: MD, PhD in Physiology<br>Specialization: Musculoskeletal Medicine<br>
+            <br> Dr. Sarah Lee is a highly specialized physician with a focus on musculoskeletal medicine. She holds both an MD and a PhD in Physiology and has dedicated her career to understanding the complexities of the human musculoskeletal system.<br>
+            Dr. Lee has conducted extensive research on the structure and function of muscle tissue, including the mechanisms of muscle contraction and the factors that contribute to muscle fatigue and injury. She has also studied the effects of aging, disease, and injury on muscle tissue and has developed innovative treatments to promote muscle recovery and repair.
+
+          <br>Dr. Lee is an expert in the diagnosis and management of musculoskeletal disorders, including muscle strains, sprains, and tears. She uses a combination of traditional medical treatments and cutting-edge therapies, such as regenerative medicine and exercise physiology, to help her patients achieve optimal muscle function and mobility.<br>
+          Dr. Lee is highly regarded in her field and has published numerous research papers and articles on the subject of musculoskeletal medicine. She is also a sought-after speaker and has presented her research at national and international conferences.
+        </div>
           </div>
         </div>
       </div>
@@ -153,7 +181,17 @@
         <br>
         <label for="my-modal-6" class="btn">More about it</label>
         <br><br>
-        <p class=" text-xl font-light italic ">"On the wall of his rehabilitation room was a picture of the space shuttle blasting off, autographed by every astronaut now at NASA. On top of the picture it says, We found nothing is impossible. That should be our motto."- Christopher Reeve</p>
+        <div class="absolute h-fit bottom-5 p-4 mx-auto -translate-x-3">
+          <blockquote class="relative bottom-5 text-xl font-light italic "> 
+            On the wall of his rehabilitation room was a picture of the space shuttle blasting off, autographed by every astronaut now at NASA. On top of the picture it says, We found nothing is impossible. That should be our motto. 
+            <br>
+            <footer>
+              <cite>
+                Christopher Reeve
+              </cite>
+            </footer>
+          </blockquote>
+        </div>
       </div>
    
 
@@ -183,15 +221,22 @@
 
     <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-    <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
-    <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="fade-in-image grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
+    
+      <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
       <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 4: Rehabilitation
       </strong>
       <br><br>
-      <p class=" text-xl font-light ">Once you are rested and ready, you will begin rehabilitation. This may include physical therapy, exercise, and other activities designed to help you regain your strength and mobility. Our team of rehabilitation experts will work closely with you to develop a personalized plan that meets your unique needs and goals. We'll provide you with the tools and resources you need to succeed, including specialized equipment and one-on-one coaching and support.</p>
+      <p class=" text-2xl font-light fade-in-text ">Once you are rested and ready, you will begin rehabilitation. This may include physical therapy, exercise, and other activities designed to help you regain your strength and mobility. Our team of rehabilitation experts will work closely with you to develop a personalized plan that meets your unique needs and goals. We'll provide you with the tools and resources you need to succeed, including specialized equipment and one-on-one coaching and support.</p>
     </h1>
     </div>
+        <progress class="progress progress-primary w-56" value="96" max="100"></progress>
+        <progress class="progress progress-primary w-56" value="94" max="100"></progress>
+        <progress class="progress progress-primary w-56" value="97" max="100"></progress>
+        <progress class="progress progress-primary w-56" value="92" max="100"></progress>
+        <progress class="progress progress-primary w-56" value="100" max="100"></progress>
   </div>
+</div>
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
@@ -200,14 +245,30 @@
     <div class="lg:col-start-8 py-20 px-10 col-start-3 col-end-10 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
       <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 5: Support and guidance </strong></h1>
       <br><br>
-        <p class="text-base-400 text-xl font-light "> Throughout the recovery process, our team will be there to provide you with the support and guidance you need to make a full and lasting recovery. We understand that recovery can be a challenging and sometimes emotional journey, and we're here to help you every step of the way. Our team of experts will be available to answer your questions, offer advice, and provide you with the care and attention you deserve.  
+        <p class="text-base-400 text-2xl font-light text-left"> Throughout the recovery process, our team will be there to provide you with the support and guidance you need to make a full and lasting recovery. We understand that recovery can be a challenging and sometimes emotional journey, and we're here to help you every step of the way. Our team of experts will be available to answer your questions, offer advice, and provide you with the care and attention you deserve.  
         <br><br>
-        <div class="radial-progress mx-2" style="--value:90;">90%</div>
-        <div class="radial-progress mx-2" style="--value:96;">96%</div>
-        <div class="radial-progress mx-2" style="--value:90;">90%</div>
-        <div class="radial-progress mx-2" style="--value:80;">80%</div>
-        <div class="radial-progress mx-2" style="--value:100;">100%</div>
-        <p class="text-base-400 text-xl font-light fontspace "> Happiness   Support   Guidance   Help   Friendly
+        <div class="flex flex-row flex-wrap justify-center">
+          <div class="text-center mx-4 my-2 w-full md:w-1/2 lg:w-1/5">
+            <div class="radial-progress mx-2" style="--value:90;">90%</div>
+            <p class="mt-2">Happiness</p>
+          </div>
+          <div class="text-center mx-4 my-2 w-full md:w-1/2 lg:w-1/5">
+            <div class="radial-progress mx-2" style="--value:94;">94%</div>
+            <p class="mt-2">Support</p>
+          </div>
+          <div class="text-center mx-4 my-2 w-full md:w-1/2 lg:w-1/5">
+            <div class="radial-progress mx-2" style="--value:96;">96%</div>
+            <p class="mt-2">Guidance</p>
+          </div>
+          <div class="text-center mx-4 my-2 w-full md:w-1/2 lg:w-1/5">
+            <div class="radial-progress mx-2" style="--value:97;">97%</div>
+            <p class="mt-2">Help</p>
+          </div>
+          <div class="text-center mx-4 my-2 w-full md:w-1/2 lg:w-1/5">
+            <div class="radial-progress mx-2" style="--value:95;">95%</div>
+            <p class="mt-2">Friendly</p>
+          </div>
+        </div>        
     </div>
   </div>
 
@@ -219,39 +280,62 @@
   <div class="lg:col-start-8 py-20 px-10 col-start-3 col-end-10 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
     <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 6: Support and guidance </strong></p>
       <br><br>
-      <p class="text-base-400 text-xl font-light "> As you near the end of the recovery process, our team will work with you to ensure a smooth and seamless reintegration into your everyday life. This may include providing you with tips and strategies for adjusting to life on Earth, as well as ongoing support and guidance to help you maintain your health and well-being. We're committed to helping you make a full and lasting recovery, and we'll be there to support you every step of the </p>
-      <br><br><br>
+      <p class="text-base-400 text-2xl font-light text-left"> As you near the end of the recovery process, our team will work with you to ensure a smooth and seamless reintegration into your everyday life. This may include providing you with tips and strategies for adjusting to life on Earth, as well as ongoing support and guidance to help you maintain your health and well-being. We're committed to helping you make a full and lasting recovery, and we'll be there to support you every step of the </p>
+      <br><br>
+      <h1 class="text-3xl text-base-400 text-3xl"><strong>Reviews</strong></p>
+      <br>
     
 
         <div class="carousel w-full">
           <div id="slide1" class="carousel-item relative w-full">
             <div class="">
-              <p  class="text-base-400 text-lg font-light px-32 my-auto ">"Their team was knowledgeable, attentive, and dedicated to helping me heal and regain my strength. From the moment I arrived, they provided me with personalized care and attention, ensuring that I received the right treatment and support for my specific needs. Their state-of-the-art facilities and cutting-edge equipment were crucial in my recovery, and their skilled therapists and medical staff were always available to answer my questions and address any concerns I had."
+              <p  class="text-base-400 text-lg font-light my-auto text-left">"Their team was knowledgeable, attentive, and dedicated to helping me heal and regain my strength. From the moment I arrived, they provided me with personalized care and attention, ensuring that I received the right treatment and support for my specific needs. Their state-of-the-art facilities and cutting-edge equipment were crucial in my recovery, and their skilled therapists and medical staff were always available to answer my questions and address any concerns I had."
               </p>
               <br>
               <div class="rating">
-                <input readonly type="radio" name="rating-1" class="mask mask-star" />
-                <input readonly type="radio" name="rating-1" class="mask mask-star" checked />
-                <input readonly type="radio" name="rating-1" class="mask mask-star" />
-                <input readonly type="radio" name="rating-1" class="mask mask-star" />
-                <input readonly type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star"  />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" checked />
               </div>
             </div>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
               <a href="#slide4" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❮</a> 
               <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
             </div>
           </div> 
           <div id="slide2" class="carousel-item relative w-full">
-            <p  class="text-base-400 text-lg font-light px-32 my-auto">From the moment I walked in the door, I was met with kindness, expertise, and a genuine passion for helping people feel their best. The Lift team provided me with a comprehensive recovery plan that was tailored specifically to my needs, and I couldn't have been happier with the results. Thanks to their innovative techniques and cutting-edge equipment, I was able to bounce back from my space journey faster than I ever thought possible."</p>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <div class="">
+              <p  class="text-base-400 text-lg font-light my-auto text-left">From the moment I walked in the door, I was met with kindness, expertise, and a genuine passion for helping people feel their best. The Lift team provided me with a comprehensive recovery plan that was tailored specifically to my needs, and I couldn't have been happier with the results. Thanks to their innovative techniques and cutting-edge equipment, I was able to bounce back from my space journey faster than I ever thought possible."
+              </p>
+              <br>
+              <div class="rating">
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" checked />
+              </div>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
               <a href="#slide1" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a> 
               <a href="#slide3" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
             </div>
           </div> 
           <div id="slide3" class="carousel-item relative w-full">
-            <p  class="text-base-400 text-lg font-light px-32 my-auto">"Thanks to their dedicated care and attention, I was able to bounce back from my journey and return to my daily life feeling stronger and more rejuvenated than ever before. I cannot recommend the team at Lift highly enough - their commitment to excellence truly sets them apart."</p>
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <div class="">
+              <p  class="text-base-400 text-lg font-light my-auto text-left">"Thanks to their dedicated care and attention, I was able to bounce back from my journey and return to my daily life feeling stronger and more rejuvenated than ever before. I cannot recommend the team at Lift highly enough - their commitment to excellence truly sets them apart."
+              </p>
+              <div class="rating">
+                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
+                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true"  />
+                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
+                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
+                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" checked/>
+              </div>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
               <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a> 
               <a href="#slide4" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❯</a>
             </div>

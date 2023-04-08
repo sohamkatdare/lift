@@ -361,7 +361,7 @@ export function starForge(scene) {
     });
 
     var stars = new THREE.Points(starGeometry, starMaterial);
-    scene.add(stars);
+    return stars
 }
 
 
@@ -382,7 +382,7 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor, fov)
 
     sphere.setFromPoints(vertices);
     sphere.radius *= planet.scale.x;
-    planetRadius.set(sphere.radius * 2, sphere.radius * 2, sphere.radius * 2);
+    planetRadius.set(sphere.radius * 4, sphere.radius * 4, sphere.radius * 4);
 
     // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);
@@ -398,6 +398,7 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor, fov)
     camera.updateProjectionMatrix();
 
     // Make the camera look at the planet in world space
+    // Slowly turn the camera to face the planet
     camera.lookAt(planetWorldPosition);
 }
 
