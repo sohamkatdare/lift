@@ -104,6 +104,25 @@ class Navbar extends HTMLElement {
         </div>
         <div class="navbar-end"></div>
       </nav>
+      <script>
+        (function() {
+          let lastScrollTop = 0;
+          const navbar = document.querySelector('.navbar.fixed');
+        
+          window.addEventListener('scroll', function() {
+            const currentScrollTop = window.pageYOffset;
+        
+            if (currentScrollTop > lastScrollTop) {
+              // User is scrolling down, hide the navbar
+              navbar.classList.add('hide-navbar');
+            } else {
+              // User is scrolling up, show the navbar
+              navbar.classList.remove('hide-navbar');
+            }
+            lastScrollTop = currentScrollTop;
+          });
+        })();
+      </script>
     `;
   }
 }
@@ -218,6 +237,25 @@ class NavbarLaunch extends HTMLElement {
         </div>
         <div class="navbar-end"></div>
       </nav>
+      <script>
+        (function() {
+          let lastScrollTop = 0;
+          const navbar = document.querySelector('.navbar.fixed');
+        
+          window.addEventListener('scroll', function() {
+            const currentScrollTop = window.pageYOffset;
+        
+            if (currentScrollTop > lastScrollTop) {
+              // User is scrolling down, hide the navbar
+              navbar.classList.add('hide-navbar');
+            } else {
+              // User is scrolling up, show the navbar
+              navbar.classList.remove('hide-navbar');
+            }
+            lastScrollTop = currentScrollTop;
+          });
+        })();
+      </script>
     `;
   }
 }

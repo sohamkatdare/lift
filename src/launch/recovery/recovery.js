@@ -1,14 +1,56 @@
-import '../../style.css'
+import '../../style.css';
 
-import * as rsc from '../../resources'
+import * as THREE from 'three';
+import isTouchDevice from '../../util';
+import * as rsc from '../../resources';
 
-const renderer = rsc.rendererSetup();
 
-const scene = rsc.sceneSetup(renderer, "/minified/2k_stars_milky_way-min.jpg");
 
-rsc.addToScene(scene, rsc.earthGroup, 3, 0.2, -10);
+const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
 
+
+function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
+  const texture = new THREE.TextureLoader().load(mapTexture)
+  const normalTexture = new THREE.TextureLoader().load(normalMapTexture)
+  const geometry = new THREE.DodecahedronGeometry(size, detail, detail);
+  const material = new THREE.MeshStandardMaterial({ map: texture, normalMap: normalTexture });
+  const planet = new THREE.Mesh(geometry, material);
+  return planet
+}
+
+
+function addPlanet(mapTexture, size, detail) {
+  const texture = new THREE.TextureLoader().load(mapTexture);
+  const geometry = new THREE.DodecahedronGeometry(size, detail, detail);
+  const materialOptions = { map: texture };
+  const material = new THREE.MeshStandardMaterial(materialOptions);
+  const planet = new THREE.Mesh(geometry, material);
+
+  return planet;
+}
+function addToScene(planet, x, y, z) {
+  planet.position.set(x, y, z);
+  scene.add(planet)
+}
 const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = rsc.rendererSetup(scene, camera)
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+
+
+const earth = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 5, 32, '/minified/2k_earth_normal-min.jpeg');
+const moon = addPlanet('/minified/2k_moon-min.jpg', 1, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+moon.position.set(6.5, 0, 0)
+
+const earthGroup = new THREE.Group();
+earthGroup.add(moon)
+earthGroup.add(earth)
+addToScene(earthGroup, 4, 0, -15);
+// const controls = new OrbitControls(camera, renderer.domElement)
+
+
 
 rsc.starForge(scene);
 
@@ -19,11 +61,50 @@ function animate() {
 }
 
 function updatePlanets() {
-  rsc.earthGroup.rotation.x = 59.5;
-  rsc.earthGroup.rotation.y += 0.005;
-  rsc.earthGroup.rotation.z = 59.5;
-  rsc.moon.rotation.y += 0.01
-  rsc.earth.rotation.y += 0.01
+  earthGroup.rotation.x = 59.5;
+  earthGroup.rotation.y += 0.005;
+  earthGroup.rotation.z = 59.5;
+  moon.rotation.y += 0.01
+  earth.rotation.y += 0.01
 }
 
 animate();
+
+// * THREEJS COMPLETE
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll("#tabs .tab");
+  const tabBodies = document.querySelectorAll(".tabbody");
+
+  function setActiveTab(tab) {
+    tabs.forEach((t) => {
+      t.classList.remove("tab-active");
+    });
+
+    tab.classList.add("tab-active");
+  }
+
+  function showTabBody(index) {
+    tabBodies.forEach((tb, i) => {
+      tb.classList[i === index ? "add" : "remove"]("visible");
+    });
+  }
+
+  // Set the first tab body as visible by default
+  tabBodies[0].classList.add("visible");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      setActiveTab(tab);
+      showTabBody(index);
+    });
+  });
+});
+
+const links = document.querySelectorAll('.carousel-link');
+links.forEach(link => {
+  link.addEventListener('click', event => {
+      event.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  });
+});

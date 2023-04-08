@@ -29,8 +29,9 @@ export function rendererSetup(scene, camera) {
     composer.addPass(fxaaPass);
 
     // Add bloom pass
-    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.0, 0.4, 0.85);
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.1, 1, 1);
     composer.addPass(bloomPass);
+
 
     // Add less common effects
     // Example: Film pass
@@ -53,6 +54,15 @@ export function addPlanet(texture, size, detail, normalMapTexture) {
     const materialOptions = { map: texture };
     if (normalMapTexture) materialOptions.normalMap = normalMapTexture;
     const material = new THREE.MeshStandardMaterial(materialOptions);
+    const planet = new THREE.Mesh(geometry, material);
+
+    return planet;
+}
+export function addUnlitPlanet(texture, size, detail, normalMapTexture) {
+    const geometry = new THREE.DodecahedronGeometry(size, detail, detail);
+    const materialOptions = { map: texture };
+    if (normalMapTexture) materialOptions.normalMap = normalMapTexture;
+    const material = new THREE.MeshBasicMaterial(materialOptions);
     const planet = new THREE.Mesh(geometry, material);
 
     return planet;
@@ -116,7 +126,7 @@ export async function setup() {
         uranusRingsTexture,
         neptuneTexture
     ] = await loadPlanetTexturesAsync();
-    const multiplier = 8;
+    const multiplier = 16;
     const mercuryDistanceFromSun = 3.5 * multiplier;
     const venusDistanceFromSun = 6.7 * multiplier;
     const earthDistanceFromSun = 9.3 * multiplier;
@@ -136,7 +146,7 @@ export async function setup() {
     uranusRotationGroup = new THREE.Group();
     neptuneRotationGroup = new THREE.Group();
 
-    sun = addPlanet(sunTexture, 10, 32);
+    sun = addUnlitPlanet(sunTexture, 30, 32);
 
     mercury = addPlanet(mercuryTexture, 1, 32);
     // const mercuryOrbitRing = new THREE.RingGeometry(14.9, 15.1)
@@ -145,7 +155,7 @@ export async function setup() {
     mercury.position.set(0, 0, mercuryDistanceFromSun);
     solarSystem.add(mercuryRotationGroup);
 
-    venus = addPlanet(venusTexture, 3, 32);
+    venus = addPlanet(venusTexture, 2.9, 32);
     venusRotationGroup.add(venus);
     venus.position.set(0, 0, venusDistanceFromSun);
     solarSystem.add(venusRotationGroup);
@@ -160,17 +170,17 @@ export async function setup() {
     earthGroup.position.set(0, 0, earthDistanceFromSun);
     solarSystem.add(earthRotationGroup);
 
-    mars = addPlanet(marsTexture, 2, 32);
+    mars = addPlanet(marsTexture, 1.5, 32);
     marsRotationGroup.add(mars);
     mars.position.set(0, 0, marsDistanceFromSun);
     solarSystem.add(marsRotationGroup);
 
-    jupiter = addPlanet(jupiterTexture, 5, 32);
+    jupiter = addPlanet(jupiterTexture, 33, 32);
     jupiterRotationGroup.add(jupiter);
     jupiter.position.set(0, 0, jupiterDistanceFromSun);
     solarSystem.add(jupiterRotationGroup);
 
-    saturn = addPlanet(saturnTexture, 4.5, 32);
+    saturn = addPlanet(saturnTexture, 27, 32);
     const saturnRing = new THREE.RingGeometry(6, 11);
     const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingsTexture, side: THREE.DoubleSide })
     saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
@@ -183,7 +193,7 @@ export async function setup() {
     saturnGroup.position.set(0, 0, saturnDistanceFromSun);
     solarSystem.add(saturnRotationGroup);
 
-    uranus = addPlanet(uranusTexture, 4, 32);
+    uranus = addPlanet(uranusTexture, 12, 32);
     const uranusRing = new THREE.RingGeometry(5, 6);
     const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingsTexture, side: THREE.DoubleSide })
     uranusRingMaterial.opacity = 0.5;
@@ -196,14 +206,14 @@ export async function setup() {
     uranusRotationGroup.add(uranusGroup);
     solarSystem.add(uranusRotationGroup);
 
-    neptune = addPlanet(neptuneTexture, 4, 32);
+    neptune = addPlanet(neptuneTexture, 11, 32);
     neptuneRotationGroup.add(neptune);
     neptune.position.set(0, 0, neptuneDistanceFromSun);
     solarSystem.add(neptuneRotationGroup);
 
     solarSystem.add(sun);
 
-    const light = new THREE.PointLight( 0xff0000, 1);
+    const light = new THREE.PointLight( 0xffffff, 1.1, 1000, 0.1);
     light.position.set(0, 0, 0 );
     solarSystem.add( light );
 }
@@ -304,7 +314,7 @@ export async function addSolarSystem(scene) {
 }
 
 export function createView(scene, fov, aspect, near, far ) {
-    const ambientLight = new THREE.AmbientLight(0xffffff);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);  
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
     camera.position.setZ(0);
@@ -372,7 +382,7 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor, fov)
 
     sphere.setFromPoints(vertices);
     sphere.radius *= planet.scale.x;
-    planetRadius.set(sphere.radius, sphere.radius, sphere.radius);
+    planetRadius.set(sphere.radius * 2, sphere.radius * 2, sphere.radius * 2);
 
     // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);

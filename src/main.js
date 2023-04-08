@@ -42,7 +42,7 @@ function animate() {
 
 async function init() {
   await rsc.addSolarSystem(scene);
-  selectedPlanet = rsc.mars;
+  selectedPlanet = rsc.moon;
   animate()
 }
 const planets = [rsc.sun, rsc.mercury, rsc.venus, rsc.moon, rsc.mars, rsc.jupiter, rsc.saturnGroup, rsc.uranusGroup, rsc.neptune]
