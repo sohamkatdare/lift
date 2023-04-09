@@ -3,7 +3,7 @@ import * as rsc from '../resources';
 import * as THREE from 'three';
 
 
-const orientation = window.orientation;
+let orientation = window.orientation;
 function resize() {
     if(!isTouchDevice()) {  // if not touch device
         location.reload();

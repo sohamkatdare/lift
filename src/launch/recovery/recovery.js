@@ -33,7 +33,7 @@ function addToScene(planet, x, y, z) {
 }
 ;
 
-const orientation = window.orientation;
+let orientation = window.orientation;
 function resize() {
     if(!isTouchDevice()) {  // if not touch device
         location.reload();

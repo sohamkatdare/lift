@@ -14,7 +14,7 @@ function addPlanet(mapTexture, size, detail) {
   return planet
 }
 
-const orientation = window.orientation;
+let orientation = window.orientation;
 function resize() {
     if(!isTouchDevice()) {  // if not touch device
         location.reload();
