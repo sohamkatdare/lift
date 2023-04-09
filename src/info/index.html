@@ -8,6 +8,14 @@
   <link href="../output.css" rel="stylesheet">
   <link href="../style.css" rel="stylesheet">
   <title>LIFT - Info</title>
+  <style>
+    @media (min-width: 1024px) {
+      
+      .video-mars {
+        box-shadow: 0 0 50px 15px rgba(255, 48, 162, 0.3);
+      }
+    }
+  </style>
 </head>
 
 <body class="no-scrollbar">
@@ -35,8 +43,8 @@
     </div>
     <!-- gradient code: bg-gradient-to-b from-black  to-[#3b1111]  -->
     <div class="pt-4 lg:grid lg:grid-cols-12  lg:py-10">
-      <div class="lg:my-3 order-2 lg:order-none lg:col-start-2 hidden md:block lg:col-end-7 lg:grid place-content-center border-5 border-white">
-        <video class="rounded-lg border-5 border-white" autoplay muted loop>
+      <div class="lg:my-3 order-2 lg:order-none lg:col-start-2 hidden md:block lg:col-end-7 lg:grid place-content-center video-mars ">
+        <video class="rounded-lg " autoplay muted loop>
           <source src="/infovid1.mp4">
           Your browser does not support the video tag.
         </video>

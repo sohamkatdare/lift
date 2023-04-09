@@ -59,16 +59,14 @@ function handleScroll() {
   const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
 
   const normalizedValue = scrollDistance / 1500;
+
+  const inverter = scrollDirection === 'down' ? -1 : 1;
   
-  if (scrollDirection === 'down') {
-    stars.position.y -= normalizedValue*50;
-    mars.position.y += normalizedValue * 20;
-    mars.position.z -= normalizedValue * 20;
-  } else {
-    stars.position.y += normalizedValue*50;
-    mars.position.y -= normalizedValue * 20;
-    mars.position.z += normalizedValue * 20;
-  }
+  stars.position.y += inverter * normalizedValue * 50;
+  stars.rotation.y += inverter * normalizedValue / 10;
+  mars.position.y -= inverter * normalizedValue * 20;
+  mars.position.z += inverter * normalizedValue * 20;
+
   prevScrollPos = currentScrollPos;
 }
 

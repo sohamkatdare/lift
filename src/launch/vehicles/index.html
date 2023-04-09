@@ -9,26 +9,6 @@
   <link href="../../style.css" rel="stylesheet">
 
   <title>LIFT - Vehicles</title>
-  <style>
-    /* Set border on first item to avoid a double border */
-    
-    div:first-child button {
-      border-top: 1px solid #e2e8f0;
-    }
-    
-    /* Flip arrow when item is open */
-    [aria-expanded="true"] svg {
-      transform: rotate(180deg);
-    }
-    .accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .accordion-body.active {
-      max-height: 500px;
-    }
-  </style>
 </head>
 
 <body class="no-scrollbar">
@@ -40,7 +20,7 @@
 
   <div class="hero min-h-screen max-w-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
-    <div class="hero-overlay max-w-full bg-opacity-60">
+    <div class="hero-overlay fixed max-w-full bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-center text-white">
@@ -50,8 +30,8 @@
       </div>
     </div>
   </div>
-
-  <div class="grid max-w-full grid-cols-12 bg-gradient-to-b from-black to-base-100 py-10">
+<!-- gradient code bg-gradient-to-b from-black to-base-100 -->
+  <div class="grid max-w-full grid-cols-12  py-10">
     <div class="lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
       <h1 class="text-3xl text-base-400"><strong>Rocket Body</strong></h1>
       <br>
