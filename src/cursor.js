@@ -1,4 +1,4 @@
-import isTouchDevice from './util';
+import {isTouchDevice} from './resources';
 import { switchPlanet } from './main';
 
 const customCursor = document.querySelector('#cursor');

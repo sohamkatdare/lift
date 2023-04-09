@@ -11,10 +11,6 @@
     @apply hidden;
   }
 
-  .card-text-responsive {
-    @apply block;
-  }
-
   
 }
 
@@ -100,10 +96,6 @@ blockquote cite:before {
 }
 
 
-@font-face {
-  font-family: Audiowide-Regular;
-  src: url(/fonts/Audiowide-Regular.ttf) format('truetype');
-}
 
 @font-face {
   font-family: Inter;
@@ -115,33 +107,12 @@ blockquote cite:before {
 }
 
 
-
-.audiowide {
-  font-family: Audiowide-Regular;
-}
-
-
-.nova {
-  font-family: Nova;
-}
-.oranienbaum {
-  font-family: Oranienbaum;
-}
-.moon-thick {
-  font-family: Moon-Thick;
-}
-.moon-thin {
-  font-family: Moon-Thin;
-}
-.inter {
-  font-family: Inter;
-}
 /* span {  font-family: Nova;  } */
 h1, h2, h3, h4, h5, h6 {
   font-family: D-DIN;
 }
 
-p {
+p, .inter {
   font-family: Inter;
 }
 @media (max-height: 1080px) and (max-width: 1920px) {

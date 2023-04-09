@@ -1,12 +1,11 @@
 import '../../style.css'
 
 import * as THREE from 'three';
-import isTouchDevice from '../../util';
 import * as rsc from '../../resources';
 
 
 
-const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
+let [scene, camera, renderer, stars] = rsc.heroSetup();
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -20,10 +19,8 @@ function addPlanet(mapTexture, size, detail) {
 function addToScene(planet, x, y, z) {
   planet.position.set(x, y, z);
   scene.add(planet)
-  console.log("hello")
 }
-const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = rsc.rendererSetup(scene, camera)
+
 const orientation = window.orientation;
 function resize() {
     if(!isTouchDevice()) {  // if not touch device
@@ -41,11 +38,6 @@ window.onresize = resize;
 const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
 addToScene(neptune, 0, 0, -15);
 
-// const controls = new OrbitControls(camera, renderer.domElement)
-
-
-
-rsc.starForge(scene);
 
 function animate() {
   requestAnimationFrame(animate);
@@ -55,6 +47,7 @@ function animate() {
 
 function updatePlanets() {
     neptune.rotation.y += 0.006;
+    stars.rotation.y += 0.0001;
 }
 
 animate();

@@ -1,12 +1,11 @@
 import '../../style.css';
 
 import * as THREE from 'three';
-import isTouchDevice from '../../util';
 import * as rsc from '../../resources';
 
 
 
-const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
+let [scene, camera, renderer, stars] = rsc.heroSetup();
 
 
 function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
@@ -32,11 +31,7 @@ function addToScene(planet, x, y, z) {
   planet.position.set(x, y, z);
   scene.add(planet)
 }
-const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = rsc.rendererSetup(scene, camera)
-
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-scene.add(ambientLight);
+;
 
 const orientation = window.orientation;
 function resize() {
@@ -60,11 +55,6 @@ const earthGroup = new THREE.Group();
 earthGroup.add(moon)
 earthGroup.add(earth)
 addToScene(earthGroup, 4, 0, -15);
-// const controls = new OrbitControls(camera, renderer.domElement)
-
-
-
-rsc.starForge(scene);
 
 function animate() {
   requestAnimationFrame(animate);
@@ -78,6 +68,7 @@ function updatePlanets() {
   earthGroup.rotation.z = 59.5;
   moon.rotation.y += 0.01
   earth.rotation.y += 0.01
+  stars.rotation.y += 0.0001;
 }
 animate();
 

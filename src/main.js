@@ -12,7 +12,7 @@ const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
 
 //sadasdasd   
 
-const camera = rsc.createView(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = rsc.cameraSetup(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = rsc.rendererSetup(scene, camera);
 // const cameraRotationGroup = new THREE.Group();
 // cameraRotationGroup.add(camera);
