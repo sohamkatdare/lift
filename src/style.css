@@ -145,9 +145,21 @@ blockquote cite:before {
   font-family: Inter;
 }
 /* span {  font-family: Nova;  } */
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   font-family: D-DIN;
 }
+
+p {
+  font-family: Inter;
+}
+@media (max-height: 1080px) and (max-width: 1920px) {
+  #quote {
+    display: none;	
+  }
+
+}
+  
+
 
 .bg-hero-space::before {
   content: '';

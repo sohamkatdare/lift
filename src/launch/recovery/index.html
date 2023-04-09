@@ -29,9 +29,9 @@
 <body class="scroll-smooth no-scrollbar">
   <navbar-launch-component></navbar-launch-component>
 
-  <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="../../spinner.svg" alt="spinner">
-  </div>
+  </div> -->
 
 
   <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
@@ -68,7 +68,7 @@
  <div class="grid grid-cols-12 px-0 py-10 w-full bg-black snap-proximity snap-y"></div>
 
   <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Outer-Space-HD-Wallpaper-Free-download.jpg');">
-    <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 w-[70vh] inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
       <h1 class="text-4xl text-base-400 w-full" id="#section1"><strong>Step 1 : Rehabilitation </strong>
         <br><br>
         <p class=" text-2xl font-light ">Re-entry into Earth's atmosphere can be a challenging process for astronauts returning from space. The transition from the microgravity environment of space to Earth's gravity and atmospheric pressure can have a significant impact on the body, causing physical and emotional challenges. However, with advanced technology and expert guidance, the process can be made smoother and less stressful</p>
@@ -77,27 +77,27 @@
       <div class="tabs w-full px-10" id="tabs">
         <a class="tab w-1/3 text-xl tab-bordered tab-active">Preparation</a> 
         <a class="tab w-1/3 text-xl tab-bordered">Technology</a> 
-        <a class="tab w-1/3 text-xl tab-bordered">Expert Guidance</a>
+        <a class="tab w-1/3 text-xl tab-bordered overflow-hidden whitespace-nowrap text-">Expert Guidance</a>
       </div>
-      <div class="tabcontent p-4 backdrop-blur-sm rounded-lg">
+      <div class="tabcontent p-4 backdrop-blur-sm rounded-lg h-[12rem]">
         <div class="tabbody" id="tabbody1">
-            <p>Preparing for re-entry is essential to ensure that astronauts are ready for the challenges ahead. This involves a comprehensive pre-re-entry training program that covers both the physical and emotional aspects of returning to Earth. The training includes exercises to help astronauts adapt to Earth's gravity, as well as psychological counseling to help them cope with the stress and emotional challenges of returning to their families and daily life on Earth.</p>
+            <p class="h-max">Preparing for re-entry is essential to ensure that astronauts are ready for the challenges ahead. This involves a comprehensive pre-re-entry training program that covers both the physical and emotional aspects of returning to Earth. The training includes exercises to help astronauts adapt to Earth's gravity, as well as psychological counseling to help them cope with the stress and emotional challenges of returning to their families and daily life on Earth.</p>
         </div>
         <div class="tabbody" id="tabbody2">
-            <p>The lift used for re-entry is equipped with advanced technology designed to make the transition smoother and more comfortable for astronauts. This includes body-support systems that help reduce the impact of the increased gravitational force on the body, as well as gravity simulation technology that provides a gradual transition from microgravity to Earth's gravity. The lift is also equipped with advanced life-support systems to ensure the safety and well-being of the astronauts during the re-entry process.</p>
+            <p class="h-max">The lift used for re-entry is equipped with advanced technology designed to make the transition smoother and more comfortable for astronauts. This includes body-support systems that help reduce the impact of the increased gravitational force on the body, as well as gravity simulation technology that provides a gradual transition from microgravity to Earth's gravity. The lift is also equipped with advanced life-support systems to ensure the safety and well-being of the astronauts during the re-entry process.</p>
         </div>
         <div class="tabbody" id="tabbody3">
-            <p>Throughout the re-entry process, a team of experts will be on hand to monitor the condition of the astronauts and provide guidance and support. This team includes medical professionals, psychologists, and other specialists who are trained to deal with the unique challenges of re-entry. They will closely monitor the physical and emotional condition of the astronauts and provide guidance and support to ensure a smooth and successful transition back to Earth.</p>
+            <p class="h-max">Throughout the re-entry process, a team of experts will be on hand to monitor the condition of the astronauts and provide guidance and support. This team includes medical professionals, psychologists, and other specialists who are trained to deal with the unique challenges of re-entry. They will closely monitor the physical and emotional condition of the astronauts and provide guidance and support to ensure a smooth and successful transition back to Earth.</p>
         </div>
     </div>
-    <div class="my-36"></div>
+    <div class="my-36 "></div>
 
     
-      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] backdrop-blur-sm rounded-box mt-2">
-        <div class="collapse-title text-xl font-medium">
+      <div tabindex="0" class="collapse collapse-plus border border-white/[0.35] backdrop-blur-sm rounded-box mt-2 transition-all duration-700">
+        <div class="collapse-title text-xl font-medium transition-all duration-700">
           Try Meditation!
         </div>
-        <div class="collapse-content">
+        <div class="collapse-content transition-all duration-700">
           <p>Meditation is a powerful and effective way to relax, not only for people on Earth but for space people as well. It is a technique that has been practiced for thousands of years, and has proven benefits for both the mind and body.
 
             In space, where there are no distractions from the outside world, meditation can be an especially effective way to achieve a state of deep relaxation. By focusing on the present moment and letting go of thoughts and worries, astronauts and space travelers can experience a sense of peace and tranquility that can help them cope with the stress and isolation of space travel.
@@ -106,15 +106,17 @@
             </p>
         </div>
       </div>
+
+      
       <br>
-      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] b backdrop-blur-sm rounded-box">
+      <div tabindex="0" class="collapse collapse-plus border border-white/[0.35] b backdrop-blur-sm rounded-box">
         <div class="collapse-title text-xl font-medium">
           What do our Astronauts think?
         </div>
-        <div class="collapse-content">
+        <div class="collapse-content daisy-collapse-transition">
           <p>As an astronaut, re-entering space after being on Earth can be an awe-inspiring experience. The sheer vastness and beauty of the universe never cease to amaze me, even after countless missions.
 
-            As we climb higher and higher into the atmosphere, I can feel the gravity of the Earth releasing its GRIPPERS on me. It's an indescribable feeling, like being weightless and free, as if I am finally breaking free from the constraints of my earthly existence.
+            As we climb higher and higher into the atmosphere, I can feel the gravity of the Earth releasing its grip on me. It's an indescribable feeling, like being weightless and free, as if I am finally breaking free from the constraints of my earthly existence.
             
             As we breach the atmosphere and enter space, I am struck by the beauty of the cosmos. The darkness is dotted with millions of stars, each one shining bright and beautiful in its own right. It's a humbling experience, to realize just how small we are in the grand scheme of things.
             
@@ -131,118 +133,64 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-    <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701892044.jpg');">
-      <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
-        <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 2: Medical evaluation
-        </strong>
-        <br><br>
-        <p class=" text-2xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
-<br>
-      </h1>
-      <div tabindex="0" class="collapse collapse-arrow border border-white/[0.35] b backdrop-blur-sm rounded-box">
-        <div class="collapse-title text-xl font-medium">
-          
-          Our medical profesionals
-        </div>
-        <div class="collapse-content">
-          <div class="flex w-full">
-            <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">Doctor Expert in Human Recovery from Space: <br> <br> 
-              Name: Dr. John Smith <br>  Qualifications: PhD in Aerospace Medicine<br>Specialization: Human Recovery from Space<br>
-            <br> Dr. John Smith is a leading expert in the field of human recovery from space. He holds a PhD in Aerospace Medicine and has dedicated his career to understanding the effects of space travel on the human body and developing strategies to help astronauts recover after long-duration missions.<br>
-            Dr. Smith has conducted extensive research on the physiological changes that occur in the body during spaceflight, including bone loss, muscle atrophy, and cardiovascular changes. He has also studied the psychological effects of isolation and confinement that astronauts experience during space missions.
-
-          <br>Dr. Smith has developed several rehabilitation protocols for astronauts returning to Earth after long-duration space missions. These protocols include exercises to help restore bone density and muscle mass, as well as strategies to address the psychological challenges of readjusting to life on Earth.<br>
-          Dr. Smith is highly respected in his field and has published numerous research papers and articles on the subject of human recovery from space. He is frequently invited to speak at international conferences and has advised NASA and other space agencies on issues related to astronaut health and safety.
-        </div>
-            <div class="divider divider-horizontal">and</div>
-            <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">Doctor Specialized in Muscle Tissue: <br> <br> 
-              Name: Dr. Sarah Lee <br>  Qualifications: MD, PhD in Physiology<br>Specialization: Musculoskeletal Medicine<br>
-            <br> Dr. Sarah Lee is a highly specialized physician with a focus on musculoskeletal medicine. She holds both an MD and a PhD in Physiology and has dedicated her career to understanding the complexities of the human musculoskeletal system.<br>
-            Dr. Lee has conducted extensive research on the structure and function of muscle tissue, including the mechanisms of muscle contraction and the factors that contribute to muscle fatigue and injury. She has also studied the effects of aging, disease, and injury on muscle tissue and has developed innovative treatments to promote muscle recovery and repair.
-
-          <br>Dr. Lee is an expert in the diagnosis and management of musculoskeletal disorders, including muscle strains, sprains, and tears. She uses a combination of traditional medical treatments and cutting-edge therapies, such as regenerative medicine and exercise physiology, to help her patients achieve optimal muscle function and mobility.<br>
-          Dr. Lee is highly regarded in her field and has published numerous research papers and articles on the subject of musculoskeletal medicine. She is also a sought-after speaker and has presented her research at national and international conferences.
-        </div>
-          </div>
-        </div>
-      </div>
-
-      </div>
+  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701892044.jpg');">
+    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-md  max-h-max outline-1 outline outline-white/25 outline-double">
+      <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 2: Medical evaluation
+      </strong>
+      <br><br>
+      <p class=" text-2xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
+        <br>
+    </div>  
+    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+      <label for="my-modal-3" class="btn">Our Human recovery expert</label>
     </div>
-
+  </div>
+ 
+        
     <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
       <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
-      <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
-        <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 3: Rest and recovery</strong>
+        <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm max-h-max outline-1 outline outline-white/25 outline-double">
+          <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 3: Rest and recovery</strong>
+            <br><br>
+          </h1>
+          <p class="lg:text-2xl md:text-xl sm:text-xl font-light ">Rest and recovery are essential components of the recovery process. After your medical evaluation, you will be given time to rest and recuperate in the lift's comfortable and well-appointed facilities. Our team will provide you with the care and attention you need to make a full and speedy recovery, including nutritionally balanced meals and access to a range of amenities designed to help you relax and rejuvenate.</p>
+          <br>          
+          <label for="my-modal-6" class="btn">More about it</label>
           <br><br>
-        </h1>
-        <p class=" text-2xl font-light ">Rest and recovery are essential components of the recovery process. After your medical evaluation, you will be given time to rest and recuperate in the lift's comfortable and well-appointed facilities. Our team will provide you with the care and attention you need to make a full and speedy recovery, including nutritionally balanced meals and access to a range of amenities designed to help you relax and rejuvenate.</p>
-        <br>
-        <label for="my-modal-6" class="btn">More about it</label>
-        <br><br>
-        <div class="absolute h-fit bottom-5 p-4 mx-auto -translate-x-3">
-          <blockquote class="relative bottom-5 text-xl font-light italic "> 
-            On the wall of his rehabilitation room was a picture of the space shuttle blasting off, autographed by every astronaut now at NASA. On top of the picture it says, We found nothing is impossible. That should be our motto. 
-            <br>
-            <footer>
-              <cite>
+          <div class="absolute h-fit bottom-5 p-4 mx-auto -translate-x-3">
+            <blockquote class="relative bottom-5 text-xl font-light italic " id="quote"> 
+              On the wall of his rehabilitation room was a picture of the space shuttle blasting off, autographed by every astronaut now at NASA. On top of the picture it says, We found nothing is impossible. That should be our motto. 
+              <br><br><br><br><br><br>
+              <footer>
+                <cite>
                 Christopher Reeve
-              </cite>
-            </footer>
-          </blockquote>
+                </cite>
+              </footer>
+            </blockquote>
+          </div>
         </div>
       </div>
-   
-
-
-      </h1>
-      <!-- The button to open modal -->
-
-    <!-- Put this part before </body> tag -->
-    <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-    <div class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box">
-        <h3 class="font-bold text-lg">More from our experts</h3>
-        <p class="py-4">The recovery process for astronauts after returning from space is a critical aspect of spaceflight. According to experts, astronauts have to go through a period of rest and recovery to help their bodies readjust to Earth's gravity and overcome the physical and psychological effects of spaceflight. During spaceflight, astronauts are exposed to a range of physiological stresses, including muscle and bone loss, cardiovascular changes, and changes in the immune system. To recover from these effects, astronauts need to engage in a range of physical and mental activities designed to promote healing and adaptation.
-          
-          </p>
-        <div class="modal-action">
-          <label for="my-modal-6" class="btn">On to the next</label>
-        </div>
-        
-      </div>
-      
     </div>
-
-
-      </div>
-  </div>
+       
+  
 
     <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-    <div class="fade-in-image grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
-    
-      <div class="lg:col-start-1 py-10 px-8 col-start-3 col-end-10 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
-      <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 4: Rehabilitation
-      </strong>
-      <br><br>
-      <p class=" text-2xl font-light fade-in-text ">Once you are rested and ready, you will begin rehabilitation. This may include physical therapy, exercise, and other activities designed to help you regain your strength and mobility. Our team of rehabilitation experts will work closely with you to develop a personalized plan that meets your unique needs and goals. We'll provide you with the tools and resources you need to succeed, including specialized equipment and one-on-one coaching and support.</p>
-    </h1>
+    <div class=" grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
+      <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
+        <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 4: Rehabilitation </strong>
+        <br><br>
+        <p class=" text-2xl font-light ">Once you are rested and ready, you will begin rehabilitation. This may include physical therapy, exercise, and other activities designed to help you regain your strength and mobility. Our team of rehabilitation experts will work closely with you to develop a personalized plan that meets your unique needs and goals. We'll provide you with the tools and resources you need to succeed, including specialized equipment and one-on-one coaching and support.</p>
+        </h1>
+      </div>
     </div>
-        <progress class="progress progress-primary w-56" value="86" max="100"></progress>
-        <progress class="progress progress-primary w-56" value="94" max="100"></progress>
-        <progress class="progress progress-primary w-56" value="97" max="100"></progress>
-        <progress class="progress progress-primary w-56" value="92" max="100"></progress>
-        <progress class="progress progress-primary w-56" value="100" max="100"></progress>
-  </div>
-</div>
-
+  
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  </div>
+
   <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://images4.alphacoders.com/936/936378.jpg');">
-    <div class="lg:col-start-8 py-20 px-10 col-start-3 col-end-10 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-8 py-20 px-10 col-span-5 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
       <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 5: Support and guidance </strong></h1>
       <br><br>
         <p class="text-base-400 text-2xl font-light text-left"> Throughout the recovery process, our team will be there to provide you with the support and guidance you need to make a full and lasting recovery. We understand that recovery can be a challenging and sometimes emotional journey, and we're here to help you every step of the way. Our team of experts will be available to answer your questions, offer advice, and provide you with the care and attention you deserve.  
@@ -277,12 +225,12 @@
 
 </div>
 <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always" style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701895579.jpg');">
-  <div class="lg:col-start-8 py-20 px-10 col-start-3 col-end-10 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+  <div class="lg:col-start-8 py-20 px-10 col-span-5 lg:col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
     <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 6: Support and guidance </strong></p>
       <br><br>
       <p class="text-base-400 text-2xl font-light text-left"> As you near the end of the recovery process, our team will work with you to ensure a smooth and seamless reintegration into your everyday life. This may include providing you with tips and strategies for adjusting to life on Earth, as well as ongoing support and guidance to help you maintain your health and well-being. We're committed to helping you make a full and lasting recovery, and we'll be there to support you every step of the </p>
       <br><br>
-      <h1 class="text-3xl text-base-400 text-3xl"><strong>Reviews</strong></p>
+      <h1 class="text-3xl text-base-400"><strong>Reviews</strong></p>
       <br>
     
 
@@ -364,10 +312,39 @@
   </div>
 
   <footer-component></footer-component>
+
+
+  <!-- Put this part before </body> tag -->
+  <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative">
+      <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+      <h3 class="text-lg font-bold">Doctor Expert in Human Recovery from Space:</h3>
+      <p class="py-4"> Name: Dr. John Smith <br>  Qualifications: PhD in Aerospace Medicine<br>Specialization: Human Recovery from Space<br>
+       <br> Dr. John Smith is a leading expert in the field of human recovery from space. He holds a PhD in Aerospace Medicine and has dedicated his career to understanding the effects of space travel on the human body and developing strategies to help astronauts recover after long-duration missions.<br>
+       Dr. Smith has conducted extensive research on the physiological changes that occur in the body during spaceflight, including bone loss, muscle atrophy, and cardiovascular changes. He has also studied the psychological effects of isolation and confinement that astronauts experience during space missions.
+
+       <br>Dr. Smith has developed several rehabilitation protocols for astronauts returning to Earth after long-duration space missions. These protocols include exercises to help restore bone density and muscle mass, as well as strategies to address the psychological challenges of readjusting to life on Earth.<br>
+       Dr. Smith is highly respected in his field and has published numerous research papers and articles on the subject of human recovery from space. He is frequently invited to speak at international conferences and has advised NASA and other space agencies on issues related to astronaut health and safety.</p>
+    </div>
+  </div>
+
+  <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+  <div class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg">More from our experts</h3>
+      <p class="py-4">The recovery process for astronauts after returning from space is a critical aspect of spaceflight. According to experts, astronauts have to go through a period of rest and recovery to help their bodies readjust to Earth's gravity and overcome the physical and psychological effects of spaceflight. During spaceflight, astronauts are exposed to a range of physiological stresses, including muscle and bone loss, cardiovascular changes, and changes in the immune system. To recover from these effects, astronauts need to engage in a range of physical and mental activities designed to promote healing and adaptation.</p>
+      <div class="modal-action">
+        <label for="my-modal-6" class="btn">On to the next</label>
+      </div>
+    </div>   
+  </div>
+
   <script src="../../navbar.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>
   <script src="../../loader.js" type="module"></script>
   <script src="recovery.js" type="module"></script>
+  
 </body>
 
 </html>

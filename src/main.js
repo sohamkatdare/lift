@@ -29,16 +29,19 @@ let selectedPlanet;
 let stars = rsc.starForge(scene)
 scene.add(stars)
 
-
+let isSwitchingPlanet = false;
 
 function animate() {
-  requestAnimationFrame(animate);
+  if(!isSwitchingPlanet) {
+    requestAnimationFrame(animate);
+    // controls.update();
+    updatePlanets();
+    rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(3, 2, 3), 0.008, 20)
+    console.log(camera.position)
+    renderer.render(scene, camera);
+    stats.update()
+  }
 
-  // controls.update();
-  updatePlanets();
-  rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(3, 2, 3), 0.008, 20)
-  renderer.render(scene, camera);
-  stats.update()
 }
 
 let planets;
@@ -72,12 +75,30 @@ function switchPlanet(sectionNumber) {
     renderer.render(scene, camera);
     if (progress < 1) {
       requestAnimationFrame(updateCameraPosition);
-    }
+      isSwitchingPlanet = true
+      updatePlanets();
+      stats.update()
+    } 
+    else isSwitchingPlanet = false;
   }
   
-  requestAnimationFrame(updateCameraPosition);
+  // requestAnimationFrame(updateCameraPosition);
+  // updateCameraPosition();
 }
-window.onresize = rsc.resize();
+
+
+const orientation = window.orientation;
+function resize() {
+    if(!isTouchDevice()) {  // if not touch device
+        location.reload();
+    } else {
+        if (orientation !== window.orientation) {
+            location.reload();
+        }
+        orientation = window.orientation;
+    }
+}
+window.onresize = resize;
 function updatePlanets() {
   rsc.sun.rotation.y += 0.001;
   rsc.mercury.rotation.y += 0.01;

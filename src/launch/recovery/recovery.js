@@ -79,7 +79,6 @@ function updatePlanets() {
   moon.rotation.y += 0.01
   earth.rotation.y += 0.01
 }
-window.onresize = rsc.resize();
 animate();
 
 // * THREEJS COMPLETE

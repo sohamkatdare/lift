@@ -34,9 +34,9 @@
 <body class="no-scrollbar">
   <navbar-launch-component></navbar-launch-component>
 
-  <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="../../spinner.svg" alt="spinner">
-  </div>
+  </div> -->
 
   <div class="hero min-h-screen max-w-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
@@ -53,42 +53,49 @@
 
   <div class="grid max-w-full grid-cols-12 bg-gradient-to-b from-black to-base-100 py-10">
     <div class="lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
-      <h1 class="text-3xl text-base-400"><strong>Launch Vehicles</strong></h1>
+      <h1 class="text-3xl text-base-400"><strong>Rocket Body</strong></h1>
       <br>
-      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Engine
         </div>
-        <div class="collapse-content transition-all">
+        <div class="collapse-content bg-black/25  transition-all">
+          <br>
           <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the world. This machinery is one of the most complex designs that surpass the complexity of other great machines. Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting in a double-layered and robust final product.
+          <br>
         </div>
       </div>
-      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-none  transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-none  transition-all">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Thruster
         </div>
-        <div class="collapse-content transition-all">
+        <div class="collapse-content bg-black/25  transition-all">
+          <br>
           <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally, high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven track record of producing high-quality rocket thrusters in order to ensure the success of your space mission. Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess through over 20 flights, some of which reached 2 years long.
+          <br>
         </div>
       </div>
-      <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-plus bg-slate-700/25 rounded-box rounded-t-none transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-t-none transition-all">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Orbiter
         </div>
-        <div class="collapse-content transition-all">
+        <div class="collapse-content bg-black/25  transition-all">
+          <br>
           <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us to study planets and other celestial bodies from a stable and long-term perspective. A company that produces high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in designing, manufacturing and testing of their orbiters is investing in the future of space exploration and technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and have successfully entered the orbits of every planet in the solar system.
+          <br>
         </div>
       </div>
     </div>
     <div class="col-span-12 mt-20 align-items justify-center lg:col-start-8 lg:col-end-12 px-7">
-      <!-- <iframe class="rounded-lg drop-shadow-md w-[100%] h-[150%] lg:h-[200%]" title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe> -->
+      <!-- -->
+      <label for="lander-modal" class="bg-contain bg-center w-full h-full bg-no-repeat hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-[3] hover:drop-shadow-2xl transition-all duration-500 rounded-lg" style="background-image: url('/lander.png')"></label>
     </div>
 
-    <div class="col-start-3 col-end-11 mt-10">
-      <h1 class="text-3xl text-center text-base-400"><strong>Lander</strong></h1>
-      <div class="lg:grid grid-cols-3 py-7">
 
-        <!-- <iframe class="justify-center align-center w-[100%] lg:col-start-1 lg:w-[180%] h-[100%] rounded-lg drop-shadow-md" title="Orbital Lander" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/185a7a53383e49fdb3698a6bf434d526/embed?autospin=1"></iframe> -->
+    <div class="col-start-3 col-end-11 mt-10">
+      <h1 class="text-3xl text-right mr-36 text-base-400"><strong>Lander</strong></h1>
+      <div class="lg:grid grid-cols-3 py-7">
+        <label for="rocket-modal" class="bg-contain bg-center w-full h-full bg-no-repeat hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-150 hover:drop-shadow-2xl transition-all duration-500 rounded-lg" style="background-image: url('/rocket.png')"></label>
         <p class="mt-4 lg:mt-0 lg:col-start-3 text-base-400">
           Landers play a key role in space tourism as they provide the means for spacecraft to safely land on a celestial body, allowing tourists to disembark and experience the surface of another world. Landers are essential for space tourism as they enable the safe and controlled descent of the spacecraft, providing a stable platform for the tourists to disembark. Without landers, space tourism would be limited to orbiting the celestial body and would not allow for a landing or surface exploration.
           <br><br>
@@ -108,7 +115,22 @@
 
   </div>
 
-
+  <input type="checkbox" id="rocket-modal" class="modal-toggle" />
+  <label for="rocket-modal" class="modal cursor-pointer">
+    <label class="modal-box min-h-[50vh] min-w-[60vw] relative" for="">
+      <h3 class="text-lg font-bold">View the Rocket in 3D!</h3>
+      <iframe class="rounded-lg drop-shadow-md w-full h-[48vh]" title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe> 
+    </label>
+  </label>
+  
+  <input type="checkbox" id="lander-modal" class="modal-toggle" />
+  <label for="lander-modal" class="modal cursor-pointer h-[600px]">
+    <label class="modal-box h-[600px] relative" for="">
+      <h3 class="text-lg font-bold">View the lander in 3D!</h3>
+      
+      <iframe class="justify-center align-center w-full h-full rounded-lg drop-shadow-md" title="Orbital Lander" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/185a7a53383e49fdb3698a6bf434d526/embed?autospin=1"></iframe>
+    </label>
+  </label>
 
   <script src="../../navbar.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>

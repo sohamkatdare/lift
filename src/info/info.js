@@ -55,7 +55,32 @@ function animate() {
 function updatePlanets() {
   mars.rotation.y += 0.005;
   mars.rotation.z += 0.0004;
+  stars.rotation.y += 0.0001;
 }
+
+let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
+
+function handleScroll() {
+  const currentScrollPos = window.scrollY || document.documentElement.scrollTop;
+  const scrollDirection = currentScrollPos > prevScrollPos ? 'down' : 'up';
+  const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
+
+  const normalizedValue = scrollDistance / 1500;
+  
+  if (scrollDirection === 'down') {
+    stars.position.y -= normalizedValue*50;
+    mars.position.y += normalizedValue * 20;
+    mars.position.z -= normalizedValue * 20;
+  } else {
+    stars.position.y += normalizedValue*50;
+    mars.position.y -= normalizedValue * 20;
+    mars.position.z += normalizedValue * 20;
+  }
+  prevScrollPos = currentScrollPos;
+}
+
+document.addEventListener('scroll', handleScroll);
+
 
 
 

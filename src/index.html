@@ -20,9 +20,9 @@
 <body class="cursor-none no-scrollbar scroll-smooth body-black" id="main">
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
 
-  <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="spinner.svg" alt="spinner">
-  </div>
+  </div> -->
 
   <div class="hero min-h-screen bg-transparent select-none  relative" id="section0">
     <!-- <div class="hero-content text-center blur-md">
@@ -99,14 +99,7 @@
     </section>
   </div>
 
-  <aside class="toast toast-top toast-end hidden p-2" id="scroll-info">
-    <aside class="alert alert-info bg-white/25 backdrop-blur-sm p-1 ">
-      <div>
-        <button class="btn btn-sm btn-ghost text-white pr-0.5 pl-2" id="scroll-info-btn">X</button>
-        <span class="text-xs text-white/75 mr-3">Click on either side of the screen to go forward or backward</span>
-      </div>
-    </aside>
-  </aside>
+
 
   <div class="fixed top-0 left-0 block pointer-events-none z-50">
     <!-- circle -->
@@ -123,9 +116,8 @@
       </span>
     </div>
   </div>
-  <script type="module" src="./main.js"></script>
-  <script type="module" src="./cursor.js"></script>
-  <script type="module" src="./loader.js"></script>
+  <script type="module" src="./main.js" defer></script>
+  <script type="module" src="./cursor.js" defer></script>
 </body>
 
 
