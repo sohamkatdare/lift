@@ -19,15 +19,7 @@
 }
 
 
-.bloom {
-  text-shadow:
-    0 0 60px 30px #fff,
-}
 
-.bloom-cursor {
-  box-shadow: inset 0px 0px 10px 2px rgba(255, 255, 255, 0.5),
-    0px 0px 10px 2px rgb(255, 255, 255);
-}
 
 
 

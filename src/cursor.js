@@ -7,13 +7,13 @@ const hoverTags = new Set(['BUTTON', 'A', 'CODE', 'LI', 'P', 'H1', 'H2', 'UL', '
 let isLeft = false;
 let isButtonHover = false;
 
+const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
+const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
+const right = ' translate-y-[-5.25rem]'
+const invisible = ' opacity-0'
+const bloom = ' blur-md'
 
 const animateCursor = function () {
-    const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
-    const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
-    const right = ' translate-y-[-5.25rem]'
-    const invisible = ' opacity-0'
-    const bloom = ' blur-md'
 
     const sectionIsLast = section === 0 || isButtonHover;
     const sectionIsFirst = section === 5 || isButtonHover;
@@ -27,6 +27,7 @@ const animateCursor = function () {
     }
 }
 
+
 const moveCursor = (e) => {
     if (isTouchDevice()) {
         customCursor.style.display = "none";
@@ -34,6 +35,7 @@ const moveCursor = (e) => {
     }
     const mouseX = e.clientX;
     const mouseY = e.clientY;
+
     customCursor.animate({
         transform: `translate3d(${mouseX}px, ${mouseY}px, 100px)`
     }, {
@@ -45,7 +47,7 @@ const moveCursor = (e) => {
     animateCursor();
 }
 
-document.addEventListener('mousemove', moveCursor)
+document.addEventListener('mousemove', moveCursor, { passive: true });
 
 let section = 0;
 
@@ -85,8 +87,55 @@ document.addEventListener('click', function(event) {
     }
 });
 
+function cursorHover(e) {
+    const t = e.target;
+    if (hoverTags.has(t.tagName)) {
+        isButtonHover = true;
+    } else {
+        isButtonHover = false;
+    }
+}
 
 
+document.onmouseover = cursorHover;
+
+// Detect if section is seen manually.
+function elementInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
+}
+
+function changeSection(num) {
+    const id = 'section' + String(num);
+    if (elementInViewport(document.getElementById(id).firstElementChild)) {
+        section = num;
+    }
+}
+
+
+
+const detectScrollChanges = function () {
+    // onScrollBefore();
+    for (let i = 0; i < 6; i++) {
+        changeSection(i);
+    }
+    animateCursor();
+};
+
+document.body.onscroll = detectScrollChanges;
+
+// document.onreadystatechange = function (e) {
+//     detectScrollChanges();
+//     moveCursor(e);
+// };
+
+export { section };
 
 
 
@@ -117,54 +166,3 @@ document.addEventListener('click', function(event) {
 //       iteration += 1 / 3;
 //     }, 30);
 //   }
-function cursorHover(e) {
-    const t = e.target;
-    if (hoverTags.has(t.tagName)) {
-        isButtonHover = true;
-    } else {
-        isButtonHover = false;
-    }
-}
-
-
-document.onmouseover = cursorHover;
-
-// Detect if section is seen manually.
-function elementInViewport(element) {
-    var rect = element.getBoundingClientRect();
-
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
-    );
-}
-
-function changeSection(num) {
-    const id = 'section' + String(num);
-    if (elementInViewport(document.getElementById(id).firstElementChild)) {
-        section = num;
-    }
-}
-
-
-
-const detectScrollChanges = function () {
-    // onScrollBefore();
-    for (let i = 0; i < 6; i++) {
-        changeSection(i);
-    }
-    animateCursor();
-};
-
-document.body.onscroll = detectScrollChanges;
-
-document.onreadystatechange = function (e) {
-    detectScrollChanges();
-    moveCursor(e);
-};
-
-
-
-export { section };

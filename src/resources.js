@@ -356,7 +356,7 @@ export function starForge(scene) {
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
     var starMaterial = new THREE.PointsMaterial({
-        size: 1.0, 
+        size: 1.5, 
         opacity: 0.7,
     });
 
