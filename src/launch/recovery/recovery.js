@@ -111,5 +111,8 @@ links.forEach(link => {
   });
 });
 
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 
 
 

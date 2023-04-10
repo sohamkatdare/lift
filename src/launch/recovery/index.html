@@ -13,7 +13,78 @@
 </head>
 
 <body class="scroll-smooth no-scrollbar">
-  <navbar-launch-component></navbar-launch-component>
+  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
+    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl"></div>
+    <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span> 
+      <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white"><h1 class="text-3xl"><code>LIFT</code></h1></span>
+      </div>
+    </button>
+    <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+    <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+    <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+      <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+      </svg>
+    </div>
+    <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+      </a>
+
+    </div>
+  </div>
 
   <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="../../spinner.svg" alt="spinner">
@@ -126,10 +197,10 @@
       <br><br>
       <p class=" text-2xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
         <br>
-    </div>  
-    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  max-h-max outline-1 outline outline-white/25 outline-double">
+    <br>
+    
       <label for="my-modal-3" class="btn">Our Human recovery expert</label>
-    </div>
+    </div>  
   </div>
  
         
@@ -222,15 +293,15 @@
         <div class="carousel w-full">
           <div id="slide1" class="carousel-item relative w-full">
             <div class="">
-              <p  class="text-base-400 text-lg font-light my-auto text-left">"Their team was knowledgeable, attentive, and dedicated to helping me heal and regain my strength. From the moment I arrived, they provided me with personalized care and attention, ensuring that I received the right treatment and support for my specific needs. Their state-of-the-art facilities and cutting-edge equipment were crucial in my recovery, and their skilled therapists and medical staff were always available to answer my questions and address any concerns I had."
+              <p  class="text-base-400 text-lg font-light my-auto text-left">"Their team was knowledgeable, attentive, and dedicated to helping me heal and regain my strength. From the moment I arrived, they provided me with personalized care and attention, ensuring that I received the right treatment and support for my specific needs. Their state-of-the-art facilities and cutting-edge equipment were crucial in my recovery, and their skilled therapists and medical staff were always available to answer my questions and address any concerns I had."- Sarah Jay
               </p>
               <br>
               <div class="rating">
                 <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
                 <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star"  />
                 <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
                 <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" checked />
+                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
               </div>
             </div>
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -240,15 +311,15 @@
           </div> 
           <div id="slide2" class="carousel-item relative w-full">
             <div class="">
-              <p  class="text-base-400 text-lg font-light my-auto text-left">From the moment I walked in the door, I was met with kindness, expertise, and a genuine passion for helping people feel their best. The Lift team provided me with a comprehensive recovery plan that was tailored specifically to my needs, and I couldn't have been happier with the results. Thanks to their innovative techniques and cutting-edge equipment, I was able to bounce back from my space journey faster than I ever thought possible."
+              <p  class="text-base-400 text-lg font-light my-auto text-left">From the moment I walked in the door, I was met with kindness, expertise, and a genuine passion for helping people feel their best. The Lift team provided me with a comprehensive recovery plan that was tailored specifically to my needs, and I couldn't have been happier with the results. Thanks to their innovative techniques and cutting-edge equipment, I was able to bounce back from my space journey faster than I ever thought possible."- Samuel Matthews
               </p>
               <br>
               <div class="rating">
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" checked />
+                <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
+                <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" checked />
               </div>
             </div>
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -258,14 +329,14 @@
           </div> 
           <div id="slide3" class="carousel-item relative w-full">
             <div class="">
-              <p  class="text-base-400 text-lg font-light my-auto text-left">"Thanks to their dedicated care and attention, I was able to bounce back from my journey and return to my daily life feeling stronger and more rejuvenated than ever before. I cannot recommend the team at Lift highly enough - their commitment to excellence truly sets them apart."
+              <p  class="text-base-400 text-lg font-light my-auto text-left">"Thanks to their dedicated care and attention, I was able to bounce back from my journey and return to my daily life feeling stronger and more rejuvenated than ever before. I cannot recommend the team at Lift highly enough - their commitment to excellence truly sets them apart."- Martha Stewart
               </p>
               <div class="rating">
-                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
-                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true"  />
-                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
-                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" />
-                <input type="radio" name="rating-1" class="mask mask-star" disabled aria-disabled="true" checked/>
+                <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
+                <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true"  />
+                <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
+                <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" checked />
+                <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
               </div>
             </div>
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">

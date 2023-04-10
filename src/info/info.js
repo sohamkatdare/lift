@@ -73,9 +73,11 @@ function handleScroll() {
 document.addEventListener('scroll', handleScroll);
 
 
-rsc.button.onclick = () => rsc.toggle();
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 
 
-setTimeout(rsc.toggle, 200);
+// setTimeout(rsc.toggle, 200);
 
 
 

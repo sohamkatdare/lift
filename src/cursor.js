@@ -51,9 +51,33 @@ document.addEventListener('mousemove', moveCursor, { passive: true });
 
 let section = 0;
 
+let allowScrolling = false;
+
+function handleEvents(e) {
+  if (!allowScrolling) {
+    e.preventDefault();
+  }
+}
+window.addEventListener('wheel', handleEvents, { passive: false });
+window.addEventListener('mousedown', handleEvents, { passive: false });
+window.addEventListener('mouseup', handleEvents, { passive: false });
+
+window.addEventListener('load', () => {
+    allowScrolling = false;
+});
+  
+window.onload = function() {
+    window.scrollTo(0, 0);
+}
+
 function scrollSection() {
+    allowScrolling = true;
     const sectionString = `section${section}`;
+    console.log(sectionString);
     document.getElementById(sectionString).scrollIntoView();
+    setTimeout(() => {
+        allowScrolling = false;
+    }, 500);
 }
 
 function scrollBefore() {
@@ -77,7 +101,7 @@ document.addEventListener('click', function(event) {
     if (target.tagName === 'BUTTON' || target.tagName === 'A') {
         target.click();
     } else {
-        if(!rsc.isTouchDevice()) {
+        if(!isTouchDevice()) {
             if (isLeft) {
                 scrollBefore();
             } else {

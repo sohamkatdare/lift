@@ -70,3 +70,8 @@ accordionButtons.forEach(button => {
     button.setAttribute("aria-expanded", button.getAttribute("aria-expanded") === "true" ? "false" : "true");
   });
 });
+
+
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 

@@ -143,9 +143,6 @@ async function loadPlanetTexturesAsync() {
     return await Promise.all(texturePromises);
 }
 
-
-
-
 let sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, saturnRings, uranus, uranusGroup, uranusRings, neptune;
 let solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup;
 export async function setup() {

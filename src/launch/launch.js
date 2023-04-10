@@ -64,3 +64,7 @@ function updatePlanets() {
 }
 
 animate();
+
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 

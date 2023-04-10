@@ -7,15 +7,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet">
   <link href="../style.css" rel="stylesheet">
+  <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Travel Plans</title>
 </head>
 
+<style>
+  
+</style>
+
 <body class="no-scrollbar">
-  <navbar-component></navbar-component>
+  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
+    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl"></div>
+    <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span> 
+      <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white"><h1 class="text-3xl"><code>LIFT</code></h1></span>
+      </div>
+    </button>
+    <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+    <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+    <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+      <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+      </svg>
+    </div>
+    <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+      </a>
+
+    </div>
+  </div>
 
   <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
     <img src="/spinner.svg" alt="spinner">
   </div> -->
+
+
+
 
   <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
@@ -36,7 +115,7 @@
     </div>
 
     <div class="col-span-9 col-start-2 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
-      <div class="inline-block card lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all">
+      <div class="inline-block  lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all card">
         <figure>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="hidden md:flex object-cover" />
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="md:hidden object-cover" />
@@ -152,7 +231,7 @@
         Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
       </p>
     </div>
-
+  
     <div class="col-span-12 text-center">
       <div class="text-4xl divider mb-5" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
       <br>
@@ -196,7 +275,7 @@
     
   </div>
   <form class="p-24 pt-12 rounded-lg bg-base-300 mt-12">
-    <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Apply for a trip!</h1>
+    <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Apply for a trip for your company!</h1>
     <div class="relative z-0 w-full mb-6 group">
         <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>

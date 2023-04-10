@@ -106,7 +106,7 @@ blockquote cite:before {
 
 
 /* span {  font-family: Nova;  } */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, a, span {
   font-family: D-DIN;
 }
 
@@ -120,13 +120,6 @@ p, .inter {
 
 }
 
-
-
-
-
-.body-black {
-  background-color: black;
-}
 
 /* this is for the space nav */
 
@@ -150,12 +143,10 @@ p, .inter {
   }
 }
 
-body {
-  transition: background-color 600ms;
-}
+
 
 body.menu-toggled {
-  background-color: var(--background-dark);
+  overflow: hidden;
 }
 
 body.menu-toggled > #menu {
@@ -247,48 +238,14 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
   transition-delay: 500ms;
 }
 
-#menu {
-  height: 100vh;
-  left: 0px;
-  overflow: hidden;
-  pointer-events: none; 
-  position: fixed;
-  top: 0px;
-  width: 100vw;
-  z-index: 100;
-}
 
-#menu > #menu-toggle {
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  height: 50px;
-  justify-content: center;
-  left: 30px;
-  padding: 0px;
-  pointer-events: all;
-  position: absolute;
-  top: 30px;
-  width: 50px;
-  z-index: 5;
-}
+
 
 #menu > #menu-toggle:hover > span:nth-of-type(2),
 #menu > #menu-toggle:hover > span:nth-of-type(3){
   transform: translate3d(0px, 0px, 0px);
 }
 
-#menu > #menu-toggle > span {
-  background-color: white;
-  display: block;
-  height: 3px;
-  transition: transform 250ms;
-  width: 24px;
-}
 
 #menu > #menu-toggle > span:nth-of-type(2) {
   transform: translate3d(6px, 0px, 0px);
@@ -319,19 +276,11 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
 }
 
 #menu > #menu-toggle > #menu-toggle-label {
-  align-items: center;
-  display: flex;
-  height: 50px;
-  gap: 5px;
-  position: absolute;
-  right: -20px;
-  top: 0px;
   transform: translate3d(100%, 0px, 0px);
-  white-space: nowrap;
 }
 
 #menu > #menu-toggle > #menu-toggle-label > .word {
-  font-family: 'Audiowide', cursive;
+  font-family: D-DIN, cursive;
   font-size: 1.5em;
   transition: opacity 250ms, transform 250ms;
 }
@@ -344,84 +293,34 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
     var(--gradient-color-3) 60%,
     var(--gradient-color-4) 90%
   );
-  height: 300vmax;
-  left: 0px;  
-  opacity: 0;
-  position: absolute;
+
   transform: translate3d(-50%, -50%, 0px) scale(4);
   transition: height 600ms cubic-bezier(.75, .1, .89, .36),
     width 600ms cubic-bezier(.75, .1, .89, .36),
     transform 600ms cubic-bezier(.75, .1, .89, .36),
     opacity 700ms cubic-bezier(.9, .02, .97, .28);
-  top: 0px;
-  width: 300vmax;
-  z-index: 1;
+
 }
 
 #menu > #menu-gradient-blur {
-  backdrop-filter: blur(1vmax);
-  inset: 0px;
-  opacity: 0;
-  position: absolute;
   transition: opacity 600ms cubic-bezier(.87, .12, .92, .39);
-  z-index: 2;
 }
 
 #menu > #menu-arcs-wrapper {
-  height: clamp(600px, 200vmax, 6000px);
-  left: 0px;
-  opacity: 0;
-  position: absolute;
-  top: 0px;
   transform: scale(1.15) translate3d(20%, 20%, 0px);
   transition: transform 600ms cubic-bezier(.87, .12, .92, .39), 
     opacity 600ms cubic-bezier(.87, .12, .92, .39);  
-  width: clamp(600px, 200vmax, 6000px);
-  z-index: 3;
 }
 
 #menu > #menu-arcs-wrapper > #menu-arcs {
   animation: arc-rotation 100s linear infinite;
-  height: 100%;
-  left: 0px;  
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  will-change: transform;
 }
 
 #menu > #menu-arcs-wrapper > #menu-arcs > .menu-arc {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.5);
   stroke-dasharray: 2,10;
-  stroke-width: 1;
 }
 
-#menu > #menu-links {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  inset: 0px;
-  justify-content: center;
-  position: absolute;
-  z-index: 4;
-}
-
-#menu > #menu-links > .link {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  font-family: "D-Din";
-  gap: 10px;
-  opacity: 0;
-  position: relative;
-  text-decoration: none;
-  transition: opacity 250ms ease-in;
-  width: 200px;
-}
-
-#menu > #menu-links > .link:hover > .label {
+link:hover > .label {
   transform: translate3d(6%, 0px, 0px);
 }
 
@@ -439,16 +338,7 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
   transform: translate3d(-50%, -50%, 0px) scale(1.1);
 }
 
-#menu > #menu-links > .link > .anchor {
-  background-color: white;
-  height: clamp(4px, 0.4vmax, 12px);
-  left: 0px;
-  position: absolute;
-  top: 50%;
-  transform: translate3d(-500%, -100%, 0px) rotate(45deg);
-  transition: transform 250ms;
-  width: clamp(4px, 0.4vmax, 12px);
-}
+
 
 #menu > #menu-links > .link > .anchor:before,
 #menu > #menu-links > .link > .anchor:after {
@@ -471,34 +361,7 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-#menu > #menu-links > .link > .index {
-  color: rgb(255, 255, 255, 0.25);
-  font-size: 0.8em;
-  transition: transform 250ms;
-}
 
-#menu > #menu-links > .link > .label {
-  color: white;
-  font-size: 2em;
-  transition: transform 250ms;
-}
-
-#content {
-  align-items: center;
-  display: flex;
-  gap: 2em;
-  height: 100vh;
-  justify-content: center;
-}
-
-#content > i {
-  color: rgb(30, 30, 30);
-  font-size: clamp(4em, 8vmax, 8em);
-}
-
-#content > .fa-plus {
-  font-size: clamp(2em, 4vmax, 4em);
-}
 
 @media (min-width: 1000px) and (max-width: 2699px) {  
   body.menu-toggled > #menu > #menu-links > .link {
@@ -530,122 +393,85 @@ body.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
 
 @media (min-width: 1000px) and (max-width: 2099px) {
   #menu > #menu-links > .link:nth-of-type(2) {
-    left: 59.2vmax;
+    left: 46.4vmax;
     top: 16vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(3) {
-    left: 44.5vmax;
-    top: 42vmax;
+    left: 28vmax;
+    top: 40vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(4) {
-    left: 42.2vmax;
-    top: 25vmax;
+    left: 55.5vmax;
+    top: 41.2vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(5) {
-    left: 94vmax;
-    top: 30vmax;
+    left: 68.5vmax;
+    top: 10vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(6) {
-    left: 75.8vmax;
-    top: 39vmax;
+    left: 64.4vmax;
+    top: 25.2vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(7) {
-    left: 75.8vmax;
-    top: 39vmax;
+    left: 85vmax;
+    top: 6.1vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(8) {
-    left: 75.8vmax;
-    top: 39vmax;
+    left: 82.3vmax;
+    top: 22vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(9) {
-    left: 75.8vmax;
-    top: 39vmax;
+    left: 75vmax;
+    top: 40.2vmax;
   }
 }
 
 @media (min-width: 2100px) and (max-width: 2699px) {
   #menu > #menu-links > .link:nth-of-type(2) {
-    left: 59.6vmax;
-    top: 14vmax;
+    left: 28vmax;
+    top: 40vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(3) {
-    left: 51vmax;
-    top: 34vmax;
+    left: 68.9vmax;
+    top: 6vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(4) {
-    left: 80.5vmax;
+    left: 63.2vmax;
     top: 28vmax;
   }
+  #menu > #menu-links > .link:nth-of-type(5) {
+    left: 61.6vmax;
+    top: 31.4vmax;
+  }
+
+  #menu > #menu-links > .link:nth-of-type(6) {
+    left: 60vmax;
+    top: 34.5vmax;
+  }
+
+  #menu > #menu-links > .link:nth-of-type(7) {
+    left: 58vmax;
+    top: 37.5vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(8) {
+    left: 83.2vmax;
+    top: 18.6vmax;
+  }
+
+  #menu > #menu-links > .link:nth-of-type(9) {
+    left: 91vmax;
+    top: 44vmax;
+  }
+
+
 }
 
-/* -- YouTube Link Styles -- */
-
-body.menu-toggled > .meta-link {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.menu-toggled > .meta-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.menu-toggled > .meta-link > span {
-  color: white;
-}
-
-#source-link {
-  bottom: 10px;
-}
-
-#source-link > i {
-  color: rgb(94, 106, 210);
-}
-
-#yt-link > i {
-  color: rgb(239, 83, 80);
-}
-
-.meta-link {
-  align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  bottom: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;  
-  display: inline-flex;
-  gap: 5px;
-  left: 10px;
-  padding: 10px 20px;
-  position: fixed;
-  text-decoration: none;
-  transition: background-color 600ms, border-color 600ms;
-  z-index: 10000;
-}
-
-.meta-link:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.meta-link > i, .meta-link > span {
-  height: 20px;
-  line-height: 20px;
-}
-
-.meta-link > span {
-  color: rgb(30, 30, 30);
-  font-family: "Rubik", sans-serif;
-  transition: color 600ms;
-}

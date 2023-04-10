@@ -5,6 +5,7 @@ import * as THREE from 'three';
 
 
 
+
 let orientation = window.orientation;
 function resize() {
     if(!rsc.isTouchDevice()) {  // if not touch device
@@ -45,3 +46,9 @@ function updatePlanets() {
   stars.rotation.y += 0.0001;
 }
 animate();
+
+
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 
+
