@@ -8,8 +8,8 @@ let isLeft = false;
 let isButtonHover = false;
 
 const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
-const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
-const right = ' translate-y-[-5.25rem]'
+const left = ' translate-y-[-3.75rem] -translate-x-[4.5rem] rotate-180' // used to be 5.5 rem, but doesnt work on laptop
+const right = ' translate-y-[-5.25rem] translate-x-[.5rem]'
 const invisible = ' opacity-0'
 const bloom = ' blur-md'
 
@@ -158,6 +158,27 @@ document.body.onscroll = detectScrollChanges;
 //     detectScrollChanges();
 //     moveCursor(e);
 // };
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        e.preventDefault();
+    }
+    else if (e.keyCode == '40') {
+        e.preventDefault();
+    }
+    else if (e.keyCode == '37') {
+       scrollBefore();
+    }
+    else if (e.keyCode == '39') {
+       scrollNext();
+    }
+
+}
 
 export { section };
 
