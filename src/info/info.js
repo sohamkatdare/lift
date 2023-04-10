@@ -16,7 +16,7 @@ function addPlanet(mapTexture, size, detail) {
 
 let orientation = window.orientation;
 function resize() {
-    if(!isTouchDevice()) {  // if not touch device
+    if(!rsc.isTouchDevice()) {  // if not touch device
         location.reload();
     } else {
         if (orientation !== window.orientation) {
@@ -72,6 +72,10 @@ function handleScroll() {
 
 document.addEventListener('scroll', handleScroll);
 
+
+rsc.button.onclick = () => rsc.toggle();
+
+setTimeout(rsc.toggle, 200);
 
 
 

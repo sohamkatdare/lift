@@ -77,7 +77,7 @@ document.addEventListener('click', function(event) {
     if (target.tagName === 'BUTTON' || target.tagName === 'A') {
         target.click();
     } else {
-        if(!isTouchDevice()) {
+        if(!rsc.isTouchDevice()) {
             if (isLeft) {
                 scrollBefore();
             } else {

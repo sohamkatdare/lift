@@ -35,7 +35,7 @@ function addToScene(planet, x, y, z) {
 
 let orientation = window.orientation;
 function resize() {
-    if(!isTouchDevice()) {  // if not touch device
+    if(!rsc.isTouchDevice()) {  // if not touch device
         location.reload();
     } else {
         if (orientation !== window.orientation) {

@@ -5,7 +5,7 @@ import * as rsc from '../../resources';
 
 let orientation = window.orientation;
 function resize() {
-    if(!isTouchDevice()) {  // if not touch device
+    if(!rsc.isTouchDevice()) {  // if not touch device
         location.reload();
     } else {
         if (orientation !== window.orientation) {
