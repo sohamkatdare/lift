@@ -15,9 +15,9 @@ export function sceneSetup(backgroundPath) {
     // renderer.setClearColor(0xffffff, 0) // makes the background match
     return scene;
 }
-export function cameraSetup(scene, fov, aspect, near, far ) {
+export function cameraSetup(scene, fov, aspect, near, far) {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
-    scene.add(ambientLight);  
+    scene.add(ambientLight);
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
     camera.position.setZ(0);
     return camera;
@@ -28,10 +28,10 @@ export function isTouchDevice() {
 // renderer setup
 export function rendererSetup(scene, camera) {
     const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
-    
+
     if (isTouchDevice()) {
-        if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width); 
-        else renderer.setSize(screen.width, screen.height); 
+        if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width);
+        else renderer.setSize(screen.width, screen.height);
     } else renderer.setSize(window.innerWidth, window.innerHeight);
 
     // Add post-processing settings
@@ -63,15 +63,15 @@ export function starForge() {
 
     var starQty = 45000;
     var vertices = [];
-    for (var i = 0; i < starQty; i++) {		
-        const spread = i/2 + 500;
-        vertices.push(THREE.MathUtils.randFloatSpread( spread ), THREE.MathUtils.randFloatSpread( spread ), THREE.MathUtils.randFloatSpread( spread ));
+    for (var i = 0; i < starQty; i++) {
+        const spread = i / 2 + 500;
+        vertices.push(THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread));
     }
     var starGeometry = new THREE.SphereGeometry(200, 100, 50);
     starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
     var starMaterial = new THREE.PointsMaterial({
-        size: 1.5, 
+        size: 1.5,
         opacity: 0.7,
     });
 
@@ -79,12 +79,28 @@ export function starForge() {
     return stars
 }
 
+function createOrbitLine(distance) {
+    // Create the dashed orbit line
+    var orbitPoints = [];
+    for (var i = 0; i <= 360; i += 5) {
+        var angle = i * Math.PI / 180;
+        var x = distance * Math.cos(angle);
+        var z = distance * Math.sin(angle);
+        orbitPoints.push(new THREE.Vector3(x, 0, z));
+    }
+    var orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+    var orbitMaterial = new THREE.LineDashedMaterial({ color: 0xffffff80, dashSize: 1, gapSize: 0.5 });
+    var orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+    orbitLine.computeLineDistances();
+    return orbitLine;
+}
+
 export function heroSetup() {
     const scene = sceneSetup('/2k_stars_milky_way.jpg');
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = rendererSetup(scene, camera);
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-    scene.add(ambientLight);  
+    scene.add(ambientLight);
     const stars = starForge();
     scene.add(stars);
     return [scene, camera, renderer, stars];
@@ -125,7 +141,7 @@ async function loadPlanetTexturesAsync() {
         '/minified/2k_mars-min.jpg',
         '/minified/2k_jupiter-min.jpg',
         '/minified/2k_saturn-min.jpg',
-        '/minified/2k_saturn_rings-min.png',
+        '/2k_saturn_rings.png',
         'https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png',
         '/minified/uranus_ring_texture-min.jpeg',
         '/minified/2k_neptune-min.jpg',
@@ -145,6 +161,7 @@ async function loadPlanetTexturesAsync() {
 
 let sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, saturnRings, uranus, uranusGroup, uranusRings, neptune;
 let solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup;
+let mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine;
 export async function setup() {
     const [
         sunTexture,
@@ -216,7 +233,7 @@ export async function setup() {
     solarSystem.add(jupiterRotationGroup);
 
     saturn = addPlanet(saturnTexture, 27, 32);
-    const saturnRing = new THREE.RingGeometry(6, 11);
+    const saturnRing = new THREE.RingGeometry(30, 54);
     const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingsTexture, side: THREE.DoubleSide })
     saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
     saturnRings.rotation.set(67.5, 0, 0);
@@ -229,7 +246,7 @@ export async function setup() {
     solarSystem.add(saturnRotationGroup);
 
     uranus = addPlanet(uranusTexture, 12, 32);
-    const uranusRing = new THREE.RingGeometry(5, 6);
+    const uranusRing = new THREE.RingGeometry(12.5, 15);
     const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingsTexture, side: THREE.DoubleSide })
     uranusRingMaterial.opacity = 0.5;
     uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
@@ -248,12 +265,30 @@ export async function setup() {
 
     solarSystem.add(sun);
 
-    const light = new THREE.PointLight( 0xffffff, 1.1, 1000, 0.1);
-    light.position.set(0, 0, 0 );
-    solarSystem.add( light );
+    const light = new THREE.PointLight(0xffffff, 1.1, 1000, 0.1);
+    light.position.set(0, 0, 0);
+    solarSystem.add(light);
+
+    // Create the dashed orbit line
+    mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun);
+    mercuryRotationGroup.add(mercuryOrbitLine);
+    venusOrbitLine = createOrbitLine(venusDistanceFromSun);
+    venusRotationGroup.add(venusOrbitLine);
+    earthOrbitLine = createOrbitLine(earthDistanceFromSun);
+    solarSystem.add(earthOrbitLine);
+    marsOrbitLine = createOrbitLine(marsDistanceFromSun);
+    marsRotationGroup.add(marsOrbitLine);
+    jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun);
+    jupiterRotationGroup.add(jupiterOrbitLine);
+    saturnOrbitLine = createOrbitLine(saturnDistanceFromSun);
+    saturnRotationGroup.add(saturnOrbitLine);
+    uranusOrbitLine = createOrbitLine(uranusDistanceFromSun);
+    uranusRotationGroup.add(uranusOrbitLine);
+    neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun);
+    neptuneRotationGroup.add(neptuneOrbitLine);
 }
 
-export {sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, uranus, uranusGroup, neptune,solarSystem,mercuryRotationGroup,venusRotationGroup,earthRotationGroup,marsRotationGroup,jupiterRotationGroup,saturnRotationGroup,uranusRotationGroup,neptuneRotationGroup,saturnRings, uranusRings, } 
+export { sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, uranus, uranusGroup, neptune, solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup, saturnRings, uranusRings, mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine }
 
 
 export async function addSolarSystem(scene) {
@@ -273,7 +308,7 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor, fov)
     const vertices = [];
 
     for (let i = 0; i < positions.length; i += 3) {
-        const vertex = new THREE.Vector3(positions[i], positions[i+1], positions[i+2]);
+        const vertex = new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2]);
         vertices.push(vertex);
     }
 

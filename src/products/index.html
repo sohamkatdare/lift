@@ -12,23 +12,29 @@
 </head>
 
 <style>
-  
+
 </style>
 
 <body class="no-scrollbar">
   <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
-    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl"></div>
-    <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl text-white underline decoration-blue-400 shadow-2xl"></div>
+    <button
+      class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"
+      type="button" id="menu-toggle" style="pointer-events: all;">
       <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
       <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
-      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span> 
-      <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
-        <span class="word text-white"><h1 class="text-3xl"><code>LIFT</code></h1></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <div id="menu-toggle-label"
+        class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white">
+          <h1 class="text-3xl"><code>LIFT</code></h1>
+        </span>
       </div>
     </button>
     <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
     <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
-    <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+    <div id="menu-arcs-wrapper"
+      class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
       <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
         <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
         <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
@@ -38,52 +44,70 @@
       </svg>
     </div>
     <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
-      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
-        <span class="index text-[0.8em] transition-transform duration-200">01</span> 
-        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>
       </a>
-      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="index text-[0.8em] transition-transform duration-200">02</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/info/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>
       </a>
-      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="index text-[0.8em] transition-transform duration-200">03</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>
       </a>
-      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
-        <span class="index text-[0.8em] transition-transform duration-200">04</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/vehicles/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>
       </a>
-      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="index text-[0.8em] transition-transform duration-200">05</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/training/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>
       </a>
-      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="index text-[0.8em] transition-transform duration-200">06</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/safety/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>
       </a>
-      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="index text-[0.8em] transition-transform duration-200">07</span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/recovery/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>
       </a>
-      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
-        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
-        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/products/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span>
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04 </span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>
       </a>
-      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
-        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
-        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
-        <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/references/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span>
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>
       </a>
 
     </div>
@@ -97,8 +121,8 @@
 
 
   <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
-      
-    <div class="hero-overlay bg-opacity-60">
+
+    <div class="hero-overlay fixed bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-center text-white">
@@ -108,42 +132,51 @@
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-11 gap-x-8 bg-gradient-to-b from-black to-base-100">
+  <div class="grid grid-cols-11 gap-x-8 ">
     <div class="col-span-12 text-center">
-      <div class="mt-20 text-xl divider"><strong class="text-4xl text-orange-100">Check out our various trip plans!</strong></div>
+      <div class="mt-20 text-xl text-white hover:bg-black/[0.05] divider"><strong class="text-4xl text-orange-100">Check out our various trip
+          plans!</strong></div>
       <br>
     </div>
 
     <div class="col-span-9 col-start-2 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
-      <div class="inline-block  lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all card">
+      <div
+        class="inline-block  lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all card">
         <figure>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="hidden md:flex object-cover" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes" class="md:hidden object-cover" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes"
+            class="hidden md:flex object-cover" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes"
+            class="md:hidden object-cover" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Gas Giant Exploration
             <div class="badge badge-accent">$1.5M</div>
           </h2>
           <p>Observe the mysterious beauty of the biggest planets of the solar system!</p>
-            <p class="hidden lg:font-bold lg:block">What's included:</p>
-            <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
-              <li>Jupiter surface-level flyby</li>
-              <li>Io, and Europa surface tours</li>
-              <li>Saturn surface-level flyby</li>
-              <li>Titan surface exploration</li>
-            </ul>
-            <br>
-            <br>
-            <br>
+          <p class="hidden lg:font-bold lg:block">What's included:</p>
+          <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
+            <li>Jupiter surface-level flyby</li>
+            <li>Io, and Europa surface tours</li>
+            <li>Saturn surface-level flyby</li>
+            <li>Titan surface exploration</li>
+          </ul>
+          <br>
+          <br>
+          <br>
           <div class="card-actions justify-center align-end">
             <a href="#Gas"><button class="btn btn-primary align-end">Read More</button></a>
           </div>
         </div>
       </div>
-      <div class="card lg:w-96 w-full hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all lg:px-0 bg-base-300 lg:border-4 lg:border-primary shadow-xl">
+      <div
+        class="card lg:w-96 w-full hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all lg:px-0 bg-base-300 lg:border-4 lg:border-primary shadow-xl">
         <figure>
-          <img src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600" alt="Mars spacewalk" class="hidden md:flex object-cover w-full" />
-          <img src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600" alt="Mars spacewalk" class="md:hidden object-cover w-full " />
+          <img
+            src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600"
+            alt="Mars spacewalk" class="hidden md:flex object-cover w-full" />
+          <img
+            src="https://astronomy.com/-/media/Images/News%20and%20Observing/News/2022/11/Marsmicrobeexploration.jpg?mw=600"
+            alt="Mars spacewalk" class="md:hidden object-cover w-full " />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Terrestrial Planet Exploration
@@ -165,8 +198,10 @@
       </div>
       <div class="card w-full lg:px-0 lg:w-96 bg-base-100 lg:border-4 lg:border-info-content shadow-xl">
         <figure>
-          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="hidden md:flex object-cover" />
-          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg" alt="Shoes" class="md:hidden object-cover" />
+          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg"
+            alt="Shoes" class="hidden md:flex object-cover" />
+          <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg"
+            alt="Shoes" class="md:hidden object-cover" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Ice Giant and Trans-Neptune Expedition
@@ -188,71 +223,99 @@
     </div>
     <br>
     <div class="col-span-12 text-center pt-9">
-      <div class="text-4xl divider"><strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet Exploration</strong></div>
+      <div class="text-4xl divider"><strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet
+          Exploration</strong></div>
       <br>
     </div>
     <div class="col-start-2 lg:col-end-7 col-end-12">
-      <div class="divider text-2xl font-semibold">Day 1</div>
-      <p class="text-xl">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
-        <div class="divider text-2xl font-semibold">Day 10</div>
-        <p class="text-xl">
-          Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
-        </p>
-        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pr-9 pb-9">
-        <div class="divider text-2xl font-semibold">Day 24</div>
-        <p class="text-xl">
-          Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
-        </p>
-        <div class="divider text-2xl font-semibold">Day 44</div>
-        <p class="text-xl">
-          Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s tallest volcano.
-        </p>
-        <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pt-9 pb-9 pr-9">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 1</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will
+        take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 10</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a
+        protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
       </p>
-        <br><br>
+      <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pr-9 pb-9">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 24</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
+      </p>
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 44</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up
+        to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of
+        past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and
+        study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s
+        tallest volcano.
+      </p>
+      <img
+        src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pt-9 pb-9 pr-9">
+      </p>
+      <br><br>
     </div>
     <div class="col-start-7 mb-5 col-end-11">
-      <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
-      <div class="divider text-2xl font-semibold">Day 12</div>
-      <p class="text-xl">
-        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2 months.
+      <img
+        src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 12</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2
+        months.
       </p>
-      <div class="divider text-2xl font-semibold">Day 22</div>
-      <p class="text-xl">
-        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on the surface.
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 22</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a
+        protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not
+        inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on
+        the surface.
       </p>
-      <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pl-6">
-      <div class="divider text-2xl font-semibold">Day 46</div>
-      <p class="text-xl">
+      <img
+        src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pl-6">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 46</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
         Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
       </p>
-      <div class="divider text-2xl font-semibold">Day 60</div>
-      <p class="text-xl">
-        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 60</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the
+        planets. Share your findings with the world and plan your next space adventure!
       </p>
     </div>
-  
+
     <div class="col-span-12 text-center">
       <div class="text-4xl divider mb-5" id="Gas"><strong class="text-orange-100">Gas Giant Exploration</strong></div>
       <br>
     </div>
 
-    <div class="col-start-2 lg:col-end-7 col-end-12"><div class="divider text-2xl font-semibold">Day 1</div>
-    <p class="text-xl">
-      Our journey begins at Jupiter, the largest planet in our solar system. Using advanced propulsion systems, we will enter orbit around the planet and have the opportunity to study its famous Great Red Spot and observe the colorful bands of clouds that circle the planet.
-    </p>
-    <div class="divider text-2xl font-semibold">Day 13</div>
-    <p class="text-xl">
-      Next, we will visit Io, the most volcanically active object in the solar system. Using specialized spacecraft, we will safely fly through the intense radiation belts and approach the moon's surface to witness volcanic eruptions and explore volcanic caldera.
-    </p>
-      <img src="https://europa.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2tFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f35ab2d7715a967b6a15b24051e203a7a69da6f/europa_artist_concept_1600px.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pr-9">
-      <div class="divider text-2xl font-semibold">Day 44</div>
-      <p class="text-xl">
-        Our final destination is Titan, Saturn's largest moon, which has a thick atmosphere and a unique methane cycle. We will use landers to explore the surface and study the moon's geology, atmosphere, and potential for life.
+    <div class="col-start-2 lg:col-end-7 col-end-12">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 1</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Our journey begins at Jupiter, the largest planet in our solar system. Using advanced propulsion systems, we
+        will enter orbit around the planet and have the opportunity to study its famous Great Red Spot and observe the
+        colorful bands of clouds that circle the planet.
       </p>
-      <div class="divider text-2xl font-semibold">Day 50</div>
-      <p class="text-xl">
-        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the planets. Share your findings with the world and plan your next space adventure!
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 13</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Next, we will visit Io, the most volcanically active object in the solar system. Using specialized spacecraft,
+        we will safely fly through the intense radiation belts and approach the moon's surface to witness volcanic
+        eruptions and explore volcanic caldera.
+      </p>
+      <img
+        src="https://europa.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2tFIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f35ab2d7715a967b6a15b24051e203a7a69da6f/europa_artist_concept_1600px.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pr-9">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 44</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Our final destination is Titan, Saturn's largest moon, which has a thick atmosphere and a unique methane cycle.
+        We will use landers to explore the surface and study the moon's geology, atmosphere, and potential for life.
+      </p>
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 50</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the
+        planets. Share your findings with the world and plan your next space adventure!
       </p>
     </div>
     <!-- <div class="col-start-1 ml-5 col-end-6 grid grid-cols-3 place-content-center bg-base-100 mb-10 rounded-lg p-5">
@@ -260,48 +323,75 @@
     </div> -->
 
     <div class="col-start-7 mb-5 col-end-11">
-      <img src="https://i.ytimg.com/vi/dwDvVLN2OVI/maxresdefault.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
-        <div class="divider text-2xl font-semibold">Day 21</div>
-        <p class="text-xl">
-          Afterwards we will travel to Europa, one of Jupiter's icy moons, scientists believe that beneath its icy crust there is a subsurface ocean, we will fly over its icy surface, using special equipments to scan the moon for signs of potential subsurface water and the potential for life.
-        </p>
-        <div class="divider text-2xl font-semibold">Day 31</div>
-        <p class="text-xl">
-          Afterwards we will travel to Saturn, the second largest planet in our solar system and famous for its rings. We will fly through the rings and get a close-up view of the planet's diverse moons, including Titan, which we will explore next.
-        </p>
-        <img src="https://cdn.sci.news/images/enlarge5/image_6492_1e-Cassini-Grand-Finale-Science.jpg" class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pl-6">
-        <br><br>
+      <img src="https://i.ytimg.com/vi/dwDvVLN2OVI/maxresdefault.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 21</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Afterwards we will travel to Europa, one of Jupiter's icy moons, scientists believe that beneath its icy crust
+        there is a subsurface ocean, we will fly over its icy surface, using special equipments to scan the moon for
+        signs of potential subsurface water and the potential for life.
+      </p>
+      <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 31</div>
+      <p class="text-xl text-white hover:bg-black/[0.05]">
+        Afterwards we will travel to Saturn, the second largest planet in our solar system and famous for its rings. We
+        will fly through the rings and get a close-up view of the planet's diverse moons, including Titan, which we will
+        explore next.
+      </p>
+      <img src="https://cdn.sci.news/images/enlarge5/image_6492_1e-Cassini-Grand-Finale-Science.jpg"
+        class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pl-6">
+      <br><br>
     </div>
-    
+
   </div>
   <form class="p-24 pt-12 rounded-lg bg-base-300 mt-12">
     <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Apply for a trip for your company!</h1>
     <div class="relative z-0 w-full mb-6 group">
-        <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+      <input type="email" name="floating_email" id="floating_email"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" " required />
+      <label for="floating_email"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+        address</label>
     </div>
-    
+
     <div class="grid md:grid-cols-2 md:gap-6">
       <div class="relative z-0 w-full mb-6 group">
-          <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+        <input type="text" name="floating_first_name" id="floating_first_name"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " required />
+        <label for="floating_first_name"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+          name</label>
       </div>
       <div class="relative z-0 w-full mb-6 group">
-          <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+        <input type="text" name="floating_last_name" id="floating_last_name"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " required />
+        <label for="floating_last_name"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+          name</label>
       </div>
     </div>
     <div class="grid md:grid-cols-2 md:gap-6">
       <div class="relative z-0 w-full mb-6 group">
-          <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " required />
+        <label for="floating_phone"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+          number (123-456-7890)</label>
       </div>
       <div class="relative z-0 w-full mb-6 group">
-          <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-          <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
+        <input type="text" name="floating_company" id="floating_company"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " required />
+        <label for="floating_company"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company
+          (Ex. Google)</label>
       </div>
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <button type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
   </form>
   <footer-component></footer-component>
   <script src="../navbar.js" type="module"></script>

@@ -172,10 +172,12 @@ function checkKey(e) {
         e.preventDefault();
     }
     else if (e.keyCode == '37') {
-       scrollBefore();
+    //    scrollBefore();
+        e.preventDefault();
     }
     else if (e.keyCode == '39') {
-       scrollNext();
+    //    scrollNext();
+        e.preventDefault();
     }
 
 }
