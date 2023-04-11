@@ -32,14 +32,14 @@ scene.add(stars)
 let isSwitchingPlanet = false;
 
 function animate() {
-  if(!isSwitchingPlanet) {
+  if (!isSwitchingPlanet) {
     requestAnimationFrame(animate);
     // controls.update();
     updatePlanets();
     const offset = planetsOffsets[section];
     rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.008, planetFOVs[section])
     renderer.render(scene, camera);
-    stats.update()
+    // stats.update()
   }
 
 }
@@ -97,8 +97,8 @@ function switchPlanet(sectionNumber) {
       requestAnimationFrame(updateCameraPosition);
       isSwitchingPlanet = true
       updatePlanets();
-      stats.update()
-    } 
+      // stats.update()
+    }
     else isSwitchingPlanet = false;
   }
 
@@ -118,14 +118,14 @@ function updatePlanetsAxialTilt() {
 
 let orientation = window.orientation;
 function resize() {
-    if(!rsc.isTouchDevice()) {  // if not touch device
-        location.reload();
-    } else {
-        if (orientation !== window.orientation) {
-            location.reload();
-        }
-        orientation = window.orientation;
+  if (!rsc.isTouchDevice()) {  // if not touch device
+    location.reload();
+  } else {
+    if (orientation !== window.orientation) {
+      location.reload();
     }
+    orientation = window.orientation;
+  }
 }
 window.onresize = resize;
 function updatePlanets() {
