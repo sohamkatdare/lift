@@ -4,8 +4,8 @@ import * as THREE from 'three'
 import Stats from 'three/examples/jsm/libs/stats.module'
 import { section } from './cursor';
 
-const stats = new Stats()
-document.body.appendChild(stats.dom)
+// const stats = new Stats()
+// document.body.appendChild(stats.dom)
 
 
 const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
@@ -144,9 +144,9 @@ function updatePlanets() {
 
   rsc.jupiter.rotation.y += 0.003;
 
-  rsc.saturn.rotation.y += 0.003;
-  // rsc.saturnGroup.rotation.y += 0.008;
-  rsc.saturnRings.rotation.x += 0.00005;
+  // rsc.saturn.rotation.y += 0.003;
+  rsc.saturnGroup.rotation.y += 0.008;
+  // rsc.saturnRings.rotation.x += 0.00005;
 
   rsc.uranus.rotation.y += 0.007;
   rsc.uranusGroup.rotation.y += 0.0005;

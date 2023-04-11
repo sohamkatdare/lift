@@ -71,6 +71,27 @@ accordionButtons.forEach(button => {
   });
 });
 
+let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
+
+function handleScroll() {
+  const currentScrollPos = window.scrollY || document.documentElement.scrollTop;
+  const scrollDirection = currentScrollPos > prevScrollPos ? 'down' : 'up';
+  const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
+
+  const normalizedValue = scrollDistance / 1500;
+
+  const inverter = scrollDirection === 'down' ? -1 : 1;
+  
+  stars.position.y += inverter * normalizedValue * 50;
+  stars.rotation.y += inverter * normalizedValue / 10;
+  neptune.position.y -= inverter * normalizedValue * 20;
+  neptune.position.z += inverter * normalizedValue * 20;
+
+  prevScrollPos = currentScrollPos;
+}
+
+document.addEventListener('scroll', handleScroll);
+
 
 rsc.button.onclick = () => {
   rsc.toggle();

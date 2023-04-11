@@ -403,18 +403,18 @@ link:hover > .label {
   }
 
   #menu > #menu-links > .link:nth-of-type(4) {
-    left: 55.5vmax;
-    top: 41.2vmax;
-  }
-
-  #menu > #menu-links > .link:nth-of-type(5) {
     left: 68.5vmax;
     top: 10vmax;
   }
 
-  #menu > #menu-links > .link:nth-of-type(6) {
+  #menu > #menu-links > .link:nth-of-type(5) {
     left: 64.4vmax;
     top: 25.2vmax;
+  }
+
+  #menu > #menu-links > .link:nth-of-type(6) {
+    left: 55.5vmax;
+    top: 41.2vmax;
   }
 
   #menu > #menu-links > .link:nth-of-type(7) {

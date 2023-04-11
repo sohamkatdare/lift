@@ -54,7 +54,7 @@ moon.position.set(6.5, 0, 0)
 const earthGroup = new THREE.Group();
 earthGroup.add(moon)
 earthGroup.add(earth)
-addToScene(earthGroup, 4, 0, -15);
+addToScene(earthGroup, 0, 0, -17);
 
 function animate() {
   requestAnimationFrame(animate);
@@ -110,6 +110,28 @@ links.forEach(link => {
       target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   });
 });
+
+let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
+
+function handleScroll() {
+  const currentScrollPos = window.scrollY || document.documentElement.scrollTop;
+  const scrollDirection = currentScrollPos > prevScrollPos ? 'down' : 'up';
+  const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
+
+  const normalizedValue = scrollDistance / 1500;
+
+  const inverter = scrollDirection === 'down' ? -1 : 1;
+  
+  stars.position.y += inverter * normalizedValue * 50;
+  stars.rotation.y += inverter * normalizedValue / 10;
+  earthGroup.position.y -= inverter * normalizedValue * 20;
+  earthGroup.position.z += inverter * normalizedValue * 20;
+
+  prevScrollPos = currentScrollPos;
+}
+
+document.addEventListener('scroll', handleScroll);
+
 
 rsc.button.onclick = () => {
   rsc.toggle();
