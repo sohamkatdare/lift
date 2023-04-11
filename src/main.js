@@ -183,4 +183,8 @@ function updatePlanets() {
 
 init();
 
+rsc.button.onclick = () => {
+  rsc.toggle();
+} 
+
 export { switchPlanet };

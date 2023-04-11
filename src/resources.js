@@ -79,7 +79,7 @@ export function starForge() {
     return stars
 }
 
-function createOrbitLine(distance) {
+function createOrbitLine(distance, color=0xffffff80) {
     // Create the dashed orbit line
     var orbitPoints = [];
     for (var i = 0; i <= 360; i += 5) {
@@ -89,7 +89,7 @@ function createOrbitLine(distance) {
         orbitPoints.push(new THREE.Vector3(x, 0, z));
     }
     var orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
-    var orbitMaterial = new THREE.LineDashedMaterial({ color: 0xffffff80, dashSize: 1, gapSize: 0.5 });
+    var orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: 0.5 });
     var orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
     orbitLine.computeLineDistances();
     return orbitLine;
@@ -105,8 +105,6 @@ export function heroSetup() {
     scene.add(stars);
     return [scene, camera, renderer, stars];
 }
-
-
 
 function addPlanet(texture, size, detail, normalMapTexture) {
     const geometry = new THREE.SphereGeometry(size, detail, detail);
@@ -126,9 +124,6 @@ function addUnlitPlanet(texture, size, detail, normalMapTexture) {
 
     return planet;
 }
-
-
-const textureLoader = new THREE.TextureLoader();
 
 async function loadPlanetTexturesAsync() {
     const urls = [
@@ -161,7 +156,7 @@ async function loadPlanetTexturesAsync() {
 
 let sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, saturnRings, uranus, uranusGroup, uranusRings, neptune;
 let solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup;
-let mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine;
+let mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine, moonOrbitLine;
 export async function setup() {
     const [
         sunTexture,
@@ -270,25 +265,27 @@ export async function setup() {
     solarSystem.add(light);
 
     // Create the dashed orbit line
-    mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun);
+    mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun, 0x999999);
     mercuryRotationGroup.add(mercuryOrbitLine);
-    venusOrbitLine = createOrbitLine(venusDistanceFromSun);
+    venusOrbitLine = createOrbitLine(venusDistanceFromSun, 0xfddca4);
     venusRotationGroup.add(venusOrbitLine);
-    earthOrbitLine = createOrbitLine(earthDistanceFromSun);
+    earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff);
     solarSystem.add(earthOrbitLine);
-    marsOrbitLine = createOrbitLine(marsDistanceFromSun);
+    marsOrbitLine = createOrbitLine(marsDistanceFromSun, 0xfa9868);
     marsRotationGroup.add(marsOrbitLine);
-    jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun);
+    jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun, 0xd1cac2);
     jupiterRotationGroup.add(jupiterOrbitLine);
-    saturnOrbitLine = createOrbitLine(saturnDistanceFromSun);
+    saturnOrbitLine = createOrbitLine(saturnDistanceFromSun, 0xfee7c5);
     saturnRotationGroup.add(saturnOrbitLine);
-    uranusOrbitLine = createOrbitLine(uranusDistanceFromSun);
+    uranusOrbitLine = createOrbitLine(uranusDistanceFromSun, 0xaadce5);
     uranusRotationGroup.add(uranusOrbitLine);
-    neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun);
+    neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun, 0x7aa8fb);
     neptuneRotationGroup.add(neptuneOrbitLine);
+    moonOrbitLine = createOrbitLine(4, 0x999999);
+    earthGroup.add(moonOrbitLine);
 }
 
-export { sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, uranus, uranusGroup, neptune, solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup, saturnRings, uranusRings, mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine }
+export { sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, uranus, uranusGroup, neptune, solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup, saturnRings, uranusRings, mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine, moonOrbitLine }
 
 
 export async function addSolarSystem(scene) {
