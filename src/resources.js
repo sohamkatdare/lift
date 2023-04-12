@@ -138,7 +138,7 @@ async function loadPlanetTexturesAsync() {
         '/minified/2k_saturn-min.jpg',
         '/2k_saturn_rings.png',
         'https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png',
-        '/minified/uranus_ring_texture-min.jpeg',
+        '/uranus_ring_texture.jpg',
         '/minified/2k_neptune-min.jpg',
     ];
 
@@ -175,7 +175,6 @@ export async function setup() {
         uranusRingsTexture,
         neptuneTexture
     ] = await loadPlanetTexturesAsync();
-    console.log("Textures Loaded 2")
     const multiplier = 16;
     const mercuryDistanceFromSun = 3.5 * multiplier;
     const venusDistanceFromSun = 6.7 * multiplier;
@@ -183,8 +182,8 @@ export async function setup() {
     const marsDistanceFromSun = 14.2 * multiplier;
     const jupiterDistanceFromSun = 28.4 * multiplier;
     const saturnDistanceFromSun = 38.9 * multiplier;
-    const uranusDistanceFromSun = 89 * multiplier;
-    const neptuneDistanceFromSun = 118 * multiplier;
+    const uranusDistanceFromSun = 50 * multiplier;
+    const neptuneDistanceFromSun = 65 * multiplier;
 
     solarSystem = new THREE.Group();
     mercuryRotationGroup = new THREE.Group();
@@ -244,8 +243,8 @@ export async function setup() {
     solarSystem.add(saturnRotationGroup);
 
     uranus = addPlanet(uranusTexture, 12, 32);
-    const uranusRing = new THREE.RingGeometry(12.5, 15);
-    const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingsTexture, side: THREE.DoubleSide })
+    const uranusRing = new THREE.RingGeometry(14.8, 15);
+    const uranusRingMaterial = new THREE.MeshBasicMaterial({ color: 0xB2BEB5, side: THREE.DoubleSide })
     uranusRingMaterial.opacity = 0.5;
     uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
 

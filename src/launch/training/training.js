@@ -30,9 +30,9 @@ function addPlanet(mapTexture, size, detail) {
 
 
 const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
-const uranusRing = new THREE.RingGeometry(5.25, 5.75);
+const uranusRing = new THREE.RingGeometry(4.65, 4.75);
 const uranusRingTexture = new THREE.TextureLoader().load('/uranus_ring_texture.jpeg');
-const uranusRingMaterial = new THREE.MeshBasicMaterial({ map: uranusRingTexture, side: THREE.DoubleSide })
+const uranusRingMaterial = new THREE.MeshBasicMaterial({ color: 0xB2BEB5, side: THREE.DoubleSide })
 uranusRingMaterial.opacity = 0.5;
 const uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
 const uranusGroup = new THREE.Group();

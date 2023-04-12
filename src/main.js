@@ -62,7 +62,6 @@ async function init() {
 function switchPlanet(sectionNumber) {
   document.querySelector("#close-toast").parentElement.parentElement.classList.add("hidden")
   selectedPlanet = planets[sectionNumber];
-  console.log(selectedPlanet.geometry.name)
 
   const startPosition = camera.position.clone();
   const offset = planetsOffsets[section];
@@ -71,8 +70,9 @@ function switchPlanet(sectionNumber) {
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
-  const duration = 1500; // milliseconds
+  const duration = 4000; // milliseconds
   const startTime = performance.now();
+  const startFOV = camera.fov;
 
   function updateCameraPosition() {
     const elapsed = performance.now() - startTime;
@@ -84,11 +84,13 @@ function switchPlanet(sectionNumber) {
 
     // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
-    for (let alpha = 0; alpha <= 1; alpha += 0.1) {
-      camera.fov = lerp(camera.fov, planetFOVs[sectionNumber], alpha)
-      camera.aspect = aspectRatio;
-      camera.updateProjectionMatrix();
+    camera.aspect = aspectRatio;
+    function lerp(v0, v1, t) {
+      return v0*(1-t)+v1*t
     }
+
+    camera.fov = lerp(startFOV, planetFOVs[sectionNumber], progress);
+    camera.updateProjectionMatrix();
 
 
     renderer.render(scene, camera);

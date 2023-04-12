@@ -73,7 +73,6 @@ window.onload = function() {
 function scrollSection() {
     allowScrolling = true;
     const sectionString = `section${section}`;
-    console.log(sectionString);
     document.getElementById(sectionString).scrollIntoView();
     setTimeout(() => {
         allowScrolling = false;
@@ -97,13 +96,10 @@ function scrollNext() {
 }
 
 document.addEventListener('click', function(event) {
-    console.log(event.target, event.target.tagName)
     const target = event.target;
     if (target.tagName === 'BUTTON' || target.tagName === 'A') {
-        console.log('Pressing Manually.')
         target.click();
     } else {
-        console.log('Invoked Click Event Listener')
         if(!isTouchDevice()) {
             if (isLeft) {
                 scrollBefore();
