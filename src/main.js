@@ -3,14 +3,15 @@ import * as rsc from './resources';
 import * as THREE from 'three'
 import Stats from 'three/examples/jsm/libs/stats.module'
 import { section } from './cursor';
+import lerp from 'lerp'
 
-// const stats = new Stats()
-// document.body.appendChild(stats.dom)
-
+function closeToast() {
+  this.parentElement.parentElement.classList.add("hidden")
+}
 
 const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
 
-//sadasdasd   
+//sadasdasd
 
 const camera = rsc.cameraSetup(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = rsc.rendererSetup(scene, camera);
@@ -59,14 +60,15 @@ async function init() {
 }
 
 function switchPlanet(sectionNumber) {
+  document.querySelector("#close-toast").parentElement.parentElement.classList.add("hidden")
   selectedPlanet = planets[sectionNumber];
+  console.log(selectedPlanet.geometry.name)
 
   const startPosition = camera.position.clone();
   const offset = planetsOffsets[section];
   const endPosition = selectedPlanet.position.clone().add(new THREE.Vector3(offset[0], offset[1], offset[2]));
   const startRotation = camera.quaternion.clone();
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
-  camera.lookAt(endPosition);
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
   const duration = 1500; // milliseconds
@@ -82,9 +84,11 @@ function switchPlanet(sectionNumber) {
 
     // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
-    camera.fov = planetFOVs[sectionNumber];
-    camera.aspect = aspectRatio;
-    camera.updateProjectionMatrix();
+    for (let alpha = 0; alpha <= 1; alpha += 0.1) {
+      camera.fov = lerp(camera.fov, planetFOVs[sectionNumber], alpha)
+      camera.aspect = aspectRatio;
+      camera.updateProjectionMatrix();
+    }
 
 
     renderer.render(scene, camera);
@@ -141,7 +145,7 @@ function updatePlanets() {
 
   rsc.saturn.rotation.y += 0.003;
   rsc.saturnGroup.rotation.y += 0.002;
-  rsc.saturnRings.rotation.y += 0.00005;
+  // rsc.saturnRings.rotation.y += 0.00005;
 
   rsc.uranus.rotation.y += 0.007;
   rsc.uranusGroup.rotation.y += 0.0005;

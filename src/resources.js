@@ -151,6 +151,8 @@ async function loadPlanetTexturesAsync() {
         });
     });
 
+    console.log("Texture Loaded")
+
     return await Promise.all(texturePromises);
 }
 
@@ -173,6 +175,7 @@ export async function setup() {
         uranusRingsTexture,
         neptuneTexture
     ] = await loadPlanetTexturesAsync();
+    console.log("Textures Loaded 2")
     const multiplier = 16;
     const mercuryDistanceFromSun = 3.5 * multiplier;
     const venusDistanceFromSun = 6.7 * multiplier;
@@ -231,7 +234,7 @@ export async function setup() {
     const saturnRing = new THREE.RingGeometry(30, 54);
     const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingsTexture, side: THREE.DoubleSide })
     saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
-    saturnRings.rotation.set(67.5, 0, 0);
+    saturnRings.rotation.set(45.5, 0, 0);
 
     saturnGroup = new THREE.Group();
     saturnGroup.add(saturn);
@@ -283,6 +286,19 @@ export async function setup() {
     neptuneRotationGroup.add(neptuneOrbitLine);
     moonOrbitLine = createOrbitLine(4, 0x999999);
     earthGroup.add(moonOrbitLine);
+
+
+    // Debug Purposes
+    mercury.geometry.name = "Mercury";
+    venus.geometry.name = "Venus";
+    earth.geometry.name = "Earth";
+    mars.geometry.name = "Mars";
+    jupiter.geometry.name = "Jupiter";
+    saturn.geometry.name = "Saturn";
+    uranus.geometry.name = "Uranus";
+    neptune.geometry.name = "Neptune";
+    moon.geometry.name = "Moon";
+
 }
 
 export { sun, mercury, venus, earthGroup, earth, moon, mars, jupiter, saturn, saturnGroup, uranus, uranusGroup, neptune, solarSystem, mercuryRotationGroup, venusRotationGroup, earthRotationGroup, marsRotationGroup, jupiterRotationGroup, saturnRotationGroup, uranusRotationGroup, neptuneRotationGroup, saturnRings, uranusRings, mercuryOrbitLine, venusOrbitLine, earthOrbitLine, marsOrbitLine, jupiterOrbitLine, saturnOrbitLine, uranusOrbitLine, neptuneOrbitLine, moonOrbitLine }
