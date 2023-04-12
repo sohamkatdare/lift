@@ -7,7 +7,10 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'header': ['D-DIN'],
+      'body': ['Inter']
+    }
   },
   plugins: [
     require("@tailwindcss/typography"),

@@ -1,34 +1,32 @@
-import isTouchDevice from './util';
+import {isTouchDevice} from './resources';
+import { switchPlanet } from './main';
 
 const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
+const hoverTags = new Set(['BUTTON', 'A', 'CODE', 'LI', 'P', 'H1', 'H2', 'UL', 'NAV', 'ASIDE', 'SVG', 'G', 'SPAN']);
 let isLeft = false;
 let isButtonHover = false;
 
+const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
+const left = ' translate-y-[-3.75rem] -translate-x-[4.5rem] rotate-180' // used to be 5.5 rem, but doesnt work on laptop
+const right = ' translate-y-[-5.25rem] translate-x-[.5rem]'
+const invisible = ' opacity-0'
+const bloom = ' blur-md'
+
 const animateCursor = function () {
-    const standard = 'pointer absolute top-0 ml-[20px] text-slate-50/75 text-[7rem] transition-all duration-1000'
-    const left = ' translate-y-[-3.75rem] -translate-x-[5.5rem] rotate-180'
-    const right = ' translate-y-[-5.25rem]'
-    const invisible = ' opacity-0'
-    const bloom = ' blur-md'
-    if (isLeft) {
-        if (section == 5 || isButtonHover) {
-            customPointers[0].className = standard + left + invisible
-            customPointers[1].className = standard + left + invisible + bloom
-        } else {
-            customPointers[0].className = standard + left
-            customPointers[1].className = standard + left + bloom
-        }
-    } else {
-        if (section == 0 || isButtonHover) {
-            customPointers[0].className = standard + right + invisible
-            customPointers[1].className = standard + right + invisible + bloom
-        } else {
-            customPointers[0].className = standard + right
-            customPointers[1].className = standard + right + bloom
-        }
+
+    const sectionIsLast = section === 0 || isButtonHover;
+    const sectionIsFirst = section === 5 || isButtonHover;
+
+    if (isLeft) { // When the cursor is on the left half of the screen
+        customPointers[0].classList = standard + left + (sectionIsLast ? invisible : '')
+        customPointers[1].classList = standard + left + (sectionIsLast ? invisible + bloom : bloom)
+    } else { // When the cursor is on the right half of the screen
+        customPointers[0].classList = standard + right + (sectionIsFirst ? invisible : '')
+        customPointers[1].classList = standard + right + (sectionIsFirst ? invisible + bloom : bloom)
     }
 }
+
 
 const moveCursor = (e) => {
     if (isTouchDevice()) {
@@ -37,23 +35,55 @@ const moveCursor = (e) => {
     }
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
-    let width = window.innerWidth;
-    isLeft = (mouseX <= width / 2);
+
+    customCursor.animate({
+        transform: `translate3d(${mouseX}px, ${mouseY}px, 100px)`
+    }, {
+        duration: 1000,
+        fill: 'forwards'
+    })
+    // customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;
+    isLeft = mouseX <= window.innerWidth / 2;
     animateCursor();
 }
 
-document.addEventListener('mousemove', moveCursor)
+document.addEventListener('mousemove', moveCursor, { passive: true });
 
 let section = 0;
 
+let allowScrolling = false;
+
+function handleEvents(e) {
+  if (!allowScrolling) {
+    e.preventDefault();
+  }
+}
+window.addEventListener('wheel', handleEvents, { passive: false });
+window.addEventListener('mousedown', handleEvents, { passive: false });
+window.addEventListener('mouseup', handleEvents, { passive: false });
+
+window.addEventListener('load', () => {
+    allowScrolling = false;
+});
+  
+window.onload = function() {
+    window.scrollTo(0, 0);
+}
+
 function scrollSection() {
-    document.getElementById('section' + String(section)).scrollIntoView();
+    allowScrolling = true;
+    const sectionString = `section${section}`;
+    console.log(sectionString);
+    document.getElementById(sectionString).scrollIntoView();
+    setTimeout(() => {
+        allowScrolling = false;
+    }, 500);
 }
 
 function scrollBefore() {
     if (section > 0) {
         section--;
+        switchPlanet(section);
     }
     scrollSection();
 }
@@ -61,62 +91,46 @@ function scrollBefore() {
 function scrollNext() {
     if (section < 5) {
         section++;
+        switchPlanet(section);
     }
     scrollSection();
 }
 
-function cursorClick(e) {
-    const t = e.target;
-    if (t.tagName == 'BUTTON' || t.tagName == 'A') {
-        t.click()
+document.addEventListener('click', function(event) {
+    console.log(event.target, event.target.tagName)
+    const target = event.target;
+    if (target.tagName === 'BUTTON' || target.tagName === 'A') {
+        console.log('Pressing Manually.')
+        target.click();
     } else {
+        console.log('Invoked Click Event Listener')
         if(!isTouchDevice()) {
-            if (infoShown){
-                toastInfo.classList = 'hidden'
-                infoShown = false
-            }
             if (isLeft) {
-                scrollNext();
-            } else {
                 scrollBefore();
+            } else {
+                scrollNext();
             }
         }
+        event.stopPropagation();
     }
-}
+});
 
 function cursorHover(e) {
     const t = e.target;
-    if (t.tagName == 'BUTTON' || t.tagName == 'A' || t.tagName == "CODE" || t.tagName == "LI" || t.tagName == "P" || t.tagName == "H1" || t.tagName == "H2" || t.tagName == "UL" || t.tagName == "NAV" || t.tagName == "ASIDE" || t.tagName == "SVG" || t.tagName == "G" || t.tagName == "SPAN") {
+    if (hoverTags.has(t.tagName)) {
         isButtonHover = true;
     } else {
         isButtonHover = false;
     }
 }
 
-document.onclick = cursorClick;
+
 document.onmouseover = cursorHover;
-
-var infoShown = false
-const toastInfo = document.getElementById('scroll-info')
-
-document.getElementById('gstar1').onclick = function () {
-    section = 1;
-    scrollSection();
-    //if the button has not been clicked before
-    if (!infoShown && !isTouchDevice()) {
-        toastInfo.classList = 'toast toast-top toast-end p-2'
-        infoShown = true
-    }
-};
-
-document.getElementById('scroll-info-btn').onclick = function () {
-    toastInfo.classList = "hidden"
-};
 
 // Detect if section is seen manually.
 function elementInViewport(element) {
     var rect = element.getBoundingClientRect();
-
+    
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -132,10 +146,10 @@ function changeSection(num) {
     }
 }
 
-const onScrollBefore = document.body.onscroll;
+
 
 const detectScrollChanges = function () {
-    onScrollBefore();
+    // onScrollBefore();
     for (let i = 0; i < 6; i++) {
         changeSection(i);
     }
@@ -144,23 +158,62 @@ const detectScrollChanges = function () {
 
 document.body.onscroll = detectScrollChanges;
 
-// Before Page Load
-document.onreadystatechange = function (e) {
-    detectScrollChanges();
-    moveCursor(e);
-};
+// document.onreadystatechange = function (e) {
+//     detectScrollChanges();
+//     moveCursor(e);
+// };
 
-// Listen for window.resize
-var orientation = window.orientation;
-function resize() {
-    if(!isTouchDevice()) {  // if not touch device
-        console.log("resizing")
-        location.reload();
-    } else {
-        if (orientation !== window.orientation) {
-            location.reload();
-        }
-        orientation = window.orientation;
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        e.preventDefault();
     }
+    else if (e.keyCode == '40') {
+        e.preventDefault();
+    }
+    else if (e.keyCode == '37') {
+    //    scrollBefore();
+        e.preventDefault();
+    }
+    else if (e.keyCode == '39') {
+    //    scrollNext();
+        e.preventDefault();
+    }
+
 }
-window.onresize = resize;
+
+export { section };
+
+
+
+// const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.";
+
+// let interval = null;
+// document.querySelector(".hacker-text").onmouseover = event => {  
+//     let iteration = 0;
+    
+//     clearInterval(interval);
+    
+//     interval = setInterval(() => {
+//       event.target.innerText = event.target.innerText
+//         .split("")
+//         .map((letter, index) => {
+//           if(index < iteration) {
+//             return event.target.dataset.value[index];
+//           }
+        
+//           return letters[Math.floor(Math.random() * 26)]
+//         })
+//         .join("");
+      
+//       if(iteration >= event.target.dataset.value.length){ 
+//         clearInterval(interval);
+//       }
+      
+//       iteration += 1 / 3;
+//     }, 30);
+//   }

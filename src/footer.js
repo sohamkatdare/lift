@@ -4,7 +4,7 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-      <footer class="footer items-center p-4 bg-base-100 text-base-content">
+      <footer class="footer items-center p-4 bg-neutral-900 text-white">
         <div class="items-center grid-flow-col">
           <img src="/logo.png" alt="logo" class="w-10 h-10">
           <p>Copyright © 2022 - All right reserved</p>

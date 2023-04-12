@@ -11,47 +11,108 @@
   <title>LIFT - Safety</title>
 </head>
 
-<body>
-  <navbar-launch-component></navbar-launch-component>
-
-  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="../../spinner.svg" alt="spinner">
-  </div>
-
-  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/122/3000/2000');">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Space doesn't have to be dangerous.</h1>
-        <p class="mb-5">Keeping Passengers Safe: Innovative Measures for a Comfortable and Secure Journey</p>
+<body classs="no-scrollbar">
+  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
+    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl"></div>
+    <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span> 
+      <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white"><h1 class="text-3xl"><code>LIFT</code></h1></span>
       </div>
+    </button>
+    <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+    <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+    <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+      <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+      </svg>
+    </div>
+    <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+      </a>
+
     </div>
   </div>
-  <br>
+
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+    <img src="../../spinner.svg" alt="spinner">
+  </div> -->
   
   <br><br><br>
   
-  <div class="divider"><h2 class="font-4xl">FAQ: Concerns and Dangers of Space Travel</h2></div>
+  <div class="divider"><h2 class="text-4xl font-bold">FAQ: Concerns and Dangers of Space Travel</h2></div>
   <br><br>
   
+  
   <div class="px-20 flex flex-col space-y-8 y-5   place-items-center">
-    <div tabindex="0" class="collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
+    <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
       <div class="collapse-title text-xl font-medium transition-all">
         Concern 1: Travel without Gravity
       </div>
       <div class="collapse-content transition-all">
         <p>
-          The absence of gravity in space can cause a variety of problems for humans, including muscle and bone loss, and other physiological changes. It can also make it difficult to perform tasks and move around, as objects do not behave in the same way they do on Earth. Not to worry though because due to our patented <strong style="font-family: Nova;">Bone Restore</strong> technology  rockets, humans will still be able to live as if they would be around gravity.
+          The absence of gravity in space can cause a variety of problems for humans, including muscle and bone loss, and other physiological changes. It can also make it difficult to perform tasks and move around, as objects do not behave in the same way they do on Earth. Not to worry though because due to our patented <strong style="font-family: Nova;">Bone Restore</strong> technology  rockets, humans will still be able to live as if they would be around gravity. Working along with Space X, we were able to devolop many solutions one being our specialzed regen suits built for recovery.
         </p>
       </div>
     </div>
-    <div tabindex="0" class="collapse collapse-arrow bg-slate-700/25 rounded-box">
+    <div tabindex="0" class="hover:outline transition-all hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box">
       <div class="collapse-title text-xl font-medium">
         Concern 2: Radiation
       </div>
       <div class="collapse-content">
         <p>
-          Space is filled with high-energy particles that can be harmful to humans. These particles can damage DNA and other cellular structures, and increase the risk of cancer and other diseases. Thanks to the <strong style="font-family: Nova;">Radionite</strong> fabric that covers the interior of our spacecraft, we can maintain safety standards that are within those of the CDC in terms of radiation.
+          Space is filled with high-energy particles that can be harmful to humans. These particles can damage DNA and other cellular structures, and increase the risk of cancer and other diseases. Thanks to the <strong style="font-family: Nova;">Radionite</strong> fabric that covers the interior of our spacecraft, we can maintain safety standards that are within those of the CDC in terms of radiation. Kjell Norwood Lindgren a former astronaut on the ISS has partnered with lift to ensure the safety of all of all our passagengers by providing research with Space radiation exposure,
         </p>
       </div>
     </div>
@@ -81,17 +142,17 @@
       </div>
       
     </div>
-    <div tabindex="0" class="collapse collapse-arrow bg-slate-700/25 rounded-box">
+    <div tabindex="0" class="hover:outline transition-all hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box">
       <div class="collapse-title text-xl font-medium">
         Concern 3: Meteoroids
       </div>
       <div class="collapse-content">
         <p>
-          Small rocks and debris pose a threat to spacecraft and humans in space. Even relatively small meteoroids can cause significant damage to spacecraft and other objects. We have fortified our spacecraft with our proprietary <strong style="font-family: Nova;">AstroMesh</strong> metal alloys that will help ensure foreign objects do not harm the exterior of the aircraft.
+          Small rocks and debris pose a threat to spacecraft and humans in space. Even relatively small meteoroids can cause significant damage to spacecraft and other objects. We have fortified our spacecraft with our proprietary <strong style="font-family: Nova;">AstroMesh</strong> metal alloys that will help ensure foreign objects do not harm the exterior of the aircraft. Our reinforced tungsten composite ensures that no sized meteroid can cause damage to the exterior of our rocket ship.
         </p>
       </div>
     </div>
-    <div tabindex="0" class="collapse collapse-arrow bg-slate-700/25 rounded-box">
+    <div tabindex="0" class="hover:outline transition-all hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box">
       <div class="collapse-title text-xl font-medium">
         Concern 4: Temperature Extremes
       </div>
@@ -102,7 +163,7 @@
         </p>
       </div>
     </div>
-    <div tabindex="0" class="collapse collapse-arrow bg-slate-700/25 rounded-box">
+    <div tabindex="0" class="hover:outline transition-all hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box">
       <div class="collapse-title text-xl font-medium">
         Concern 5: Who's flying me?
       </div>
@@ -112,11 +173,47 @@
         </p>
       </div>
     </div>
+    <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
+      <div class="collapse-title text-xl font-medium transition-all">
+        Concern 6: Limited living space:
+      </div>
+      <div class="collapse-content transition-all">
+        <p>
+          Space travelers may feel claustrophobic and uncomfortable in a limited living space, especially during long-duration missions. Lift has designed spacious and modular habitats that can be reconfigured to meet the changing needs of the astronauts. Additionally, we use virtual reality technology to create an illusion of larger living spaces.</p>
+      </div>
+    </div>
+    <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
+      <div class="collapse-title text-xl font-medium transition-all">
+        Concern 7: Psychological stress:
+      </div>
+      <div class="collapse-content transition-all">
+        <p>
+          The isolation, confinement, and lack of social interaction in space can cause psychological stress among astronauts. Lift provides virtual reality experiences that simulate natural environments such as forests or beaches, to help astronauts feel more connected to Earth. Additionally, Lift offers support services such as counseling and mental health resources to help astronauts cope with the stress of long-duration missions.</div>
+    
+           </div>
+    <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
+      <div class="collapse-title text-xl font-medium transition-all">
+        Concern 8: Communication Delays
+      </div>
+      <div class="collapse-content transition-all">
+        <p>
+          Communication delays between Earth and space can be a major concern for space travelers, especially in emergency situations. Lift has worked with many comm tech ompanies to develop advanced communication technologies such as faster communication systems or artificial intelligence-based communication systems that could assist space travelers in communicating with Earth more efficiently.<p>
+    </div>
   </div>
-
+    <div tabindex="0" class="hover:outline hover:outline-success collapse collapse-arrow bg-slate-700/25 rounded-box transition-all">
+      <div class="collapse-title text-xl font-medium transition-all">
+        Concern 9: Limited resources:
+      </div>
+      <div class="collapse-content transition-all">
+        <p>
+          In space, resources such as food, water, and air are limited. Lift has come up with sustainable solutions such as hydroponic farming, water recycling systems, and air purification systems. These solutions would not only provide the necessary resources for space travelers but also reduce the cost of space travel by decreasing the need to transport resources from Earth.
+        <p>   
+      </div>
+    </div>
+  </div>
   <footer-component></footer-component>
 
-  <script src="../../navbar.js" type="module"></script>
+  <script src="safety.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>
   <script src="../../loader.js" type="module"></script>
 </body>

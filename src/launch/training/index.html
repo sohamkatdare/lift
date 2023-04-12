@@ -11,115 +11,145 @@
   <title>LIFT - Training</title>
 </head>
 
-<body>
-  <navbar-launch-component></navbar-launch-component>
+<body class="scroll-smooth no-scrollbar">
+  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
+    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl"></div>
+    <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span> 
+      <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white"><h1 class="text-3xl"><code>LIFT</code></h1></span>
+      </div>
+    </button>
+    <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+    <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+    <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+      <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+      </svg>
+    </div>
+    <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+        <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+      </a>
 
-  <div class="items-center bg-gray-900 flex h-screen justify-center left-0 fixed top-0 w-full z-[999999] user-select-none pointer-events-none" style="transition: opacity 0.3s linear ;" id="preloader">
+    </div>
+  </div>
+
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999] user-select-none pointer-events-none" style="transition: opacity 0.3s linear ;" id="preloader">
     <img src="../../spinner.svg" alt="spinner">
-  </div>
+  </div> -->
 
-  <div class="hero min-h-screen select-none" style="background-image: url('https://picsum.photos/id/903/3000/2000');">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Preparing you for an out-of-this-world experience.</h1>
-        <p class="mb-5">Scroll down to find out more!</p>
-      </div>
-    </div>
-
-  </div>
-  <br>
-  <div class="grid grid-cols-12 py-10 bg-base-300">
-    <div class="lg:col-start-4 lg:col-end-10 col-span-12 inline-block text-center">
-      <h1 class="text-xl text-base-400"><strong>What is the point of training?</strong></h1>
-      <br>
-      <p class="text-base-400 p-5">
-        The training required of our customers is designed to be challenging but intuitive to prepare them for the demands of our wonderful trip. Lift space training, also known as SpaceCamp TM ️, is a 4-week program that takes place at the Galileo facilities in San Diego, California, or Parris Island, South Carolina. The training includes physical conditioning, cardiovascular training, and instruction in our unique and innovative Lift spacecraft. After completing SpaceCamp™️, some individuals may receive additional training. This training is to make sure everyone is ready for the exciting adventure ahead. This training may be technical, such as learning how to operate and function within space, but the goal of this mandatory training is to ensure that our customers have a better experience during their LIFT trip. 
-      </p>
-    </div>
-  </div>
-  <div class="grid grid-cols-12 py-10">
-    <div class="col-start-1 col-end-13 overflow-x-auto text-center ">
-      <ul class="steps">
-        <li class="step step-secondary">Fitness Screening</li>
-        <li class="step step-secondary">Basic Training</li>
-        <li class="step step-secondary">Emergency Training</li>
-        <li class="step step-secondary">Zero-Grav Training</li>
-      </ul>
-      <p class="mt-5 text-white"><i>24-day training regimen</i></p>
-      <br>
-    </div>
-  </div>
-  <div class="grid grid-cols-12 py-10 gap-y-7 gap-x-4">
-
-    <!-- <div class="col-start-9 col-end-12">
-      <img src="https://picsum.photos/id/537/2000/3000" class="mask mask-triangle drop-shadow-lg mb-[-65%] mt-[-35%]">
-      <img src="https://picsum.photos/id/120/2000/3000" class="mask mask-triangle-2 drop-shadow-lg mt[-65%] mb-[-35%]">
-    </div> -->
-
-    <!-- <div class="col-span-12 flex items-center grid grid-cols-12">
-      <div class="col-start-1 col-end-6 text-center">
-        <ul class="steps steps-vertical">
-          <li class=" step step-accent text-accent-content">Register</li>
-          <li class="step step-accent text-accent-content">Choose plan</li>
-          <li class="step step-accent text-accent-content">Purchase</li>
-          <li class="step step-accent text-accent-content">Receive Product</li>
-        </ul>
-      </div> -->
-
-      <div class="col-start-2 hidden lg:block col-end-6 grid place-content-center">
-        <div class="px-4">
-          <img class="rounded-lg" src="https://www.verywellfit.com/thmb/EuToJFLlN3djA0kmxtZoxfedufE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-476805177-569530f65f9b58eba499f940.jpg" alt="">
-        </div>
-      </div>
-      <div class="lg:col-start-6 col-start-2 col-end-12 grid place-content-center ">
-        <h1 class="text-lg text-base-400 px-10 lg:px-0"><strong>Fitness screening</strong></h1>
-        <p class="text-base-400 px-5 lg:px-0">
-          All medical screening for each participant traveling must be completed during the first part of training. This medical screening will include different physical tests that ensure that the traveler is capable of flying safely without any complications. The list of tests that will be present during this stage will be a basic screening of physical attributes, including height, weight, vision, etc. Additionally, a fitness screening will also be conducted for each participant, testing their level of endurance, strength, and flexibility to make sure that they are capable of space travel. These different tests are necessary for the training as they make sure that each participant is capable of flying through space over a prolonged period of time.
-        </p>
-      </div>
-
-      <div class="col-start-2 lg:col-end-8 col-end-12 p-3 bg-base-300 rounded-lg grid place-content-center">
-        <h1 class="text-lg text-base-content px-3"><strong>basic training</strong></h1>
-        <p class="text-base-content px-3">
-          The next step of space training will include basic space travel training.  Space tourists will need to receive basic training in the principles of space travel, including the effects of microgravity on the body and safety protocols. Participants must be prepared for the effects of space on the body. Additionally, the participants will go through mission-specific training in which they will receive special training for the particular mission or package they choose. Space tourists will need to know how to operate any equipment or perform any tasks that may be required during their space travel experience.
-        </p>
-      </div>
-
-      <div class="col-span-4 rounded-r-lg hidden lg:block grid place-content-center">
-        <img class="rounded-lg m-2 hidden lg:block border-2 border-secondary" src="https://cdn.lifehack.org/wp-content/uploads/2018/03/workout-routines-for-men-1024x768.jpeg" alt="">
-      </div>
-
-      <div class="col-start-2 hidden lg:block col-end-6 grid place-content-center object-scale-down">
-        <img class="lg:rounded-lg hidden lg:block h-[400px] w-auto object-scale-down" src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2018_15/2396561/180412-leland-melvin-al-1353.jpg" alt="">
-      </div>
-
-      <div class="lg:col-start-6 col-start-2 col-end-12 grid place-content-center pl-3">
-        <h1 class="text-lg text-base-400"><strong>Emergency training</strong></h1>
-        <p class="text-base-400">
-          In the third stage of training, we will train the participants to be ready for space and its environment. This includes different simulations that will portray different possible scenarios in the case of an emergency.  It's important that space tourists know how to respond in the event of an emergency while in space. Training may include simulations of various emergency scenarios and drills to practice emergency procedures. This emergency training consists of different simulations that depict a real-like scene in which the tourist must be able to perform the correct duties in the case of an emergency.
-        </p>
-      </div>
-
-      <div class="col-start-2 lg:col-end-8 col-end-12 p-3 bg-base-300 rounded-lg grid place-content-center">
-        <h1 class="text-lg text-base-content px-3"><strong>Zero-Grav Training</strong></h1>
-        <p class="text-base-content px-3">
-          In the last part of the training, the tourists will undergo more simulations that depict the gravity-less environment of space. This last part of the training will include a full review of the training program as well as a rehearsal of the actual launch. This will ensure that all the participants are ready for the launch on the specified date.
-        </p>
-      </div>
-
-      <div class="col-start-8 hidden lg:block col-span-4 bg-secondary rounded-lg grid place-content-center">
-        <img class="rounded-lg border-2 hidden lg:block border-secondary" src="https://www.universetoday.com/wp-content/uploads/2013/08/Alexander_Gerst_in_spacewalk_training.jpg" alt="">
-      </div>
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
+    <div class="hero-overlay fixed bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg"></canvas>
+    </div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-2xl">
+        <h1 class="mb-5 text-5xl">Preparing you for the trip of your life.</h1>
+        <p>Training makes sure you are safe during your long voyage through alien environments.</p>
+      </div>
     </div>
 
+  </div>
+  <div class="justify-items-center justify-center pt-10 pb-20 px-24">
+    <div class="h-[54rem] w-full  carousel carousel-vertical rounded-box">
+      <div class="carousel-item h-full bg-cover snap-start snap-always" style="background-image: url('https://cdn.wallpapersafari.com/68/99/u6UK95.jpg')">
+        <div class="text-center rounded-lg bg-black/[0.1] p-10 backdrop-blur-md  h-min max-h-max w-full shadow-2xl">
+            <h1 class="pt-6 text-4xl text-base-400 w-full" id="#section1"><strong>What is the point of training?</strong>
+            <br><br>
+            <p class=" text-2xl font-light ">The training required of our customers is designed to be challenging but intuitive to prepare them for the demands <br> of our wonderful trip. Lift space training, also known as SpaceCamp™️, is a 4-week program that takes place at the Galileo facilities <br> in San Diego, California, or Parris Island, South Carolina. The training includes physical conditioning, cardiovascular training, <br> and instruction in our unique and innovative Lift spacecraft. After completing SpaceCamp™️, some individuals may receive additional training. <br> This training is to make sure everyone is ready for the exciting adventure ahead. This training may be technical, such as learning how to operate <br> and function within space, but the goal of this mandatory training is to ensure that our customers have a better experience during their LIFT trip.
+          </h1>
+        </div>
+      </div> 
+      <div class="carousel-item h-full bg-cover snap-start snap-always" style="background-image: url('https://rare-gallery.com/mocahbig/397477-wallpaper-black-hole-space-planet-astronaut-4k.jpg')">
+        <div class="text-center p-10 rounded-lg bg-black/[0.1]  backdrop-blur-md h-min max-h-max shadow-2xl">
+            <h1 class="pt-6 text-4xl text-base-400 w-full" id="#section1"><strong>Fitness screening</strong>
+            <br><br>
+            <p class=" text-2xl font-light "> Re-entry into Earth's atmosphere can be a challenging process for astronauts returning from space. The transition from the microgravity environment of space to Earth's gravity and atmospheric pressure can have a significant impact on the body, causing physical and emotional challenges. However, with advanced technology and expert guidance, the process can be made smoother and less stressful</p>
+          </h1>
+        </div>
+      </div> 
+      <div class="carousel-item h-full bg-cover snap-start snap-always" style="background-image: url('https://images.hdqwalls.com/wallpapers/the-ascention-astronaut-4k-8w.jpg')">
+        <div class="text-center p-10 rounded-lg bg-black/[0.1]  backdrop-blur-md  h-min max-h-max shadow-2xl">
+          <h1 class="pt-6 text-4xl text-base-400 w-full" id="#section1"><strong>Basic Training</strong>
+          <br><br>
+          <p class=" text-2xl font-light "> The next step of space training will include basic space travel training.  Space tourists will need to receive basic training in the principles of space travel, including the effects of microgravity on the body and safety protocols. The participants need to be ready for the changes that space has on the body. Additionally, the participants will go through a mission-specific training in which they will receive special training for the particular mission/package they choose. Space tourists will need to know how to operate any equipment or perform any tasks that may be required during their space travel experience.
+          </h1>
+        </div>
+      </div> 
+      <div class="carousel-item h-full bg-cover snap-start snap-always" style="background-image: url('https://wallpaperaccess.com/full/19355.jpg')">
+        <div class="text-center p-10 rounded-lg bg-black/[0.1]  backdrop-blur-md h-min max-h-max shadow-2xl">
+          <h1 class="pt-6 text-4xl text-base-400 w-full" id="#section1"><strong>Emergency Training</strong>
+          <br><br>
+          <p class=" text-2xl font-light "> In the third stage of training, we will train the participants to be ready for space and its environment. This includes different simulations that will portray different possible scenarios in the case of an emergency.  It's important that space tourists know how to respond in the event of an emergency while in space. Training may include simulations of various emergency scenarios and drills to practice emergency procedures. This emergency training consists of different simulations that depict a real-like scene in which the tourist must be able to perform the correct duties in the case of an emergency.
+          </h1>
+        </div>
+      </div> 
+      <div class="carousel-item h-full bg-cover snap-start snap-always" style="background-image: url('https://a-static.besthdwallpaper.com/purple-space-wallpaper-3840x2400-26680_9.jpg')">
+        <div class="text-center p-10 rounded-lg bg-black/[0.1]  backdrop-blur-md  h-min max-h-max shadow-2xl">
+          <h1 class="pt-6 text-4xl text-base-400 w-full" id="#section1"><strong>Zero gravity</strong>
+          <br><br>
+          <p class=" text-2xl font-light "> In the last part of the training, the tourists will undergo more simulations that depict the gravity-less environment of space. This last part of the training will include a full review of the training program as well as a rehearsal of the actual launch. This will ensure that all the participants are ready for the launch on its specified date.
+          </h1>
+        </div>
+      </div> 
+    </div>
   </div>
 
   <footer-component></footer-component>
-  <script src="../../navbar.js" type="module"></script>
   <script src="../../footer.js" type="module"></script>
-  <script src="../../loader.js" type="module"></script>
+  <script src="training.js" type="module"></script>0
 </body>
 
 </html>
