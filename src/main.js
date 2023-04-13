@@ -4,6 +4,8 @@ import * as THREE from 'three'
 // import Stats from 'three/examples/jsm/libs/stats.module'
 import { section } from './cursor';
 
+export const swipeCanvas = document.querySelector("body");
+
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")
 }

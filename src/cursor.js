@@ -1,5 +1,8 @@
 import {isTouchDevice} from './resources';
-import { switchPlanet } from './main';
+import { switchPlanet, swipeCanvas } from './main';
+import Hammer from 'hammerjs';
+
+let hammer = new Hammer(swipeCanvas);
 
 const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
@@ -106,6 +109,8 @@ document.addEventListener('click', function(event) {
             } else {
                 scrollNext();
             }
+        } else {
+            hammer.on('swipeleft')
         }
         event.stopPropagation();
     }
