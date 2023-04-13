@@ -17,7 +17,7 @@
 
 <body class="no-scrollbar">
   <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
-    <div class="w-full h-14 backdrop-blur-sm drop-shadow-2xl text-white underline decoration-blue-400 shadow-2xl"></div>
+    <div class="w-44 h-14 backdrop-blur-sm drop-shadow-2xl text-white underline decoration-blue-400 shadow-2xl rounded-b-lg"></div>
     <button
       class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"
       type="button" id="menu-toggle" style="pointer-events: all;">
@@ -131,6 +131,11 @@
         <h2>Make sure your travel is perfect for you.</h2>
       </div>
     </div>
+    <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </button>
   </div>
   <div class="grid grid-cols-11 gap-x-8 ">
     <div class="col-span-12 text-center">
@@ -140,8 +145,7 @@
     </div>
 
     <div class="col-span-9 col-start-2 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full">
-      <div
-        class="inline-block  lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all card">
+      <div class="inline-block  lg:border-4 lg:border-info-content w-full lg:px-0 lg:w-96 bg-base-100 shadow-xl hover:shadow-2xl hover:drop-shadow-2xl hover:translate-y-[-1.5rem] transition-all card">
         <figure>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes"
             class="hidden md:flex object-cover" />
