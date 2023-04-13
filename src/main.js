@@ -1,9 +1,8 @@
 import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
-import Stats from 'three/examples/jsm/libs/stats.module'
+// import Stats from 'three/examples/jsm/libs/stats.module'
 import { section } from './cursor';
-import lerp from 'lerp'
 
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")
@@ -70,9 +69,10 @@ function switchPlanet(sectionNumber) {
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
-  const duration = 4000; // milliseconds
+  const duration = 3000; // milliseconds
   const startTime = performance.now();
   const startFOV = camera.fov;
+  console.log("startFOV", startFOV);
 
   function updateCameraPosition() {
     const elapsed = performance.now() - startTime;
@@ -85,11 +85,8 @@ function switchPlanet(sectionNumber) {
     // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
     camera.aspect = aspectRatio;
-    function lerp(v0, v1, t) {
-      return v0*(1-t)+v1*t
-    }
-
-    camera.fov = lerp(startFOV, planetFOVs[sectionNumber], progress);
+    const newFOV = planetFOVs[sectionNumber];
+    camera.fov = THREE.MathUtils.damp(startFOV, newFOV, 0.01, 0.1); // Smoothly interpolate FOV
     camera.updateProjectionMatrix();
 
 
