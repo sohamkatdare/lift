@@ -1,9 +1,8 @@
 import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
-import Stats from 'three/examples/jsm/libs/stats.module'
+// import Stats from 'three/examples/jsm/libs/stats.module'
 import { section } from './cursor';
-import lerp from 'lerp'
 
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")
@@ -70,6 +69,7 @@ function switchPlanet(sectionNumber) {
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
+  
   const duration = 1500; // milliseconds
   const startTime = performance.now();
 
@@ -88,7 +88,7 @@ function switchPlanet(sectionNumber) {
       camera.aspect = aspectRatio;
       camera.updateProjectionMatrix();
     }
-
+    
     renderer.render(scene, camera);
     if (progress < 1) {
       requestAnimationFrame(updateCameraPosition);
