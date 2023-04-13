@@ -7,7 +7,7 @@ class Footer extends HTMLElement {
       <footer class="footer items-center p-4 bg-neutral-900 text-white">
         <div class="items-center grid-flow-col">
           <img src="/logo.png" alt="logo" class="w-10 h-10">
-          <p>Copyright © 2022 - All right reserved</p>
+          <p>Copyright © 2022 - All rights reserved</p>
         </div>
         <div class="grid-flow-col gap-4 md:place-self-center">
           <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">

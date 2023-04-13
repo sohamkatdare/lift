@@ -69,10 +69,9 @@ function switchPlanet(sectionNumber) {
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
-  const duration = 3000; // milliseconds
+  
+  const duration = 1500; // milliseconds
   const startTime = performance.now();
-  const startFOV = camera.fov;
-  console.log("startFOV", startFOV);
 
   function updateCameraPosition() {
     const elapsed = performance.now() - startTime;
@@ -84,12 +83,12 @@ function switchPlanet(sectionNumber) {
 
     // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
-    camera.aspect = aspectRatio;
-    const newFOV = planetFOVs[sectionNumber];
-    camera.fov = THREE.MathUtils.damp(startFOV, newFOV, 0.01, 0.1); // Smoothly interpolate FOV
-    camera.updateProjectionMatrix();
-
-
+    for(alpha = 0; alpha <= 1; alpha += 0.1) {
+      camera.fov = lerp(camera.fov, planetFOVs[sectionNumber], alpha)
+      camera.aspect = aspectRatio;
+      camera.updateProjectionMatrix();
+    }
+    
     renderer.render(scene, camera);
     if (progress < 1) {
       requestAnimationFrame(updateCameraPosition);

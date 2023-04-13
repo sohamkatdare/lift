@@ -3,32 +3,13 @@
 @tailwind utilities;
 
 @layer components {
-
-  /* .hero-btn :hover {
-      @apply backdrop-blur-sm bg-white/[0.125] text-white border-none;
-    } */
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
-  }
-
-  
+  }  
 }
-
-
-
-
-
-
-/* we should use futura or aileron as our font, maybe space mono for the <code> tag  */
-/* Hide scrollbar for Chrome, Safari and Opera */
-
-
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .tabbody {
