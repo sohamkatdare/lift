@@ -150,9 +150,6 @@ async function loadPlanetTexturesAsync() {
             textureLoader.load(url, resolve, undefined, reject);
         });
     });
-
-    console.log("Texture Loaded")
-
     return await Promise.all(texturePromises);
 }
 
