@@ -79,7 +79,7 @@ function scrollSection() {
     }, 500);
 }
 
-function scrollBefore() {
+export function scrollBefore() {
     if (section > 0) {
         section--;
         switchPlanet(section);
@@ -87,7 +87,7 @@ function scrollBefore() {
     scrollSection();
 }
 
-function scrollNext() {
+export function scrollNext() {
     if (section < 5) {
         section++;
         switchPlanet(section);
