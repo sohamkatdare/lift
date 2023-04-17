@@ -2,18 +2,7 @@ import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
 // import Stats from 'three/examples/jsm/libs/stats.module'
-import { section, scrollBefore, scrollNext } from './cursor';
-import Hammer from 'hammerjs';
-
-const swipeCanvas = document.querySelector("body");
-let hammer = new Hammer(swipeCanvas);
-
-hammer.on('swipeup', () => {
-  scrollNext();
-});
-hammer.on('swipedown', () => {
-  scrollBefore();
-});
+import { section } from './cursor';
 
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")
