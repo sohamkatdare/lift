@@ -29,7 +29,7 @@ export function isTouchDevice() {
 export function rendererSetup(scene, camera) {
     const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
 
-    renderer.setPixelRatio(window.devicePixelRatio);
+    // renderer.setPixelRatio(window.devicePixelRatio);
 
     if (isTouchDevice()) {
         if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width);
@@ -100,7 +100,7 @@ function createOrbitLine(distance, color=0xffffff80) {
 export function heroSetup() {
     const scene = sceneSetup('/2k_stars_milky_way.jpg');
     const aspect = window.orientation == 90 || window.orientation == -90 ? window.innerWidth / window.innerheight : window.innerHeight / innerWidth;
-    const camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = rendererSetup(scene, camera);
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
