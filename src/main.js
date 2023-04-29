@@ -4,6 +4,11 @@ import * as THREE from 'three'
 // import Stats from 'three/examples/jsm/libs/stats.module'
 import { section, scrollBefore, scrollNext } from './cursor';
 import Hammer from 'hammerjs';
+import Stats from 'three/examples/jsm/libs/stats.module'
+const stats = new Stats()
+document.body.appendChild(stats.dom)
+stats.dom.style.cssText = 'position: absolute; left: 0; bottom: 0; z-index: 10000; cursor: pointer; opacity: 0.9;';
+
 
 const swipeCanvas = document.querySelector("body");
 let hammer = new Hammer(swipeCanvas);
@@ -21,7 +26,6 @@ function closeToast() {
 
 const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
 
-//sadasdasd
 
 const camera = rsc.cameraSetup(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = rsc.rendererSetup(scene, camera);
@@ -41,19 +45,36 @@ let stars = rsc.starForge(scene)
 scene.add(stars)
 
 let isSwitchingPlanet = false;
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
 
 function animate() {
   if (!isSwitchingPlanet) {
     requestAnimationFrame(animate);
     // controls.update();
+    const currentTime = performance.now();
+    const delta = (currentTime - lastTime) / 1000; // convert to seconds
+    smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+    lastTime = currentTime;
+    timeDelta = deltaTime() * 30;
     updatePlanets();
     const offset = planetsOffsets[section];
-    rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.01, planetFOVs[section])
+    rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.075 * timeDelta, planetFOVs[section])
     renderer.render(scene, camera);
-    // stats.update()
+    stats.update()
   }
 
 }
+
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
+
+
 
 let planets;
 let planetsOffsets;
@@ -137,49 +158,56 @@ function resize() {
 }
 window.onresize = resize;
 function updatePlanets() {
-  rsc.sun.rotation.y += 0.001;
-  rsc.mercury.rotation.y += 0.01;
-  rsc.venus.rotation.y += 0.01;
+  rsc.sun.rotation.y += 0.001 * timeDelta;
+  rsc.mercury.rotation.y += 0.01 * timeDelta;
+  rsc.venus.rotation.y += 0.01 * timeDelta;
 
   rsc.earthGroup.rotation.x = 59.5;
-  rsc.earthGroup.rotation.y += 0.005;
+  rsc.earthGroup.rotation.y += 0.005 * timeDelta;
   rsc.earthGroup.rotation.z = 59.5;
-  rsc.moon.rotation.y += 0.01
-  rsc.earth.rotation.y += 0.01
+  rsc.moon.rotation.y += 0.01 * timeDelta
+  rsc.earth.rotation.y += 0.01 * timeDelta
 
-  rsc.mars.rotation.y += 0.005;
+  rsc.mars.rotation.y += 0.005 * timeDelta;
 
 
-  rsc.jupiter.rotation.y += 0.003;
+  rsc.jupiter.rotation.y += 0.003 * timeDelta;
 
-  rsc.saturn.rotation.y += 0.003;
-  rsc.saturnGroup.rotation.y += 0.002;
+  rsc.saturn.rotation.y += 0.003 * timeDelta;
+  rsc.saturnGroup.rotation.y += 0.002 * timeDelta;
   // rsc.saturnRings.rotation.y += 0.00005;
 
-  rsc.uranus.rotation.y += 0.007;
-  rsc.uranusGroup.rotation.y += 0.0005;
-  rsc.uranusRings.rotation.y += 0.0003;
+  rsc.uranus.rotation.y += 0.007 * timeDelta;
+  rsc.uranusGroup.rotation.y += 0.0005 * timeDelta;
+  rsc.uranusRings.rotation.y += 0.0003 * timeDelta;
 
-  rsc.neptune.rotation.y += 0.006;
+  rsc.neptune.rotation.y += 0.006 * timeDelta;
 
-  rsc.mercuryRotationGroup.rotation.y += 0.008;
-  // rsc.mercuryRotationGroup.rotation.x += 0.0008 * 2;
-  rsc.venusRotationGroup.rotation.y += 0.001;
-  // rsc.venusRotationGroup.rotation.x += 0.0001 * 2;
-  rsc.earthRotationGroup.rotation.y += 0.0008;
-  // rsc.earthRotationGroup.rotation.x += 0.00008 * 2;
-  rsc.marsRotationGroup.rotation.y += 0.0006;
-  // rsc.marsRotationGroup.rotation.x += 0.00006 * 2;
-  rsc.jupiterRotationGroup.rotation.y += 0.0005;
-  // rsc.jupiterRotationGroup.rotation.x += 0.00005 * 2;
-  rsc.saturnRotationGroup.rotation.y += 0.0003;
-  // rsc.saturnRotationGroup.rotation.x += 0.00003 * 2;
-  rsc.uranusRotationGroup.rotation.y += 0.0002;
-  // rsc.uranusRotationGroup.rotation.x += 0.00002 * 2;
-  rsc.neptuneRotationGroup.rotation.y += 0.0001;
-  // rsc.neptuneRotationGroup.rotation.x += 0.00001 * 2;
+  rsc.mercuryRotationGroup.rotation.y += 0.008 * timeDelta;
+  rsc.mercuryRotationGroup.rotation.x = THREE.MathUtils.degToRad(4);
 
-  stars.rotation.y -= 0.0002;
+  rsc.venusRotationGroup.rotation.y += 0.001 * timeDelta;
+  rsc.venusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-2);
+
+  rsc.earthRotationGroup.rotation.y += 0.0008 * timeDelta;
+
+  rsc.marsRotationGroup.rotation.y += 0.0006 * timeDelta;
+  rsc.marsRotationGroup.rotation.x = THREE.MathUtils.degToRad(1);
+
+  rsc.jupiterRotationGroup.rotation.y += 0.0005 * timeDelta;
+  rsc.jupiterRotationGroup.rotation.x = THREE.MathUtils.degToRad(2);
+
+  rsc.saturnRotationGroup.rotation.y += 0.0003 * timeDelta;
+  rsc.saturnRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+
+  rsc.uranusRotationGroup.rotation.y += 0.0002 * timeDelta;
+  rsc.uranusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+
+  rsc.neptuneRotationGroup.rotation.y += 0.0001 * timeDelta;
+  rsc.neptuneRotationGroup.rotation.x = THREE.MathUtils.degToRad(3);
+
+
+  stars.rotation.y -= 0.0002 * timeDelta;
 
   // rsc.mercuryOrbitLine.rotation.y -= 0.008;
   // rsc.venusOrbitLine.rotation.y -= 0.001;

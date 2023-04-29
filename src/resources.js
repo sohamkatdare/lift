@@ -63,44 +63,55 @@ export function rendererSetup(scene, camera) {
 // NEW Star Generation 
 export function starForge() {
 
-    var starQty = 45000;
-    var vertices = [];
-    for (var i = 0; i < starQty; i++) {
-        const spread = i / 2 + 500;
-        vertices.push(THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread));
+    const starQty = 45000;
+    const vertices = new Float32Array(starQty * 3);
+    let i = starQty;
+    const spreadBase = 500;
+    
+    while (i--) {
+        const spread = i / 2 + spreadBase;
+        const index = i * 3;
+        vertices[index] = THREE.MathUtils.randFloatSpread(spread);
+        vertices[index + 1] = THREE.MathUtils.randFloatSpread(spread);
+        vertices[index + 2] = THREE.MathUtils.randFloatSpread(spread);
     }
-    var starGeometry = new THREE.SphereGeometry(200, 100, 50);
-    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
-    var starMaterial = new THREE.PointsMaterial({
+    const starGeometry = new THREE.SphereGeometry(200, 100, 50);
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+
+    const starMaterial = new THREE.PointsMaterial({
         size: 1.5,
         opacity: 0.7,
     });
 
-    var stars = new THREE.Points(starGeometry, starMaterial);
-    return stars
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    return stars;
 }
 
-function createOrbitLine(distance, color=0xffffff80) {
-    // Create the dashed orbit line
-    var orbitPoints = [];
-    for (var i = 0; i <= 360; i += 5) {
-        var angle = i * Math.PI / 180;
-        var x = distance * Math.cos(angle);
-        var z = distance * Math.sin(angle);
-        orbitPoints.push(new THREE.Vector3(x, 0, z));
+function createOrbitLine(distance, color = 0xffffff80) {
+    const orbitPoints = [];
+    const tempVector = new THREE.Vector3();
+    const step = 5;
+
+    for (let i = 0; i <= 360; i += step) {
+        const angle = i * Math.PI / 180;
+        const x = distance * Math.cos(angle);
+        const z = distance * Math.sin(angle);
+        orbitPoints.push(tempVector.set(x, 0, z).clone());
     }
-    var orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
-    var orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: 0.5 });
-    var orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+
+    const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+    const orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: 0.5 });
+    const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
     orbitLine.computeLineDistances();
     return orbitLine;
 }
 
+
 export function heroSetup() {
     const scene = sceneSetup('/2k_stars_milky_way.jpg');
     const aspect = window.orientation == 90 || window.orientation == -90 ? window.innerWidth / window.innerheight : window.innerHeight / innerWidth;
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
     const renderer = rendererSetup(scene, camera);
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
@@ -195,22 +206,22 @@ export async function setup() {
     uranusRotationGroup = new THREE.Group();
     neptuneRotationGroup = new THREE.Group();
 
-    sun = addUnlitPlanet(sunTexture, 30, 32);
+    sun = addUnlitPlanet(sunTexture, 30, 24);
 
-    mercury = addPlanet(mercuryTexture, 1, 32);
+    mercury = addPlanet(mercuryTexture, 1, 24);
     // const mercuryOrbitRing = new THREE.RingGeometry(14.9, 15.1)
     mercuryRotationGroup.add(mercury);
     // mercuryRotationGroup.add(mercuryOrbitRing);
     mercury.position.set(0, 0, mercuryDistanceFromSun);
     solarSystem.add(mercuryRotationGroup);
 
-    venus = addPlanet(venusTexture, 2.9, 32);
+    venus = addPlanet(venusTexture, 2.9, 24);
     venusRotationGroup.add(venus);
     venus.position.set(0, 0, venusDistanceFromSun);
     solarSystem.add(venusRotationGroup);
 
-    moon = addPlanet(earthTexture, 3, 32, earthNormalTexture);
-    earth = addPlanet(moonTexture, 0.5, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+    moon = addPlanet(earthTexture, 3, 24, earthNormalTexture);
+    earth = addPlanet(moonTexture, 0.5, 24); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
     earthGroup = new THREE.Group();
     earthGroup.add(earth);
     earthGroup.add(moon);
@@ -219,17 +230,17 @@ export async function setup() {
     earthGroup.position.set(0, 0, earthDistanceFromSun);
     solarSystem.add(earthRotationGroup);
 
-    mars = addPlanet(marsTexture, 1.5, 32);
+    mars = addPlanet(marsTexture, 1.5, 24);
     marsRotationGroup.add(mars);
     mars.position.set(0, 0, marsDistanceFromSun);
     solarSystem.add(marsRotationGroup);
 
-    jupiter = addPlanet(jupiterTexture, 33, 32);
+    jupiter = addPlanet(jupiterTexture, 33, 24);
     jupiterRotationGroup.add(jupiter);
     jupiter.position.set(0, 0, jupiterDistanceFromSun);
     solarSystem.add(jupiterRotationGroup);
 
-    saturn = addPlanet(saturnTexture, 27, 32);
+    saturn = addPlanet(saturnTexture, 27, 24);
     const saturnRing = new THREE.RingGeometry(30, 54);
     const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingsTexture, side: THREE.DoubleSide })
     saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
@@ -242,7 +253,7 @@ export async function setup() {
     saturnGroup.position.set(0, 0, saturnDistanceFromSun);
     solarSystem.add(saturnRotationGroup);
 
-    uranus = addPlanet(uranusTexture, 12, 32);
+    uranus = addPlanet(uranusTexture, 12, 24);
     const uranusRing = new THREE.RingGeometry(14.8, 15);
     const uranusRingMaterial = new THREE.MeshBasicMaterial({ color: 0xB2BEB5, side: THREE.DoubleSide })
     uranusRingMaterial.opacity = 0.5;
@@ -255,7 +266,7 @@ export async function setup() {
     uranusRotationGroup.add(uranusGroup);
     solarSystem.add(uranusRotationGroup);
 
-    neptune = addPlanet(neptuneTexture, 11, 32);
+    neptune = addPlanet(neptuneTexture, 11, 24);
     neptuneRotationGroup.add(neptune);
     neptune.position.set(0, 0, neptuneDistanceFromSun);
     solarSystem.add(neptuneRotationGroup);
@@ -310,41 +321,36 @@ export async function addSolarSystem(scene) {
 }
 
 export function updateCameraPosition(camera, planet, offset, dampingFactor, fov) {
-    // Get the planet's position in world space
     const planetWorldPosition = new THREE.Vector3();
-    planet.getWorldPosition(planetWorldPosition);
-
     const planetRadius = new THREE.Vector3();
     const sphere = new THREE.Sphere();
+    const tempVector = new THREE.Vector3();
+
+    planet.getWorldPosition(planetWorldPosition);
+
     const positions = planet.geometry.attributes.position.array;
     const vertices = [];
 
     for (let i = 0; i < positions.length; i += 3) {
-        const vertex = new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2]);
-        vertices.push(vertex);
+        const vertex = tempVector.fromArray(positions, i);
+        vertices.push(vertex.clone());
     }
 
     sphere.setFromPoints(vertices);
     sphere.radius *= planet.scale.x;
     planetRadius.set(sphere.radius * 4, sphere.radius * 4, sphere.radius * 4);
 
-    // Calculate the desired position of the camera relative to the planet
     const desiredPosition = new THREE.Vector3().copy(planetWorldPosition).add(offset).add(planetRadius);
-
-    // Use lerp to gradually move the camera towards the desired position
     camera.position.lerp(desiredPosition, dampingFactor);
 
-
-    // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
     camera.fov = fov;
     camera.aspect = aspectRatio;
     camera.updateProjectionMatrix();
 
-    // Make the camera look at the planet in world space
-    // Slowly turn the camera to face the planet
     camera.lookAt(planetWorldPosition);
 }
+
 
 export const button = document.getElementById("menu-toggle");
 
