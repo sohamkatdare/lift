@@ -45,18 +45,32 @@ scene.add(uranusGroup);
 
 
 
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
+
 function animate() {
   requestAnimationFrame(animate);
+  const currentTime = performance.now();
+  const delta = (currentTime - lastTime) / 1000; // convert to seconds
+  smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  lastTime = currentTime;
+  timeDelta = deltaTime() * 30;
   updatePlanets();
   renderer.render(scene, camera);
 }
 
 function updatePlanets() {
-    uranus.rotation.y += 0.007;
-    uranus.rotation.z += 0.0002;
-    uranusGroup.rotation.y += 0.0007;
-    uranusGroup.rotation.z += 0.0001;
-    stars.rotation.y += 0.0001;
+    uranus.rotation.y += 0.007 * timeDelta;
+    uranus.rotation.z += 0.0002 * timeDelta;
+    uranusGroup.rotation.y += 0.0007 * timeDelta;
+    uranusGroup.rotation.z += 0.0001 * timeDelta;
+    stars.rotation.y += 0.0001 * timeDelta;
 }
 
 let prevScrollPos = window.scrollY || document.documentElement.scrollTop;

@@ -48,19 +48,33 @@ saturnGroup.add(saturnRings);
 saturnRings.rotation.set(67.5, 0, 0);
 addToScene(saturnGroup, 0, 0, -20);
 
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
+
 function animate() {
   requestAnimationFrame(animate);
+  const currentTime = performance.now();
+  const delta = (currentTime - lastTime) / 1000; // convert to seconds
+  smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  lastTime = currentTime;
+  timeDelta = deltaTime() * 30;
   updatePlanets();
   renderer.render(scene, camera);
 }
 
 function updatePlanets() {
-  saturn.rotation.x += 0.00013;
-  saturn.rotation.y += 0.008;
-  saturnGroup.rotation.x += 0.0001;
-  saturnGroup.rotation.y += 0.003;
-  saturnRings.rotation.y += 0.00005;
-  stars.rotation.y += 0.0001;
+  saturn.rotation.x += 0.00013 * timeDelta;
+  saturn.rotation.y += 0.008 * timeDelta;
+  saturnGroup.rotation.x += 0.0001 * timeDelta;
+  saturnGroup.rotation.y += 0.003 * timeDelta;
+  saturnRings.rotation.y += 0.00005 * timeDelta;
+  stars.rotation.y += 0.0001 * timeDelta;
 }
 
 animate();

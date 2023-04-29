@@ -11,7 +11,7 @@
   <title>LIFT - Ready for Launch!</title>
 </head>
 
-<body>
+<body class="scroll-smooth no-scrollbar">
   <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
     <div class="w-44 h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl rounded-b-lg"></div>
     <button class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
@@ -89,7 +89,7 @@
     <img src="../spinner.svg" alt="spinner">
   </div> -->
   <div class="hero min-h-screen relative " style="transform-style: inherit;">
-    <div class="hero-overlay brightness-50 bg-opacity-60 z-[-1]">
+    <div class="hero-overlay brightness-90 z-[-1]">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content select-none text-center text-neutral-content">
@@ -100,7 +100,7 @@
     </div>
     <div class="grid justify-center p-5 relative top-60 z-10">
       <div class="grid grid-cols-2 md:grid-cols-4 justify-center gap-y-5 gap-x-5">
-        <div class="card col-start-1 hover:border border-secondary col-end-1 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-1 border border-transparent transition-all hover:border-secondary col-end-1 bg-base-100/25 background-blur-md text-white">
             <div class="card-body">
                 <h2 class="card-title justify-center">Vehicles</h2>
                 <p class="hidden md:block text-center">Check out the vehicles we use to ensure that your trip is as safe as possible.</p>
@@ -110,7 +110,7 @@
             </div>
         </div>
     
-        <div class="card col-start-2 hover:border border-secondary col-end-2 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-2 border border-transparent transition-all hover:border-secondary col-end-2 bg-base-100/25 background-blur-md text-white">
             <div class="card-body">
                 <h2 class="card-title justify-center">Training</h2>
                 <p class="hidden md:block text-center">Learn how we prepare you to endure the alien physics of space.</p>
@@ -120,7 +120,7 @@
             </div>
         </div>
     
-        <div class="card col-start-1 md:col-start-3 hover:border border-secondary md:col-end-3 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-1 md:col-start-3 border border-transparent transition-all hover:border-secondary md:col-end-3 bg-base-100/25 background-blur-md text-white">
             <div class="card-body">
                 <h2 class="card-title justify-center">Safety</h2>
                 <p class="hidden md:block text-center">Learn how our technology keeps you safe through the harshest conditions of space</p>
@@ -130,7 +130,7 @@
             </div>
         </div>
     
-        <div class="card col-start-2 md:col-start-4 hover:border border-secondary col-end-4 bg-base-100/25 background-blur-md text-white">
+        <div class="card col-start-2 md:col-start-4 border border-transparent transition-all hover:border-secondary col-end-4 bg-base-100/25 background-blur-md text-white">
             <div class="card-body">
                 <h2 class="card-title justify-center">Recovery</h2>
                 <p class="hidden md:block text-center">Instructions on how re-entry into Earth is conducted.</p>

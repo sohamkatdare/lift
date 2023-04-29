@@ -29,7 +29,7 @@ export function isTouchDevice() {
 export function rendererSetup(scene, camera) {
     const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
 
-    // renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
     if (isTouchDevice()) {
         if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width);
@@ -63,29 +63,22 @@ export function rendererSetup(scene, camera) {
 // NEW Star Generation 
 export function starForge() {
 
-    const starQty = 45000;
-    const vertices = new Float32Array(starQty * 3);
-    let i = starQty;
-    const spreadBase = 500;
-    
-    while (i--) {
-        const spread = i / 2 + spreadBase;
-        const index = i * 3;
-        vertices[index] = THREE.MathUtils.randFloatSpread(spread);
-        vertices[index + 1] = THREE.MathUtils.randFloatSpread(spread);
-        vertices[index + 2] = THREE.MathUtils.randFloatSpread(spread);
+    var starQty = 45000;
+    var vertices = [];
+    for (var i = 0; i < starQty; i++) {
+        const spread = i / 2 + 500;
+        vertices.push(THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread), THREE.MathUtils.randFloatSpread(spread));
     }
+    var starGeometry = new THREE.SphereGeometry(200, 100, 50);
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
-    const starGeometry = new THREE.SphereGeometry(200, 100, 50);
-    starGeometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
-
-    const starMaterial = new THREE.PointsMaterial({
+    var starMaterial = new THREE.PointsMaterial({
         size: 1.5,
         opacity: 0.7,
     });
 
-    const stars = new THREE.Points(starGeometry, starMaterial);
-    return stars;
+    var stars = new THREE.Points(starGeometry, starMaterial);
+    return stars
 }
 
 function createOrbitLine(distance, color = 0xffffff80) {
@@ -111,7 +104,7 @@ function createOrbitLine(distance, color = 0xffffff80) {
 export function heroSetup() {
     const scene = sceneSetup('/2k_stars_milky_way.jpg');
     const aspect = window.orientation == 90 || window.orientation == -90 ? window.innerWidth / window.innerheight : window.innerHeight / innerWidth;
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = rendererSetup(scene, camera);
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);

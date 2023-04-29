@@ -56,19 +56,33 @@ earthGroup.add(moon)
 earthGroup.add(earth)
 addToScene(earthGroup, 0, 0, -17);
 
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
+
 function animate() {
   requestAnimationFrame(animate);
+  const currentTime = performance.now();
+  const delta = (currentTime - lastTime) / 1000; // convert to seconds
+  smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  lastTime = currentTime;
+  timeDelta = deltaTime() * 50;
   updatePlanets();
   renderer.render(scene, camera);
 }
 
 function updatePlanets() {
   earthGroup.rotation.x = 59.5;
-  earthGroup.rotation.y += 0.005;
+  earthGroup.rotation.y += 0.005 * timeDelta;
   earthGroup.rotation.z = 59.5;
-  moon.rotation.y += 0.01
-  earth.rotation.y += 0.01
-  stars.rotation.y += 0.0001;
+  moon.rotation.y += 0.01 * timeDelta
+  earth.rotation.y += 0.01 * timeDelta
+  stars.rotation.y += 0.0001 * timeDelta;
 }
 animate();
 

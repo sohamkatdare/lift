@@ -38,17 +38,31 @@ let mars = addPlanet('/2k_mars.jpg', 2, 32);
 
 addToScene(mars, 0, 0, -7)
 
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
 
 function animate() {
   requestAnimationFrame(animate);
+  const currentTime = performance.now();
+  const delta = (currentTime - lastTime) / 1000; // convert to seconds
+  smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  lastTime = currentTime;
+  timeDelta = deltaTime() * 30;
   updatePlanets();
   renderer.render(scene, camera);
 }
 
 function updatePlanets() {
-  mars.rotation.y += 0.005;
-  mars.rotation.z += 0.0004;
-  stars.rotation.y += 0.0001;
+  console.log(timeDelta);
+  mars.rotation.y += 0.005 * timeDelta;
+  mars.rotation.z += 0.0004 * timeDelta;
+  stars.rotation.y += 0.0001 * timeDelta;
 }
 
 let prevScrollPos = window.scrollY || document.documentElement.scrollTop;

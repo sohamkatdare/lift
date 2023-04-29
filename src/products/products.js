@@ -35,15 +35,28 @@ const jupiter = addPlanet('/2k_jupiter.jpg', 2, 32);
 jupiter.position.set(0, 0, -7);
 scene.add(jupiter);
 
+var timeDelta;
+let smoothDeltaTime = 0;
+const lerpFactor = 0.005;
+let lastTime = performance.now();
+
+function deltaTime() {
+  return smoothDeltaTime;
+}
+
 function animate() {
   requestAnimationFrame(animate);
+  const currentTime = performance.now();
+  const delta = (currentTime - lastTime) / 1000; // convert to seconds
+  smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  lastTime = currentTime;
+  timeDelta = deltaTime() * 30;
   updatePlanets();
   renderer.render(scene, camera);
 }
-
 function updatePlanets() {
-  jupiter.rotation.y += 0.005;
-  stars.rotation.y += 0.0001;
+  jupiter.rotation.y += 0.005 * timeDelta;
+  stars.rotation.y += 0.0001 * timeDelta;
 }
 animate();
 
