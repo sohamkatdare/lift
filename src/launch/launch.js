@@ -62,6 +62,7 @@ function animate() {
   const currentTime = performance.now();
   const delta = (currentTime - lastTime) / 1000; // convert to seconds
   smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
+  smoothDeltaTime = Math.min(smoothDeltaTime, 0.033)
   lastTime = currentTime;
   timeDelta = deltaTime() * 30;
   updatePlanets();
