@@ -63,7 +63,7 @@ function animate() {
     timeDelta = deltaTime() * 30;
     updatePlanets();
     const offset = planetsOffsets[section];
-    rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.075 * timeDelta, planetFOVs[section])
+    rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.05 * timeDelta, planetFOVs[section])
     renderer.render(scene, camera);
     stats.update()
   }
@@ -86,7 +86,7 @@ async function init() {
   updatePlanetsAxialTilt();
   planets = [rsc.moon, rsc.mars, rsc.jupiter, rsc.saturn, rsc.uranus, rsc.neptune]
   planetsOffsets = [[3, 2, 3], [0, 0, 0], [3, 2, 3], [3, 2, 3], [0, 0, 0], [3, 2, 3]];
-  planetFOVs = [20, 7, 20, 37, 17, 20];
+  planetFOVs = [20, 20, 20, 37, 17, 20];
   selectedPlanet = planets[section];
   animate()
 }
@@ -102,7 +102,7 @@ function switchPlanet(sectionNumber) {
   const endRotation = new THREE.Quaternion().setFromUnitVectors(camera.up, selectedPlanet.position.clone().sub(camera.position).normalize());
   // const endRotation = camera.quaternion.clone();
   // camera.lookAt(startPosition);
-  
+
   const duration = 1500; // milliseconds
   const startTime = performance.now();
 
@@ -116,12 +116,12 @@ function switchPlanet(sectionNumber) {
 
     // Update camera FOV and aspect ratio to match viewport
     const aspectRatio = window.innerWidth / window.innerHeight;
-    for(alpha = 0; alpha <= 1; alpha += 0.1) {
+    for (alpha = 0; alpha <= 1; alpha += 0.1) {
       camera.fov = lerp(camera.fov, planetFOVs[sectionNumber], alpha)
       camera.aspect = aspectRatio;
       camera.updateProjectionMatrix();
     }
-    
+
     renderer.render(scene, camera);
     if (progress < 1) {
       requestAnimationFrame(updateCameraPosition);
@@ -227,6 +227,6 @@ init();
 
 rsc.button.onclick = () => {
   rsc.toggle();
-} 
+}
 
 export { switchPlanet };
