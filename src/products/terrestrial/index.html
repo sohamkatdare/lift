@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../../output.css" rel="stylesheet">
+  <link href="../../style.css" rel="stylesheet">
+  <!-- <link href="/products.css" rel="stylesheet"> -->
+  <title>LIFT - Terrestrial Planet</title>
+</head>
+
+<style>
+
+</style>
+
+<body class="no-scrollbar">
+  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden pointer-events-none fixed z-[100]">
+    <div class="w-44 h-14 backdrop-blur-sm drop-shadow-2xl text-white underline decoration-blue-400 shadow-2xl rounded-b-lg"></div>
+    <button
+      class="-translate-y-6 -translate-x-4 items-center bg-transparent border-none cursor-pointer flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"
+      type="button" id="menu-toggle" style="pointer-events: all;">
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200 "></span>
+      <div id="menu-toggle-label"
+        class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] top-0 whitespace-nowrap">
+        <span class="word text-white">
+          <h1 class="text-3xl"><code>LIFT</code></h1>
+        </span>
+      </div>
+    </button>
+    <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+    <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+    <div id="menu-arcs-wrapper"
+      class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+      <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+        <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+      </svg>
+    </div>
+    <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">01</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Home</span>
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/info/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">02</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Info</span>
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">03</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/vehicles/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">04</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/training/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">05</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Training</span>
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/safety/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">06</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>
+      </a>
+      <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/launch/recovery/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="index text-[0.8em] transition-transform duration-200">07</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/products/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span>
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04 </span>
+        <span class="label text-white text-[2em] transition-transform duration-200">Products</span>
+      </a>
+      <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in"
+        style="text-decoration: none;" href="/references/">
+        <span
+          class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+        <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span>
+        <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span>
+        <span class="label text-white text-[2em] transition-transform duration-200">References</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
+    <img src="/spinner.svg" alt="spinner">
+  </div> -->
+
+
+
+
+  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+
+    <div class="hero-overlay fixed bg-opacity-60">
+      <canvas class="top-0 left-0" id="bg"></canvas>
+    </div>
+    <div class="hero-content text-center text-white">
+      <div class="max-w-2xl">
+        <h1 class="mb-5 text-5xl">Terrestrial Planet Exploration</h1>
+        <h2>Take a trip to the rocky planets of the inner solar system!</h2>
+      </div>
+    </div>
+    <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </button>
+  </div>
+  <div class="grid grid-cols-11 gap-x-8 ">
+    <div class="col-span-12 text-center pt-9">
+        <div class="text-4xl divider"><strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet
+            Exploration</strong></div>
+        <br>
+      </div>
+      <div class="col-start-2 lg:col-end-7 col-end-12">
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 1</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will
+          take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 10</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a
+          protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
+        </p>
+        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg"
+          class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pr-9 pb-9">
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 24</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
+        </p>
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 44</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up
+          to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of
+          past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and
+          study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s
+          tallest volcano.
+        </p>
+        <img
+          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg"
+          class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pt-9 pb-9 pr-9">
+        </p>
+        <br><br>
+      </div>
+      <div class="col-start-2 lg:col-start-7 mb-5 col-end-12">
+        <img
+          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg"
+          class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 12</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2
+          months.
+        </p>
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 22</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a
+          protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not
+          inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on
+          the surface.
+        </p>
+        <img
+          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg"
+          class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pl-6">
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 46</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
+        </p>
+        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 60</div>
+        <p class="text-xl text-white hover:bg-black/[0.05]">
+          Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the
+          planets. Share your findings with the world and plan your next space adventure!
+        </p>
+      </div>
+    </div>
+  <footer-component></footer-component>
+  <script src="../../footer.js" type="module"></script>
+  <script src="../products.js" type="module"></script>
+</body>
+
+<!-- </html>top-[4rem]
+top-[17.75rem]
+top-[32.5rem] -->
