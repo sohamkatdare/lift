@@ -100,6 +100,29 @@ function createOrbitLine(distance, color = 0xffffff80) {
     return orbitLine;
 }
 
+export function createArcLine(distance, color, startAngle, endAngle) {
+    const orbitPoints = [];
+    const tempVector = new THREE.Vector3();
+    const step = 5;
+
+    for (let i = startAngle; i <= endAngle; i += step) {
+        const angle = i * Math.PI / 180;
+        const x = distance * Math.cos(angle);
+        const z = distance * Math.sin(angle);
+        orbitPoints.push(tempVector.set(x, 0, z).clone());
+    }
+
+    const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+    const orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: 0 });
+    const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+
+    // Set rotation to random
+    orbitLine.rotation.x = Math.random() * 2 * Math.PI;
+    orbitLine.rotation.y = Math.random() * 2 * Math.PI;
+
+    orbitLine.computeLineDistances();
+    return orbitLine;
+}
 
 export function heroSetup() {
     const scene = sceneSetup('/2k_stars_milky_way.jpg');

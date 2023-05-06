@@ -68,6 +68,7 @@ window.addEventListener('load', () => {
   
 window.onload = function() {
     window.scrollTo(0, 0);
+    console.log(`section: ${section}`)
 }
 
 function scrollSection() {
@@ -94,8 +95,9 @@ export function scrollNext() {
     }
     scrollSection();
 }
-
+// let heroText = document.querySelector('.animate-hidden-text');
 document.addEventListener('click', function(event) {
+    // heroText.style.transition = 'all 0.5s ease-in-out';
     const target = event.target;
     if (target.tagName === 'BUTTON' || target.tagName === 'A') {
         target.click();
@@ -109,6 +111,7 @@ document.addEventListener('click', function(event) {
         }
         event.stopPropagation();
     }
+    console.log(section)
 });
 
 function cursorHover(e) {

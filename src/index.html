@@ -5,8 +5,10 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./output.css" rel="stylesheet">
-  <link href="./style.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="./animate.css" rel="stylesheet" >
+  <script defer src="./animate.js" type="module"></script>
   <title>LIFT - Home</title>
   <style>
     button:hover {
@@ -43,6 +45,7 @@
 
     
   </style>
+
 </head>
 
 <body class="cursor-none no-scrollbar scroll-smooth " id="main">
@@ -132,8 +135,8 @@
       </div>
     </div>
     <div class="hero-content text-center">
-      <div class="max-w-screen">
-        <h1 data-value="Welcome to LIFT" class="text-4xl md:text-7xl lg:text-9xl  font-bold text-white/75  bg-white/[0.025] rounded-lg background-blur-sm p-4">Welcome to <span class="bloom" ><code class="hacker-text" data-value="LIFT.">LIFT.</code></span>
+      <div class="max-w-screen animate-hidden animate-hidden-text">
+        <h1 data-value="Welcome to LIFT" class="text-4xl md:text-7xl lg:text-9xl  font-bold text-white/75  bg-white/[0.025] rounded-lg background-blur-sm p-4">Welcome to LIFT.
         </h1>
       </div>
     </div>
@@ -141,7 +144,7 @@
 
   <div class="absolute grid grid-cols-12 snap-mandatory snap-y max-sm:justify-center max-sm:items-center ">
     <section id="section1" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
-      <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
+      <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Our <strong class="text-white"><code>Mission</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">At LIFT, our mission is to provide safe and accessible space travel
@@ -153,7 +156,7 @@
       </section>
     </section>
     <section id="section2" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
-      <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
+      <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our <strong class="text-white"><code>Products</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">We offer three different products here at Lift that you can buy to travel throughout space. Each package contains a trip to some of the most mesmerizing places within our universe.</p>
@@ -161,7 +164,7 @@
       </section>
     </section>
     <section id="section3" class="sm:col-start-2 sm:col-span-5 mx-auto col-span-12 snap-start snap-always">
-      <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
+      <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Get ready for <strong class="text-white"><code>Launch!</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">To ensure your safe flight, we strictly
@@ -172,7 +175,7 @@
       </section>
     </section>
     <section id="section4" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
-      <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
+      <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white"><strong class="text-white"><code>SpaceCamp™️</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">SpaceCamp ️is a challenging but intuitive 4-week program that takes place at the Galileo facilities and includes physical conditioning, cardiovascular training, and instruction in our unique and innovative Lift spacecraft to make sure your trip is smooth and safe. </p>
@@ -180,7 +183,7 @@
       </section>
     </section>
     <section id="section5" class="sm:col-start-2 sm:col-end-7 col-span-12 mx-auto  snap-start snap-always">
-      <section class="rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
+      <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our <strong class="text-white"><code>Vehicles!</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">We have
@@ -209,7 +212,7 @@
     </div>
   </div>
   <script type="module" src="./main.js" async defer></script>
-  <script type="module" src="./cursor.js" defer></script>
+  <script type="module" defer src="./cursor.js" defer></script>
 </body>
 
 
