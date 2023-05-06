@@ -85,15 +85,15 @@ async function init() {
   await rsc.addSolarSystem(scene);
   updatePlanetsAxialTilt();
   planets = [rsc.moon, rsc.mars, rsc.jupiter, rsc.saturn, rsc.uranus, rsc.neptune]
-  planetsOffsets = [[3, 2, 3], [0, 0, 0], [3, 2, 3], [3, 2, 3], [0, 0, 0], [3, 2, 3]];
-  planetFOVs = [20, 20, 20, 37, 17, 20];
+  planetsOffsets = [[3, 2, 3], [0, 0, 0], [3, 2, 3], [15, 9, 14], [0, 0, 0], [3, 2, 3]];
+  planetFOVs = [20, 20, 20, 20, 20, 20];
   selectedPlanet = planets[section];
   animate()
 }
 
 function switchPlanet(sectionNumber) {
   document.querySelector("#close-toast").parentElement.parentElement.classList.add("hidden")
-  selectedPlanet = planets[sectionNumber];
+  selectedPlanet = planets[parseInt(sectionNumber)];
 
   const startPosition = camera.position.clone();
   const offset = planetsOffsets[section];
@@ -106,7 +106,7 @@ function switchPlanet(sectionNumber) {
   const duration = 1500; // milliseconds
   const startTime = performance.now();
 
-  function updateCameraPosition() {
+  function lerpCameraPosition() {
     const elapsed = performance.now() - startTime;
     const progress = Math.min(elapsed / duration, 1);
     const newPosition = new THREE.Vector3().lerpVectors(startPosition, endPosition, progress);
@@ -124,7 +124,7 @@ function switchPlanet(sectionNumber) {
 
     renderer.render(scene, camera);
     if (progress < 1) {
-      requestAnimationFrame(updateCameraPosition);
+      requestAnimationFrame(lerpCameraPosition);
       isSwitchingPlanet = true
       updatePlanets();
       // stats.update()
@@ -132,7 +132,7 @@ function switchPlanet(sectionNumber) {
     else isSwitchingPlanet = false;
   }
 
-  // updateCameraPosition();
+  // lerpCameraPosition();
 }
 
 function updatePlanetsAxialTilt() {
