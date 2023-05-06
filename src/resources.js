@@ -295,21 +295,21 @@ export async function setup() {
 
     // Create the dashed orbit line
     mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun, 0x999999);
-    mercuryRotationGroup.add(mercuryOrbitLine);
+    solarSystem.add(mercuryOrbitLine);
     venusOrbitLine = createOrbitLine(venusDistanceFromSun, 0xfddca4);
-    venusRotationGroup.add(venusOrbitLine);
+    solarSystem.add(venusOrbitLine);
     earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff);
     solarSystem.add(earthOrbitLine);
     marsOrbitLine = createOrbitLine(marsDistanceFromSun, 0xfa9868);
-    marsRotationGroup.add(marsOrbitLine);
+    solarSystem.add(marsOrbitLine);
     jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun, 0xd1cac2);
-    jupiterRotationGroup.add(jupiterOrbitLine);
+    solarSystem.add(jupiterOrbitLine);
     saturnOrbitLine = createOrbitLine(saturnDistanceFromSun, 0xfee7c5);
-    saturnRotationGroup.add(saturnOrbitLine);
+    solarSystem.add(saturnOrbitLine);
     uranusOrbitLine = createOrbitLine(uranusDistanceFromSun, 0xaadce5);
-    uranusRotationGroup.add(uranusOrbitLine);
+    solarSystem.add(uranusOrbitLine);
     neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun, 0x7aa8fb);
-    neptuneRotationGroup.add(neptuneOrbitLine);
+    solarSystem.add(neptuneOrbitLine);
     moonOrbitLine = createOrbitLine(4, 0x999999);
     earthGroup.add(moonOrbitLine);
 

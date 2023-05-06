@@ -168,6 +168,7 @@ function updatePlanets() {
   rsc.earthGroup.rotation.z = 59.5;
   rsc.moon.rotation.y += 0.01 * timeDelta
   rsc.earth.rotation.y += 0.01 * timeDelta
+  rsc.moonOrbitLine.rotation.y += 0.005 * timeDelta;
 
   rsc.mars.rotation.y += 0.005 * timeDelta;
 
