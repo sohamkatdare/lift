@@ -4,15 +4,20 @@ import * as THREE from 'three';
 import * as rsc from '../../resources';
 
 let orientation = window.orientation;
+let resizeTimeout;
+
 function resize() {
-    if(!rsc.isTouchDevice()) {  // if not touch device
-        location.reload();
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    if (!rsc.isTouchDevice()) {
+      location.reload();
     } else {
-        if (orientation !== window.orientation) {
-            location.reload();
-        }
-        orientation = window.orientation;
+      if (orientation !== window.orientation) {
+        location.reload();
+      }
+      orientation = window.orientation;
     }
+  }, 500); 
 }
 window.onresize = resize;
 

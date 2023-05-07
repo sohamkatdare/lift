@@ -10,6 +10,22 @@
 }
 
 
+.animate-hidden-slide {
+  transform: scale(1);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: calc(200ms * (var(--order) + 1));
+}
+
+.animate-hidden-left {
+  transform: translateX(-100%);
+}
+
+.animate-hidden-right {
+  transform: translateX(100%);
+}
+
 
 
 .show,
@@ -20,7 +36,7 @@
 }
 
 @media(prefers-reduced-motion) {
-  .animate-hidden {
+  .animate-hidden { 
     transition: none;
   }
 }

@@ -146,16 +146,18 @@ function updatePlanetsAxialTilt() {
 }
 
 
-let orientation = window.orientation;
 function resize() {
-  if (!rsc.isTouchDevice()) {  // if not touch device
-    location.reload();
-  } else {
-    if (orientation !== window.orientation) {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    if (!rsc.isTouchDevice()) {
       location.reload();
+    } else {
+      if (orientation !== window.orientation) {
+        location.reload();
+      }
+      orientation = window.orientation;
     }
-    orientation = window.orientation;
-  }
+  }, 500); 
 }
 window.onresize = resize;
 function updatePlanets() {
