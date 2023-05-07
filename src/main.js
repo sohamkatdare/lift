@@ -136,6 +136,7 @@ function switchPlanet(sectionNumber) {
 }
 
 function updatePlanetsAxialTilt() {
+
   rsc.mercury.rotation.z = THREE.MathUtils.degToRad(0.01);
   rsc.venus.rotation.z = THREE.MathUtils.degToRad(177.44);
   rsc.mars.rotation.z = THREE.MathUtils.degToRad(25.19);
@@ -143,6 +144,15 @@ function updatePlanetsAxialTilt() {
   rsc.saturnGroup.rotation.z = THREE.MathUtils.degToRad(26.7);
   rsc.uranusGroup.rotation.z = THREE.MathUtils.degToRad(97.8);
   rsc.neptune.rotation.z = THREE.MathUtils.degToRad(28.3);
+
+  rsc.mercuryRotationGroup.rotation.x = THREE.MathUtils.degToRad(4);
+  rsc.venusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-2);
+  rsc.marsRotationGroup.rotation.x = THREE.MathUtils.degToRad(1);
+  rsc.jupiterRotationGroup.rotation.x = THREE.MathUtils.degToRad(2);
+  rsc.saturnRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+  rsc.uranusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+  rsc.neptuneRotationGroup.rotation.x = THREE.MathUtils.degToRad(3);
+
 }
 
 
@@ -188,27 +198,35 @@ function updatePlanets() {
   rsc.neptune.rotation.y += 0.006 * timeDelta;
 
   rsc.mercuryRotationGroup.rotation.y += 0.008 * timeDelta;
-  rsc.mercuryRotationGroup.rotation.x = THREE.MathUtils.degToRad(4);
+  rsc.mercuryOrbitLine.rotation.y -= 0.008 * timeDelta;
+
 
   rsc.venusRotationGroup.rotation.y += 0.001 * timeDelta;
-  rsc.venusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-2);
+  rsc.venusOrbitLine.rotation.y -= 0.001 * timeDelta;
+
 
   rsc.earthRotationGroup.rotation.y += 0.0008 * timeDelta;
+  rsc.earthOrbitLine.rotation.y -= 0.0008 * timeDelta;
 
   rsc.marsRotationGroup.rotation.y += 0.0006 * timeDelta;
-  rsc.marsRotationGroup.rotation.x = THREE.MathUtils.degToRad(1);
+  rsc.marsOrbitLine.rotation.y -= 0.0006 * timeDelta;
+
 
   rsc.jupiterRotationGroup.rotation.y += 0.0005 * timeDelta;
-  rsc.jupiterRotationGroup.rotation.x = THREE.MathUtils.degToRad(2);
+  rsc.jupiterOrbitLine.rotation.y -= 0.0005 * timeDelta;
+
 
   rsc.saturnRotationGroup.rotation.y += 0.0003 * timeDelta;
-  rsc.saturnRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+  rsc.saturnOrbitLine.rotation.y -= 0.0003 * timeDelta;
+
 
   rsc.uranusRotationGroup.rotation.y += 0.0002 * timeDelta;
-  rsc.uranusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
+  rsc.uranusOrbitLine.rotation.y -= 0.0002 * timeDelta;
+
 
   rsc.neptuneRotationGroup.rotation.y += 0.0001 * timeDelta;
-  rsc.neptuneRotationGroup.rotation.x = THREE.MathUtils.degToRad(3);
+  rsc.neptuneOrbitLine.rotation.y -= 0.0001 * timeDelta;
+
 
 
   stars.rotation.y -= 0.0002 * timeDelta;
