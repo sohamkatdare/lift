@@ -81,7 +81,7 @@ export function starForge() {
     return stars
 }
 
-function createOrbitLine(distance, color = 0xffffff80) {
+function createOrbitLine(distance, color = 0xffffff80, gapSize=0.5) {
     const orbitPoints = [];
     const tempVector = new THREE.Vector3();
     const step = 5;
@@ -94,7 +94,7 @@ function createOrbitLine(distance, color = 0xffffff80) {
     }
 
     const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
-    const orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: 0.5 });
+    const orbitMaterial = new THREE.LineDashedMaterial({ color: color, dashSize: 1, gapSize: gapSize });
     const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
     orbitLine.computeLineDistances();
     return orbitLine;
@@ -298,7 +298,7 @@ export async function setup() {
     mercuryRotationGroup.add(mercuryOrbitLine);
     venusOrbitLine = createOrbitLine(venusDistanceFromSun, 0xfddca4);
     venusRotationGroup.add(venusOrbitLine);
-    earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff);
+    earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff, 2);
     solarSystem.add(earthOrbitLine);
     marsOrbitLine = createOrbitLine(marsDistanceFromSun, 0xfa9868);
     marsRotationGroup.add(marsOrbitLine);
