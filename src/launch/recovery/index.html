@@ -124,7 +124,7 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content max-w-[100%] text-center text-white">
-      <div class="">
+      <div class="animate-hidden">
         <h1 class="text-3xl md:text-5xl lg:text-7xl  font-bold text-white/75  bg-white/[0.025] rounded-lg background-blur-sm p-4">A safe return after a long voyage is the most important of all.</h1>
         <p class="mb-5 text-2xl">Rest easy as you re-enter the Earth's atmosphere.</p>
       </div>
@@ -137,31 +137,23 @@
   </div>
 
   <div class="hidden md:block grid-cols-12 px-0 py-10 bg-black">
-    <div class="col-start-1 col-end-13 overflow-x-auto text-center mx-auto  p-5 pt-0 ">
-      <div class="text-center text-4xl font-bold mb-8 text-white underline decoration-blue-500">Steps on your way back
-        to Earth</div>
+    <div class="col-start-1 col-end-13 overflow-x-hidden text-center mx-auto  p-5 pt-0 ">
+      <div class="text-center text-4xl font-bold mb-8 text-white underline decoration-blue-500 animate-hidden">Steps on your way back to Earth</div>
       <ul class="steps">
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all"
-            href="#section1">Re-Entry</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section2">Medical
-            Evaluation</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section3">Rest
-            and Recovery</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all"
-            href="#section4">Zero-Grav Training</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all"
-            href="#section5">Rehabilitation</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section6">Support
-            and Guidance</a></li>
-        <li class="step step-primary"><a
-            class="btn-link btn text-white font-xl no-underline hover:underline transition-all"
-            href="#section7">Reintegration</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 1 ">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section1">Re-Entry</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 2">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section2">Medical Evaluation</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 3">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section3">Rest and Recovery</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 4">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section4">Zero-Grav Training</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 5">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section5">Rehabilitation</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 6">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section6">Support and Guidance</a></li>
+        <li class="step step-primary mx-1 animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 7">
+          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section7">Reintegration</a></li>
       </ul>
       <br>
     </div>
@@ -170,18 +162,17 @@
 
   <div class="grid grid-cols-12 px-0 py-10 w-full bg-black snap-proximity snap-y "></div>
 
-  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always"
+  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Outer-Space-HD-Wallpaper-Free-download.jpg');">
-    <div
-      class="col-start-1 py-10 px-8 col-end-12 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1] backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="col-start-1 py-10 px-8 col-end-12 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1] backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 1;">
       <h1 class="text-xl md:text-4xl text-base-400 w-full" id="#section1"><strong>Step 1 : Re-Entry </strong></h1>
       <br>
-      <p class="text-md md:text-2xl font-light ">We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.</p>
+      <p class="text-md md:text-2xl font-light animate-hidden animate-hidden-slide animate-hidden-right " style="--order: 1; ">We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.</p>
       <br>
       <div class="hidden md:block tabs w-full px-10" id="tabs">
-        <a class="tab w-[30%] text-xl tab-bordered tab-active">Preparation</a>
-        <a class="tab w-[30%] text-xl tab-bordered">Technology</a>
-        <a class="tab w-[30%] text-xl tab-bordered overflow-hidden whitespace-nowrap">Expert Guidance</a>
+        <a class="tab overflow-ellipses w-[30%] text-xl tab-bordered tab-active">Preparation</a>
+        <a class="tab overflow-ellipses w-[30%] text-xl tab-bordered">Technology</a>
+        <a class="tab overflow-ellipses w-[30%] text-xl tab-bordered overflow-hidden whitespace-nowrap">Expert Guidance</a>
       </div>
       <div class="hidden md:block tabcontent p-4 backdrop-blur-sm rounded-lg h-[14rem]">
         <div class="tabbody h-fit" id="tabbody1">
@@ -235,10 +226,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always"
+  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701892044.jpg');">
-    <div
-      class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-md  h-fit max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-md  h-fit max-h-max outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 1">
       <h1 class="text-2xl md:text-4xl text-base-400" id="#section1"><strong>Step 2: Medical evaluation</strong></h1>
       <br>
       <p class="text-md md:text-2xl font-light ">After re-entry, you will undergo a comprehensive medical evaluation to ensure that you are healthy and ready to begin the recovery process. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include medication, physical therapy, and other treatments as needed.
@@ -248,10 +238,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always"
+  <div class="grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
-    <div
-      class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 1">
       <h1 class="text-4xl text-base-400" id="#section1"><strong>Step 3: Rest and recovery</strong>
         <br><br>
       </h1>
@@ -279,10 +268,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class=" grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] w-full snap-start snap-always"
+  <div class=" grid grid-cols-5 py-20 px-32 bg-cover min-h-[100vh] w-full snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
-    <div
-      class="lg:col-start-1 py-10 px-8 col-span-12 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-1 py-10 px-8 col-span-12 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-left" style="--order: 1">
       <h1 class="text-2xl md:text-4xl text-base-400" id="#section1"><strong>Step 4: Rehabilitation </strong></h1>
       <br>
       <p class="md:text-2xl font-light ">Once you are rested and ready, you will begin rehabilitation. This may include
@@ -296,10 +284,9 @@
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
 
-  <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always"
+  <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://images4.alphacoders.com/936/936378.jpg');">
-    <div
-      class="lg:col-start-8 col-start-1 py-20 px-10 col-span-12 col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-fit outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-8 col-start-1 py-20 px-10 col-span-12 col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-fit outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-right" style="--order: 1">
       <h1 class="text-2xl md:text-4xl text-base-400" id="#section1"><strong>Step 5: Support and guidance </strong></h1>
       <br><br>
       <p class="text-base-400 md:text-2xl font-light text-left"> Throughout the recovery process, our team will be there to
@@ -314,10 +301,9 @@
 
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
-  <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always"
+  <div class="grid grid-cols-12 py-20 px-20 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
     style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701895579.jpg');">
-    <div
-      class="lg:col-start-8 col-start-1 py-20 px-10 col-span-12 col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  h-fit outline-1 outline outline-white/25 outline-double">
+    <div class="lg:col-start-8 col-start-1 py-20 px-10 col-span-12 col-end-12 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  h-fit outline-1 outline outline-white/25 outline-double animate-hidden animate-hidden-slide animate-hidden-right" style="--order: 1">
       <h1 class="text-2xl md:text-4xl text-base-400" id="#section1"><strong>Step 6: Support and guidance </strong></h1>
         <br><br>
         <p class="text-base-400 md:text-2xl font-light text-left"> As you near the end of the recovery process, our team
@@ -412,12 +398,6 @@
 
   </div>
 
-
-
-
-
-
-
   </div>
 
   </div>
@@ -466,7 +446,7 @@
     </div>
   </div>
 
-  <script src="../../footer.js" type="module"></script>
+  <script src="../../footer.js" defer type="module"></script>
   <script src="recovery.js" type="module"></script>
 
 </body>
