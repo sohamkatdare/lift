@@ -2,24 +2,32 @@ import '../style.css'
 import * as rsc from '../resources';
 import * as THREE from 'three';
 
+
 let orientation = window.orientation;
+let resizeTimeout;
+
 function resize() {
-    if(!rsc.isTouchDevice()) {  // if not touch device
-        location.reload();
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    if (!rsc.isTouchDevice()) {
+      location.reload();
     } else {
-        if (orientation !== window.orientation) {
-            location.reload();
-        }
-        orientation = window.orientation;
+      if (orientation !== window.orientation) {
+        location.reload();
+      }
+      orientation = window.orientation;
     }
+  }, 500); 
 }
 window.onresize = resize;
 
 let [scene, camera, renderer, stars] = rsc.heroSetup();
 
+
+
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
-  const geometry = new THREE.DodecahedronGeometry(size, detail, detail);
+  const geometry = new THREE.SphereGeometry(size, detail, detail);
   const material = new THREE.MeshBasicMaterial({ map: texture });
   const planet = new THREE.Mesh(geometry, material);
   return planet
@@ -27,9 +35,23 @@ function addPlanet(mapTexture, size, detail) {
 
 
 
-const mars = addPlanet('/2k_mars.jpg', 2, 32);
-mars.position.set(0, 0, -7);
-scene.add(mars);
+function addToScene(planet, x, y, z) {
+  planet.position.set(x, y, z);
+  scene.add(planet)
+}
+
+
+const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
+const saturnRing = new THREE.RingGeometry(6, 11);
+const saturnRingTexture = new THREE.TextureLoader().load('/2k_saturn_rings.png');
+const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
+const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
+const saturnGroup = new THREE.Group();
+saturnGroup.add(saturn);
+saturnGroup.add(saturnRings);
+
+saturnRings.rotation.set(67.5, 0, 0);
+addToScene(saturnGroup, 0, 0, -20);
 
 var timeDelta;
 let smoothDeltaTime = 0;
@@ -51,48 +73,18 @@ function animate() {
   updatePlanets();
   renderer.render(scene, camera);
 }
+
 function updatePlanets() {
-  mars.rotation.y += 0.005 * timeDelta;
+  saturn.rotation.x += 0.00013 * timeDelta;
+  saturn.rotation.y += 0.008 * timeDelta;
+  saturnGroup.rotation.x += 0.0001 * timeDelta;
+  saturnGroup.rotation.y += 0.003 * timeDelta;
+  saturnRings.rotation.y += 0.00005 * timeDelta;
   stars.rotation.y += 0.0001 * timeDelta;
 }
+
 animate();
-
-let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
-
-function handleScroll() {
-  const currentScrollPos = window.scrollY || document.documentElement.scrollTop;
-  const scrollDirection = currentScrollPos > prevScrollPos ? 'down' : 'up';
-  const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
-
-  const normalizedValue = scrollDistance / 1500;
-
-  const inverter = scrollDirection === 'down' ? -1 : 1;
-  
-  stars.position.y += inverter * normalizedValue * 50;
-  stars.rotation.y += inverter * normalizedValue / 10;
-  mars.position.y -= inverter * normalizedValue * 20;
-  mars.position.z += inverter * normalizedValue * 20;
-
-  prevScrollPos = currentScrollPos;
-}
-
-document.addEventListener('scroll', handleScroll);
-
 
 rsc.button.onclick = () => {
   rsc.toggle();
 } 
-
-document.getElementById("p-2").addEventListener("click", () => {
-  this.classList.add("btn-active")
-  document.getElementById("p-1").classList.remove("btn-active")
-  document.getElementById("p1Form").classList.add("hidden")
-  document.getElementById("p2Form").classList.remove("hidden")
-})
-
-document.querySelector("#p-1").addEventListener("click",() => {
-  this.classList.add("btn-active")
-  document.querySelector("#p-2").classList.add("btn-active")
-  document.querySelector("#p1Form").classList.remove("hidden")
-  document.querySelector("#p2Form").classList.add("hidden")
-})

@@ -84,7 +84,7 @@ rsc.button.onclick = () => {
 } 
 
 document.getElementById("p-2").addEventListener("click", () => {
-  this.classList.add("btn-active")
+  document.getElementById("p-2").classList.add("btn-active")
   document.getElementById("p-1").classList.remove("btn-active")
   document.getElementById("p1Form").classList.add("hidden")
   document.getElementById("p2Form").classList.remove("hidden")
