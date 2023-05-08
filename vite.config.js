@@ -13,6 +13,7 @@ export default defineConfig({
                 products: resolve(__dirname, 'src/products/index.html'),
                 terrestrial: resolve(__dirname, 'src/products/terrestrial/index.html'),
                 gas_giant: resolve(__dirname, 'src/products/gas_giant/index.html'),
+                booking: resolve(__dirname, 'src/products/booking/index.html'),
                 launch: resolve(__dirname, 'src/launch/index.html'),
                 launch_recovery: resolve(__dirname, 'src/launch/recovery/index.html'),
                 launch_safety: resolve(__dirname, 'src/launch/safety/index.html'),
