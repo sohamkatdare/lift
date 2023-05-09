@@ -45,11 +45,15 @@
 
     
   </style>
+  <script src="navbar.js" type="module"></script>
+
 
 </head>
 
 <body class="cursor-none no-scrollbar scroll-smooth " id="main">
-  <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
+  <navbar-component></navbar-component>
+
+  <!-- <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
     <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
     <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
       <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
@@ -120,7 +124,7 @@
       </a>
 
     </div>
-  </div>
+  </div> -->
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="hero min-h-screen bg-transparent select-none relative" id="section0">
     <div class="toast toast-top toast-end hidden md:block">
