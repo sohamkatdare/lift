@@ -9,9 +9,13 @@ window.addEventListener('scroll', () => {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting && isScrollingDown) {
+    const scrollUpIntoView = entry.isIntersecting && !isScrollingDown;
+    const scrollDownIntoView = entry.isIntersecting && isScrollingDown;
+    const scrollUpOutOfView = !entry.isIntersecting && !isScrollingDown;
+    const scrollDownOutOfView = !entry.isIntersecting && isScrollingDown;
+    if (scrollUpIntoView || scrollUpOutOfView || scrollDownIntoView) {
       entry.target.classList.add('show')
-    } else {
+    } else if (scrollDownOutOfView) {
       entry.target.classList.remove('show')
     }
   })

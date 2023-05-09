@@ -6,6 +6,9 @@ import * as THREE from 'three';
 
 
 
+let orientation = window.orientation;
+let resizeTimeout;
+
 function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {

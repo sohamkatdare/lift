@@ -156,6 +156,9 @@ function updatePlanetsAxialTilt() {
 }
 
 
+let orientation = window.orientation;
+let resizeTimeout;
+
 function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
