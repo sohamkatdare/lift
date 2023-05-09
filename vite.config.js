@@ -22,6 +22,8 @@ export default defineConfig({
                 launch_training: resolve(__dirname, 'src/launch/training/index.html'),
                 launch_vehicles: resolve(__dirname, 'src/launch/vehicles/index.html'),
                 references: resolve(__dirname, 'src/references/index.html'),
+                404: resolve(__dirname, 'src/404/index.html'),
+                403: resolve(__dirname, 'src/403/index.html'),
             },
         },
     },
