@@ -5,45 +5,44 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-function signup(firstName, lastName, email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    user = userCredential.user;
+async function signup(firstName, lastName, email, password) {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
     console.log("Signup successful");
-    setDoc(doc(db, "users", email), {
+    await setDoc(doc(db, "users", email), {
       firstName: firstName,
       lastName: lastName,
       bookings: []
     });
     window.location.replace("/login/index.html");
-  })
-  .catch((error) => {
+    return 'success', user;
+  } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorCode, errorMessage);
-  });
+    return 'failed', error;
+  }
 }
 
-function login(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // Add user to local storage
-        localStorage.setItem('user', JSON.stringify(user));
-        console.log("Login successful");
-        return 'success', user;
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        return 'failed', error;
-    });
+async function login(email, password) {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    // Add user to local storage
+    localStorage.setItem('user', JSON.stringify(user));
+    console.log("Login successful");
+    window.location.replace("/booking/index.html");
+    return 'success', user;
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+    return 'failed', error;
+  }
 }
 
-function logout() {
+async function logout() {
     // Remove user from local storage to log user out
     localStorage.removeItem('user');
 }

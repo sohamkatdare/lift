@@ -1,7 +1,7 @@
 import { signup } from "../auth.js";
 
 const signupForm = document.querySelector('#p1Form');
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // get user info
@@ -16,8 +16,8 @@ signupForm.addEventListener('submit', (e) => {
         alert("Passwords do not match");
         return;
     }
-    const resp = async () => {
-        const a = await address;
-        console.log(a);
-    };
+    const resp = await signup(firstName, lastName, email, password_1);
+    if (resp[0] === 'success') {
+        window.location.replace("/login/index.html");
+    }
 });
