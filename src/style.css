@@ -483,3 +483,47 @@ link:hover > .label {
   background-color: #686f9a;
 }
 
+
+/* Webkit date input fields wrapper */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  background-color: transparent;
+}
+
+/* Webkit date input text style */
+input[type="date"]::-webkit-datetime-edit-text {
+  color: white;
+}
+
+/* Webkit date input month field */
+input[type="date"]::-webkit-datetime-edit-month-field {
+  color: white;
+}
+
+/* Webkit date input day field */
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: white;
+}
+
+/* Webkit date input year field */
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: white;
+}
+
+/* Webkit inner spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Webkit calendar picker indicator */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+  height: 20px;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+}
+
