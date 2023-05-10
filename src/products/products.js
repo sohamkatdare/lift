@@ -100,7 +100,5 @@ function handleScroll() {
 document.addEventListener('scroll', handleScroll);
 
 
-rsc.button.onclick = () => {
-  rsc.toggle();
-}
+
 

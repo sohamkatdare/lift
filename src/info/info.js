@@ -65,7 +65,6 @@ function animate() {
 }
 
 function updatePlanets() {
-  console.log(timeDelta);
   mars.rotation.y += 0.005 * timeDelta;
   mars.rotation.z += 0.0004 * timeDelta;
   stars.rotation.y += 0.0001 * timeDelta;
@@ -93,9 +92,7 @@ function handleScroll() {
 document.addEventListener('scroll', handleScroll);
 
 
-rsc.button.onclick = () => {
-  rsc.toggle();
-} 
+
 
 // setTimeout(rsc.toggle, 200);
 

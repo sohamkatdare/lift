@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../animate.css" rel="stylesheet" >
+  <script defer src="../../animate.js" type="module"></script>
+  <meta name="description" content="Book a trip to any location in the Solar System today!">
+  <!-- <link href="/products.css" rel="stylesheet"> -->
+  <title>LIFT - Booking a Tour</title>
+  <script defer src="../../navbar.js" type="module"></script>
+</head>
+
+<body class="no-scrollbar scroll-smooth " id="main">
+  <navbar-component></navbar-component>
+  <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
+
+    <div class="hero-overlay fixed">
+      <canvas class="top-0 left-0" id="bg"></canvas>
+    </div>
+    <div class="hero-content text-white">
+      <form id="p1Form" class="p-24 w-[96rem] z-50 pt-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+        <h1 class="text-6xl mb-12 underline underline-offset-4 text-white decoration-blue-400">Billing Address</h1>
+        <div class="grid md:gap-6">
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="email" name="floating_email" id="floating_email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_email"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Street Address</label>
+          </div>
+        </div>
+    
+        <div class="grid md:grid-cols-4 md:gap-6">
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="floating_first_name" id="floating_first_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_first_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="floating_last_name" id="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_last_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+          </div>
+          <div class="relative col-span-2 z-0 w-full mb-6 group">
+            <select type="text" name="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 scrollbar-minimalist" id="floating_last_name" placeholder=" " required>
+                <option class="bg-base-200" value="---">---</option>
+                <option class="bg-base-200" value="Alabama">Alabama</option>
+                <option class="bg-base-200" value="Alaska">Alaska</option>
+                <option class="bg-base-200" value="Arizona">Arizona</option>
+                <option class="bg-base-200" value="Arkansas">Arkansas</option>
+                <option class="bg-base-200" value="California">California</option>
+                <option class="bg-base-200" value="Colorado">Colorado</option>
+                <option class="bg-base-200" value="Connecticut">Connecticut</option>
+                <option class="bg-base-200" value="Delaware">Delaware</option>
+                <option class="bg-base-200" value="District of Columbia">District of Columbia</option>
+                <option class="bg-base-200" value="Florida">Florida</option>
+                <option class="bg-base-200" value="Georgia">Georgia</option>
+                <option class="bg-base-200" value="Guam">Guam</option>
+                <option class="bg-base-200" value="Hawaii">Hawaii</option>
+                <option class="bg-base-200" value="Idaho">Idaho</option>
+                <option class="bg-base-200" value="Illinois">Illinois</option>
+                <option class="bg-base-200" value="Indiana">Indiana</option>
+                <option class="bg-base-200" value="Iowa">Iowa</option>
+                <option class="bg-base-200" value="Kansas">Kansas</option>
+                <option class="bg-base-200" value="Kentucky">Kentucky</option>
+                <option class="bg-base-200" value="Louisiana">Louisiana</option>
+                <option class="bg-base-200" value="Maine">Maine</option>
+                <option class="bg-base-200" value="Maryland">Maryland</option>
+                <option class="bg-base-200" value="Massachusetts">Massachusetts</option>
+                <option class="bg-base-200" value="Michigan">Michigan</option>
+                <option class="bg-base-200" value="Minnesota">Minnesota</option>
+                <option class="bg-base-200" value="Mississippi">Mississippi</option>
+                <option class="bg-base-200" value="Missouri">Missouri</option>
+                <option class="bg-base-200" value="Montana">Montana</option>
+                <option class="bg-base-200" value="Nebraska">Nebraska</option>
+                <option class="bg-base-200" value="Nevada">Nevada</option>
+                <option class="bg-base-200" value="New Hampshire">New Hampshire</option>
+                <option class="bg-base-200" value="New Jersey">New Jersey</option>
+                <option class="bg-base-200" value="New Mexico">New Mexico</option>
+                <option class="bg-base-200" value="New York">New York</option>
+                <option class="bg-base-200" value="North Carolina">North Carolina</option>
+                <option class="bg-base-200" value="North Dakota">North Dakota</option>
+                <option class="bg-base-200" value="Northern Marianas Islands">Northern Marianas Islands</option>
+                <option class="bg-base-200" value="Ohio">Ohio</option>
+                <option class="bg-base-200" value="Oklahoma">Oklahoma</option>
+                <option class="bg-base-200" value="Oregon">Oregon</option>
+                <option class="bg-base-200" value="Pennsylvania">Pennsylvania</option>
+                <option class="bg-base-200" value="Puerto Rico">Puerto Rico</option>
+                <option class="bg-base-200" value="Rhode Island">Rhode Island</option>
+                <option class="bg-base-200" value="South Carolina">South Carolina</option>
+                <option class="bg-base-200" value="South Dakota">South Dakota</option>
+                <option class="bg-base-200" value="Tennessee">Tennessee</option>
+                <option class="bg-base-200" value="Texas">Texas</option>
+                <option class="bg-base-200" value="Utah">Utah</option>
+                <option class="bg-base-200" value="Vermont">Vermont</option>
+                <option class="bg-base-200" value="Virginia">Virginia</option>
+                <option class="bg-base-200" value="Virgin Islands">Virgin Islands</option>
+                <option class="bg-base-200" value="Washington">Washington</option>
+                <option class="bg-base-200" value="West Virginia">West Virginia</option>
+                <option class="bg-base-200" value="Wisconsin">Wisconsin</option>
+                <option class="bg-base-200" value="Wyoming">Wyoming</option></select>
+            <label for="floating_last_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">State</label>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-4 md:gap-6">
+          <div class="relative z-0 col-span-2 w-full mb-6 group">
+            <input type="number" name="floating_first_name" id="floating_first_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_first_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Card Number</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="floating_last_name" id="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_last_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Exp. Date (MM/YY)</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="number" name="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" id="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required></input>
+            <label for="floating_last_name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">CVV</label>
+          </div>
+        </div>
+        <!-- <button type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 z-50">Submit</button>
+        <br> -->
+
+        <div class="flex justify-between">
+          <div class="text-sm breadcrumbs">
+            <ul>
+              <li>
+                <a>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  Home
+                </a>
+              </li> 
+              <li>
+                <a class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  Order Information
+                </a>
+              </li>
+              <li>
+                <a class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  Billing Address
+                </a>
+              </li>
+              <li>
+                <a class="text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  Confirmation
+                </a>
+              </li>  
+            </ul>
+          </div>
+          <button class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a>Next --></a></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    <footer-component></footer-component>
+    <script src="../../footer.js" type="module"></script>
+    <script src="../booking.js" type="module"></script>
+</body>

@@ -249,9 +249,7 @@ function updatePlanets() {
 
 init();
 
-// Button id does not exist.
 // rsc.button.onclick = () => {
 //   rsc.toggle();
-// }
-
+// } 
 export { switchPlanet };

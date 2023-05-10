@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
   
 window.onload = function() {
     window.scrollTo(0, 0);
-    console.log(`section: ${section}`)
+    // console.log(`section: ${section}`)
 }
 
 function scrollSection() {
@@ -111,7 +111,7 @@ document.addEventListener('click', function(event) {
         }
         event.stopPropagation();
     }
-    console.log(section)
+    // console.log(section)
 });
 
 function cursorHover(e) {

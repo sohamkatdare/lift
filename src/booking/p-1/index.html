@@ -5,14 +5,14 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../animate.css" rel="stylesheet" >
-  <script defer src="../animate.js" type="module"></script>
+  <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../animate.css" rel="stylesheet" >
+  <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Booking a Tour</title>
-  <script defer src="../navbar.js" type="module"></script>
+  <script defer src="../../navbar.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -24,7 +24,7 @@
     </div>
     <div class="hero-content text-white">
       <form id="p1Form" class="p-24 w-[96rem] z-50 pt-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Book your trip today!</h1>
+        <h1 class="text-6xl mb-12 underline underline-offset-4 text-white decoration-blue-400">Order Information</h1>
         <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-6 group">
             <input type="email" name="floating_email" id="floating_email"
@@ -116,24 +116,30 @@
               <li>
                 <a>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                  Home
+                  Start
                 </a>
               </li> 
               <li>
-                <a class="text-gray-500">
+                <a class="">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                  Documents
+                  Order Information
                 </a>
               </li>
               <li>
                 <a class="text-gray-500">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                  Documents
+                  Billing Address
+                </a>
+              </li>  
+              <li>
+                <a class="text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  Confirmation
                 </a>
               </li>  
             </ul>
           </div>
-          <button class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a>Next --></a></button>
+          <button class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a href="../p-2/">Next --></a></button>
         </div>
         
       </form>
@@ -142,6 +148,6 @@
 
 
     <footer-component></footer-component>
-    <script src="../footer.js" type="module"></script>
-    <script src="./booking.js" type="module"></script>
+    <script src="../../footer.js" type="module"></script>
+    <script src="../booking.js" type="module"></script>
 </body>

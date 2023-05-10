@@ -368,11 +368,6 @@ export function updateCameraPosition(camera, planet, offset, dampingFactor, fov)
 }
 
 
-export const button = document.getElementById("menu-toggle");
-
-export const toggle = () => {
-    document.body.classList.toggle("menu-toggled");
-}
 
 
 

@@ -1,8 +1,11 @@
-import '../style.css'
-import * as rsc from '../resources';
+import '../style.css';
+
 import * as THREE from 'three';
+import * as rsc from '../resources';
 
 
+
+let [scene, camera, renderer, stars] = rsc.heroSetup();
 let orientation = window.orientation;
 let resizeTimeout;
 
@@ -21,38 +24,6 @@ function resize() {
 }
 window.onresize = resize;
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
-
-
-
-function addPlanet(mapTexture, size, detail) {
-  const texture = new THREE.TextureLoader().load(mapTexture);
-  const geometry = new THREE.SphereGeometry(size, detail, detail);
-  const material = new THREE.MeshBasicMaterial({ map: texture });
-  const planet = new THREE.Mesh(geometry, material);
-  return planet
-}
-
-
-
-function addToScene(planet, x, y, z) {
-  planet.position.set(x, y, z);
-  scene.add(planet)
-}
-
-
-const saturn = addPlanet('/2k_saturn.jpg', 4.5, 32);
-const saturnRing = new THREE.RingGeometry(6, 11);
-const saturnRingTexture = new THREE.TextureLoader().load('/2k_saturn_rings.png');
-const saturnRingMaterial = new THREE.MeshBasicMaterial({ map: saturnRingTexture, side: THREE.DoubleSide })
-const saturnRings = new THREE.Mesh(saturnRing, saturnRingMaterial);
-const saturnGroup = new THREE.Group();
-saturnGroup.add(saturn);
-saturnGroup.add(saturnRings);
-
-saturnRings.rotation.set(67.5, 0, 0);
-addToScene(saturnGroup, 0, 0, -20);
-
 var timeDelta;
 let smoothDeltaTime = 0;
 const lerpFactor = 0.005;
@@ -69,22 +40,74 @@ function animate() {
   smoothDeltaTime = THREE.MathUtils.lerp(smoothDeltaTime, delta, lerpFactor);
   smoothDeltaTime = Math.min(smoothDeltaTime, 0.033)
   lastTime = currentTime;
-  timeDelta = deltaTime() * 30;
+  timeDelta = deltaTime() * 50;
   updatePlanets();
   renderer.render(scene, camera);
 }
 
 function updatePlanets() {
-  saturn.rotation.x += 0.00013 * timeDelta;
-  saturn.rotation.y += 0.008 * timeDelta;
-  saturnGroup.rotation.x += 0.0001 * timeDelta;
-  saturnGroup.rotation.y += 0.003 * timeDelta;
-  saturnRings.rotation.y += 0.00005 * timeDelta;
   stars.rotation.y += 0.0001 * timeDelta;
 }
-
 animate();
 
-rsc.button.onclick = () => {
-  rsc.toggle();
-} 
+// * THREEJS COMPLETE
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll("#tabs .tab");
+  const tabBodies = document.querySelectorAll(".tabbody");
+
+  function setActiveTab(tab) {
+    tabs.forEach((t) => {
+      t.classList.remove("tab-active");
+    });
+
+    tab.classList.add("tab-active");
+  }
+
+  function showTabBody(index) {
+    tabBodies.forEach((tb, i) => {
+      tb.classList[i === index ? "add" : "remove"]("visible");
+    });
+  }
+
+  // Set the first tab body as visible by default
+  // tabBodies[0].classList.add("visible");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      setActiveTab(tab);
+      showTabBody(index);
+    });
+  });
+});
+
+const links = document.querySelectorAll('.carousel-link');
+links.forEach(link => {
+  link.addEventListener('click', event => {
+      event.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  });
+});
+
+let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
+
+function handleScroll() {
+  const currentScrollPos = window.scrollY || document.documentElement.scrollTop;
+  const scrollDirection = currentScrollPos > prevScrollPos ? 'down' : 'up';
+  const scrollDistance = Math.abs(currentScrollPos - prevScrollPos);
+
+  const normalizedValue = scrollDistance / 1500;
+
+  const inverter = scrollDirection === 'down' ? -1 : 1;
+  
+  stars.position.y += inverter * normalizedValue * 50;
+  stars.rotation.y += inverter * normalizedValue / 10;
+  earthGroup.position.y -= inverter * normalizedValue * 20;
+  earthGroup.position.z += inverter * normalizedValue * 20;
+
+  prevScrollPos = currentScrollPos;
+}
+
+document.addEventListener('scroll', handleScroll);
+
+

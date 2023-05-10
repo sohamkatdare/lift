@@ -6,33 +6,6 @@ import * as rsc from '../resources';
 
 
 let [scene, camera, renderer, stars] = rsc.heroSetup();
-
-
-function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
-  const texture = new THREE.TextureLoader().load(mapTexture)
-  const normalTexture = new THREE.TextureLoader().load(normalMapTexture)
-  const geometry = new THREE.SphereGeometry(size, detail, detail);
-  const material = new THREE.MeshStandardMaterial({ map: texture, normalMap: normalTexture });
-  const planet = new THREE.Mesh(geometry, material);
-  return planet
-}
-
-
-function addPlanet(mapTexture, size, detail) {
-  const texture = new THREE.TextureLoader().load(mapTexture);
-  const geometry = new THREE.SphereGeometry(size, detail, detail);
-  const materialOptions = { map: texture };
-  const material = new THREE.MeshStandardMaterial(materialOptions);
-  const planet = new THREE.Mesh(geometry, material);
-
-  return planet;
-}
-function addToScene(planet, x, y, z) {
-  planet.position.set(x, y, z);
-  scene.add(planet)
-}
-;
-
 let orientation = window.orientation;
 let resizeTimeout;
 
@@ -50,16 +23,6 @@ function resize() {
   }, 500); 
 }
 window.onresize = resize;
-
-
-const earth = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 5, 32, '/minified/2k_earth_normal-min.jpeg');
-const moon = addPlanet('/minified/2k_moon-min.jpg', 1, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
-moon.position.set(6.5, 0, 0)
-
-const earthGroup = new THREE.Group();
-earthGroup.add(moon)
-earthGroup.add(earth)
-addToScene(earthGroup, 0, 0, -17);
 
 var timeDelta;
 let smoothDeltaTime = 0;
@@ -83,11 +46,6 @@ function animate() {
 }
 
 function updatePlanets() {
-  earthGroup.rotation.x = 59.5;
-  earthGroup.rotation.y += 0.005 * timeDelta;
-  earthGroup.rotation.z = 59.5;
-  moon.rotation.y += 0.01 * timeDelta
-  earth.rotation.y += 0.01 * timeDelta
   stars.rotation.y += 0.0001 * timeDelta;
 }
 animate();
@@ -153,8 +111,6 @@ function handleScroll() {
 document.addEventListener('scroll', handleScroll);
 
 
-rsc.button.onclick = () => {
-  rsc.toggle();
-} 
+
 
 
