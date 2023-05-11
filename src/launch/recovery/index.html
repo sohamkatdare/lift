@@ -16,7 +16,7 @@
   <script defer src="../../navbar.js" type="module"></script>
 </head>
 
-<body class="no-scrollbar scroll-smooth " id="main">
+<body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden" id="main">
   <navbar-component></navbar-component>
 
   <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
@@ -73,7 +73,7 @@
     <div class="col-start-1 py-10 px-8 col-end-12 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1] backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden slide slide-left" style="--order: 1;">
       <h1 class="text-xl md:text-4xl text-base-400 w-full" id="#section1"><strong>Step 1 : Re-Entry </strong></h1>
       <br>
-      <p class="text-md md:text-2xl font-light animate-hidden slide slide-right " style="--order: 1; ">We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.</p>
+      <p class="text-md md:text-2xl font-light animate-hidden slide slide-right " style="--order: 4; ">We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.</p>
       <br>
       <div class="hidden md:block tabs w-full px-10" id="tabs">
         <a class="tab overflow-ellipses w-[30%] text-xl tab-bordered tab-active">Preparation</a>
@@ -81,21 +81,21 @@
         <a class="tab overflow-ellipses w-[30%] text-xl tab-bordered overflow-hidden whitespace-nowrap">Expert Guidance</a>
       </div>
       <div class="hidden md:block tabcontent p-4 backdrop-blur-sm rounded-lg h-[14rem]">
-        <div class="tabbody h-fit" id="tabbody1">
+        <div class="tabbody animate-hidden slide slide-left" style="--order: 1" id="tabbody1">
           <p class="h-max">Preparing for re-entry is essential to ensure that you are ready for the challenges
             ahead. This involves a comprehensive pre-entry training program that covers both the physical and
             emotional aspects of returning to Earth. The training includes exercises to help astronauts adapt to Earth's
             gravity, as well as psychological counseling to help them cope with the stress and emotional challenges of
             returning to their families and daily life on Earth.</p>
         </div>
-        <div class="tabbody" id="tabbody2">
+        <div class="tabbody animate-hidden slide slide-left" style="--order: 2" id="tabbody2">
           <p class="h-max">The lift used for re-entry is equipped with advanced technology designed to make the
             transition smoother and more comfortable for astronauts. This includes body-support systems that help reduce
             the impact of the increased gravitational force on the body, as well as gravity simulation technology that
             provides a gradual transition from microgravity to Earth's gravity. The lift is also equipped with advanced
             life-support systems to ensure the safety and well-being of the astronauts during the re-entry process.</p>
         </div>
-        <div class="tabbody" id="tabbody3">
+        <div class="tabbody animate-hidden slide slide-left" style="--order: 3" id="tabbody3">
           <p class="h-max">Throughout the re-entry process, a team of experts will be on hand to monitor the condition
             of the astronauts and provide guidance and support. This team includes medical professionals, psychologists,
             and other specialists who are trained to deal with the unique challenges of re-entry. They will closely
@@ -221,7 +221,6 @@
         <h1 class="hidden md:block text-3xl text-base-400"><strong>Reviews</strong></h1>
           <br>
 
-
           <div class="hidden md:flex carousel w-full">
             <div id="slide1" class="carousel-item relative w-full">
               <div class="">
@@ -237,15 +236,13 @@
                   <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
                   <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
                   <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
-                  <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" checked />
                   <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star" />
+                  <input disabled aria-disabled="true" type="radio" name="rating-1" class="mask mask-star bg-slate-300/25" />
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide4"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❮</a>
-                <a href="#slide2"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
+                <a href="#slide4" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❮</a>
+                <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
               </div>
             </div>
             <div id="slide2" class="carousel-item relative w-full">
@@ -263,14 +260,12 @@
                   <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
                   <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
                   <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" />
-                  <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star" checked />
+                  <input disabled aria-disabled="true" type="radio" name="rating-2" class="mask mask-star bg-slate-300/25" />
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide1"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
-                <a href="#slide3"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
+                <a href="#slide1" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
+                <a href="#slide3" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
               </div>
             </div>
             <div id="slide3" class="carousel-item relative w-full">
@@ -284,21 +279,28 @@
                   <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
                   <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
                   <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
-                  <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" checked />
+                  <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true bg-slate-300/25" />
                   <input type="radio" name="rating-3" class="mask mask-star" disabled aria-disabled="true" />
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide2"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
-                <a href="#slide4"
-                  class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❯</a>
+                <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
+                <a href="#slide4" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
               </div>
             </div>
           </div>
-
-
-
+          
+          <script>
+            const carouselLinks = document.querySelectorAll('.carousel-link');
+            carouselLinks.forEach(link => {
+              link.addEventListener('click', event => {
+                event.preventDefault();
+                const slideId = link.getAttribute('href');
+                document.querySelector(slideId).scrollIntoView({ behavior: 'smooth' });
+              });
+            });
+          </script>
+      
     </div>
   </div>
 
