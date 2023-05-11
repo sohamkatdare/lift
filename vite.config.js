@@ -28,6 +28,11 @@ export default defineConfig({
                 booking_p2: resolve(__dirname, 'src/booking/p-2/index.html'),
                 booking_p3: resolve(__dirname, 'src/booking/p-3/index.html'),
             },
+            output: {
+                assetFileNames: (assetInfo) => {
+                  return "assets/"+assetInfo.name;
+                },
+            }
         },
     },
 })
