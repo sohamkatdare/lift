@@ -29,7 +29,7 @@ export default defineConfig({
             },
             output: {
                 assetFileNames: (assetInfo) => {
-                  return assetInfo.name;
+                  return "assets/"+assetInfo.name;
                 },
             }
         },
