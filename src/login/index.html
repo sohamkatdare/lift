@@ -12,9 +12,16 @@
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Login</title>
   <script defer src="../navbar.js" type="module"></script>
+  <style>
+    button {
+      transition-property: colors;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+  </style>
 </head>
 
-<body class="cursor-none no-scrollbar scroll-smooth " id="main">
+<body class="no-scrollbar scroll-smooth " id="main">
   <navbar-component></navbar-component>
   <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
 
@@ -22,10 +29,10 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="p-24 w-[96rem] opacity-80 z-50 pt-12 rounded-lg bg-base-300 mt-12" method="POST">
-        <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Login</h1>
-        <div class="grid">
-          <div class="relative z-0 w-full mb-6 group">
+      <form id="p1Form" class="p-24 w-[64rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg outline outline-1 outline-slate-700/[0.15] mt-12 text-center" method="POST">
+        <h1 class="text-6xl mb-12 underline text-white  decoration-blue-400">Login</h1>
+        <div class="grid text-left ">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="email" name="floating_email" id="floating_email"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -34,7 +41,7 @@
               address</label>
           </div>
         </div>
-        <div class="relative z-0 w-full mb-6 group">
+        <div class="text-left relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 4">
             <input type="password" name="floating_password" id="floating_password"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " autocomplete="on" required />
@@ -42,7 +49,10 @@
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
           </div>
     
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="grid grid-rows-2 gap-y-12">
+          <button type="submit" class="btn btn-outline animate-hidden slide slide-right slide-quick mx-[35%]" style="--order: 1">Submit</button>
+          <div class="divider"><a href="/signup/" class="link link-primary">Don't have an account? Sign up here.</a></div>
+        </div>
         
       </form>
     </div>

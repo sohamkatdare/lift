@@ -15,7 +15,7 @@
 .animate-hidden-img {
   transform: scale(1) ;
 }
-.animate-hidden-slide {
+.slide {
   transform: scale(1);
   transition-property: all;
   transition-duration: 0.5s;
@@ -23,29 +23,35 @@
   transition-delay: calc(200ms * (var(--order) + 1));
 }
 
-.animate-hidden-left {
+.slide-quick {
+  transition-delay: calc(150ms * (var(--order) + 1));
+}
+
+.slide-left {
   transform: translateX(calc(-100% * var(--dist)));
 }
 
-.animate-hidden-right {
+.slide-right {
   transform: translateX(calc(100% * var(--dist)));
 }
 
-.animate-hidden-up {
+.slide-up {
   transform: translateY(calc(-100% * var(--dist)));
 }
-.animate-hidden-down {
+.slide-down {
   transform: translateY(calc(100% * var(--dist)));
 }
 
-.show{
+.show {
   opacity: 1;
   filter: blur(0);
   transform: scale(1) translateX(0) translateY(0);
 }
 
 @media(prefers-reduced-motion) {
-  .animate-hidden { 
+  .animate-hidden,
+  .slide,
+  .animate-hidden-text { 
     transition: none;
   }
 }

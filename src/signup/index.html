@@ -22,10 +22,10 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="p-24 w-[96rem] opacity-80 z-50 pt-12 rounded-lg bg-base-300 mt-12" method="POST">
+      <form id="p1Form" class="p-24 max-w-[96rem]  z-50 pt-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg  outline outline-1 outline-slate-700/[0.15] mt-12" method="POST">
         <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Sign up</h1>
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="text" name="floating_first_name" id="floating_first_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -33,7 +33,7 @@
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
               name</label>
           </div>
-          <div class="relative z-0 w-full mb-6 group">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="text" name="floating_last_name" id="floating_last_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="grid">
-          <div class="relative z-0 w-full mb-6 group">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="email" name="floating_email" id="floating_email"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -54,14 +54,14 @@
         </div>
       
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="password" name="floating_password_1" id="floating_password_1"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " autocomplete="on" required />
             <label for="floating_password_1"
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Create password</label>
           </div>
-          <div class="relative z-0 w-full mb-6 group">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="password" name="floating_password_2" id="floating_password_2"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " autocomplete="on" required />

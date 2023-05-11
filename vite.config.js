@@ -26,6 +26,7 @@ export default defineConfig({
                 booking: resolve(__dirname, 'src/booking/index.html'),
                 booking_p1: resolve(__dirname, 'src/booking/p-1/index.html'),
                 booking_p2: resolve(__dirname, 'src/booking/p-2/index.html'),
+                booking_p3: resolve(__dirname, 'src/booking/p-3/index.html'),
             },
         },
     },
