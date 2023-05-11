@@ -25,9 +25,9 @@ class NavbarComponent extends HTMLElement {
   render() {
     const shadowRoot = this.attachShadow({ mode: 'open' });
     shadowRoot.innerHTML = `
-      <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-      <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-      <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+      <link href="./style.css" rel="stylesheet" media="print" onload="this.media='all'">
+      <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+      <link href="../../style.css" rel="stylesheet" media="print" onload="this.media='all'">
       
       
       

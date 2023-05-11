@@ -27,6 +27,13 @@ export default defineConfig({
                 booking_p1: resolve(__dirname, 'src/booking/p-1/index.html'),
                 booking_p2: resolve(__dirname, 'src/booking/p-2/index.html'),
             },
+            output: {
+                assetFileNames: (assetInfo) => {
+                  if (assetInfo.name == 'style.css')
+                    return 'style.css';
+                  return assetInfo.name;
+                },
+            }
         },
     },
 })
