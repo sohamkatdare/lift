@@ -18,10 +18,6 @@
 <body class="no-scrollbar scroll-smooth " id="main">
   <navbar-component></navbar-component>
 
-  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="../../spinner.svg" alt="spinner">
-  </div> -->
-
   <div class="hero min-h-screen max-w-screen select-none relative z-[-1]" style="transform-style: inherit;">
       
     <div class="hero-overlay fixed max-w-full bg-opacity-60">
@@ -132,6 +128,8 @@
 
     </div>
 
+    <canvas  class="z-50 h-screen" id="spaceship"></canvas>
+
     <footer-component></footer-component>
 
   </div>
@@ -155,6 +153,7 @@
 
   <script src="../../footer.js" defer type="module"></script>
   <script src="vehicles.js" type="module"></script>
+  <script src="shuttle.js" type="module"></script>
 </body>
 
 </html>

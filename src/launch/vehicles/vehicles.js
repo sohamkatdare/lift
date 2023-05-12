@@ -3,8 +3,6 @@ import '../../style.css'
 import * as THREE from 'three';
 import * as rsc from '../../resources';
 
-
-
 let [scene, camera, renderer, stars] = rsc.heroSetup();
 
 function addPlanet(mapTexture, size, detail) {

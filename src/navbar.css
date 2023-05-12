@@ -1,3 +1,22 @@
+/* :root {
+  --background-light: rgba(236, 229, 220, 0.4);
+  --background-dark: rgba(20, 20, 20, 0.4);
+  
+  --gradient-color-1: rgba(178, 94, 82, 0.4);
+  --gradient-color-2: rgba(56, 33, 46, 0.4);
+  --gradient-color-3: rgba(42, 37, 51, 0.4);
+  --gradient-color-4: rgba(17, 30, 41, 0.4);
+} */
+@keyframes arc-rotation {
+  from {
+    transform: translate3d(-50%, -50%, 0px) rotate(0deg);
+  }
+  
+  to {
+    transform: translate3d(-50%, -50%, 0px) rotate(360deg);
+  }
+}
+
 #body-div.menu-toggled > #menu {
   pointer-events: all; 
   cursor: pointer;
@@ -5,7 +24,6 @@
 
 #body-div.menu-toggled > #menu > #menu-toggle > span:first-of-type {
   cursor: pointer;
-  background-color: black;
   transform: translate3d(0px, 8px, 0px) rotate(45deg);
 }
 
@@ -16,7 +34,6 @@
 
 #body-div.menu-toggled > #menu > #menu-toggle > span:nth-of-type(3) {
   cursor: pointer;
-  background-color: black;
   transform: translate3d(0px, -8px, 0px) rotate(-45deg);
 }
 
@@ -52,9 +69,12 @@
 #body-div.menu-toggled > #menu > #menu-arcs-wrapper {
   opacity: 1;
   transform: scale(1);
-  transition: transform 600ms cubic-bezier(.16, .68, .25, .83), 
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 600ms cubic-bezier(.16, .68, .25, .83), 
     opacity 600ms cubic-bezier(.87, .12, .92, .39); 
 }
+
+
 
 #body-div.menu-toggled > #menu > #menu-links > .link {  
   opacity: 1;
