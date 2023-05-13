@@ -5,7 +5,11 @@ import * as rsc from '../resources';
 
 
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+}
+setup()
 let orientation = window.orientation;
 let resizeTimeout;
 
@@ -13,14 +17,14 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 

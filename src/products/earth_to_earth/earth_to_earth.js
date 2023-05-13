@@ -5,7 +5,20 @@ import * as rsc from '../../resources';
 
 
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let earthGroup, earth, moon;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  earth = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 5, 32, '/minified/2k_earth_normal-min.jpeg');
+  moon = addPlanet('/minified/2k_moon-min.jpg', 1, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
+  moon.position.set(6.5, 0, 0)
+  
+  earthGroup = new THREE.Group();
+  earthGroup.add(moon)
+  earthGroup.add(earth)
+  addToScene(earthGroup, 0, 0, -17);
+}
+setup()
 
 
 function addNormalPlanet(mapTexture, size, detail, normalMapTexture) {
@@ -40,26 +53,18 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
 
-const earth = addNormalPlanet('https://va3c.github.io/three.js/examples/textures/land_ocean_ice_cloud_2048.jpg', 5, 32, '/minified/2k_earth_normal-min.jpeg');
-const moon = addPlanet('/minified/2k_moon-min.jpg', 1, 32); //THESE ARE SWITCHED SO THAT THE EARTH DOES NOT ROTATE THE MOON
-moon.position.set(6.5, 0, 0)
-
-const earthGroup = new THREE.Group();
-earthGroup.add(moon)
-earthGroup.add(earth)
-addToScene(earthGroup, 0, 0, -17);
 
 var timeDelta;
 let smoothDeltaTime = 0;

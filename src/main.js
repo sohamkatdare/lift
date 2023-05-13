@@ -1,38 +1,38 @@
 import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
-// import Stats from 'three/examples/jsm/libs/stats.module'
-import { section, scrollBefore, scrollNext } from './cursor';
-import Hammer from 'hammerjs';
+import { section } from './cursor';
+// import Hammer from 'hammerjs';
+
 import Stats from 'three/examples/jsm/libs/stats.module'
 const stats = new Stats()
 document.body.appendChild(stats.dom)
 stats.dom.style.cssText = 'position: absolute; left: 0; bottom: 0; z-index: 10000; cursor: pointer; opacity: 0.9;';
 
 
-const swipeCanvas = document.querySelector("body");
-let hammer = new Hammer(swipeCanvas);
+// const swipeCanvas = document.querySelector("body");
+// let hammer = new Hammer(swipeCanvas);
 
-hammer.on('swipeup', () => {
-  scrollNext();
-});
-hammer.on('swipedown', () => {
-  scrollBefore();
-});
+// hammer.on('swipeup', () => {
+//   scrollNext();
+// });
+// hammer.on('swipedown', () => {
+//   scrollBefore();
+// });
 
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")
 }
 
-const scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
+let scene = rsc.sceneSetup("/2k_stars_milky_way.jpg");
 
 
-const camera = rsc.cameraSetup(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = rsc.rendererSetup(scene, camera);
+let camera = rsc.cameraSetup(scene, 45, window.innerWidth / window.innerHeight, 0.1, 1000);
+let renderer = rsc.rendererSetup(scene, camera);
 // const cameraRotationGroup = new THREE.Group();
 // cameraRotationGroup.add(camera);
 
-const cameraOriginalPosition = new THREE.Vector3(0, 20, 40)
+
 camera.position.set(0, 200, 800);
 camera.rotation.set(5, 0, 0);
 
@@ -166,13 +166,14 @@ function resize() {
       location.reload();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        location.reload()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
+
 function updatePlanets() {
   rsc.sun.rotation.y += 0.001 * timeDelta;
   rsc.mercury.rotation.y += 0.01 * timeDelta;
@@ -249,7 +250,5 @@ function updatePlanets() {
 
 init();
 
-// rsc.button.onclick = () => {
-//   rsc.toggle();
-// } 
+
 export { switchPlanet };

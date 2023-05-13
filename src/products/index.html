@@ -15,9 +15,11 @@
   <style>
     .card:hover figure > img {
       transform: scale(1.2);
-      transition: all 0.3s ease-in-out
+      transition: all 0.3s ease-in-out;
+      filter: brightness(1.1);
     }
     .card figure > img {
+      filter: brightness(0.95);
       transition: all 0.3s ease-in-out
     }
   </style>
@@ -61,13 +63,13 @@
       <div class="inline-block card  w-full lg:px-0 lg:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 1">
         <figure>
           <img src="https://www.worldatlas.com/r/w768/upload/ce/eb/6b/shutterstock-1918580258.jpg" alt="Shoes"
-            class="hidden md:flex object-cover brightness-75" />
+            class="hidden md:flex object-cover" />
           <img src="https://www.worldatlas.com/r/w768/upload/ce/eb/6b/shutterstock-1918580258.jpg" alt="Shoes"
-            class="md:hidden object-cover brightness-75" />
+            class="md:hidden object-cover" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Earth to Earth Express
-            <div class="badge hover:brightness-75 badge-accent">$3k - $10k</div>
+            <div class="badge hover:brightness-75 badge-accent text-xs">$3k - $10k</div>
           </h2>
           <p>Go anywhere on earth within the hour!</p>
           <p class="hidden lg:font-bold lg:block">Popular Locations</p>

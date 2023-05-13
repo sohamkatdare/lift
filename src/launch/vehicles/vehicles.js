@@ -3,7 +3,14 @@ import '../../style.css'
 import * as THREE from 'three';
 import * as rsc from '../../resources';
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let neptune;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  neptune = addPlanet('/2k_neptune.jpg', 4, 32);
+  addToScene(neptune, 0, 0, -15);
+}
+setup()
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -26,20 +33,18 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
 
-const neptune = addPlanet('/2k_neptune.jpg', 4, 32);
-addToScene(neptune, 0, 0, -15);
 
 
 var timeDelta;

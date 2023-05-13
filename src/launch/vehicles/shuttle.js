@@ -4,51 +4,54 @@ import * as THREE from 'three';
 import * as rsc from '../../resources';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const loader = new GLTFLoader();
+let scene, camera, renderer, stars, ambientLight;
 
-const scene = new THREE.Scene();
-const aspect = window.orientation == 90 || window.orientation == -90 ? window.innerWidth / window.innerheight : window.innerHeight / innerWidth;
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#spaceship"), antialias: true });
-const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-scene.add(scene);
-scene.add(aspect);
-scene.add(camera);
-scene.add(renderer);
-scene.add(ambientLight);
-
+function setup() {
+  const loader = new GLTFLoader();
+  
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+  renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#spaceship"), antialias: true });
+  ambientLight = new THREE.AmbientLight(0xffffff, 1);
+  scene.add(scene);
+  scene.add(camera);
+  scene.add(renderer);
+  scene.add(ambientLight);
+  
+  let orientation = window.orientation;
+  let resizeTimeout;
+  
+  loader.load(
+      '/assets/space_shuttle/scene.gltf',
+      function (gltf) {
+        let obj = gltf.scene;
+        obj.position = (0, 0, 20);
+        scene.add(obj);
+        
+        console.log("hello");
+      },
+      function (xhr) {
+          console.log("loading")
+      },
+      function (error) {
+          console.log("threw an error" + error)
+      }
+  )
+}
 let orientation = window.orientation;
 let resizeTimeout;
-
-loader.load(
-    '/assets/space_shuttle/scene.gltf',
-    function (gltf) {
-      let obj = gltf.scene;
-      obj.position = (0, 0, 20);
-      scene.add(obj);
-      
-      console.log("hello");
-    },
-    function (xhr) {
-        console.log("loading")
-    },
-    function (error) {
-        console.log("threw an error" + error)
-    }
-)
-
 function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 
 window.onresize = resize;

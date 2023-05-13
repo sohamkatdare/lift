@@ -4,7 +4,14 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as rsc from '../resources';
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let mars;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  mars = addPlanet('/2k_mars.jpg', 2, 32);
+  addToScene(mars, 0, 0, -7)
+}
+setup()
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -21,14 +28,14 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
@@ -39,9 +46,6 @@ function addToScene(planet, x, y, z) {
 }
 
 
-let mars = addPlanet('/2k_mars.jpg', 2, 32);
-
-addToScene(mars, 0, 0, -7)
 
 var timeDelta;
 let smoothDeltaTime = 0;

@@ -13,18 +13,36 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let jupiter, satelliteGroup;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  jupiter = addPlanet('/2k_jupiter.jpg', 2, 32);
+  satelliteGroup = new THREE.Group();
+  satelliteGroup.add(jupiter);
+  for (let i = 0; i < 30; i++) {
+    const height = Math.random() * 0.5 + 2.1;
+    const start = Math.random() * 300;
+    const length = Math.random() * 25;
+    const jupiterLine = rsc.createArcLine(height, '#' + Math.floor(Math.random() * 16777215).toString(16), start, start + length);
+    satelliteGroup.add(jupiterLine);
+  }
+  satelliteGroup.position.set(0, 0, -7);
+  scene.add(satelliteGroup);
+}
+setup()
+
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -34,18 +52,6 @@ function addPlanet(mapTexture, size, detail) {
   return planet
 }
 
-const jupiter = addPlanet('/2k_jupiter.jpg', 2, 32);
-const satelliteGroup = new THREE.Group();
-satelliteGroup.add(jupiter);
-for (let i = 0; i < 30; i++) {
-  const height = Math.random() * 0.5 + 2.1;
-  const start = Math.random() * 300;
-  const length = Math.random() * 25;
-  const jupiterLine = rsc.createArcLine(height, '#' + Math.floor(Math.random() * 16777215).toString(16), start, start + length);
-  satelliteGroup.add(jupiterLine);
-}
-satelliteGroup.position.set(0, 0, -7);
-scene.add(satelliteGroup);
 
 var timeDelta;
 let smoothDeltaTime = 0;

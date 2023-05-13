@@ -13,18 +13,26 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let mars;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  mars = addPlanet('/2k_mars.jpg', 2, 32);
+  mars.position.set(0, 0, -7);
+  scene.add(mars);
+}
+setup()
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -36,9 +44,6 @@ function addPlanet(mapTexture, size, detail) {
 
 
 
-const mars = addPlanet('/2k_mars.jpg', 2, 32);
-mars.position.set(0, 0, -7);
-scene.add(mars);
 
 var timeDelta;
 let smoothDeltaTime = 0;

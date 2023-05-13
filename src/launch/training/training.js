@@ -10,19 +10,36 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+let uranus, uranusRing, uranusRingMaterial, uranusRings, uranusGroup;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+  uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
+  uranusRing = new THREE.RingGeometry(4.65, 4.75);
+  uranusRingMaterial = new THREE.MeshBasicMaterial({ color: 0xB2BEB5, side: THREE.DoubleSide })
+  uranusRingMaterial.opacity = 0.5;
+  uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
+  uranusGroup = new THREE.Group();
+  uranusGroup.add(uranus);
+  uranusGroup.add(uranusRings);
+  
+  
+  uranusGroup.position.set(0, 0, -15);
+  scene.add(uranusGroup);
+}
+setup()
 
 function addPlanet(mapTexture, size, detail) {
   const texture = new THREE.TextureLoader().load(mapTexture);
@@ -34,19 +51,6 @@ function addPlanet(mapTexture, size, detail) {
 
 
 
-const uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
-const uranusRing = new THREE.RingGeometry(4.65, 4.75);
-const uranusRingTexture = new THREE.TextureLoader().load('/uranus_ring_texture.jpeg');
-const uranusRingMaterial = new THREE.MeshBasicMaterial({ color: 0xB2BEB5, side: THREE.DoubleSide })
-uranusRingMaterial.opacity = 0.5;
-const uranusRings = new THREE.Mesh(uranusRing, uranusRingMaterial);
-const uranusGroup = new THREE.Group();
-uranusGroup.add(uranus);
-uranusGroup.add(uranusRings);
-
-
-uranusGroup.position.set(0, 0, -15);
-scene.add(uranusGroup);
 
 
 

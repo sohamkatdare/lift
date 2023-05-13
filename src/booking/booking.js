@@ -5,7 +5,11 @@ import * as rsc from '../resources';
 
 
 
-let [scene, camera, renderer, stars] = rsc.heroSetup();
+let scene, camera, renderer, stars;
+function setup() {
+  [scene, camera, renderer, stars] = rsc.heroSetup();
+}
+setup()
 let orientation = window.orientation;
 let resizeTimeout;
 
@@ -13,14 +17,14 @@ function resize() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
     if (!rsc.isTouchDevice()) {
-      location.reload();
+      setup();
     } else {
       if (orientation !== window.orientation) {
-        location.reload();
+        setup()
       }
       orientation = window.orientation;
     }
-  }, 500); 
+  }, 250); 
 }
 window.onresize = resize;
 
@@ -51,44 +55,6 @@ function updatePlanets() {
 animate();
 
 // * THREEJS COMPLETE
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll("#tabs .tab");
-  const tabBodies = document.querySelectorAll(".tabbody");
-
-  function setActiveTab(tab) {
-    tabs.forEach((t) => {
-      t.classList.remove("tab-active");
-    });
-
-    tab.classList.add("tab-active");
-  }
-
-  function showTabBody(index) {
-    tabBodies.forEach((tb, i) => {
-      tb.classList[i === index ? "add" : "remove"]("visible");
-    });
-  }
-
-  // Set the first tab body as visible by default
-  // tabBodies[0].classList.add("visible");
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-      setActiveTab(tab);
-      showTabBody(index);
-    });
-  });
-});
-
-const links = document.querySelectorAll('.carousel-link');
-links.forEach(link => {
-  link.addEventListener('click', event => {
-      event.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-  });
-});
-
 let prevScrollPos = window.scrollY || document.documentElement.scrollTop;
 
 function handleScroll() {
