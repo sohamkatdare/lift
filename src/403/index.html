@@ -7,10 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet">
   <meta name="description" content="403 Error: Forbidden Page">
+  <meta http-equiv="Refresh" content="10; url='/'" />
 
   <title>LIFT - Info</title>
   <script defer src="../navbar.js" type="module"></script>
+  <script defer src="../animate.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -18,15 +21,14 @@
   <div class="hero min-h-screen" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">403 Error</h1>
-        <p class="mb-5">This page is forbidden to your user. Click below to return to the home page or login in order to access this page</p>
-        <div class="grid grid-cols-3 gap-x-8">
-          <a href="/"><button class="btn btn-primary">Go Home</button></a>
-          <br>
-          <a href="/signup/"><button class="btn btn-primary">Login</button></a>
-          <br>
-          <a href="/login/"><button class="btn btn-primary">Sign Up</button></a>
+      <div class="max-w-screen">
+        <div class="divider py-14 animate-hidden">
+          <h1 class="mb-5 text-8xl font-bold ">403 Error</h1>
+        </div>
+        <p class="mb-5 text-xl animate-hidden">This page is forbidden to your user. <br> Wait <span class="countdown inter text-4xl animate-hidden" id="countdown"><span></span></span> to be redirected to the home or login in order to access this page</p>
+        <div class="grid grid-cols-2 py-14 gap-x-0">
+          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 5"><a href="/signup/"><button class="btn btn-primary">Sign Up</button></a></div>
+          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 6"><a href="/"><button class="btn btn-primary">Go Home</button></a></div>
         </div>
       </div>
     </div>
@@ -35,6 +37,7 @@
 
   <footer-component></footer-component>
   <script src="../footer.js" defer type="module"></script>
+  <script src="../countdown.js" defer type="module"></script>
   <!-- <script src="403.js" type="module"></script> -->
 
 </body>
