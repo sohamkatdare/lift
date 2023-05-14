@@ -30,7 +30,7 @@
     </div>
     <div class="hero-content text-white">
       <form id="p1Form" class="p-24 w-[64rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg outline outline-1 outline-slate-700/[0.15] mt-12 text-center" method="POST">
-        <h1 class="text-6xl mb-12 underline text-white  decoration-blue-400">Login</h1>
+        <h1 class="text-6xl mb-12 underline text-white  decoration-blue-400 animate-hidden animate-hidden-text">Login</h1>
         <div class="grid text-left ">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="email" name="floating_email" id="floating_email"
@@ -50,8 +50,8 @@
           </div>
     
         <div class="grid grid-rows-2 gap-y-12">
-          <button type="submit" class="btn btn-outline animate-hidden slide slide-right slide-quick mx-[35%]" style="--order: 1">Submit</button>
-          <div class="divider"><a href="/signup/" class="link link-primary">Don't have an account? Sign up here.</a></div>
+          <button type="submit" class="btn btn-outline mx-[35%]" >Submit</button>
+          <div class="divider"><p>Don't have an account? Sign up <a href="/signup/" class="link link-primary text-lg">here.</a></p></div>
         </div>
         
       </form>

@@ -7,6 +7,7 @@ let scene, camera, renderer, stars;
 function setup() {
   [scene, camera, renderer, stars] = rsc.heroSetup();
 }
+setup();
 
 let orientation = window.orientation;
 let resizeTimeout;

@@ -46,6 +46,7 @@
   opacity: 1;
   filter: blur(0);
   transform: scale(1) translateX(0) translateY(0);
+  transition: opacity filter blur 0.5s ease-in-out 0.5s;
 }
 
 @media(prefers-reduced-motion) {

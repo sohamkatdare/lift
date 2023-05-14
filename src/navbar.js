@@ -30,7 +30,7 @@ class NavbarComponent extends HTMLElement {
       <link href="/assets/style.css" rel="stylesheet" media="print" onload="this.media='all'">     
       
       
-      <div id="body-div" class="w-full h-full">
+      <header id="body-div" class="w-full h-full">
       <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
       <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
       <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
@@ -103,7 +103,7 @@ class NavbarComponent extends HTMLElement {
 
       </div>
     </div>
-    </div>
+    </header>
     `;
   }
 }

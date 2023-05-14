@@ -23,7 +23,7 @@ window.onresize = resize;
 
 
 let scene, camera, renderer, stars;
-let uranus, uranusRing, uranusRingMaterial, uranusRings, uranusGroup;
+let uranus, uranusRing, uranusRingMaterial, uranusRings, uranusGroup, satelliteGroup;
 function setup() {
   [scene, camera, renderer, stars] = rsc.heroSetup();
   uranus = addPlanet('https://static.wikia.nocookie.net/planet-texture-maps/images/c/c2/Dh_uranus_texture.png', 4, 32);
@@ -34,6 +34,19 @@ function setup() {
   uranusGroup = new THREE.Group();
   uranusGroup.add(uranus);
   uranusGroup.add(uranusRings);
+  satelliteGroup = new THREE.Group();
+  satelliteGroup.add(uranusGroup)
+  satelliteGroup.add(uranus);
+  satelliteGroup.add(uranusRings);
+  for (let i = 0; i < 30; i++) {
+    const height = Math.random() * 0.5 + 2.1;
+    const start = Math.random() * 300;
+    const length = Math.random() * 25;
+    const uranusLine = rsc.createArcLine(height, '#' + Math.floor(Math.random() * 16777215).toString(16), start, start + length);
+    satelliteGroup.add(uranusLine);
+  }
+  satelliteGroup.position.set(0, 0, -15);
+  scene.add(satelliteGroup);
   
   
   uranusGroup.position.set(0, 0, -15);
@@ -96,8 +109,8 @@ function handleScroll() {
   
   stars.position.y += inverter * normalizedValue*50;
   stars.rotation.y += inverter * normalizedValue/10;
-  uranusGroup.position.y -= inverter * normalizedValue * 30;
-  uranusGroup.position.z += inverter * normalizedValue * 20;
+  satelliteGroup.position.y -= inverter * normalizedValue * 20;
+  satelliteGroup.position.z += inverter * normalizedValue * 20;
 
   prevScrollPos = currentScrollPos;
 }

@@ -25,12 +25,21 @@ function resize() {
 window.onresize = resize;
 
 let scene, camera, renderer, stars;
-let mars;
+let mars, satelliteGroup;
 function setup() {
   [scene, camera, renderer, stars] = rsc.heroSetup();
   mars = addPlanet('/2k_mars.jpg', 2, 32);
-  mars.position.set(0, 0, -7);
-  scene.add(mars);
+  satelliteGroup = new THREE.Group();
+  satelliteGroup.add(mars);
+  for (let i = 0; i < 30; i++) {
+    const height = Math.random() * 0.5 + 2.1;
+    const start = Math.random() * 300;
+    const length = Math.random() * 25;
+    const marsLine = rsc.createArcLine(height, '#' + Math.floor(Math.random() * 16777215).toString(16), start, start + length);
+    satelliteGroup.add(marsLine);
+  }
+  satelliteGroup.position.set(0, 0, -7);
+  scene.add(satelliteGroup);
 }
 setup()
 
@@ -67,6 +76,11 @@ function animate() {
 }
 function updatePlanets() {
   mars.rotation.y += 0.005 * timeDelta;
+  for (let i = 0; i < satelliteGroup.children.length; i++) {
+    const child = satelliteGroup.children[i];
+    if (child.type != 'Line') continue;
+    child.rotation.y += Math.random() * (0.02 - 0.01) + (0.01) * timeDelta;
+  }
   stars.rotation.y += 0.0001 * timeDelta;
 }
 animate();
@@ -84,8 +98,8 @@ function handleScroll() {
   
   stars.position.y += inverter * normalizedValue * 50;
   stars.rotation.y += inverter * normalizedValue / 10;
-  mars.position.y -= inverter * normalizedValue * 20;
-  mars.position.z += inverter * normalizedValue * 20;
+  satelliteGroup.position.y -= inverter * normalizedValue * 20;
+  satelliteGroup.position.z += inverter * normalizedValue * 20;
 
   prevScrollPos = currentScrollPos;
 }
