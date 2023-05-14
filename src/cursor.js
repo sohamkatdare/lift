@@ -96,23 +96,26 @@ export function scrollNext() {
     scrollSection();
 }
 // let heroText = document.querySelector('.animate-hidden-text');
-document.addEventListener('click', function(event) {
+document.addEventListener('click', clickHandler);
+
+function clickHandler (event) {
     // heroText.style.transition = 'all 0.5s ease-in-out';
     const target = event.target;
     if (target.tagName === 'BUTTON' || target.tagName === 'A') {
         target.click();
     } else {
-        if(!isTouchDevice()) {
-            if (isLeft) {
-                scrollBefore();
-            } else {
-                scrollNext();
-            }
+        if (isLeft) {
+            scrollBefore();
+        } else {
+            scrollNext();
         }
-        event.stopPropagation();
+        // if(!isTouchDevice()) {
+        // }
+        // event.stopPropagation();
     }
     // console.log(section)
-});
+    
+}
 
 function cursorHover(e) {
     const t = e.target;
