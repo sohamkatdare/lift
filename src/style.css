@@ -56,7 +56,7 @@ blockquote:before {
     left: 0;
     content: "\201C";
 }
-blockquote:before {
+blockquote:after {
     font-family: Georgia, serif;
     position: absolute;
     float:right;
