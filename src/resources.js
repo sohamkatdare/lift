@@ -32,8 +32,8 @@ export function rendererSetup(scene, camera) {
     renderer.setPixelRatio(window.devicePixelRatio);
 
     if (isTouchDevice()) {
-        if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.height, screen.width);
-        else renderer.setSize(screen.width, screen.height);
+        if (window.orientation == 90 || window.orientation == -90) renderer.setSize(screen.innerHeight, screen.innerWidth);
+        else renderer.setSize(screen.innerWidth, screen.innerHeight);
     } else renderer.setSize(window.innerWidth, window.innerHeight);
 
     // Add post-processing settings
