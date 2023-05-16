@@ -22,8 +22,9 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="p-24 max-w-[96rem]  z-50 pt-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg  outline outline-1 outline-slate-700/[0.15] mt-12" method="POST">
-        <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Sign up</h1>
+      <form id="p1Form" class="w-[36rem] z-50 p-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg  outline outline-1 outline-slate-700/[0.15] mt-12" method="POST">
+        <h1 class="text-6xl text-center underline text-white decoration-blue-400">Sign up</h1>
+        <div class="divider mb-12"></div>
         <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left" style="--order: 1">
             <input type="text" name="floating_first_name" id="floating_first_name"
@@ -69,7 +70,10 @@
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>  
+        <div class="grid grid-rows-2 gap-y-4 mt-12">
+          <div class="divider"><button type="submit" class="btn btn-outline" >Submit</button></div>
+          <div class="divider"><p>Already have an account? Log in <a href="/login/" class="link link-primary text-lg">here.</a></p></div>
+        </div>
       </form>
     </div>
   </div>
@@ -77,6 +81,6 @@
 
     <footer-component></footer-component>
     <script src="../footer.js" type="module"></script>
-    <script src="signup.js" type="module"></script>
+    <script src="../stars.js" type="module"></script>
     <script src="signup_firebase.js" type="module"></script>
 </body>

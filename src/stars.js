@@ -1,7 +1,7 @@
-import '../style.css';
+import './style.css';
 
 import * as THREE from 'three';
-import * as rsc from '../resources';
+import * as rsc from './resources';
 
 
 

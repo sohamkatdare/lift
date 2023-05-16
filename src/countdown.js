@@ -1,24 +1,3 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//   function countdown(seconds) {
-//     let counter = seconds;
-      
-//     const interval = setInterval(() => {
-//       console.log(counter);
-//       counter--;
-//       getComputedStyle(document.getElementById('countdown')).setProperty('--value', counter);
-        
-//       if (counter < 0 ) {
-//         clearInterval(interval);
-//         console.log('Ding!');
-//       }
-//     }, 1000);
-//   }
-//   let counter  = 10;
-//   const counterVar = getComputedStyle(document.getElementById('countdown')).getPropertyValue('--value')
-//   console.log(counterVar)
-//   countdown(counter)
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
   let counter = 10;
   const counterElement = document.getElementById('counter');

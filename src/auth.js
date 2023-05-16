@@ -1,6 +1,6 @@
 import { app } from "./firebase_init.js";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 
 const db = getFirestore(app);
 const auth = getAuth(app);
@@ -47,4 +47,18 @@ async function logout() {
     localStorage.removeItem('user');
 }
 
-export { signup, login, logout };
+async function reset(email) {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    console.log(`Password reset email sent to ${email}`);
+    return 'success';
+  } catch (error) {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+    return 'failed', error;
+  }
+}
+
+
+export { signup, login, logout, reset };

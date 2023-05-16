@@ -56,7 +56,7 @@ blockquote:before {
     left: 0;
     content: "\201C";
 }
-blockquote:after {
+blockquote:before {
     font-family: Georgia, serif;
     position: absolute;
     float:right;
@@ -167,5 +167,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 20px;
   border: none;
   cursor: pointer;
+}
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+
+
+
+
+
+
+
+
+input[type="checkbox"], 
+input[type="radio"] {
+  display: none;
+}
+.accordion input[type="checkbox"]:checked + label + .content, 
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 40rem;
+  padding: 10px 10px 20px;
+}
+
+.accordion input[type="checkbox"]:checked + label::after, 
+.accordion input[type="radio"]:checked + label::after {
+  content: '-';
+}
+.accordion .content {
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 

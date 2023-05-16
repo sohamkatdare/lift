@@ -5,11 +5,11 @@
   opacity: 0;
   filter: blur(5px);
   transform: scale(2.3);
-  transition: opacity filter blur 0.5s ease-in-out 0.5s;
+  transition: all 0.5s ease-in-out 0.5s;
 }
 
 .animate-hidden-text {
-  transition: opacity filter blur 0.5s ease-in-out 1.5s;
+  transition: all 0.5s ease-in-out 1.5s;
 }
 
 .animate-hidden-img {
@@ -17,7 +17,7 @@
 }
 .slide {
   transform: scale(1);
-  transition-property: opacity filter blur;
+  transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
   transition-delay: calc(200ms * (var(--order) + 1));

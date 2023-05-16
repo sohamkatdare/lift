@@ -14,6 +14,7 @@ export default defineConfig({
                 terrestrial: resolve(__dirname, 'src/products/terrestrial/index.html'),
                 gas_giant: resolve(__dirname, 'src/products/gas_giant/index.html'),
                 login: resolve(__dirname, 'src/login/index.html'),
+                reset_password: resolve(__dirname, 'src/login/reset_password/index.html'),
                 signup: resolve(__dirname, 'src/signup/index.html'),
                 launch: resolve(__dirname, 'src/launch/index.html'),
                 launch_recovery: resolve(__dirname, 'src/launch/recovery/index.html'),
