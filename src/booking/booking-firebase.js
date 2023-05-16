@@ -38,18 +38,16 @@ async function addBooking (uid, data) {
 
 function encodeQuery(data){
     let query = data.url + "/"
-    for (let d in data.params)
-         query += encodeURIComponent(d) + '='
-              + encodeURIComponent(data.params[d]) + '&';
+    for (let d in data.params) query += encodeURIComponent(d) + '=' + encodeURIComponent(data.params[d]) + '&';
     return query.slice(0, -1)
 }
 
 const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-    if(user) {
-        const uid = user.uid;
-        addBooking(uid, data);
-    } else {
-        window.location.href = '../login/'
-    }
-})
+// onAuthStateChanged(auth, (user) => {
+//     if(user) {
+//         const uid = user.uid;
+//         addBooking(uid, data);
+//     } else {
+//         window.location.href = '/login/'
+//     }
+// })

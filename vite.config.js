@@ -25,9 +25,9 @@ export default defineConfig({
                 404: resolve(__dirname, 'src/404/index.html'),
                 403: resolve(__dirname, 'src/403/index.html'),
                 booking: resolve(__dirname, 'src/booking/index.html'),
-                booking_p1: resolve(__dirname, 'src/booking/p-1/index.html'),
-                booking_p2: resolve(__dirname, 'src/booking/p-2/index.html'),
-                booking_p3: resolve(__dirname, 'src/booking/p-3/index.html'),
+                booking_p1: resolve(__dirname, 'src/booking/p_1/index.html'),
+                booking_p2: resolve(__dirname, 'src/booking/p_2/index.html'),
+                booking_p3: resolve(__dirname, 'src/booking/p_3/index.html'),
             },
             output: {
                 assetFileNames: (assetInfo) => {
