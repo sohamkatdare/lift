@@ -1,0 +1,103 @@
+
+.wrapper {
+  max-width: 100rem;
+  height: fit-content;
+  margin-inline: clamp(5%, 10%, 20%);
+  padding-inline: 1rem;
+}
+.collapsible {
+  --_button-size: 3rem;
+  --_panel-padding: 0.75rem;
+  --_panel-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  contain: content;
+}
+.collapsible * {
+  margin: 0;
+}
+.collapsible-panel {
+  position: relative;
+  isolation: isolate;
+  flex-basis: 3.5rem;
+  overflow: hidden;
+  padding: var(--_panel-padding);
+  padding-top: 0.45rem;
+  padding-right: calc(var(--_panel-padding) * 4);
+  border: 3px solid rgb(59 130 246 / 0%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .collapsible-panel {
+    transition: flex-basis ease-in-out 500ms, flex-grow ease-in-out 500ms;
+  }
+}
+.collapsible-panel:has([aria-expanded="true"]) {
+  flex-basis: clamp(12rem, calc(49rem - 44vw), 45rem);
+  flex-grow: 1;
+  background-color: rgb(5, 3, 18);;
+  border: 3px solid rgb(59 130 246 / 50%);
+}
+.collapsible-trigger {
+  outline: 0;
+}
+.collapsible-content > p {
+  transform: translateY(2rem);
+  opacity: 0;
+  margin-left: 1.5rem;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .collapsible-panel:has([aria-expanded="true"]) p {
+    transition: transform 500ms ease-in-out 500ms, opacity 500ms ease-in-out 500ms;
+  }
+}
+.collapsible-panel:has([aria-expanded="true"]) p {
+  transform: translateY(0);
+  opacity: 1;
+  margin-bottom: 1rem;
+  transition: opacity 500ms ease-in-out 700ms, transform 500ms ease-in-out 700ms;
+}
+.collapsible-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+}
+.collapsible-panel::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  z-index: 5;
+  /* border: 1px solid rgb(240, 240, 240); */
+  transition: top 500ms ease-in-out;
+}
+.collapsible-panel:has([aria-expanded="true"])::after {
+  content: "-";
+  transition: top 500ms ease-in-out 500ms;
+}
+.collapsible-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--_panel-gap);
+  flex-direction: row-reverse;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.collapsible-icon {
+  aspect-ratio: 1 / 1;
+  padding: 0.25rem;
+  border-radius: 50%;
+  z-index: 10;
+  content: '+'
+}
