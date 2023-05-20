@@ -1,53 +1,30 @@
-import {initializeApp} from 'firebase/app'
-import {getAuth, onAuthStateChanged} from 'firebase/auth'
-import {getFirestore, collection, addDoc} from 'firebase/firestore'
-
-const firebaseConfig = {
-    apiKey: "AIzaSyBIMn4iunZcpmBy2xKGdgtzRYEa2bjlb9c",
-    authDomain: "lift-8e0f9.firebaseapp.com",
-    projectId: "lift-8e0f9",
-    storageBucket: "lift-8e0f9.appspot.com",
-    messagingSenderId: "56078114567",
-    appId: "1:56078114567:web:8eda150b24c50254d42fa2",
-    measurementId: "G-REZP1JBBQS"
-}
-
-const app = initializeApp(firebaseConfig);
+import { app } from "../firebase_init.js";
+import { getFirestore, doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
+import { Trip, toFirestore, fromFirestore } from "./trip.js";
 
 const db = getFirestore(app);
 
-let data = {
-    date: "",
-    type: "",
-    tier: "",
-    numOfTravelers: ""
+const docRef = doc(db, "users", JSON.parse(localStorage.getItem("user"))['email']);
+
+export async function addBooking(trip) {
+  await updateDoc(docRef, {
+    bookings: arrayUnion(toFirestore(trip))
+  });
 }
 
-document.querySelector("#submit-btn").addEventListener("click", ()=> {
-    data.date = document.querySelector("#date").value;
-    data.type = document.querySelector("#type").value;
-    data.tier = document.querySelector("#tier").value;
-    data.numOfTravelers = document.querySelector("#numOfTravelers").value;
-})
+export async function getAllBookings() {
+  const docSnap = await getDoc(docRef);
 
-
-
-async function addBooking (uid, data) {
-    await addDoc(collection(db, "users", uid, "bookings"), data);
+  const bookingsList = [];
+  if (docSnap.exists()) {
+    const bookings = docSnap.data()['bookings'];
+    for (let i = 0; i < bookings.length; i++) {
+      bookingsList.push(fromFirestore(JSON.parse(bookings[i])));
+    }
+    return bookingsList;
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log("No such document!");
+    return null;
+  }
 }
-
-function encodeQuery(data){
-    let query = data.url + "/"
-    for (let d in data.params) query += encodeURIComponent(d) + '=' + encodeURIComponent(data.params[d]) + '&';
-    return query.slice(0, -1)
-}
-
-const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//     if(user) {
-//         const uid = user.uid;
-//         addBooking(uid, data);
-//     } else {
-//         window.location.href = '/login/'
-//     }
-// })

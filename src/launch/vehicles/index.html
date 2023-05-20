@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../collapsible.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../../animate.css" rel="stylesheet" >
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Learn about our fleet of launch vehicles and the capabilities of each one.">
@@ -25,7 +26,7 @@
     </div>
     <div class="hero-content text-center text-white">
       <div class="max-w-lg">
-        <h1 class="text-4xl md:text-6xl font-light italic">The technology of the future, to keep you safe.</h1>
+        <h1 class="text-4xl md:text-6xl font-light italic animate-hidden">The technology of the future, to keep you safe.</h1>
       </div>
     </div>
     <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
@@ -39,80 +40,103 @@
     <div class="col-start-2 col-end-12 lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
       <h1 class="text-3xl text-white font-bold underline decoration-blue-400"><strong>Rocket Body</strong></h1>
       <br>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all">
-        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
-          Engine
-        </div>
-        <div class="collapse-content bg-black/25 transition-all">
-          <br>
-          <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the world. This machinery is one of the most complex designs that surpass the complexity of other great machines. Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting in a double-layered and robust final product.
-          <br>
-        </div>
-      </div>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-none  transition-all">
-        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
-          Thruster
-        </div>
-        <div class="collapse-content bg-black/25 transition-all">
-          <br>
-          <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally, high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven track record of producing high-quality rocket thrusters in order to ensure the success of your space mission. Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess through over 20 flights, some of which reached 2 years long. 
-          <br>
-        </div>
-      </div>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-t-none transition-all">
-        <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
-          Orbiter
-        </div>
-        <div class="collapse-content bg-black/25 transition-all">
-          <br>
-          <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us to study planets and other celestial bodies from a stable and long-term perspective. A company that produces high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in designing, manufacturing and testing of their orbiters is investing in the future of space exploration and technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and have successfully entered the orbits of every planet in the solar system.
-          <br>
+      <div class="wrapper max-w-[70vw] h-fit w-[170%]">
+        <div class="collapsible">
+          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-b-none">
+            <h2 id="panel1-heading">
+              <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
+                <span class="collapsible-title" id="panel1-title">Engine</span>
+                <div aria-hidden="true" class="collapsible-icon">
+                </div>
+              </button>
+            </h2>
+            <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
+              <p>
+                <br style="height:10px; visibility:hidden;" />  
+                Our rocket’s engine is a powerful machine that needs to be of great magnitude to help us launch from the ground against gravity's force. We have the latest state-of-the-art engine that can provide the highest amount of upward lift possible. Our engineers have custom designed parts from all over the world, and this machinery is one of the most unique designs surpassing the complexity of other great machines. This engine has efficiently powered countless launches, allowing us to break Earth's atmosphere and journey through space. Our thrusters were designed based on Robert H. Goddard's principles and incorporate new breakthrough technology, resulting in a double-layered and robust final product.
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-t-none rounded-b-none">
+            <h2 id="panel2-heading">
+              <button class="collapsible-trigger" aria-controls="panel2-content" aria-expanded="false" >
+                <span class="collapsible-title" id="panel2-title">Thrusters</span>
+                <div aria-hidden="true" class="collapsible-icon">
+                </div>
+              </button>
+            </h2>
+            <div class="collapsible-content"  id="panel2-content"   aria-labelledby="panel2-heading"  aria-hidden="true"   role="region"  >
+              <p>
+                <br style="height:10px; visibility:hidden;" />  
+                Rocket thrusters are a crucial component of any space mission, as they provide the propulsion needed to launch a spacecraft into orbit and beyond. We are proud to say that our high-quality rocket thrusters have been proven reliable, powerful and efficient, making them essential for successful space launches. We believe that our manufactured rocket thrusters help to reduce our repair and maintenance costs. Additionally, these high-quality rockets improve the safety of our space missions as they reduce the risk of failure during different stages of flight. Our thrusters at Lift have been made using bleeding-edge technology, and have a proven track record. These thrusters have been used on countless flights, some of which have lasted for over two years long.
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-t-none">
+            <h2 id="panel3-heading">
+              <button class="collapsible-trigger" aria-controls="panel3-content" aria-expanded="false" >
+                <span class="collapsible-title" id="panel3-title">Orbiters</span>
+                <div aria-hidden="true" class="collapsible-icon">
+                </div>
+              </button>
+            </h2>
+            <div class="collapsible-content"  id="panel3-content"   aria-labelledby="panel3-heading"  aria-hidden="true"   role="region"  >
+              <p>
+                <br style="height:10px; visibility:hidden;" />  
+                We also have orbiters which allow us to study planets and other celestial bodies from a stable and long-term perspective. With our high-quality orbiters, we can expand our scientific knowledge and understanding of space.our orbiters require less maintenance and costs in the long run, making it more efficient and reliable during critical stages of flight. Additionally, our orbiters have an excellent track record as they have been able to enter the orbit of every planet in our solar system. Overall, our orbiters have been essential piece of technology that help ensure that our space flights are successful.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-span-12 mt-20 align-items justify-center lg:col-start-8 lg:col-end-12 px-7">
-      <!-- -->
-      <div class=" hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-[3] hover:drop-shadow-2xl transition-all duration-500 rounded-lg bg-contain bg-center w-full h-full bg-no-repeat" style="background-image: url('/lander.png')">
-        <label for="lander-modal" class="w-full h-full"></label>
-      </div>
-    </div>
-
-
     <div class="col-start-2 col-end-12 lg:col-start-3 lg:col-end-11 mt-10">
-      <h1 class="text-3xl text-white font-bold underline decoration-blue-400 text-right mr-44"><strong>Lander</strong></h1>
+      <h1 class="text-3xl text-white font-bold underline decoration-blue-400 text-right mr-44 animate hidden"><strong>Lander</strong></h1>
       <div class="lg:grid grid-cols-3 py-7">
-        <label for="rocket-modal" class="bg-contain group hover:brightness-[1.25] hover:backdrop-brightess-[3] bg-center w-full h-full bg-no-repeat hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-150 hover:drop-shadow-2xl transition-all duration-500 rounded-lg" style="background-image: url('/rocket.png')">
-          <h1 class="hidden group-hover:block text-2xl text-white">Click on me! I'm 3D!</h1>
+        <label for="rocket-modal" class="bg-contain group bg-center  w-full h-full bg-no-repeat transition-all duration-500 rounded-lg animate-hidden slide slide-left hover:scale-[1.05] hover:backdrop-brightness-[1.5]" style="background-image: url('/rocket.png')">
+          <h1 class="hidden group-hover:block animate-hidden text-2xl text-white p-6">Click on me! I'm 3D!</h1>
         </label>
         <div class="mt-4 lg:mt-0 lg:col-start-3 text-base-400">
-          Landers play a key role in space tourism as they provide the means for spacecraft to safely land on a celestial body, allowing tourists to disembark and experience the surface of another world. Landers are essential for space tourism as they enable the safe and controlled descent of the spacecraft, providing a stable platform for the tourists to disembark. Without landers, space tourism would be limited to orbiting the celestial body and would not allow for a landing or surface exploration.
+          <div class="animate-hidden slide slide-right" style="--order: 3">
+            <div class="card lg:card-side bg-base-100 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title">Landers!</h2>
+                <p>Landers play a key role in space tourism as they provide the means for spacecraft to safely land on a celestial body, allowing tourists to disembark and experience the surface of another world. Landers are essential for space tourism as they enable the safe and controlled descent of the spacecraft, providing a stable platform for the tourists to disembark. Without landers, space tourism would be limited to orbiting the celestial body and would not allow for a landing or surface exploration.</p>
+              </div>
+            </div>
           <br><br>
-          Additionally, landers also enable the deployment of other equipment and infrastructure that can support space tourism such as habitats, rovers, and other facilities. These facilities would provide the tourists with a comfortable and safe environment, allowing them to explore and experience the surface of the celestial body without the need for bulky and restrictive space suits. Furthermore, landers could also provide the means for tourists to conduct scientific experiments and research, adding an educational and unique component to space tourism. In summary, landers are a crucial component of space tourism as they provide the means for safe and controlled landings, and enable the deployment of infrastructure and equipment that support space tourism.
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Landers!</h2>
+              <p>Additionally, landers also enable the deployment of other equipment and infrastructure that can support space tourism such as habitats, rovers, and other facilities. These facilities would provide the tourists with a comfortable and safe environment, allowing them to explore and experience the surface of the celestial body without the need for bulky and restrictive space suits. Furthermore, landers could also provide the means for tourists to conduct scientific experiments and research, adding an educational and unique component to space tourism. In summary, landers are a crucial component of space tourism as they provide the means for safe and controlled landings, and enable the deployment of infrastructure and equipment that support space tourism.</p>
+            </div>
+          </div>
           <br><br>
-          <h2 class="text-3xl text-white font-bold underline decoration-blue-400">Our Landers are:</h2>
+          </div>
+          <h2 class="text-3xl text-white font-bold underline decoration-blue-400 animate-hidden">Our Landers are:</h2>
           <br>
           <ul>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 1">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Safe
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 2">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Reliable
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 3">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               High Quality
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 4">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Cost Effective
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 5">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Efficient
@@ -149,6 +173,7 @@
   </label>
 
   <script src="../../footer.js" defer type="module"></script>
+  <script src="../../collapse.js" defer type="module"></script>
   <script src="vehicles.js" type="module"></script>
 </body>
 
