@@ -6,12 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../animate.css" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet" >
   <script defer src="../animate.js" type="module"></script>
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Login</title>
-  <script defer src="../components.js" type="module"></script>
+  <script defer src="../navbar.js" type="module"></script>
   <style>
     button {
       transition-property: colors;
@@ -29,9 +29,7 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form"
-        class="w-[36rem] z-50 p-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg outline outline-1 outline-slate-700/[0.15] mt-12 text-center"
-        method="POST">
+      <form id="p1Form" class="w-[36rem] z-50 p-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg outline outline-1 outline-slate-700/[0.15] mt-12 text-center" method="POST">
         <h1 class="text-6xl underline text-white  decoration-blue-400 animate-hidden animate-hidden-text">Login</h1>
         <div class="divider mb-12"></div>
         <div class="grid text-left ">
@@ -44,35 +42,27 @@
               address</label>
           </div>
         </div>
-        <div class="text-left relative z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick"
-          style="--order: 2">
-          <input type="password" name="floating_password" id="floating_password"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" " autocomplete="on" required />
-          <label for="floating_password"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-        </div>
-
-
+        <div class="text-left relative z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick" style="--order: 2">
+            <input type="password" name="floating_password" id="floating_password"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " autocomplete="on" required />
+            <label for="floating_password"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+          </div>
+    
         <div class="grid grid-rows-3 gap-y-0  mt-12">
-          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 3"><button type="submit"
-              class="btn btn-outline">Log in</button></div>
-          <div class="divider animate-hidden slide slide-right slide-quick mt-8" style="--order: 4">
-            <p>Don't have an account? Sign up <a href="/signup/" class="link link-primary text-lg">here.</a></p>
-          </div>
-          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 5">
-            <p>Forgot Password? Reset it <a href="/login/reset_password/" class="link link-primary text-lg">here.</a>
-            </p>
-          </div>
+          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 3"><button type="submit" class="btn btn-outline" >Log in</button></div>
+          <div class="divider animate-hidden slide slide-right slide-quick mt-8" style="--order: 4"><p>Don't have an account? Sign up <a href="/signup/" class="link link-primary text-lg">here.</a></p></div>
+          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 5"><p>Forgot Password? Reset it <a href="/login/reset_password/" class="link link-primary text-lg">here.</a></p></div>
         </div>
-
+        
       </form>
     </div>
   </div>
 
 
-  <footer-component></footer-component>
-  <script src="../footer.js" type="module"></script>
-  <script src="../stars.js" type="module"></script>
-  <script src="login_firebase.js" type="module"></script>
+    <footer-component></footer-component>
+    <script src="../footer.js" type="module"></script>
+    <script src="../stars.js" type="module"></script>
+    <script src="login_firebase.js" type="module"></script>
 </body>

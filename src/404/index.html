@@ -6,37 +6,33 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../animate.css" rel="stylesheet">
   <meta name="description" content="403 Error: Forbidden Page">
   <meta http-equiv="Refresh" content="10; url='/'" />
 
 
   <title>LIFT - Info</title>
-  <script defer src="../components.js" type="module"></script>
+  <script defer src="../navbar.js" type="module"></script>
   <script defer src="../animate.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
   <navbar-component></navbar-component>
-  <div class="hero min-h-screen"
-    style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
+  <div class="hero min-h-screen" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-screen">
         <div class="divider py-14 animate-hidden">
           <h1 class="mb-5 text-8xl font-bold ">404 Error</h1>
         </div>
-        <p class="mb-5 text-xl animate-hidden">This page doesn't exist. Click below or <br> wait <span
-            class="countdown inter text-4xl animate-hidden" id="countdown"><span></span></span> to return to the home
-          page.</p>
-        <div class="divider py-14 animate-hidden slide slide-left slide-quick" style="--order: 5"><a href="/"><button
-              class="btn btn-primary">Go Home</button></a></div>
+        <p class="mb-5 text-xl animate-hidden">This page doesn't exist. Click below or <br> wait <span class="countdown inter text-4xl animate-hidden" id="countdown"><span></span></span> to return to the home page.</p>
+        <div class="divider py-14 animate-hidden slide slide-left slide-quick" style="--order: 5"><a href="/"><button class="btn btn-primary">Go Home</button></a></div>
       </div>
     </div>
   </div>
   <footer-component></footer-component>
-
+  <script src="../footer.js" defer type="module"></script>
   <script src="../countdown.js" defer type="module"></script>
   <!-- <script src="404.js" type="module"></script> -->
 

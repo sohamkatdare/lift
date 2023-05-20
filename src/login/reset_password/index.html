@@ -6,13 +6,13 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../animate.css" rel="stylesheet">
+  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../animate.css" rel="stylesheet" >
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Booking a Tour</title>
-  <script defer src="../../components.js" type="module"></script>
+  <script defer src="../../navbar.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -23,10 +23,8 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form"
-        class="px-24 w-[40rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl underline text-white  decoration-blue-400 animate-hidden animate-hidden-text">Reset Password
-        </h1>
+      <form id="p1Form" class="px-24 w-[40rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+        <h1 class="text-6xl underline text-white  decoration-blue-400 animate-hidden animate-hidden-text">Reset Password</h1>
         <div class="divider mb-12"></div>
         <div class="grid text-left ">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
@@ -38,17 +36,16 @@
               address</label>
           </div>
         </div>
-        <div class="divider mt-12 animate-hidden slide slide-right slide-quick" style="--order: 2"><button type="submit"
-            class="btn btn-outline">Reset Password</button></div>
+        <div class="divider mt-12 animate-hidden slide slide-right slide-quick" style="--order: 2"><button type="submit" class="btn btn-outline" >Reset Password</button></div>
 
-
+        
       </form>
     </div>
   </div>
 
 
-  <footer-component></footer-component>
-  <script src="reset_firebase.js" type="module"></script>
-  <script src="../../footer.js" type="module"></script>
-  <script src="../../stars.js" type="module"></script>
+    <footer-component></footer-component>
+    <script src="reset_firebase.js" type="module"></script>
+    <script src="../../footer.js" type="module"></script>
+    <script src="../../stars.js" type="module"></script>
 </body>

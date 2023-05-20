@@ -1,7 +1,7 @@
 import { reset } from "../../auth.js";
 
 const resetForm = document.querySelector('#p1Form');
-resetForm.addEventListener('submit', async (e) => {
+resetForm.addEventListener('submit', (e) => {
     console.log("Resetting password");
     e.preventDefault();
 
@@ -9,12 +9,6 @@ resetForm.addEventListener('submit', async (e) => {
     const email = document.getElementById("floating_email").value;
 
     // login up the user
-    const resp = await reset(email);
-
-    if (resp[0] === 'success') {
-        console.log("Reset successful");
-        window.location.replace("/login/");
-    } else {
-        alert("Reset failed");
-    }
+    reset(email)
+    // window.location.replace("/login/");
 });
