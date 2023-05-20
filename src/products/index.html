@@ -6,24 +6,26 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../animate.css" rel="stylesheet" >
+  <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet">
   <script defer src="../animate.js" type="module"></script>
-  <meta name="description" content="See a list of our products and services, including rocket flight trips, spacesuits, and other space travel equipment.">
+  <meta name="description"
+    content="See a list of our products and services, including rocket flight trips, spacesuits, and other space travel equipment.">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Travel Plans</title>
   <style>
-    .card:hover figure > img {
+    .card:hover figure>img {
       transform: scale(1.2);
       transition: all 0.3s ease-in-out;
       filter: brightness(1.1);
     }
-    .card figure > img {
+
+    .card figure>img {
       filter: brightness(0.95);
       transition: all 0.3s ease-in-out
     }
   </style>
-  <script defer src="../navbar.js" type="module"></script>
+  <script defer src="../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -46,20 +48,26 @@
         <h1 class="text-4xl md:text-6xl font-light italic">Customize your trip to meet your needs!</h1>
       </div>
     </div>
-    <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+    <button id="gstar1"
+      class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-20 h-20">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
       </svg>
     </button>
   </div>
   <div class="grid grid-cols-11 gap-x-8 ">
     <div class="col-span-12 text-center">
-      <div class="mt-20 text-xl text-white hover:bg-black/[0.05] divider animate-hidden"><strong class="text-4xl text-orange-100">Check out our various trip plans!</strong></div>
+      <div class="mt-20 text-xl text-white hover:bg-black/[0.05] divider animate-hidden"><strong
+          class="text-4xl text-orange-100">Check out our various trip plans!</strong></div>
       <br>
     </div>
 
-    <div class="col-span-9 col-start-2 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
-      <div class="inline-block card  w-full lg:px-0 lg:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 1">
+    <div
+      class="col-span-9 col-start-2 flex flex-col lg:flex-row lg:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
+      <div
+        class="inline-block card  w-full lg:px-0 lg:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left"
+        style="--order: 1">
         <figure>
           <img src="https://www.worldatlas.com/r/w768/upload/ce/eb/6b/shutterstock-1918580258.jpg" alt="Shoes"
             class="hidden md:flex object-cover" />
@@ -86,7 +94,8 @@
           </div>
         </div>
       </div>
-      <div class="card lg:w-96 w-full lg:px-0 bg-base-300  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left" style="--order: 3">
+      <div class="card lg:w-96 w-full lg:px-0 bg-base-300  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left"
+        style="--order: 3">
         <figure>
           <img
             src="https://media.istockphoto.com/id/1182464225/photo/life-on-planet-mars-astronaut-discovers-tiny-martians.jpg?s=612x612&w=0&k=20&c=mMmvUY2VMX4Lpt7Vu79B5nYymDoq4A67SD3mL59Lxhk="
@@ -103,17 +112,23 @@
           <p>Take a trip to the rocky planets of the inner solar system!</p>
           <p class="hidden lg:font-bold lg:block">What's included:</p>
           <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Mercury surface tour</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Venus surface tour</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Asteroid belt and Ceres flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Mars surface tour</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Mercury surface
+              tour</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Venus surface tour
+            </li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Asteroid belt and
+              Ceres flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 4; --dist: 0.3;">Mars surface tour
+            </li>
           </ul>
           <div class="card-actions justify-center mt-5">
             <a href="terrestrial/"><button class="btn btn-primary justify-start">Read more</button></a>
           </div>
         </div>
       </div>
-      <div class="inline-block card  w-full lg:px-0 lg:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 2">
+      <div
+        class="inline-block card  w-full lg:px-0 lg:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left"
+        style="--order: 2">
         <figure>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Saturn_eclipse.jpg" alt="Shoes"
             class="hidden md:flex object-cover" />
@@ -127,10 +142,14 @@
           <p>Observe the mysterious beauty of the biggest planets of the solar system!</p>
           <p class="hidden lg:font-bold lg:block">What's included:</p>
           <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Jupiter surface-level flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Io, and Europa surface tours</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Saturn surface-level flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Titan surface exploration</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Jupiter
+              surface-level flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Io, and Europa
+              surface tours</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Saturn
+              surface-level flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 3; --dist: 0.3;">Titan surface
+              exploration</li>
           </ul>
           <br>
           <br>
@@ -140,7 +159,8 @@
           </div>
         </div>
       </div>
-      <div class="card w-full lg:px-0 lg:w-96 bg-base-100  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left" style="--order: 4">
+      <div class="card w-full lg:px-0 lg:w-96 bg-base-100  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left"
+        style="--order: 4">
         <figure>
           <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_13/3461687/210402-uranus-al-0919.jpg"
             alt="Shoes" class="hidden md:flex object-cover" />
@@ -154,10 +174,14 @@
           <p>Explore the distant wonders of the lonely ice giants and the Kuiper Belt!</p>
           <p class="hidden lg:font-bold lg:inline-block">What's included:</p>
           <ul class="hidden lg:list-disc lg:inline-block lg:px-4">
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Uranus surface-level flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Neptune surface-level flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Asteroid belt and Ceres flyby</li>
-            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Oort Cloud refuel stop</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Uranus
+              surface-level flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Neptune
+              surface-level flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Asteroid belt and
+              Ceres flyby</li>
+            <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Oort Cloud refuel
+              stop</li>
           </ul>
           <div class="card-actions justify-center">
             <button class="btn btn-primary btn-disabled justify-center">Coming soon</button>
@@ -168,7 +192,8 @@
   </div>
   <br>
   <form class="px-[17%] py-12 rounded-lg mt-12">
-    <h1 class="text-6xl mb-12 underline text-white decoration-blue-400 animate-hidden">Apply for a trip for your company!</h1>
+    <h1 class="text-6xl mb-12 underline text-white decoration-blue-400 animate-hidden">Apply for a trip for your
+      company!</h1>
 
     <div class="grid md:grid-cols-9 md:gap-6">
       <div class="relative z-0 col-span-4  w-full mb-6 group animate-hidden slide slide-right" style="--order: 1">
@@ -195,12 +220,14 @@
           class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
           name</label>
       </div>
-      <button type="submit" class="col-span-1 max-h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 animate-hidden slide slide-right" style="--order: 4">Submit</button>
+      <button type="submit"
+        class="col-span-1 max-h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 animate-hidden slide slide-right"
+        style="--order: 4">Submit</button>
     </div>
-    
+
   </form>
   <footer-component></footer-component>
-  <script src="../footer.js" defer type="module"></script>
+
   <script src="products.js" type="module"></script>
 </body>
 

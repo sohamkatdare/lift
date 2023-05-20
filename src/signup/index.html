@@ -6,12 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../animate.css" rel="stylesheet" >
+  <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet">
   <script defer src="../animate.js" type="module"></script>
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Sign up</title>
-  <script defer src="../navbar.js" type="module"></script>
+  <script defer src="../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -21,12 +21,14 @@
     <div class="hero-overlay fixed bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
-    <div class="hero-content text-white">
-      <form id="p1Form" class="w-[36rem] z-50 p-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg  outline outline-1 outline-slate-700/[0.15] mt-12" method="POST">
+    <div class="hero-content text-white text-center">
+      <form id="p1Form"
+        class="w-[36rem] z-50 p-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg  outline outline-1 outline-slate-700/[0.15] mt-12"
+        method="POST">
         <h1 class="text-6xl text-center underline text-white decoration-blue-400">Sign up</h1>
         <div class="divider mb-12"></div>
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left" style="--order: 1">
+          <div class="relative z-0 text-left w-full mb-6 group animate-hidden slide slide-left" style="--order: 1">
             <input type="text" name="floating_first_name" id="floating_first_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -34,7 +36,7 @@
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
               name</label>
           </div>
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left" style="--order: 2">
+          <div class="relative z-0 text-left w-full mb-6 group animate-hidden slide slide-left" style="--order: 2">
             <input type="text" name="floating_last_name" id="floating_last_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -44,7 +46,7 @@
           </div>
         </div>
         <div class="grid">
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-right" style="--order: 3">
+          <div class="relative z-0 text-left w-full mb-6 group animate-hidden slide slide-right" style="--order: 3">
             <input type="email" name="floating_email" id="floating_email"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
@@ -53,34 +55,39 @@
               address</label>
           </div>
         </div>
-      
+
         <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left" style="--order: 4">
+          <div class="relative z-0 text-left w-full mb-6 group animate-hidden slide slide-left" style="--order: 4">
             <input type="password" name="floating_password_1" id="floating_password_1"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " autocomplete="on" required />
             <label for="floating_password_1"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Create password</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Create
+              password</label>
           </div>
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left" style="--order: 5">
+          <div class="relative z-0 text-left w-full mb-6 group animate-hidden slide slide-left" style="--order: 5">
             <input type="password" name="floating_password_2" id="floating_password_2"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 peer-focus:border-blue-600 "
               placeholder=" " autocomplete="on" required />
             <label for="floating_password_2"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+              password</label>
           </div>
         </div>
+        <p class="text-red-500 text-xs font-italic text-center" id="error-text"></p>
         <div class="grid grid-rows-2 gap-y-4 mt-12">
-          <div class="divider"><button type="submit" class="btn btn-outline" >Submit</button></div>
-          <div class="divider"><p>Already have an account? Log in <a href="/login/" class="link link-primary text-lg">here.</a></p></div>
+          <div class="divider"><button type="submit" class="btn btn-outline">Submit</button></div>
+          <div class="divider">
+            <p>Already have an account? Log in <a href="/login/" class="link link-primary text-lg">here.</a></p>
+          </div>
         </div>
       </form>
     </div>
   </div>
 
 
-    <footer-component></footer-component>
-    <script src="../footer.js" type="module"></script>
-    <script src="../stars.js" type="module"></script>
-    <script src="signup_firebase.js" type="module"></script>
+  <footer-component></footer-component>
+  <script src="../footer.js" type="module"></script>
+  <script src="../stars.js" type="module"></script>
+  <script src="signup_firebase.js" type="module"></script>
 </body>

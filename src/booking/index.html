@@ -6,13 +6,13 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../animate.css" rel="stylesheet" >
+  <link href="../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet">
   <script defer src="../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Booking a Tour</title>
-  <script defer src="../navbar.js" type="module"></script>
+  <script defer src="../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -22,42 +22,58 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Book your trip today!</h1>     
+      <form id="p1Form"
+        class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+        <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Book your trip today!</h1>
         <div class="flex justify-between">
           <div class="text-sm breadcrumbs">
             <ul>
               <li>
                 <a>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="w-4 h-4 mr-2 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
                   Home
                 </a>
-              </li> 
+              </li>
               <li>
                 <a class="text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="w-4 h-4 mr-2 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
                   Documents
                 </a>
               </li>
               <li>
                 <a class="text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 mr-2 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="w-4 h-4 mr-2 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                  </svg>
                   Documents
                 </a>
-              </li>  
+              </li>
             </ul>
           </div>
-          <button class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a href="p_1/">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-          </svg>
-          </a></button>
+          <button
+            class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a
+              href="p_1/">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </a></button>
         </div>
       </form>
     </div>
   </div>
 
 
-    <footer-component></footer-component>
-    <script src="../footer.js" type="module"></script>
-    <script src="../stars.js" type="module"></script>
+  <footer-component></footer-component>
+  <script src="../footer.js" type="module"></script>
+  <script src="../stars.js" type="module"></script>
 </body>

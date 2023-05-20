@@ -6,13 +6,13 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../../animate.css" rel="stylesheet" >
+  <link href="../../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../animate.css" rel="stylesheet">
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Booking a Tour</title>
-  <script defer src="../../navbar.js" type="module"></script>
+  <script defer src="../../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
@@ -23,8 +23,10 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl underline underline-offset-4 text-center text-white decoration-blue-400">Billing Address</h1>
+      <form id="p1Form"
+        class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+        <h1 class="text-6xl underline underline-offset-4 text-center text-white decoration-blue-400">Billing Address
+        </h1>
         <div class="divider mb-12"></div>
         <div class="grid md:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
@@ -32,17 +34,19 @@
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_email"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Street Address</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Street
+              Address</label>
           </div>
         </div>
-    
+
         <div class="grid md:grid-cols-4 md:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 2">
             <input type="text" name="floating_first_name" id="floating_first_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_first_name"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip
+              Code</label>
           </div>
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 3">
             <input type="text" name="floating_last_name" id="floating_last_name"
@@ -51,86 +55,95 @@
             <label for="floating_last_name"
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
           </div>
-          <div class="relative col-span-2 z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick" style="--order: 4">
-            <select type="text" name="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 scrollbar-minimalist" id="floating_last_name" placeholder=" " required>
-                <option class="bg-base-200" value="---">---</option>
-                <option class="bg-base-200" value="Alabama">Alabama</option>
-                <option class="bg-base-200" value="Alaska">Alaska</option>
-                <option class="bg-base-200" value="Arizona">Arizona</option>
-                <option class="bg-base-200" value="Arkansas">Arkansas</option>
-                <option class="bg-base-200" value="California">California</option>
-                <option class="bg-base-200" value="Colorado">Colorado</option>
-                <option class="bg-base-200" value="Connecticut">Connecticut</option>
-                <option class="bg-base-200" value="Delaware">Delaware</option>
-                <option class="bg-base-200" value="District of Columbia">District of Columbia</option>
-                <option class="bg-base-200" value="Florida">Florida</option>
-                <option class="bg-base-200" value="Georgia">Georgia</option>
-                <option class="bg-base-200" value="Guam">Guam</option>
-                <option class="bg-base-200" value="Hawaii">Hawaii</option>
-                <option class="bg-base-200" value="Idaho">Idaho</option>
-                <option class="bg-base-200" value="Illinois">Illinois</option>
-                <option class="bg-base-200" value="Indiana">Indiana</option>
-                <option class="bg-base-200" value="Iowa">Iowa</option>
-                <option class="bg-base-200" value="Kansas">Kansas</option>
-                <option class="bg-base-200" value="Kentucky">Kentucky</option>
-                <option class="bg-base-200" value="Louisiana">Louisiana</option>
-                <option class="bg-base-200" value="Maine">Maine</option>
-                <option class="bg-base-200" value="Maryland">Maryland</option>
-                <option class="bg-base-200" value="Massachusetts">Massachusetts</option>
-                <option class="bg-base-200" value="Michigan">Michigan</option>
-                <option class="bg-base-200" value="Minnesota">Minnesota</option>
-                <option class="bg-base-200" value="Mississippi">Mississippi</option>
-                <option class="bg-base-200" value="Missouri">Missouri</option>
-                <option class="bg-base-200" value="Montana">Montana</option>
-                <option class="bg-base-200" value="Nebraska">Nebraska</option>
-                <option class="bg-base-200" value="Nevada">Nevada</option>
-                <option class="bg-base-200" value="New Hampshire">New Hampshire</option>
-                <option class="bg-base-200" value="New Jersey">New Jersey</option>
-                <option class="bg-base-200" value="New Mexico">New Mexico</option>
-                <option class="bg-base-200" value="New York">New York</option>
-                <option class="bg-base-200" value="North Carolina">North Carolina</option>
-                <option class="bg-base-200" value="North Dakota">North Dakota</option>
-                <option class="bg-base-200" value="Northern Marianas Islands">Northern Marianas Islands</option>
-                <option class="bg-base-200" value="Ohio">Ohio</option>
-                <option class="bg-base-200" value="Oklahoma">Oklahoma</option>
-                <option class="bg-base-200" value="Oregon">Oregon</option>
-                <option class="bg-base-200" value="Pennsylvania">Pennsylvania</option>
-                <option class="bg-base-200" value="Puerto Rico">Puerto Rico</option>
-                <option class="bg-base-200" value="Rhode Island">Rhode Island</option>
-                <option class="bg-base-200" value="South Carolina">South Carolina</option>
-                <option class="bg-base-200" value="South Dakota">South Dakota</option>
-                <option class="bg-base-200" value="Tennessee">Tennessee</option>
-                <option class="bg-base-200" value="Texas">Texas</option>
-                <option class="bg-base-200" value="Utah">Utah</option>
-                <option class="bg-base-200" value="Vermont">Vermont</option>
-                <option class="bg-base-200" value="Virginia">Virginia</option>
-                <option class="bg-base-200" value="Virgin Islands">Virgin Islands</option>
-                <option class="bg-base-200" value="Washington">Washington</option>
-                <option class="bg-base-200" value="West Virginia">West Virginia</option>
-                <option class="bg-base-200" value="Wisconsin">Wisconsin</option>
-                <option class="bg-base-200" value="Wyoming">Wyoming</option></select>
+          <div class="relative col-span-2 z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick"
+            style="--order: 4">
+            <select type="text" name="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 scrollbar-minimalist"
+              id="floating_last_name" placeholder=" " required>
+              <option class="bg-base-200" value="---">---</option>
+              <option class="bg-base-200" value="Alabama">Alabama</option>
+              <option class="bg-base-200" value="Alaska">Alaska</option>
+              <option class="bg-base-200" value="Arizona">Arizona</option>
+              <option class="bg-base-200" value="Arkansas">Arkansas</option>
+              <option class="bg-base-200" value="California">California</option>
+              <option class="bg-base-200" value="Colorado">Colorado</option>
+              <option class="bg-base-200" value="Connecticut">Connecticut</option>
+              <option class="bg-base-200" value="Delaware">Delaware</option>
+              <option class="bg-base-200" value="District of Columbia">District of Columbia</option>
+              <option class="bg-base-200" value="Florida">Florida</option>
+              <option class="bg-base-200" value="Georgia">Georgia</option>
+              <option class="bg-base-200" value="Guam">Guam</option>
+              <option class="bg-base-200" value="Hawaii">Hawaii</option>
+              <option class="bg-base-200" value="Idaho">Idaho</option>
+              <option class="bg-base-200" value="Illinois">Illinois</option>
+              <option class="bg-base-200" value="Indiana">Indiana</option>
+              <option class="bg-base-200" value="Iowa">Iowa</option>
+              <option class="bg-base-200" value="Kansas">Kansas</option>
+              <option class="bg-base-200" value="Kentucky">Kentucky</option>
+              <option class="bg-base-200" value="Louisiana">Louisiana</option>
+              <option class="bg-base-200" value="Maine">Maine</option>
+              <option class="bg-base-200" value="Maryland">Maryland</option>
+              <option class="bg-base-200" value="Massachusetts">Massachusetts</option>
+              <option class="bg-base-200" value="Michigan">Michigan</option>
+              <option class="bg-base-200" value="Minnesota">Minnesota</option>
+              <option class="bg-base-200" value="Mississippi">Mississippi</option>
+              <option class="bg-base-200" value="Missouri">Missouri</option>
+              <option class="bg-base-200" value="Montana">Montana</option>
+              <option class="bg-base-200" value="Nebraska">Nebraska</option>
+              <option class="bg-base-200" value="Nevada">Nevada</option>
+              <option class="bg-base-200" value="New Hampshire">New Hampshire</option>
+              <option class="bg-base-200" value="New Jersey">New Jersey</option>
+              <option class="bg-base-200" value="New Mexico">New Mexico</option>
+              <option class="bg-base-200" value="New York">New York</option>
+              <option class="bg-base-200" value="North Carolina">North Carolina</option>
+              <option class="bg-base-200" value="North Dakota">North Dakota</option>
+              <option class="bg-base-200" value="Northern Marianas Islands">Northern Marianas Islands</option>
+              <option class="bg-base-200" value="Ohio">Ohio</option>
+              <option class="bg-base-200" value="Oklahoma">Oklahoma</option>
+              <option class="bg-base-200" value="Oregon">Oregon</option>
+              <option class="bg-base-200" value="Pennsylvania">Pennsylvania</option>
+              <option class="bg-base-200" value="Puerto Rico">Puerto Rico</option>
+              <option class="bg-base-200" value="Rhode Island">Rhode Island</option>
+              <option class="bg-base-200" value="South Carolina">South Carolina</option>
+              <option class="bg-base-200" value="South Dakota">South Dakota</option>
+              <option class="bg-base-200" value="Tennessee">Tennessee</option>
+              <option class="bg-base-200" value="Texas">Texas</option>
+              <option class="bg-base-200" value="Utah">Utah</option>
+              <option class="bg-base-200" value="Vermont">Vermont</option>
+              <option class="bg-base-200" value="Virginia">Virginia</option>
+              <option class="bg-base-200" value="Virgin Islands">Virgin Islands</option>
+              <option class="bg-base-200" value="Washington">Washington</option>
+              <option class="bg-base-200" value="West Virginia">West Virginia</option>
+              <option class="bg-base-200" value="Wisconsin">Wisconsin</option>
+              <option class="bg-base-200" value="Wyoming">Wyoming</option>
+            </select>
             <label for="floating_last_name"
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">State</label>
           </div>
         </div>
-        
+
         <div class="grid md:grid-cols-4 md:gap-6">
-          <div class="relative z-0 col-span-2 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 4">
+          <div class="relative z-0 col-span-2 w-full mb-6 group animate-hidden slide slide-left slide-quick"
+            style="--order: 4">
             <input type="number" name="floating_first_name" id="floating_first_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_first_name"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Card Number</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Card
+              Number</label>
           </div>
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 5">
             <input type="text" name="floating_last_name" id="floating_last_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_last_name"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Exp. Date (MM/YY)</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Exp.
+              Date (MM/YY)</label>
           </div>
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 6">
-            <input type="number" name="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" id="floating_last_name"
+            <input type="number" name="floating_last_name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              id="floating_last_name"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required></input>
             <label for="floating_last_name"
@@ -146,49 +159,59 @@
             <ul>
               <li>
                 <a class="animate-hidden slide slide-left" style="--order: 5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" />
                   </svg>
-                                    Start
+                  Start
                 </a>
-              </li> 
+              </li>
               <li>
                 <a class="animate-hidden slide slide-left" style="--order: 6">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="mr-2 w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                   </svg>
                   Order Information
                 </a>
               </li>
               <li>
                 <a class="animate-hidden slide slide-left" style="--order: 7">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="mr-2 w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
                   </svg>
                   Billing Address
                 </a>
               </li>
               <li>
                 <a class="text-gray-500 animate-hidden slide slide-left" style="--order: 8">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="mr-2 w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                   Confirmation
                 </a>
-              </li>  
+              </li>
             </ul>
           </div>
-          <button class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a href="../p_3/">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-          </svg>
-          </a></button>
+          <button
+            class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none"><a
+              href="../p_3/">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </a></button>
         </div>
       </form>
     </div>
   </div>
 
 
-    <footer-component></footer-component>
-    <script src="../../footer.js" type="module"></script>
-    <script src="../../stars.js" type="module"></script>
+  <footer-component></footer-component>
+  <script src="../../footer.js" type="module"></script>
+  <script src="../../stars.js" type="module"></script>
 </body>

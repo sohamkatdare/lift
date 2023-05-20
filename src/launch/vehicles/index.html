@@ -6,20 +6,20 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../../animate.css" rel="stylesheet" >
+  <link href="../../style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../animate.css" rel="stylesheet">
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Learn about our fleet of launch vehicles and the capabilities of each one.">
 
   <title>LIFT - Vehicles</title>
-  <script defer src="../../navbar.js" type="module"></script>
+  <script defer src="../../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth " id="main">
   <navbar-component></navbar-component>
 
   <div class="hero min-h-screen max-w-screen select-none relative z-[-1]" style="transform-style: inherit;">
-      
+
     <div class="hero-overlay fixed max-w-full bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
@@ -28,24 +28,34 @@
         <h1 class="text-4xl md:text-6xl font-light italic animate-hidden">The technology of the future, to keep you safe.</h1>
       </div>
     </div>
-    <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+    <button id="gstar1"
+      class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-20 h-20">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
       </svg>
     </button>
   </div>
-<!-- gradient code bg-gradient-to-b from-black to-base-100 -->
+  <!-- gradient code bg-gradient-to-b from-black to-base-100 -->
   <div class="grid max-w-full grid-cols-12  py-10">
     <div class="col-start-2 col-end-12 lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
       <h1 class="text-3xl text-white font-bold underline decoration-blue-400"><strong>Rocket Body</strong></h1>
       <br>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all animate-hidden slide slide-left" style="--order: 1">
+      <div tabindex="0"
+        class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Engine
         </div>
         <div class="collapse-content bg-black/25 transition-all">
           <br>
-          <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the world. This machinery is one of the most complex designs that surpass the complexity of other great machines. Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting in a double-layered and robust final product.
+          <strong>Our rocket requires an engine of great magnitude to launch from the ground against the force of
+            gravity.</strong> The engine we have on our rockets is state of the art, providing the highest amount of
+          upward lift that is possible. Our engines have been assembled from handcrafted custom parts from all over the
+          world. This machinery is one of the most complex designs that surpass the complexity of other great machines.
+          Through this engine, we will be able to efficiently power our large rocket, so that it can break Earth's
+          atmosphere and guide us throughout space. Our state-of-the-art thrusters were designed on the principles of
+          Robert H. Goddard for a solid foundation and incorporate new breakthrough technology in the field, resulting
+          in a double-layered and robust final product.
           <br>
         </div>
       </div>
@@ -55,7 +65,16 @@
         </div>
         <div class="collapse-content bg-black/25 transition-all">
           <br>
-          <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally, high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven track record of producing high-quality rocket thrusters in order to ensure the success of your space mission. Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess through over 20 flights, some of which reached 2 years long. 
+          <strong>Rocket thrusters are a crucial component of any space mission</strong>, as they provide the propulsion
+          necessary to launch a spacecraft into orbit and beyond. A company that produces high-quality rocket thrusters
+          can be trusted to deliver reliable, powerful and efficient propulsion systems that are essential for
+          successful space launches. Furthermore, well-designed and manufactured rocket thrusters can help reduce the
+          overall cost of a space mission by minimizing the need for costly repairs and maintenance. Additionally,
+          high-quality rocket thrusters can also improve the safety of space missions by reducing the risk of failure
+          during critical stages of launch and flight. Therefore, it is important to choose a company that has a proven
+          track record of producing high-quality rocket thrusters in order to ensure the success of your space mission.
+          Luckily, our thrusters here at LIFT are made using bleeding-edge technology and have shown their prowess
+          through over 20 flights, some of which reached 2 years long.
           <br>
         </div>
       </div>
@@ -65,7 +84,16 @@
         </div>
         <div class="collapse-content bg-black/25 transition-all">
           <br>
-          <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us to study planets and other celestial bodies from a stable and long-term perspective. A company that produces high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in designing, manufacturing and testing of their orbiters is investing in the future of space exploration and technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and have successfully entered the orbits of every planet in the solar system.
+          <strong>When it comes to space exploration, an orbiter is a vital piece of equipment</strong> that allows us
+          to study planets and other celestial bodies from a stable and long-term perspective. A company that produces
+          high-quality orbiters is not only providing us with the ability to gather valuable scientific data, but also
+          the opportunity to expand our understanding of the universe. Furthermore, a company that takes great care in
+          designing, manufacturing and testing of their orbiters is investing in the future of space exploration and
+          technology. High-quality orbiters are also more reliable and efficient, which means less maintenance and cost
+          in the long run, and less risk of failure during crucial moments of a mission. Choosing a company with a track
+          record of producing top-notch orbiters is not only a wise decision for a successful mission but also a step
+          forward in advancing our knowledge and understanding of our universe. Our orbiters are very high quality and
+          have successfully entered the orbits of every planet in the solar system.
           <br>
         </div>
       </div>
@@ -109,37 +137,57 @@
 
               Safe
             </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 2">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <li class="flex items-center text-xl">
+              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
 
               Reliable
             </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 3">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <li class="flex items-center text-xl">
+              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
 
               High Quality
             </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 4">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <li class="flex items-center text-xl">
+              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
 
               Cost Effective
             </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 5">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <li class="flex items-center text-xl">
+              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
 
               Efficient
             </li>
           </ul>
         </div>
-        </div>
-        
       </div>
-      
-      
 
     </div>
 
-    <footer-component></footer-component>
+
+
+  </div>
+
+  <footer-component></footer-component>
 
   </div>
 
@@ -147,20 +195,27 @@
   <label for="rocket-modal" class="modal cursor-pointer">
     <label class="modal-box min-h-[50vh] min-w-[60vw] relative" for="">
       <h3 class="text-lg font-bold">View the Rocket in 3D!</h3>
-      <iframe class="rounded-lg drop-shadow-md w-full h-[48vh]" title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe> 
+      <iframe class="rounded-lg drop-shadow-md w-full h-[48vh]" title="Space Shuttle" frameborder="0" allowfullscreen
+        mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+        src="https://sketchfab.com/models/6cbf64ebdd474dc7910218c30e03fbe9/embed?autospin=1"></iframe>
     </label>
   </label>
-  
+
   <input type="checkbox" id="lander-modal" class="modal-toggle" />
   <label for="lander-modal" class="modal cursor-pointer h-[600px]">
     <label class="modal-box h-[600px] relative" for="">
       <h3 class="text-lg font-bold">View the lander in 3D!</h3>
-      
-      <iframe class="justify-center align-center w-full h-full rounded-lg drop-shadow-md" title="Orbital Lander" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/185a7a53383e49fdb3698a6bf434d526/embed?autospin=1"></iframe>
+
+      <iframe class="justify-center align-center w-full h-full rounded-lg drop-shadow-md" title="Orbital Lander"
+        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+        execution-while-not-rendered web-share
+        src="https://sketchfab.com/models/185a7a53383e49fdb3698a6bf434d526/embed?autospin=1"></iframe>
     </label>
   </label>
 
-  <script src="../../footer.js" defer type="module"></script>
+
   <script src="vehicles.js" type="module"></script>
 </body>
 
