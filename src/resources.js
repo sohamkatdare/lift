@@ -36,10 +36,10 @@ export function rendererSetup(scene, camera) {
 
     if (isTouchDevice()) {
         renderer.setSize(window.innerWidth, window.innerHeight);
-        oldWindow = [window.innerWidth, window.innerHeight]
+        const oldWindow = [window.innerWidth, window.innerHeight]
         window.addEventListener("resize", () => {
             renderer.setSize(window.innerWidth, window.innerHeight);
-            for(i = 0; i >= 1; i++) {
+            for (i = 0; i >= 1; i++) {
                 renderer.setSize(lerp(oldwindow[0], window.innerWidth, i), lerp(oldwindow[1], window.innerHeight, i));
             }
         });
@@ -90,7 +90,7 @@ export function starForge() {
     return stars
 }
 
-function createOrbitLine(distance, color = 0xffffff80, gapSize=0.5) {
+function createOrbitLine(distance, color = 0xffffff80, gapSize = 0.5) {
     const orbitPoints = [];
     const tempVector = new THREE.Vector3();
     const step = 5;

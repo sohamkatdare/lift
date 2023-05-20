@@ -6,8 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="./navbar.css" rel="stylesheet" >
+  <link href="./style.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./navbar.css" rel="stylesheet">
   <!-- <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'"> -->
   <!-- <link href="./animate.css" rel="stylesheet" >
   <script defer src="./animate.js" type="module"></script> -->
@@ -15,7 +15,8 @@
   <style>
     button:hover {
       cursor: none;
-    }    
+    }
+
     .filling-button {
       border: 0;
       background: linear-gradient(to right, black 50%, white 50%);
@@ -23,33 +24,40 @@
       background-position: right bottom;
       transition: all 0.5s ease-out;
     }
-    
+
     .filling-button:hover {
       color: white;
       background-position: left bottom;
     }
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: D-DIN;
     }
-    
-    p, .inter {
+
+    p,
+    .inter {
       font-family: Inter;
     }
+
     .no-scrollbar {
       -ms-overflow-style: none;
       /* IE and Edge */
       scrollbar-width: none;
       /* Firefox */
     }
+
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-
-    
   </style>
-  
-  
-  <script src="./navbar.js" type="module"></script>
+
+
+  <script src="./components.js" type="module"></script>
 </head>
 
 <body class="cursor-none no-scrollbar scroll-smooth " id="main">
@@ -131,17 +139,25 @@
     <div class="toast toast-top toast-end hidden md:block">
       <div class="alert shadow-lg opacity-80">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            class="stroke-info flex-shrink-0 w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
           <span>Click on either side of the screen to switch planets.</span>
-          <button class="btn btn-ghost rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg></button>
+          <button class="btn btn-ghost rounded-full" id="close-toast" onClick="closeToast()"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg></button>
         </div>
       </div>
     </div>
     <div class="hero-content text-center">
       <div class="max-w-screen animate-hidden animate-hidden-text">
-        <h1 data-value="Welcome to LIFT" class="text-4xl md:text-7xl lg:text-9xl  font-bold text-white/75  bg-white/[0.025] rounded-lg background-blur-sm p-4">Welcome to LIFT.
+        <h1 data-value="Welcome to LIFT"
+          class="text-4xl md:text-7xl lg:text-9xl  font-bold text-white/75  bg-white/[0.025] rounded-lg background-blur-sm p-4">
+          Welcome to LIFT.
         </h1>
       </div>
     </div>
@@ -150,7 +166,8 @@
   <div class="absolute grid grid-cols-12 snap-mandatory snap-y max-sm:justify-center max-sm:items-center ">
     <section id="section1" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
       <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
-        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Our <strong class="text-white"><code>Mission</code></strong></h2>
+        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Our <strong
+            class="text-white"><code>Mission</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">At LIFT, our mission is to provide safe and accessible space travel
           experiences for all. Through innovation, we foresee a future where space travel can be achieved at an
@@ -162,15 +179,18 @@
     </section>
     <section id="section2" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
       <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
-        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our <strong class="text-white"><code>Products</code></strong></h2>
+        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our
+          <strong class="text-white"><code>Products</code></strong></h2>
         <br>
-        <p class="text-white sm:block hidden">We offer three different products here at Lift that you can buy to travel throughout space. Each package contains a trip to some of the most mesmerizing places within our universe.</p>
+        <p class="text-white sm:block hidden">We offer three different products here at Lift that you can buy to travel
+          throughout space. Each package contains a trip to some of the most mesmerizing places within our universe.</p>
         <a href="products/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
     <section id="section3" class="sm:col-start-2 sm:col-span-5 mx-auto col-span-12 snap-start snap-always">
       <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
-        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Get ready for <strong class="text-white"><code>Launch!</code></strong></h2>
+        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Get ready for
+          <strong class="text-white"><code>Launch!</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">To ensure your safe flight, we strictly
           follow all safety regulations and rules when launching into outer space. Our thorough training program
@@ -181,15 +201,19 @@
     </section>
     <section id="section4" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
       <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
-        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white"><strong class="text-white"><code>SpaceCamp™️</code></strong></h2>
+        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white"><strong
+            class="text-white"><code>SpaceCamp™️</code></strong></h2>
         <br>
-        <p class="text-white sm:block hidden">SpaceCamp ️is a challenging but intuitive 4-week program that takes place at the Galileo facilities and includes physical conditioning, cardiovascular training, and instruction in our unique and innovative Lift spacecraft to make sure your trip is smooth and safe. </p>
+        <p class="text-white sm:block hidden">SpaceCamp ️is a challenging but intuitive 4-week program that takes place
+          at the Galileo facilities and includes physical conditioning, cardiovascular training, and instruction in our
+          unique and innovative Lift spacecraft to make sure your trip is smooth and safe. </p>
         <a href="launch/training/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
       </section>
     </section>
     <section id="section5" class="sm:col-start-2 sm:col-end-7 col-span-12 mx-auto  snap-start snap-always">
       <section class="animate-hidden rounded-lg bg-white/[0.05] backdrop-blur-sm p-5 my-[20rem]">
-        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our <strong class="text-white"><code>Vehicles!</code></strong></h2>
+        <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our
+          <strong class="text-white"><code>Vehicles!</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">We have
           multiple different vehicles that all fulfill. Our vehicles range from different types of rockets to rovers
@@ -204,14 +228,19 @@
   <div class="fixed top-0 left-0 block pointer-events-none z-50">
     <!-- circle -->
     <div class="absolute left-0 top-0 w-[30px] h-[30px] ml-[-15px] mt-[-15px] opacity-100 scale-[0.5] z-50" id="cursor">
-      <div class="absolute left-0 top-0 w-full h-full box-border bg-slate-50/75 backdrop-blur-[1.5px] rounded-full  z-50" style="contain: strict;"> 
+      <div
+        class="absolute left-0 top-0 w-full h-full box-border bg-slate-50/75 backdrop-blur-[1.5px] rounded-full  z-50"
+        style="contain: strict;">
         <!-- <div class="relative -translate-y-3 text-white text-lg w-40">Click on the right half of the screen!</div> -->
       </div>
       <!-- pointer -->
-      <span class="pointer absolute top-0 ml-[20px] text-white-50 text-[7rem] translate-y-[-5rem] blur-md font-lighter font-thin z-50">
+      <span
+        class="pointer absolute top-0 ml-[20px] text-white-50 text-[7rem] translate-y-[-5rem] blur-md font-lighter font-thin z-50">
         >
       </span>
-      <span class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all font-thin z-50" id="pointer">
+      <span
+        class="pointer absolute top-0 ml-[20px] text-gray-50 text-[7rem] translate-y-[-5.25rem] transition-all font-thin z-50"
+        id="pointer">
         >
       </span>
     </div>
