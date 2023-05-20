@@ -15,13 +15,12 @@ async function signup(firstName, lastName, email, password) {
       lastName: lastName,
       bookings: []
     });
-    window.location.replace("/login/index.html");
-    return 'success', user;
+    return ['success', user];
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorCode, errorMessage);
-    return 'failed', error;
+    return ['failed', error];
   }
 }
 
@@ -29,34 +28,30 @@ async function login(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-    // Add user to local storage
-    localStorage.setItem('user', JSON.stringify(user));
-    console.log("Login successful");
-    window.location.replace("/booking/index.html");
-    return 'success', user;
+    return ['success', user];
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorCode, errorMessage);
-    return 'failed', error;
+    return ['failed', error];
   }
 }
 
 async function logout() {
-    // Remove user from local storage to log user out
-    localStorage.removeItem('user');
+  // Remove user from local storage to log user out
+  localStorage.removeItem('user');
 }
 
 async function reset(email) {
   try {
     await sendPasswordResetEmail(auth, email);
     console.log(`Password reset email sent to ${email}`);
-    return 'success';
+    return ['success'];
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorCode, errorMessage);
-    return 'failed', error;
+    return ['failed', error];
   }
 }
 
