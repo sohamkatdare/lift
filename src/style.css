@@ -318,15 +318,7 @@ input[type="radio"] {
 }
 
 
-input[type="checkbox"], 
-input[type="radio"] {
-  display: none;
-}
-.accordion input[type="checkbox"]:checked + label + .content, 
-.accordion input[type="radio"]:checked + label + .content {
-  max-height: 40rem;
-  padding: 10px 10px 20px;
-}
+
 
 .collapsible-trigger {
   display: flex;
