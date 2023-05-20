@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 @layer components {
   .no-scrollbar::-webkit-scrollbar {
@@ -214,8 +218,9 @@ input[type="radio"] {
 }
 
 .wrapper {
-  max-width: 50rem;
-  margin-inline: auto;
+  max-width: 100rem;
+  height: fit-content;
+  margin-inline: clamp(5%, 10%, 20%);
   padding-inline: 1rem;
 }
 
@@ -229,11 +234,8 @@ input[type="radio"] {
   gap: 1rem;
 
   contain: content;
-  /* added padding to prevent issue with outlines */
-  padding: 0.5rem;
 
-  /* demo only */
-  margin-top: 20rem;
+
 }
 
 .collapsible * {
@@ -243,49 +245,51 @@ input[type="radio"] {
 .collapsible-panel {
   position: relative;
   isolation: isolate;
-  flex-basis: calc((var(--_panel-padding) * 2) + var(--_button-size));
+  flex-basis: 3.5rem;
   overflow: hidden;
   padding: var(--_panel-padding);
+  padding-top: 0.45rem;
   padding-right: calc(var(--_panel-padding) * 4);
-  border-radius: calc(((var(--_panel-padding) * 2) + var(--_button-size)) / 2);
+  border: 3px solid rgb(59 130 246 / 0%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .collapsible-panel {
-    transition: flex-basis 500ms, flex-grow 500ms;
+    transition: flex-basis ease-in-out 500ms, flex-grow ease-in-out 500ms;
   }
 }
 
 .collapsible-panel:has([aria-expanded="true"]) {
-  flex-basis: clamp(15rem, 40vh, 20rem);
+  flex-basis: clamp(12rem, calc(49rem - 44vw), 45rem);
   flex-grow: 1;
+  background-color: rgb(5, 3, 18);;
+  border: 3px solid rgb(59 130 246 / 50%);
 }
 
 .collapsible-trigger {
   outline: 0;
 }
 
-.collapsible-panel:focus-within {
-  outline: 3px solid var(--_panel-color);
-  outline-offset: 4px;
-}
 
 .collapsible-content > p {
   transform: translateY(2rem);
   opacity: 0;
-
-  margin-left: calc(var(--_button-size) + var(--_panel-gap));
+  margin-left: 1.5rem;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .collapsible-panel:has([aria-expanded="true"]) p {
-    transition: transform 500ms 500ms, opacity 500ms 500ms;
+    transition: transform 500ms ease-in-out 500ms, opacity 500ms ease-in-out 500ms;
   }
 }
+
 
 .collapsible-panel:has([aria-expanded="true"]) p {
   transform: translateY(0);
   opacity: 1;
+  margin-bottom: 1rem;
+  transition: opacity 500ms ease-in-out 700ms, transform 500ms ease-in-out 700ms;
 }
 
 .collapsible-title {
@@ -299,32 +303,32 @@ input[type="radio"] {
   align-items: center;
 }
 
-.collapsible-title::after {
-  content: "";
+.collapsible-panel::after {
+  content: "+";
   position: absolute;
-  left: calc((var(--_panel-gap) + var(--_button-size)) * -1);
-  width: calc(100% + (var(--_button-size) * 2));
-  height: var(--_button-size);
-  background: hsl(0 0% 0% / 0.5);
-  z-index: -1;
-  border-radius: 100vw;
+  right: 1rem;
+  top: 1.5rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  z-index: 5;
+  /* border: 1px solid rgb(240, 240, 240); */
+  transition: top 500ms ease-in-out;
 }
 
 
-.collapsible-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
 
-  transition: filter 500ms;
+
+.collapsible-panel:has([aria-expanded="true"])::after {
+  content: "-";
+  transition: top 500ms ease-in-out 500ms;
 }
 
-.collapsible-panel:has([aria-expanded="true"]) .collapsible-image {
-  filter: brightness(0.5);
-}
+
+
 
 .collapsible-trigger {
   display: flex;
@@ -337,11 +341,9 @@ input[type="radio"] {
 }
 
 .collapsible-icon {
-  fill: var(--_panel-color);
-  background: hsl(0 0% 0% / 0.55);
-  width: var(--_button-size);
   aspect-ratio: 1 / 1;
-  padding: 0.75rem;
+  padding: 0.25rem;
   border-radius: 50%;
   z-index: 10;
+  content: '+'
 }

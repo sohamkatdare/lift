@@ -25,7 +25,7 @@
     </div>
     <div class="hero-content text-center text-white">
       <div class="max-w-lg">
-        <h1 class="text-4xl md:text-6xl font-light italic">The technology of the future, to keep you safe.</h1>
+        <h1 class="text-4xl md:text-6xl font-light italic animate-hidden">The technology of the future, to keep you safe.</h1>
       </div>
     </div>
     <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
@@ -39,7 +39,7 @@
     <div class="col-start-2 col-end-12 lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
       <h1 class="text-3xl text-white font-bold underline decoration-blue-400"><strong>Rocket Body</strong></h1>
       <br>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-b-none transition-all animate-hidden slide slide-left" style="--order: 1">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Engine
         </div>
@@ -49,7 +49,7 @@
           <br>
         </div>
       </div>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-none  transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-none  transition-all animate-hidden slide slide-right" style="--order: 2">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Thruster
         </div>
@@ -59,7 +59,7 @@
           <br>
         </div>
       </div>
-      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-t-none transition-all">
+      <div tabindex="0" class="hover:outline hover:outline-success/50 collapse collapse-plus bg-slate-700/25 rounded-box rounded-t-none transition-all animate-hidden slide slide-left" style="--order: 3">
         <div class="collapse-title text-xl font-medium transition-all" onclick="toggleCollapse(this)">
           Orbiter
         </div>
@@ -72,47 +72,59 @@
     </div>
     <div class="col-span-12 mt-20 align-items justify-center lg:col-start-8 lg:col-end-12 px-7">
       <!-- -->
-      <div class=" hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-[3] hover:drop-shadow-2xl transition-all duration-500 rounded-lg bg-contain bg-center w-full h-full bg-no-repeat" style="background-image: url('/lander.png')">
+      <div class=" hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-[3] hover:drop-shadow-2xl transition-all duration-500 rounded-lg bg-contain bg-center w-full h-full bg-no-repeat animate-hidden" style="background-image: url('/lander.png')">
         <label for="lander-modal" class="w-full h-full"></label>
       </div>
     </div>
 
 
     <div class="col-start-2 col-end-12 lg:col-start-3 lg:col-end-11 mt-10">
-      <h1 class="text-3xl text-white font-bold underline decoration-blue-400 text-right mr-44"><strong>Lander</strong></h1>
+      <h1 class="text-3xl text-white font-bold underline decoration-blue-400 text-right mr-44 animate hidden"><strong>Lander</strong></h1>
       <div class="lg:grid grid-cols-3 py-7">
-        <label for="rocket-modal" class="bg-contain group hover:brightness-[1.25] hover:backdrop-brightess-[3] bg-center w-full h-full bg-no-repeat hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-150 hover:drop-shadow-2xl transition-all duration-500 rounded-lg" style="background-image: url('/rocket.png')">
+        <label for="rocket-modal" class="bg-contain group hover:brightness-[1.25] hover:backdrop-brightess-[3] bg-center w-full h-full bg-no-repeat hover:-translate-y-6 hover:shadow-2xl hover:backdrop-brightness-150 hover:drop-shadow-2xl transition-all duration-500 rounded-lg animate-hidden" style="background-image: url('/rocket.png')">
           <h1 class="hidden group-hover:block text-2xl text-white">Click on me! I'm 3D!</h1>
         </label>
         <div class="mt-4 lg:mt-0 lg:col-start-3 text-base-400">
-          Landers play a key role in space tourism as they provide the means for spacecraft to safely land on a celestial body, allowing tourists to disembark and experience the surface of another world. Landers are essential for space tourism as they enable the safe and controlled descent of the spacecraft, providing a stable platform for the tourists to disembark. Without landers, space tourism would be limited to orbiting the celestial body and would not allow for a landing or surface exploration.
+          <div class="animate-hidden slide slide-right" style="--order: 3">
+            <div class="card lg:card-side bg-base-100 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title">Landers!</h2>
+                <p>Landers play a key role in space tourism as they provide the means for spacecraft to safely land on a celestial body, allowing tourists to disembark and experience the surface of another world. Landers are essential for space tourism as they enable the safe and controlled descent of the spacecraft, providing a stable platform for the tourists to disembark. Without landers, space tourism would be limited to orbiting the celestial body and would not allow for a landing or surface exploration.</p>
+              </div>
+            </div>
           <br><br>
-          Additionally, landers also enable the deployment of other equipment and infrastructure that can support space tourism such as habitats, rovers, and other facilities. These facilities would provide the tourists with a comfortable and safe environment, allowing them to explore and experience the surface of the celestial body without the need for bulky and restrictive space suits. Furthermore, landers could also provide the means for tourists to conduct scientific experiments and research, adding an educational and unique component to space tourism. In summary, landers are a crucial component of space tourism as they provide the means for safe and controlled landings, and enable the deployment of infrastructure and equipment that support space tourism.
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Landers!</h2>
+              <p>Additionally, landers also enable the deployment of other equipment and infrastructure that can support space tourism such as habitats, rovers, and other facilities. These facilities would provide the tourists with a comfortable and safe environment, allowing them to explore and experience the surface of the celestial body without the need for bulky and restrictive space suits. Furthermore, landers could also provide the means for tourists to conduct scientific experiments and research, adding an educational and unique component to space tourism. In summary, landers are a crucial component of space tourism as they provide the means for safe and controlled landings, and enable the deployment of infrastructure and equipment that support space tourism.</p>
+            </div>
+          </div>
           <br><br>
-          <h2 class="text-3xl text-white font-bold underline decoration-blue-400">Our Landers are:</h2>
+          </div>
+          <h2 class="text-3xl text-white font-bold underline decoration-blue-400 animate-hidden">Our Landers are:</h2>
           <br>
           <ul>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 1">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Safe
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 2">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Reliable
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 3">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               High Quality
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 4">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Cost Effective
             </li>
-            <li class="flex items-center text-xl">
+            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 5">
              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
 
               Efficient

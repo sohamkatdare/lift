@@ -15,6 +15,7 @@ export function sceneSetup(backgroundPath) {
     // renderer.setClearColor(0xffffff, 0) // makes the background match
     return scene;
 }
+
 export function cameraSetup(scene, fov, aspect, near, far) {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
@@ -22,9 +23,11 @@ export function cameraSetup(scene, fov, aspect, near, far) {
     camera.position.setZ(0);
     return camera;
 }
+
 export function isTouchDevice() {
     return (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
 }
+
 // renderer setup
 export function rendererSetup(scene, camera) {
     const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
