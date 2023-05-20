@@ -145,16 +145,6 @@ input[type="date"]::-webkit-datetime-edit-month-field {
   color: white;
 }
 
-input[type="checkbox"], 
-input[type="radio"] {
-  display: none;
-}
-.accordion input[type="checkbox"]:checked + label + .content, 
-.accordion input[type="radio"]:checked + label + .content {
-  max-height: 40rem;
-  padding: 10px 10px 20px;
-}
-
 /* Webkit date input day field */
 input[type="date"]::-webkit-datetime-edit-day-field {
   color: white;
