@@ -6,6 +6,11 @@ document.getElementById("submit-btn").addEventListener("click", function() {
         var tier = document.getElementById("tier").value;
         var numOfTravelers = document.getElementById("numOfTravelers").value;
 
+        if(date == "" || type == "Choose trip" || tier == "Choose tier" || numOfTravelers == "") {
+            alert("Fill out all fields.")
+            return false;
+        }
+
         localStorage.setItem("date", date);
         localStorage.setItem("type", type);
         localStorage.setItem("tier", tier);

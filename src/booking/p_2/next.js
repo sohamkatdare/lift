@@ -8,6 +8,11 @@ document.getElementById("submit-btn").addEventListener("click", function() {
     var cardExpiry = document.getElementById("floating_card_expiry").value;
     var cardCVV = document.getElementById("floating_cvv").value;
 
+    if(address == "" || zipcode == "" || state == "---" || cardNumber == "" || cardExpiry == "" || cardCVV == "") {
+        alert("Fill out all fields.")
+        return false;
+    }
+
     localStorage.setItem("address", address);
     localStorage.setItem("zipcode", zipcode);
     localStorage.setItem("state", state);
