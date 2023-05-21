@@ -35,10 +35,7 @@ export function rendererSetup(scene, camera) {
         renderer.setSize(window.innerWidth, window.innerHeight);
         oldWindow = [window.innerWidth, window.innerHeight]
         window.addEventListener("resize", () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            for(i = 0; i >= 1; i++) {
-                renderer.setSize(lerp(oldwindow[0], window.innerWidth, i), lerp(oldwindow[1], window.innerHeight, i));
-            }
+            renderer.setSize(window.innerWidth, window.innerHeight)
         });
     } else renderer.setSize(window.innerWidth, window.innerHeight);
 
