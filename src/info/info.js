@@ -91,6 +91,8 @@ function handleScroll() {
   mars.position.z += inverter * normalizedValue * 20;
 
   prevScrollPos = currentScrollPos;
+
+  // timeline();
 }
 
 document.addEventListener('scroll', handleScroll);
@@ -98,7 +100,29 @@ document.addEventListener('scroll', handleScroll);
 
 
 
-// setTimeout(rsc.toggle, 200);
+
+
+var timelineEvents = document.querySelectorAll('.timeline li');
+
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('shown');
+    } else {
+      entry.target.classList.remove('shown');
+    }
+  });
+}, {
+  root: null, // Use the viewport as the root
+  rootMargin: '0px',
+  threshold: 0.66 // Trigger when 2/3 of the element is visible
+});
+
+timelineEvents.forEach(function(timelineEvent) {
+  observer.observe(timelineEvent);
+});
+
+
 
 
 

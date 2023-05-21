@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide Scrollbar */
+
 @layer components {
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
@@ -11,6 +13,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Tabs */
 
 .tabbody {
   position: absolute;
@@ -23,13 +27,7 @@
   opacity: 1;
 }
 
-
-
-
-
-.particle {
-  opacity: 0;
-}
+/* Remove text upon mobile */
 
 @media (max-width: 900px) {
   .card-text-responsive {
@@ -37,7 +35,7 @@
   }
 }
 
-
+/* Quote */
 
 blockquote {
     /* font-family: Georgia, serif; */
@@ -74,7 +72,7 @@ blockquote cite:before {
     content: "\2013";
 }
 
-
+/* fonts */
 
 @font-face {
   font-family: Inter;
@@ -102,7 +100,7 @@ p, .inter {
 }
 
 
-/* this is for the space nav */
+/* Styling webkit elements */
 
 
 .scrollbar-minimalist::-webkit-scrollbar {
@@ -127,26 +125,14 @@ p, .inter {
 
 
 /* Webkit date input fields wrapper */
-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+input[type="date"]::-webkit-datetime-edit-fields-wrapper{
   background-color: transparent;
 }
 
 /* Webkit date input text style */
-input[type="date"]::-webkit-datetime-edit-text {
-  color: white;
-}
-
-/* Webkit date input month field */
-input[type="date"]::-webkit-datetime-edit-month-field {
-  color: white;
-}
-
-/* Webkit date input day field */
-input[type="date"]::-webkit-datetime-edit-day-field {
-  color: white;
-}
-
-/* Webkit date input year field */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
 input[type="date"]::-webkit-datetime-edit-year-field {
   color: white;
 }
@@ -169,6 +155,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+/* Radio or Checkbox accordion */
 input[type="checkbox"], 
 input[type="radio"] {
   display: none;
@@ -189,4 +176,25 @@ input[type="radio"] {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+/* Timeline */
+
+.timeline li{
+	opacity:0;
+	transform: translateX(-10%);
+}
+
+.timeline li:nth-child(2n) {
+	align-self: flex-end;
+	text-align: left;
+	transform: translateX(10%);
+}
+.timeline li:nth-child(2n):before {
+	left: 0;
+  transform: translate(-50%,-50%);
+}
+.timeline li.shown {
+	opacity:1;
+	transform:translateX(0);
 }
