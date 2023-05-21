@@ -37,11 +37,6 @@ async function login(email, password) {
   }
 }
 
-async function logout() {
-  // Remove user from local storage to log user out
-  localStorage.removeItem('user');
-}
-
 async function reset(email) {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -56,4 +51,4 @@ async function reset(email) {
 }
 
 
-export { signup, login, logout, reset };
+export { signup, login, reset };

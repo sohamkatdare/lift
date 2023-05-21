@@ -27,10 +27,73 @@ class NavbarComponent extends HTMLElement {
     shadowRoot.innerHTML = `  
       <link href="/assets/tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">     
       <link href="/assets/index.css" rel="stylesheet" media="print" onload="this.media='all'">     
-      <link href="/assets/base2.css" rel="stylesheet" media="print" onload="this.media='all'">     
+      <link href="/assets/base2.css" rel="stylesheet" media="print" onload="this.media='all'">   
+      
+      <style>
+        .btn1{
+          padding: 15px;
+          margin:10px 4px;
+          color: #fff;
+          background-color:rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(10px);
+          font-family: sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          position: relative;
+          text-decoration: none;
+          display:inline-block;
+          /* border-radius: 0.375rem; */
+        }
+
+        .btn1{
+          border:3px solid rgba(0, 0, 0, 0); 
+          -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+          transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+        }
+
+        .btn1::before {
+          content: '';
+          position: absolute;
+          left: -0.5%;
+          bottom:-1.5px;
+          z-index:-1;
+          width: 0%;
+          height:3px;
+          background: white;
+          box-shadow: inset 0px 0px 0px white;
+          display: block;
+          -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+          transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+        }
+
+        .btn1:hover::before {
+          width:101%;
+        }
+
+        .btn1::after {
+          content: '';
+          position: absolute;
+          right: -0.5%;
+          top:-1.5px;
+          z-index:-1;
+          width: 0%;
+          height:3px;
+          background: white;
+          -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+          transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+        }
+        .btn1:hover::after {
+          width:101%;
+        }
+        .btn1:hover{
+          border-left:3px solid white;
+          border-right:3px solid white;
+          background-color: transparent;
+        }
+      </style>
       
       
-      <header id="body-div" class="w-full h-full">
+      <header id="body-div" class="w-screen h-screen">
         <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
         <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
         <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
@@ -100,9 +163,37 @@ class NavbarComponent extends HTMLElement {
             <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
             <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
           </a>
-
+          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+            <span class="label text-white text-[2em] transition-transform duration-200" id="login_logout">Login</span>  
+          </a>
+          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+            <span class="label text-white text-[2em] transition-transform duration-200" id="signup">Signup</span>  
+          </a>
+          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+            <span class="label text-white text-[2em] transition-transform duration-200" id="profile">Profile</span>  
+          </a>
+          
         </div>
       </div>
+      <script>
+        const login_logout = document.getElementById('login_logout');
+        const login_logout_text = login_logout.innerHTML;
+        if (localStorage.getItem('user') != null) {
+          login_logout.innerHTML = 'Logout';
+        } else {
+          login_logout.innerHTML = 'Login';
+        }
+
+        login_logout.addEventListener('click', () => {
+          if (localStorage.getItem('user') != null) {
+            localStorage.removeItem('user');
+            window.location.href = '/';
+          } else {
+            window.location.href = '/login/';
+          }
+        });
+
+      </script>
     </header>
     `;
   }

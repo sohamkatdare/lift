@@ -19,3 +19,7 @@ document.getElementById("submit-btn").addEventListener("click", function() {
         window.location.replace("/booking/p_2/");
     }
 );
+
+document.getElementById("p1Form").addEventListener("submit", function(evt) {
+    evt.preventDefault();
+}, true);

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="scroll-smooth">
+<html lang="en" data-theme="night" class="overflow-x-hidden" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../../animate.css" rel="stylesheet" >
@@ -30,7 +30,7 @@
     </div>
     <div class="hero-content text-white">
       <form id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl underline underline-offset-4 text-center text-white decoration-blue-400">Billing Address</h1>
+        <h1 class="text-6xl underline underline-offset-4 text-center text-white decoration-blue-400">Billing Information</h1>
         <div class="divider mb-12"></div>
         <div class="grid lg:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
@@ -42,7 +42,7 @@
           </div>
         </div>
     
-        <div class="grid grid-rows-4 lg:grid-cols-4 lg:gap-6">
+        <div class="grid lg:grid-cols-4 lg:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick col-span-1 row-span-1" style="--order: 2">
             <input type="text" name="floating_zipcode" id="floating_zipcode"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"

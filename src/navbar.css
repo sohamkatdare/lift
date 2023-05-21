@@ -82,36 +82,10 @@
   transition: opacity 600ms ease-in;  
 }
 
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(2) {
-  transition-delay: 100ms;
+#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(n+2) {
+  transition-delay: calc(50ms + 50ms * (n - 2));
 }
 
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(3) {
-  transition-delay: 150ms;
-}
-
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(4) {
-  transition-delay: 250ms;
-}
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(5) {
-  transition-delay: 300ms;
-}
-
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(6) {
-  transition-delay: 350ms;
-}
-
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(7) {
-  transition-delay: 400ms;
-}
-
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(8) {
-  transition-delay: 450ms;
-}
-
-#body-div.menu-toggled > #menu > #menu-links > .link:nth-of-type(9) {
-  transition-delay: 500ms;
-}
 
 
 
@@ -306,6 +280,18 @@ link:hover > .label {
     left: 75vmax;
     top: 40.2vmax;
   }
+  #menu > #menu-links > .link:nth-of-type(10) {
+    left: 15vmax;
+    top: 40.2vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(11) {
+    left: 5vmax;
+    top: 20.2vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(12) {
+    left: 15vmax;
+    top: 10.2vmax;
+  }
 }
 
 @media (min-width: 2100px) and (max-width: 2699px) {
@@ -345,6 +331,18 @@ link:hover > .label {
   #menu > #menu-links > .link:nth-of-type(9) {
     left: 91vmax;
     top: 44vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(10) {
+    left: 11vmax;
+    top: 44vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(11) {
+    left: 11vmax;
+    top: 44vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(12) {
+    left: 11vmax;
+    top: 14vmax;
   }
 
 

@@ -3,6 +3,7 @@ document.getElementById("submit-btn").addEventListener("click", function() {
     console.log("submit-btn1 clicked");
     var address = document.getElementById("floating_address").value;
     var zipcode = document.getElementById("floating_zipcode").value;
+    var city = document.getElementById("floating_city").value;
     var state = document.getElementById("floating_state").value;
     var cardNumber = document.getElementById("floating_card_number").value;
     var cardExpiry = document.getElementById("floating_card_expiry").value;
@@ -14,6 +15,7 @@ document.getElementById("submit-btn").addEventListener("click", function() {
     }
 
     localStorage.setItem("address", address);
+    localStorage.setItem("city", city)
     localStorage.setItem("zipcode", zipcode);
     localStorage.setItem("state", state);
     localStorage.setItem("cardNumber", cardNumber);
