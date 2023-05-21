@@ -11,7 +11,6 @@ let lineDrawing = anime({
   delay: function(el, i) {
     return i * 250;
   },
-  loop: true
 });
 
 const fadeEffect = () => {
@@ -29,11 +28,18 @@ const fadeEffect = () => {
   }, interval);
 };
 
+let bigger = anime({
+  targets: '#loaderLogo',
+  width: '100vh',
+  height: '100vh'
+});
+
 const loadFunction = () => {
   setTimeout(() => {
     fadeEffect();
     window.load(); // Assuming you have a function named "load" to be executed after the fade effect
-  }, 2200); // Delay the loadFunction by 2200 milliseconds (2.2 seconds)
+  }, 1100); // Delay the loadFunction by 2200 milliseconds (2.2 seconds)
+  bigger.play()
 };
 
 window.addEventListener('DOMContentLoaded', () => {
