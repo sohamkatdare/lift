@@ -28,18 +28,18 @@ const fadeEffect = () => {
   }, interval);
 };
 
-let bigger = anime({
-  targets: '#loaderLogo',
-  width: '100vh',
-  height: '100vh'
-});
+// let bigger = anime({
+//   targets: '#loaderLogo',
+//   width: '100vh',
+//   height: '100vh'
+// });
 
 const loadFunction = () => {
   setTimeout(() => {
     fadeEffect();
     window.load(); // Assuming you have a function named "load" to be executed after the fade effect
   }, 1100); // Delay the loadFunction by 2200 milliseconds (2.2 seconds)
-  bigger.play()
+  // bigger.play()
 };
 
 window.addEventListener('DOMContentLoaded', () => {
