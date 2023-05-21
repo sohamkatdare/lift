@@ -1,6 +1,6 @@
 // Add event listener for submit-btn.
 document.getElementById("submit-btn").addEventListener("click", function() {
-    console.log("submit-btn clicked");
+    console.log("submit-btn1 clicked");
     var address = document.getElementById("floating_address").value;
     var zipcode = document.getElementById("floating_zipcode").value;
     var state = document.getElementById("floating_state").value;

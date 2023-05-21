@@ -1,6 +1,6 @@
 // Add event listener for submit-btn.
 document.getElementById("submit-btn").addEventListener("click", function() {
-        console.log("submit-btn clicked");
+        console.log("submit-btn1 clicked");
         var date = document.getElementById("date").value;
         var type = document.getElementById("type").value;
         var tier = document.getElementById("tier").value;

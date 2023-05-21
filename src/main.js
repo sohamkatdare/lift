@@ -1,4 +1,4 @@
-import './style.css'
+import './base.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
 import { section } from './cursor';

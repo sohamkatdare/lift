@@ -24,10 +24,10 @@ class NavbarComponent extends HTMLElement {
 
   render() {
     const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.innerHTML = `
+    shadowRoot.innerHTML = `  
+      <link href="/assets/tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">     
       <link href="/assets/index.css" rel="stylesheet" media="print" onload="this.media='all'">     
-      <link href="/assets/index2.css" rel="stylesheet" media="print" onload="this.media='all'">     
-      <link href="/assets/style.css" rel="stylesheet" media="print" onload="this.media='all'">     
+      <link href="/assets/base2.css" rel="stylesheet" media="print" onload="this.media='all'">     
       
       
       <header id="body-div" class="w-full h-full">
@@ -47,9 +47,9 @@ class NavbarComponent extends HTMLElement {
           <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
             <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
             <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
-            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="30%"></circle>
-            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="40%"></circle>
-            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="48%"></circle>
+            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+            <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
           </svg>
         </div>
         <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">

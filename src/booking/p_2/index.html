@@ -6,8 +6,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../../animate.css" rel="stylesheet" >
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
@@ -32,7 +32,7 @@
       <form id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
         <h1 class="text-6xl underline underline-offset-4 text-center text-white decoration-blue-400">Billing Address</h1>
         <div class="divider mb-12"></div>
-        <div class="grid md:gap-6">
+        <div class="grid lg:gap-6">
           <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
             <input type="address" name="floating_address" id="floating_address"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -42,22 +42,22 @@
           </div>
         </div>
     
-        <div class="grid md:grid-cols-4 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 2">
+        <div class="grid grid-rows-4 lg:grid-cols-4 lg:gap-6">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick col-span-1 row-span-1" style="--order: 2">
             <input type="text" name="floating_zipcode" id="floating_zipcode"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_zipcode"
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Zip Code</label>
           </div>
-          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 3">
+          <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick col-span-1 row-span-1" style="--order: 3">
             <input type="text" name="floating_city" id="floating_city"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_city"
               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
           </div>
-          <div class="relative col-span-2 z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick" style="--order: 4">
+          <div class="relative col-span-2 z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick row-span-1" style="--order: 4">
             <select type="text" name="floating_state" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 scrollbar-minimalist" id="floating_state" placeholder=" " required>
                 <option class="bg-base-200" value="---">---</option>
                 <option class="bg-base-200" value="Alabama">Alabama</option>
@@ -120,7 +120,7 @@
           </div>
         </div>
         
-        <div class="grid md:grid-cols-4 md:gap-6">
+        <div class="grid md:grid-cols-4 lg:gap-6">
           <div class="relative z-0 col-span-2 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 4">
             <input type="number" name="floating_card_number" id="floating_card_number"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -184,7 +184,7 @@
               </li>  
             </ul>
           </div>
-          <button id="submit-btn" class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
+          <button id="submit-btn" class="m-0 ml-12 btn1 max-h-11 p-3 text-sm">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
           </svg>
           </button>

@@ -1,4 +1,4 @@
-import '../../style.css';
+import '../../base.css';
 
 import * as THREE from 'three';
 import * as rsc from '../../resources';

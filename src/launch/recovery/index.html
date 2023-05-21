@@ -6,8 +6,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../../animate.css" rel="stylesheet" >
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Read about our launch recovery process and how we ensure the safety of our passengers and crew.">
@@ -50,22 +50,22 @@
       <div class="text-center text-4xl font-bold mb-8 text-white underline decoration-blue-500 animate-hidden">Steps on your way back to Earth</div>
       <ul class="steps">
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 1 ">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section1">Re-Entry</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section1">Re-Entry</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 2">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section2">Medical Evaluation</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section2">Medical Evaluation</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 3">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section3">Rest and Recovery</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section3">Rest and Recovery</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 4">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section4">Rehabilitation</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section4">Rehabilitation</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 5">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section5">Support and Guidance</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section5">Support and Guidance</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 6">
-          <a class="btn-link btn text-white font-xl no-underline hover:underline transition-all" href="#section6">Reintegration</a>
+          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section6">Reintegration</a>
         </li>
       </ul>
       <br>
@@ -255,8 +255,8 @@
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide4" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❮</a>
-                <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
+                <a href="#slide4" class="btn1  btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link invisible">❮</a>
+                <a href="#slide2" class="btn1  btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
               </div>
             </div>
             <div id="slide2" class="carousel-item relative w-full">
@@ -273,8 +273,8 @@
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide1" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
-                <a href="#slide3" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
+                <a href="#slide1" class="btn1  btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
+                <a href="#slide3" class="btn1  btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❯</a>
               </div>
             </div>
             <div id="slide3" class="carousel-item relative w-full">
@@ -290,7 +290,7 @@
                 </div>
               </div>
               <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 bottom-0">
-                <a href="#slide2" class="btn btn-ghost btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
+                <a href="#slide2" class="btn1  btn-cirle bg-black/[0.25] hover:bg-black/50 backdrop-blur-sm carousel-link">❮</a>
               </div>
             </div>
           </div>
@@ -323,7 +323,7 @@
   <input type="checkbox" id="my-modal-3" class="modal-toggle" />
   <div class="modal">
     <div class="modal-box relative">
-      <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+      <label for="my-modal-3" class="btn1 btn-sm btn-circle absolute right-2 top-2">✕</label>
       <h3 class="text-lg font-bold">Doctor Expert in Human Recovery from Space:</h3>
       <p class="py-4"> Name: Dr. John Smith <br> Qualifications: PhD in Aerospace Medicine<br>Specialization: Human
         Recovery from Space<br>

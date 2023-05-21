@@ -6,8 +6,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="../../output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../../animate.css" rel="stylesheet" >
   <script defer src="../../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
@@ -29,10 +29,10 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+      <form id="p1Form" class="px-24 w-[50rem] lg:w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
         <h1 class="text-6xl mb-12 underline underline-offset-4 text-white decoration-blue-400">Order Information</h1>
 
-        <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="grid lg:grid-cols-2 lg:gap-6">
             <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-left slide-quick" style="--order: 1">
               <input type="date" name="floating_date" id="date"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -53,7 +53,7 @@
             
             </div>
           </div>
-          <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="grid lg:grid-cols-2 lg:gap-6">
             <div class="relative z-0 w-full mb-6 group animate-hidden slide slide-right slide-quick" style="--order: 3">
               <select name="floating_tier" id="tier"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -117,7 +117,7 @@
               </li>  
             </ul>
           </div>
-          <button id="submit-btn" class="text-sm px-2 bg-black text-white rounded-md outline outline-1 outline-gray-400 hover:text-black hover:bg-white hover:duration-300 ease-in-out hover:outline-none">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
+          <button id="submit-btn" class="m-0 ml-12 btn1 max-h-11 p-3 text-sm">Next <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
           </svg>
           </button>

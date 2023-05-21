@@ -6,10 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./output.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="./tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="./navbar.css" rel="stylesheet" >
-  <!-- <link href="./style.css" rel="stylesheet"  media="print" onload="this.media='all'"> -->
+  <!-- <link href="./base.css" rel="stylesheet"  media="print" onload="this.media='all'"> -->
   <!-- <link href="./animate.css" rel="stylesheet" >
   <script defer src="./animate.js" type="module"></script> -->
   <title>LIFT - Home</title>
@@ -17,7 +17,7 @@
     button:hover {
       cursor: none;
     }    
-    .filling-button {
+    . {
       border: 0;
       background: linear-gradient(to right, black 50%, white 50%);
       background-size: 200% 100%;
@@ -25,7 +25,7 @@
       transition: all 0.5s ease-out;
     }
     
-    .filling-button:hover {
+    .:hover {
       color: white;
       background-position: left bottom;
     }
@@ -67,7 +67,7 @@
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Click on either side of the screen to switch planets.</span>
-          <button class="btn btn-ghost rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <button class="btn1  rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg></button>
         </div>
@@ -109,7 +109,7 @@
           affordable price. We believe that space travel has the power to bring people and nations together, and we are
           excited to help lead the charge in this exciting new era of space exploration.
         </p>
-        <a href="info/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
+        <a href="info/"><button class="my-5 btn1  ">Learn More</button></a>
       </section>
     </section>
     <section id="section2" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
@@ -117,7 +117,7 @@
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white">Check out our <strong class="text-white"><code>Products</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">We offer three different products here at Lift that you can buy to travel throughout space. Each package contains a trip to some of the most mesmerizing places within our universe.</p>
-        <a href="products/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
+        <a href="products/"><button class="my-5 btn1  ">Learn More</button></a>
       </section>
     </section>
     <section id="section3" class="sm:col-start-2 sm:col-span-5 mx-auto col-span-12 snap-start snap-always">
@@ -128,7 +128,7 @@
           follow all safety regulations and rules when launching into outer space. Our thorough training program
           thoroughly teaches all of the safety regulations. With our state-of-the-art technology, we conduct the launch
           experience perfectly.</p>
-        <a href="launch/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
+        <a href="launch/"><button class="my-5 btn1  ">Learn More</button></a>
       </section>
     </section>
     <section id="section4" class="sm:col-start-6 sm:col-span-6 col-span-12 mx-auto  snap-start snap-always">
@@ -136,7 +136,7 @@
         <h2 class="text-4xl underline underline-offset-4 decoration-blue-400 basic-info text-white"><strong class="text-white"><code>SpaceCamp™️</code></strong></h2>
         <br>
         <p class="text-white sm:block hidden">SpaceCamp ️is a challenging but intuitive 4-week program that takes place at the Galileo facilities and includes physical conditioning, cardiovascular training, and instruction in our unique and innovative Lift spacecraft to make sure your trip is smooth and safe. </p>
-        <a href="launch/training/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
+        <a href="launch/training/"><button class="my-5 btn1  ">Learn More</button></a>
       </section>
     </section>
     <section id="section5" class="sm:col-start-2 sm:col-end-7 col-span-12 mx-auto  snap-start snap-always">
@@ -146,7 +146,7 @@
         <p class="text-white sm:block hidden">We have
           multiple different vehicles that all fulfill. Our vehicles range from different types of rockets to rovers
           which can be used to explore the surfaces of the places we explore.</p>
-        <a href="launch/vehicles/"><button class="my-5 btn btn-primary filling-button">Learn More</button></a>
+        <a href="launch/vehicles/"><button class="my-5 btn1  ">Learn More</button></a>
       </section>
     </section>
   </div>
