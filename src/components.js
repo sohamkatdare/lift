@@ -38,7 +38,7 @@ class NavbarComponent extends HTMLElement {
           <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
           <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
           <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
-            <span class="word text-white cursor-pointer"><h1 class="text-3xl"><code>LIFT</code></h1></span>
+            <span class="word text-white cursor-pointer"><h1 class="text-3xl"><span><code>LIFT</code></h1></span>
           </div>
         </button>
         <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>

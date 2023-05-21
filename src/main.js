@@ -153,6 +153,15 @@ function updatePlanetsAxialTilt() {
   rsc.uranusRotationGroup.rotation.x = THREE.MathUtils.degToRad(-1);
   rsc.neptuneRotationGroup.rotation.x = THREE.MathUtils.degToRad(3);
 
+  rsc.earthRotationGroup.rotation.y = THREE.MathUtils.degToRad(60);
+  rsc.mercuryRotationGroup.rotation.y = THREE.MathUtils.degToRad(0);
+  rsc.venusRotationGroup.rotation.y = THREE.MathUtils.degToRad(120);
+  rsc.marsRotationGroup.rotation.y = THREE.MathUtils.degToRad(180);
+  rsc.jupiterRotationGroup.rotation.y = THREE.MathUtils.degToRad(240);
+  rsc.saturnRotationGroup.rotation.y = THREE.MathUtils.degToRad(300);
+  rsc.uranusRotationGroup.rotation.y = THREE.MathUtils.degToRad(360);
+  rsc.neptuneRotationGroup.rotation.y = THREE.MathUtils.degToRad(420);
+
 }
 
 

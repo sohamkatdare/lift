@@ -1,19 +1,42 @@
-// const preloader = document.getElementById('preloader');
+import anime from 'animejs/lib/anime.es';
 
-// const fadeEffect = setInterval(() => {
-//     // if we don't set opacity 1 in CSS, then it will be equaled to "" -- that's why we check it, and if so, set opacity to 1
-//     if (!preloader.style.opacity) preloader.style.opacity = 1;
-//     if (preloader.style.opacity > 0) {
-//        preloader.style.opacity -= 0.1; 
-//     } else if(preloader.style.opacity <= 0 && !preloader.classList.contains("hidden")) {  
-//         preloader.classList += ' hidden'
-//     }
-//     else clearInterval(fadeEffect);
-// }, 100);
+const preloader = document.getElementById('preloader');
 
-// const oldLoadFunction = window.load;
-// const loadFunction = function(){
-//     fadeEffect();
-//     oldLoadFunction();
-// }
-// window.addEventListener("onload", loadFunction);
+// Animation for drawing the stroke
+let lineDrawing = anime({
+  targets: '#preloaderPath',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 1500,
+  delay: function(el, i) {
+    return i * 250;
+  },
+  loop: true
+});
+
+const fadeEffect = () => {
+  const interval = 10;
+  let opacity = 1;
+
+  const fadeOut = setInterval(() => {
+    if (opacity > 0) {
+      opacity -= interval / 1000;
+      preloader.style.opacity = opacity;
+    } else {
+      clearInterval(fadeOut);
+      preloader.classList.add('hidden');
+    }
+  }, interval);
+};
+
+const loadFunction = () => {
+  setTimeout(() => {
+    fadeEffect();
+    window.load(); // Assuming you have a function named "load" to be executed after the fade effect
+  }, 2200); // Delay the loadFunction by 2200 milliseconds (2.2 seconds)
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  lineDrawing.play(); // Start the line drawing animation
+  loadFunction();
+});
