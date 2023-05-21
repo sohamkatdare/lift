@@ -19,6 +19,11 @@ document.getElementById("confirm-btn").addEventListener("click", async function(
 
         await addBooking(new Trip(date, type, tier, numOfTravelers, address, zipcode, state, cardNumber, cardExpiry, cardCVV));
         
+        document.querySelector("date").innerHTML = date
+        document.querySelector("type").innerHTML = type
+        document.querySelector("tier").innerHTML = tier
+        document.querySelector("numOfTravelers").innerHTML = numOfTravelers
+
         window.location.replace("/booking/");
     }
 );

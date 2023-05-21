@@ -2,23 +2,16 @@ import './style.css'
 import * as rsc from './resources';
 import * as THREE from 'three'
 import { section } from './cursor';
-// import Hammer from 'hammerjs';
 
 import Stats from 'three/examples/jsm/libs/stats.module'
 const stats = new Stats()
 document.body.appendChild(stats.dom)
 stats.dom.style.cssText = 'position: absolute; left: 0; bottom: 0; z-index: 10000; cursor: pointer; opacity: 0.9;';
 
+let index = 0,
+    interval = 1000;
 
-// const swipeCanvas = document.querySelector("body");
-// let hammer = new Hammer(swipeCanvas);
 
-// hammer.on('swipeup', () => {
-//   scrollNext();
-// });
-// hammer.on('swipedown', () => {
-//   scrollBefore();
-// });
 
 function closeToast() {
   this.parentElement.parentElement.classList.add("hidden")

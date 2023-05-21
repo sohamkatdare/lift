@@ -32,26 +32,13 @@
         <h1 class="text-6xl mb-12 underline text-center text-white decoration-blue-400">Confirm your booking</h1>
         <div class="divider mb-12"></div>
         <div id="receipt">
-          <div class="grid grid-rows-3 gap-5">
+          <div class="grid gap-5">
             <div class="bg-slate-900 animate-hidden slide slide-left rounded-lg pt-5 pl-5" style="--order: 1">
-              <h3 class="text-3xl">Terrestrial Planet Exploration <span class="text-gray-500 text-sm">$500k</span></h3>
+              <h3 class="text-3xl"><span id="type"></span> <span class="text-gray-500 text-sm">$500k</span></h3>
               <div class="flex ml-5 gap-5 my-5">
-                <p><span class="text-gray-500 text-sm">Launches on:</span> 11/2/2027</p>
-                <p><span class="text-gray-500 text-sm">Tier: </span> Deluxe</p>
-              </div>
-            </div>
-            <div class="bg-slate-900 animate-hidden slide slide-right rounded-lg pt-5 pl-5" style="--order: 2">
-              <h3 class="text-3xl">Terrestrial Planet Exploration <span class="text-gray-500 text-sm">$500k</span></h3>
-              <div class="flex ml-5 gap-5 my-5">
-                <p><span class="text-gray-500 text-sm">Launches on:</span> 11/2/2027</p>
-                <p><span class="text-gray-500 text-sm">Tier: </span> Deluxe</p>
-              </div>
-            </div>
-            <div class="bg-slate-900 animate-hidden slide slide-left rounded-lg pt-5 pl-5" style="--order: 3">
-              <h3 class="text-3xl">Terrestrial Planet Exploration <span class="text-gray-500 text-sm">$500k</span></h3>
-              <div class="flex ml-5 gap-5 my-5">
-                <p><span class="text-gray-500 text-sm">Launches on:</span> 11/2/2027</p>
-                <p><span class="text-gray-500 text-sm">Tier: </span> Deluxe</p>
+                <p><span class="text-gray-500 text-sm">Launches on:</span> <span id="date"></span></p>
+                <p><span class="text-gray-500 text-sm">Tier: </span> <span id="tier"></span></p>
+                <p><span class="text-gray-500 text-sm">Number of travelers: </span> <span id="numOfTravelers"></span></p>
               </div>
             </div>
             <br>
