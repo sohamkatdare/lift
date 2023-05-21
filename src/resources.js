@@ -33,7 +33,6 @@ export function rendererSetup(scene, camera) {
 
     if (isTouchDevice()) {
         renderer.setSize(window.innerWidth, window.innerHeight);
-        oldWindow = [window.innerWidth, window.innerHeight]
         window.addEventListener("resize", () => {
             renderer.setSize(window.innerWidth, window.innerHeight)
         });
