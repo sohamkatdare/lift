@@ -1,5 +1,6 @@
 
-const collapsibles = document.getElementsByClassName("collapsible");
+const collapsibles = document.querySelectorAll(".collapsible");
+
 collapsibles.forEach((collapsible) => {
   collapsible.addEventListener("click", (e) => {
     const activePanel = e.target.closest(".collapsible-panel");

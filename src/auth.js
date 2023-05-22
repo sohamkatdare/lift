@@ -61,7 +61,7 @@ async function continueAsGuest() {
     if (!(docSnap.exists())) {
       await setDoc(doc(db, "users", user.uid), {
         firstName: "Guest",
-        lastName: "Guest",
+        lastName: "",
         bookings: []
       });
     }
