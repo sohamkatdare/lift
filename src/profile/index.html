@@ -6,16 +6,16 @@
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <script src="../../auth-check.js" type="module"></script>
-  <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../../navbar.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../../animate.css" rel="stylesheet" >
-  <script defer src="../../animate.js" type="module"></script>
+  <script src="../auth-check.js" type="module"></script>
+  <link href="../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../navbar.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet" >
+  <script defer src="../animate.js" type="module"></script>
   <meta name="description" content="Book a trip to any location in the Solar System today!">
   <!-- <link href="/products.css" rel="stylesheet"> -->
   <title>LIFT - Booking a Tour</title>
-  <script defer src="../../components.js" type="module"></script>
+  <script defer src="../components.js" type="module"></script>
 </head>
 
 <body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
@@ -32,70 +32,11 @@
     </div>
     <div class="hero-content text-white">
       <div id="p1Form" class="px-24 w-[96rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl mb-12 underline text-center text-white decoration-blue-400">Confirm your booking</h1>
+        <h1 class="text-6xl mb-12 underline text-center text-white decoration-blue-400">Your Bookings</h1>
         <div class="divider mb-12"></div>
-        <div id="receipt-order">
-          <div class="grid gap-5">
-            <div class="bg-slate-900 animate-hidden slide slide-left rounded-lg pt-5 pl-5" style="--order: 1">
-              <h3 class="text-3xl"><span id="price">$500k</span> each</h3>
-              <div class="flex ml-5 gap-5 my-5">
-                <p><span class="text-gray-500 text-sm">Launches on:</span> <span id="date"></span></p>
-                <p><span class="text-gray-500 text-sm">Type: </span> <span id="type"></span></p>
-                <p><span class="text-gray-500 text-sm">Tier: </span> <span id="tier"></span></p>
-                <p><span class="text-gray-500 text-sm">Number of travelers: </span> <span id="num-of-travelers"></span></p>
-              </div>
-            </div>
-            <br>
-          </div>
+        <div id="bookings">
+
         </div>
-        <div id="receipt-billing">
-          <div class="grid gap-5">
-            <div class="bg-slate-900 animate-hidden slide slide-left rounded-lg pt-5 pl-5" style="--order: 1">
-              <h3 class="text-3xl">Billing Information</h3>
-              <div class="flex ml-5 gap-5 my-5">
-                <p class="text-gray-500 text-sm">
-                  Address:
-                  <span id="address">123 Denard Lane</span>
-                  <span id="city">
-                    /jkasdf
-                  </span>
-                  <span id="state">
-                    /sdfsd
-                  </span>
-                  <span id="zipcode">
-                    /ssdf
-                  </span>
-                  USA
-                </p>
-              </div>
-              <div class="flex ml-5 gap-5 my-5">
-                <p class="text-gray-500 text-sm">
-                  Card Number: <span id="cardNumber" class="mr-3">
-                    /sdfsdf
-                  </span>
-                  Card Expiration: <span id="cardExpiry">
-                    .fsdfd
-                  </span>
-                </p>
-              </div>
-            </div>
-            <br>
-          </div>
-        </div>
-        <!-- price
-        trip tier
-        trip type
-        trip date
-        # travelers
-        -->
-        <!-- 
-        Address
-        City
-        State
-        Zip
-        Card Number (Just last 4 digits)
-        Expiration Date
-         -->
         
         <div class="flex justify-between">
           <div class="text-sm breadcrumbs">
@@ -134,8 +75,6 @@
               </li>  
             </ul>
           </div>
-          <button id="confirm-btn" class="m-0 ml-12 btn1 max-h-11 p-3 text-sm">Confirm
-          </button>
         </div>
         
       </div>
@@ -145,7 +84,7 @@
 
     <footer-component></footer-component>
     
-    <script src="../../stars.js" type="module"></script>
-    <script src="confirm.js" type="module"></script>
-  <script type="module" defer src="../../loader.js" defer></script>
+    <script src="../stars.js" type="module"></script>
+    <script src="profile.js" type="module"></script>
+    <script type="module" defer src="../loader.js" defer></script>
 </body>

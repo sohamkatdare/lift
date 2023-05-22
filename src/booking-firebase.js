@@ -1,10 +1,10 @@
-import { app } from "../firebase_init.js";
+import { app } from "./firebase_init.js";
 import { getFirestore, doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
 import { Trip, toFirestore, fromFirestore } from "./trip.js";
 
 const db = getFirestore(app);
 
-const docRef = doc(db, "users", JSON.parse(localStorage.getItem("user"))['email']);
+const docRef = doc(db, "users", JSON.parse(localStorage.getItem("user"))['uid']);
 
 export async function addBooking(trip) {
   await updateDoc(docRef, {

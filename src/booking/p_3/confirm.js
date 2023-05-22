@@ -1,6 +1,5 @@
-import { Trip } from "../trip.js";
-import { addBooking } from "../booking-firebase.js";
-
+import { Trip } from "../../trip.js";
+import { addBooking } from "../../booking-firebase.js";
 
 // Populate the confirm page with the data from the previous pages.
 document.getElementById("price").innerHTML = localStorage.getItem("type") === "Gas Giant Exploration" ? "$750k" : "$500k";
@@ -37,6 +36,6 @@ document.getElementById("confirm-btn").addEventListener("click", async function(
 
         await addBooking(new Trip(date, type, tier, numOfTravelers, address, zipcode, city, state, cardNumber, cardExpiry, cardCVV));
 
-        window.location.replace("/booking/");
+        window.location.replace("/profile/");
     }
 );

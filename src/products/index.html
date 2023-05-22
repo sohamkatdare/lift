@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../navbar.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../collapsible.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="../animate.css" rel="stylesheet" >
   <script defer src="../animate.js" type="module"></script>
   <meta name="description" content="See a list of our products and services, including rocket flight trips, spacesuits, and other space travel equipment.">
@@ -33,11 +35,141 @@
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
   </div>
-  <navbar-component></navbar-component>
+  
 
-  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="/spinner.svg" alt="spinner">
-  </div> -->
+  <header id="body-div">
+    <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
+      <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
+      <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
+        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
+        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
+        <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
+          <span class="word text-white cursor-pointer"><h1 class="text-3xl"><span><code>LIFT</code></h1></span>
+        </div>
+      </button>
+      <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
+      <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
+      <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
+        <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
+          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
+          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
+          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
+          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
+          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
+        </svg>
+      </div>
+      <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+          <span class="index text-[0.8em] transition-transform duration-200">01</span> 
+          <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
+        </a>
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="index text-[0.8em] transition-transform duration-200">02</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
+        </a>
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="index text-[0.8em] transition-transform duration-200">03</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
+        </a>
+        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
+          <span class="index text-[0.8em] transition-transform duration-200">04</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
+        </a>
+        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="index text-[0.8em] transition-transform duration-200">05</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
+        </a>
+        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="index text-[0.8em] transition-transform duration-200">06</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
+        </a>
+        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="index text-[0.8em] transition-transform duration-200">07</span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
+        </a>
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
+          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
+        </a>
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
+          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
+          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+          <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+        </a>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/booking/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
+          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">10</span> 
+          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">06</span> 
+          <span class="label text-white text-[2em] transition-transform duration-200">Booking</span>  
+        </a>
+        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+          <span class="label text-white text-[2em] transition-transform duration-200" id="login">Login</span>  
+        </a>
+        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/signup/">
+          <span class="label text-white text-[2em] transition-transform duration-200" id="signup">Signup</span>  
+        </a>
+        
+        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/profile/"> 
+          <span class="label text-white text-[2em] transition-transform duration-200" id="profile">Profile</span>  
+        </a>
+        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" id="logout">
+          <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
+        </a>
+        
+      </div>
+    </div>
+    <script>
+      const button = document.getElementById("menu-toggle");
+      button.onclick = () => {
+        document.getElementById('body-div').classList.toggle("menu-toggled");
+      }
+      const login = document.getElementById("login");
+      const signup = document.getElementById("signup");
+      const profile = document.getElementById("profile");
+      const logout = document.getElementById("logout");
+
+      if (localStorage.getItem('user') != null) {
+        // Hide login and signup
+        login.style.display = 'none';
+        signup.style.display = 'none';
+        login.classList.remove("btn1") 
+        signup.classList.remove("btn1")
+        
+        profile.style.display = 'block';
+        logout.style.display = 'block';
+        profile.classList.add("btn1") 
+        logout.classList.add("btn1")
+        
+        document.getElementById('logout').addEventListener('click', () => {
+          if (localStorage.getItem('user') != null) {
+            localStorage.removeItem('user');
+          }
+        });
+      } else {
+        // Hide profile and logout
+        login.style.display = 'block';
+        signup.style.display = 'block';
+        login.classList.add("btn1") 
+        signup.classList.add("btn1")
+        
+        profile.style.display = 'none';
+        logout.style.display = 'none';
+        profile.classList.remove("btn1") 
+        logout.classList.remove("btn1");
+      }
+    </script>
+  </header>
 
 
 
@@ -176,8 +308,11 @@
   <div class="text-center">
     <div class="my-20 text-xl text-white hover:bg-black/[0.05] divider animate-hidden"><p class="text-6xl text-white underline decoration-primary">What's Included</p></div>
   </div>
+
+
+
   <div class="grid grid-cols-12 gap-x-8 bg-base-300/25 backdrop-blur-md min-h-[21rem] py-12 justify-center items-center">
-    <button class="col-span-2 col-start-3 justify-center animate-hidden slide slide-right" style="--order: 1">
+    <button class="col-span-2 col-start-3 justify-center animate-hidden slide slide-right" style="--order: 1" onclick="showCard(1)">
       <div class="flex flex-col items-center group " >
         <svg fill="#ffffff" class="aspect-square w-32 group-hover:w-40 group-hover:fill-primary transition-all" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
           <g>
@@ -228,29 +363,29 @@
         <p class="mt-8 text-2xl">Luxurious Leisure</p>
       </div>
     </button>
-    <button class="col-span-2 justify-center animate-hidden slide slide-right" style="--order: 2">
+    
+    <button class="col-span-2 justify-center  animate-hidden slide slide-right" style="--order: 2" id="menu" onclick="showCard(2)">
       <div class="flex flex-col items-center group " >
         <svg fill="#ffffff" class="aspect-square w-32 group-hover:w-40 group-hover:fill-primary transition-all" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.8 489.8" xml:space="preserve">
-        <g>
           <g>
             <g>
-              <path d="M172.15,293.1L172.15,293.1h314.5l0,0c0-40.8-33-73.9-73.9-73.9h-166.7C205.25,219.2,172.15,252.3,172.15,293.1z"/>
-              <path d="M246.05,489.8h166.8c40.8,0,73.9-33,73.9-73.9h-314.6C172.15,456.7,205.25,489.8,246.05,489.8z"/>
-              <path d="M462.55,330h-266.3c-14,0-25.3,11.3-25.3,25.3s11.3,25.3,25.3,25.3h266.3c14,0,25.3-11.3,25.3-25.3
-                S476.55,330,462.55,330z"/>
-              <polygon points="343.15,0 28.35,0 1.95,61.4 369.25,61.4 			"/>
-              <path d="M152.35,396.1h26c-15.9-7-26.8-22.5-26.8-41.2c0-19.4,12.4-36.2,29.9-42.4h-29.2v-19.8c0-51.7,42-93.7,93.7-93.7h92.1
-                l12.4-118.6h-330l43.1,409.3h124.8C141.85,452.9,152.35,396.1,152.35,396.1z"/>
+              <g>
+                <path d="M172.15,293.1L172.15,293.1h314.5l0,0c0-40.8-33-73.9-73.9-73.9h-166.7C205.25,219.2,172.15,252.3,172.15,293.1z"/>
+                <path d="M246.05,489.8h166.8c40.8,0,73.9-33,73.9-73.9h-314.6C172.15,456.7,205.25,489.8,246.05,489.8z"/>
+                <path d="M462.55,330h-266.3c-14,0-25.3,11.3-25.3,25.3s11.3,25.3,25.3,25.3h266.3c14,0,25.3-11.3,25.3-25.3
+                  S476.55,330,462.55,330z"/>
+                <polygon points="343.15,0 28.35,0 1.95,61.4 369.25,61.4 			"/>
+                <path d="M152.35,396.1h26c-15.9-7-26.8-22.5-26.8-41.2c0-19.4,12.4-36.2,29.9-42.4h-29.2v-19.8c0-51.7,42-93.7,93.7-93.7h92.1
+                  l12.4-118.6h-330l43.1,409.3h124.8C141.85,452.9,152.35,396.1,152.35,396.1z"/>
+              </g>
             </g>
           </g>
-        </g>
         </svg>
         <p class="mt-8 text-xl">Interstellar Menu</p>
-       
       </div>
     </button>
     
-    <button class="col-span-2 justify-center animate-hidden slide slide-right" style="--order: 3">
+    <button class="col-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 3" onclick="showCard(3)">
       <div class="flex flex-col group items-center " >
         <svg class="aspect-square w-32 group-hover:w-40  transition-all" version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 342.685 342.685" xml:space="preserve">
           <g>
@@ -285,10 +420,10 @@
         <p class="mt-8 text-xl">Cosmic Entertainment</p>
       </div>
     </button>
-    <button class="col-span-2 justify-center animate-hidden slide slide-right" style="--order: 4">
+    
+    <button class="col-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 4" onclick="showCard(4)">
       <div class="flex flex-col items-center group " >
-      
-        <svg fill="#ffffff" class="aspect-square w-32 group-hover:w-40 group-hover:fill-primary transition-all" version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <svg fill="#ffffff" class="aspect-square w-32 group-hover:w-40 group-hover:fill-primary transition-all" version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
           <g>
             <g>
               <g>
@@ -347,55 +482,268 @@
         </svg>
         <p class="mt-8 text-xl">Awe-Inspiring Views</p>
       </div>
+      
     </button>
-    
   </div>
+  
+  <div id="cardContainer" class="flex justify-center mt-8">
+    <!-- Card content will be dynamically added here -->
+    <div class="w-[80rem] h-[50rem] bg-black-500 rounded-xl shadow-lg pt-10 pb-10" id="btn-1">
+      <h2 class='text-2xl text-white font-bold mb-4'>Luxurious Leisure</h2>
+      <p>Nebula Lounge: Unwind and socialize in the Nebula Lounge, a tranquil space where passengers can enjoy comfortable seating, soft ambient lighting, and panoramic views of the cosmos. The lounge offers a variety of relaxation amenities, including reading materials, calming music, and a selection of space-inspired beverages to sip on while engaging in leisurely conversations with fellow travelers.
+      </p>
+    </div>
+    <div class="w-[80rem] h-[50rem] bg-black-500 rounded-xl shadow-lg pt-10 pb-10" id="btn-2">
+      <h2 class='text-2xl text-white font-bold mb-4'>Interstellar Menu</h2>
+        <div class="collapsible gap-[1rem]">
+          <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel1-heading">
+              <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
+                <span class="collapsible-title" id="panel1-title"> ​​Breakfast: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
+              <p>
+                <ol class='list-decimal'>
+                  <li class='ml-10'>Cosmic Omelet: Fluffy eggs filled with astronaut's choice of dehydrated vegetables, cheese, and rehydrated protein options.</li>
+                  <li class='ml-10'>Zero-Gravity Pancakes: Light and fluffy pancakes served with a side of space berry compote and a sprinkle of powdered space sugar.</li>
+                  <li class='ml-10'>Stellar Smoothie: A refreshing blend of freeze-dried fruits, yogurt, and protein powder, providing essential nutrients for a long space journey.</li>
+                </ol>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel2-title">
+              <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
+                <span class="collapsible-title"> Lunch: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div role="region" aria-labelledby="panel2-title" aria-hidden="true" class="collapsible-content " id="panel2-content" >
+              <p>
+              <ol class='list-decimal'>
+                <li class='ml-10'>Interstellar Wrap: A multigrain tortilla filled with rehydrated grilled chicken, crisp lettuce, tangy dynamite sauce, and a variety of diced vegetables.</li>
+                <li class='ml-10'>Meteor Burger: A juicy, plant-based patty topped with melted space cheese, fresh tomatoes, lettuce, and a tangy secret sauce, served with a side of cosmic fries.</li>
+                <li class='ml-10'>Lunar Salad Bowl: A vibrant mix of leafy greens, cherry tomatoes, cucumbers, and crunchy croutons, drizzled with a tangy vinaigrette, sprinkled with assorted nuts.</li>
+              </ol>
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel2-title">
+              <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
+                <span class="collapsible-title"> Dinner: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div role="region" aria-labelledby="panel3-title" aria-hidden="true" class="collapsible-content " id="panel3-content" >
+              <p>
+              <ol class='list-decimal'>
+                <li class='ml-10'>Nebula Noodles: Stir-fried rice noodles with astronaut's choice of rehydrated shrimp, chicken, or tofu, mixed with fresh vegetables and a special blend of Asian spices.</li>
+                <li class='ml-10'>Celestial Curry: A fragrant blend of spices and rehydrated vegetables simmered with tender chunks of rehydrated beef, served with fluffy rice.</li>
+                <li class='ml-10'>Galactic Grilled Salmon: A perfectly grilled salmon filet marinated in a zesty citrus sauce, accompanied by a medley of steamed vegetables and quinoa.</li>
+              </ol>
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel2-title">
+              <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
+                <span class="collapsible-title"> Snacks: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div role="region" aria-labelledby="panel4-title" aria-hidden="true" class="collapsible-content " id="panel4-content" >
+              <p>
+              <ol class='list-decimal'>
+                <li class='ml-10'>Astro Trail Mix: A blend of dried fruits, nuts, and chocolate chunks, providing a quick energy boost during long space journeys.</li>
+                <li class='ml-10'>Cosmic Energy Bars: Nutrient-dense bars packed with seeds, dried fruits, and a touch of honey, perfect for a quick and satisfying snack.</li>
+                <li class='ml-10'>Martian Popcorn: A fun twist on classic popcorn, flavored with a hint of spice and sprinkled with edible glitter.</li>
+              </ol>
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel2-title">
+              <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
+                <span class="collapsible-title"> Beverages: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div role="region" aria-labelledby="panel5-title" aria-hidden="true" class="collapsible-content " id="panel5-content" >
+              <p>
+              <ol class='list-decimal'>
+                <li class='ml-10'>Starstruck Lemonade: A refreshing blend of freshly squeezed lemons, sweetened with a touch of honey and garnished with a sprig of mint.</li>
+                <li class='ml-10'>Meteorite Mocktail: A colorful and bubbly concoction made with a mix of fruit juices, sparkling water, and a dash of maple syrup.</li>
+                <li class='ml-10'>Intergalactic Coffee: A rich and smooth cup of coffee brewed from freshly ground coffee beans, served black or with astronaut's choice of creamer.</li>
+              </ol>
+              </p>
+            </div>
+          </div>
+          <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+            <h2 id="panel2-title">
+              <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
+                <span class="collapsible-title"> Desserts: </span>
+                <div aria-hidden="true" class="collapsible-icon"></div>
+              </button>
+            </h2>
+            <div role="region" aria-labelledby="panel6-title" aria-hidden="true" class="collapsible-content " id="panel6-content" >
+              <p>
+              <ol class='list-decimal'>
+                <li class='ml-10'>Moonrock Cheesecake: A creamy and velvety cheesecake with a graham cracker crust, topped with a sprinkle of cinnamon.</li>
+                <li class='ml-10'>Cosmic Chocolate Mousse: A light and airy chocolate mousse made from decadent milk chocolate, served with a dollop of whipped cream and a sprinkle of dark chocolate shavings.</li>
+                <li class='ml-10'>Nebula Ice Cream Sundae: A delightful combination of space-themed ice cream flavors, topped with sprinkles, whipped cream, and a cherry on top.</li>
+              </ol>
+              </p>
+            </div>
+          </div>
+        </div>
+        <p> 
+          Note: All menu items have been carefully crafted to provide the necessary nutrients, accommodate dietary restrictions, and ensure a memorable culinary experience during space travel with Lift.
+        </p>
+    </div>
+    <div class="w-[80rem] h-[50rem] bg-black-500 rounded-xl shadow-lg pt-10 pb-10" id="btn-3">
+      <p>Hello</p>
+    </div>
+    <div class="w-[80rem] h-[50rem] bg-black-500 rounded-xl shadow-lg pt-10 pb-10" id="btn-4">
+      <h2 class='text-2xl text-white font-bold mb-4'>Awe-Inspiring Views</h2>
+      <div class="collapsible gap-[1rem]">
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel1-heading">
+            <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
+              <span class="collapsible-title" id="panel1-title"> Earthrise: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
+            <p>
+              <br style="height:10px; visibility:hidden;" />
+              <p>As you depart from the launch pad, watch in awe as the beautiful blue planet Earth slowly emerges from the darkness of space. Witness the sun's rays gently caressing our planet, illuminating the vast oceans, majestic mountains, and swirling clouds.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
+              <span class="collapsible-title"> Lunar Landing: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel2-title" aria-hidden="true" class="collapsible-content " id="panel2-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Feel the excitement build as you approach the moon's surface. Look out the window as you descend and witness the barren, crater-filled landscape stretching out before you. Experience the incredible sight of the Earth suspended in the blackness of space from the moon's perspective.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
+              <span class="collapsible-title"> Martian Landscape: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel3-title" aria-hidden="true" class="collapsible-content " id="panel3-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Embark on a journey to the red planet, Mars. As you touch down on the rusty surface, be captivated by the breathtaking views of towering volcanoes, vast canyons, and the iconic red-hued landscape. Marvel at the possibility of future human colonization and exploration.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
+              <span class="collapsible-title"> Rings of Saturn: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel4-title" aria-hidden="true" class="collapsible-content " id="panel4-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Travel farther into our solar system and witness the magnificent rings of Saturn. The intricate bands of ice and rock circling the planet create a mesmerizing spectacle, painting a picture of celestial beauty. It's a view you'll never forget.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
+              <span class="collapsible-title"> Giant Gas Giants: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel5-title" aria-hidden="true" class="collapsible-content " id="panel5-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Encounter the colossal gas giants of our outer solar system, such as Jupiter and Saturn. Behold their mesmerizing swirling storms, including the famous Great Red Spot on Jupiter. These massive planets, with their vibrant colors and immense size, evoke a sense of wonder and awe.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
+              <span class="collapsible-title"> Stellar Nurseries: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel6-title" aria-hidden="true" class="collapsible-content " id="panel6-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Venture beyond our solar system to witness the birthplaces of stars. Gaze at the breathtaking beauty of vast clouds of gas and dust where stars are born. Nebulas such as the Orion Nebula will leave you awe-inspired as you witness the creation of new celestial objects.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel7-content" >
+              <span class="collapsible-title"> Galactic Wonders: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel7-title" aria-hidden="true" class="collapsible-content " id="panel7-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Marvel at the splendor of distant galaxies as you journey through the cosmos. Witness the dance of galaxies, spiral arms, and celestial collisions, providing a glimpse into the vastness and grandeur of the universe.</p>
+            </p>
+          </div>
+        </div>
+        <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+          <h2 id="panel2-title">
+            <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel8-content" >
+              <span class="collapsible-title"> The Pale Blue Dot: </span>
+              <div aria-hidden="true" class="collapsible-icon"></div>
+            </button>
+          </h2>
+          <div role="region" aria-labelledby="panel8-title" aria-hidden="true" class="collapsible-content " id="panel8-content" >
+            <p>
+            <br style="height:10px; visibility:hidden;" />
+            <p>Reflect on the profound sight of our home planet, Earth, seen from the depths of space. As you gaze upon the "pale blue dot," appreciate the fragility and interconnectedness of life on our tiny planet, reminding us of the importance of preserving and cherishing our home.</p>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p> 
+        Note: All menu items have been carefully crafted to provide the necessary nutrients, accommodate dietary restrictions, and ensure a memorable culinary experience during space travel with Lift.
+      </p>
+    </div>
+  </div>
+  
+
+  <script>
+    function showCard(section) {
+      for (let i=1; i<=4; i++){
+        if (i !== section) {
+          document.getElementById("btn-"+i).style.display = "none";
+        } else {
+          document.getElementById("btn-"+i).style.display = "block";
+        }
+      }
+    }
+    showCard(1);
+  </script>
+
+
   <br><br><br><br> 
-
-  <div class="card card-side bg-base-100 shadow-xl">
-    <div class="card-body">
-      <h2 class="card-title">Menu for Lift Space Traveling Company:</h2>
-    </div>
-  </div>
-  <div class="card card-side bg-base-100 shadow-xl">
-    <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
-    <div class="card-body">
-      <h2 class="card-title">​​Breakfast:</h2>
-      <p><br>Cosmic Omelet: Fluffy eggs filled with astronaut's choice of dehydrated vegetables, cheese, and rehydrated protein options.</br>
-        <br>Zero-Gravity Pancakes: Light and fluffy pancakes served with a side of space berry compote and a sprinkle of powdered space sugar.</br>
-        Stellar Smoothie: A refreshing blend of freeze-dried fruits, yogurt, and protein powder, providing essential nutrients for a long space journey.</p>
-    </div>
-  </div>
-  
-
-    
-
-
-  
-Lunch:
-  Interstellar Wrap: A multigrain tortilla filled with rehydrated grilled chicken, crisp lettuce, tangy dynamite sauce, and a variety of diced vegetables.
-  Meteor Burger: A juicy, plant-based patty topped with melted space cheese, fresh tomatoes, lettuce, and a tangy secret sauce, served with a side of cosmic fries.
-  Lunar Salad Bowl: A vibrant mix of leafy greens, cherry tomatoes, cucumbers, and crunchy croutons, drizzled with a tangy vinaigrette, sprinkled with assorted nuts.
-Dinner:
-Nebula Noodles: Stir-fried rice noodles with astronaut's choice of rehydrated shrimp, chicken, or tofu, mixed with fresh vegetables and a special blend of Asian spices.
-Celestial Curry: A fragrant blend of spices and rehydrated vegetables simmered with tender chunks of rehydrated beef, served with fluffy rice.
-Galactic Grilled Salmon: A perfectly grilled salmon filet marinated in a zesty citrus sauce, accompanied by a medley of steamed vegetables and quinoa.
-Snacks:
-Astro Trail Mix: A blend of dried fruits, nuts, and chocolate chunks, providing a quick energy boost during long space journeys.
-Cosmic Energy Bars: Nutrient-dense bars packed with seeds, dried fruits, and a touch of honey, perfect for a quick and satisfying snack.
-Martian Popcorn: A fun twist on classic popcorn, flavored with a hint of spice and sprinkled with edible glitter.
-Beverages:
-Starstruck Lemonade: A refreshing blend of freshly squeezed lemons, sweetened with a touch of honey and garnished with a sprig of mint.
-Meteorite Mocktail: A colorful and bubbly concoction made with a mix of fruit juices, sparkling water, and a dash of maple syrup.
-Intergalactic Coffee: A rich and smooth cup of coffee brewed from freshly ground coffee beans, served black or with astronaut's choice of creamer.
-Desserts:
-Moonrock Cheesecake: A creamy and velvety cheesecake with a graham cracker crust, topped with a sprinkle of cinnamon.
-Cosmic Chocolate Mousse: A light and airy chocolate mousse made from decadent milk chocolate, served with a dollop of whipped cream and a sprinkle of dark chocolate shavings.
-Nebula Ice Cream Sundae: A delightful combination of space-themed ice cream flavors, topped with sprinkles, whipped cream, and a cherry on top.
-Note: All menu items have been carefully crafted to provide the necessary nutrients, accommodate dietary restrictions, and ensure a memorable culinary experience during space travel with Lift.
-
-
-  </p>
+<!-- code here -->
   <br><br><br><br> 
   <div class="hidden md:grid md:grid-cols-3 mx-[11.5%]">
     <h1 class="text-6xl mb-12 underline text-white decoration-blue-400 animate-hidden slide slide-left col-span-1" style="--order: 1">Book a Lift Trip Today! </h1>
@@ -410,6 +758,7 @@ Note: All menu items have been carefully crafted to provide the necessary nutrie
   
   <script src="products.js" type="module"></script>
   <script type="module" defer src="../loader.js" defer></script>
+  <script type="module" defer src="../collapse.js" defer></script>
 </body>
 
 <!-- </html>top-[4rem]

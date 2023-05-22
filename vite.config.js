@@ -45,6 +45,7 @@ export default defineConfig({
                 booking_p1: resolve(__dirname, 'src/booking/p_1/index.html'),
                 booking_p2: resolve(__dirname, 'src/booking/p_2/index.html'),
                 booking_p3: resolve(__dirname, 'src/booking/p_3/index.html'),
+                profile: resolve(__dirname, 'src/profile/index.html'),
             },
             output: {
                 assetFileNames: (assetInfo) => {

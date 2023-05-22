@@ -1,4 +1,4 @@
-import { login } from "../auth.js";
+import { login, continueAsGuest } from "../auth.js";
 
 const loginForm = document.querySelector('#p1Form');
 loginForm.addEventListener('submit', async (e) => {
@@ -21,3 +21,18 @@ loginForm.addEventListener('submit', async (e) => {
         alert("Login failed");
     }
 });
+
+document.getElementById("continueAsGuest").addEventListener("click", async (e) => {
+    e.preventDefault();
+    const resp = await continueAsGuest();
+    if (resp[0] === 'success') {
+        // Add user to local storage
+        localStorage.setItem('user', JSON.stringify(resp[1]));
+        window.location.replace("/booking/");
+        console.log("Login successful");
+        console.log(localStorage);
+    } else {
+        alert("Login failed");
+    }
+}
+);

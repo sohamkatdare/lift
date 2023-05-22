@@ -6,15 +6,28 @@
     <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="../../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="../../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
-  <link href="../../animate.css" rel="stylesheet" >
-  <script defer src="../../animate.js" type="module"></script>
-  <meta name="description" content="Find out more about our Terrestrial trip, which includes the Moon, Mars, and more!">
+  <link href="../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="../base.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../navbar.css" rel="stylesheet"  media="print" onload="this.media='all'">
+  <link href="../animate.css" rel="stylesheet" >
+  <script defer src="../animate.js" type="module"></script>
+  <meta name="description" content="See a list of our products and services, including rocket flight trips, spacesuits, and other space travel equipment.">
   <!-- <link href="/products.css" rel="stylesheet"> -->
-  <title>LIFT - Terrestrial Planet</title>
+  <title>LIFT - Travel Plans</title>
+  <style>
+    .card:hover figure > img {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+      filter: brightness(1.1);
+    }
+    .card figure > img {
+      filter: brightness(0.95);
+      transition: all 0.3s ease-in-out
+    }
+  </style>
   <script defer src="../../components.js" type="module"></script>
 </head>
+
 
 <body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
   <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
@@ -24,22 +37,14 @@
   </div>
   <navbar-component></navbar-component>
 
-  <!-- <div class="items-center bg-black flex h-screen justify-center left-0 fixed top-0 w-full z-[999999]" style="transition: opacity 0.3s linear;" id="preloader">
-    <img src="/spinner.svg" alt="spinner">
-  </div> -->
-
-
-
-
   <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
 
     <div class="hero-overlay fixed bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-center text-white">
-      <div class="max-w-2xl">
-        <h1 class="mb-5 text-5xl">Earth to Earth Express</h1>
-        <h2>Take a trip to the rocky planets of the inner solar system!</h2>
+      <div class="max-w-[100%] animate-hidden animate-text-hidden">
+        <h1 class="text-4xl md:text-6xl font-light italic">Customize your trip to meet your needs!</h1>
       </div>
     </div>
     <button id="gstar1"  class="bg-transparent text-white cursor-none border-none text-9xl absolute bottom-4 translate-y-[-1rem] hover:translate-y-1 transition-all ease-in-out">
@@ -48,75 +53,142 @@
       </svg>
     </button>
   </div>
-  <div class="grid grid-cols-11 gap-x-8 ">
-    <div class="col-span-12 text-center pt-9">
-        <div class="text-4xl divider"><strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet
-            Exploration</strong></div>
-        <br>
-      </div>
-      <div class="col-start-2 lg:col-end-7 col-end-12">
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 1</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will
-          take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 10</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Arrival at Mercury! The surface temperature here can reach up to 800 degrees Fahrenheit, so be sure to wear a
-          protective suit. Explore the planet's rocky, cratered terrain and take measurements of the thin atmosphere.
-        </p>
-        <img src="https://mars.nasa.gov/system/content_pages/main_images/378_maven.jpg"
-          class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pr-9 pb-9">
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 24</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Depart Venus and begin the journey to Mars, the fourth planet from the sun. The trip will take about 6 months.
-        </p>
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 44</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Arrival at Mars! The surface temperature here is much cooler than on Venus or Mercury, but it can still reach up
-          to 70 degrees Fahrenheit in the daytime. Explore the planet's reddish, rocky terrain and search for signs of
-          past or present life. Investigate the erosion marks of past water. Take readings of the thin atmosphere and
-          study the planet's polar ice caps. Take note of the amazing landmarks, like Olympus Mons, the solar system’s
-          tallest volcano.
-        </p>
-        <img
-          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/09/bepicolombo_mercury_flyby4/23479079-1-eng-GB/BepiColombo_Mercury_flyby_pillars.jpg"
-          class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pt-9 pb-9 pr-9">
-        </p>
-        <br><br>
-      </div>
-      <div class="col-start-2 lg:col-start-7 mb-5 col-end-12">
-        <img
-          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg"
-          class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 12</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Depart Mercury and begin the journey to Venus, the second planet from the sun. The trip will take about 2
-          months.
-        </p>
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 22</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Arrival at Venus! The surface temperature here is hot enough to melt lead, so again, be sure to wear a
-          protective suit. Venus has a thick, toxic atmosphere, but our protective suits will make sure that you do not
-          inhale any of it or get crushed under the pressure. Take readings of the atmosphere and study the volcanoes on
-          the surface.
-        </p>
-        <img
-          src="https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2020/12/solar_orbiter_flyby_of_venus/22391903-1-eng-GB/Solar_Orbiter_flyby_of_Venus_pillars.jpg"
-          class="rounded-lg drop-shadow-lg m-3 col-start-2 col-end-4 pt-9 pb-9 pl-6">
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 46</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Depart Mars and begin the journey back to Earth. The trip will take about 6 months.
-        </p>
-        <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 60</div>
-        <p class="text-xl text-white hover:bg-black/[0.05]">
-          Arrival back on Earth! Reflect on the amazing sights and discoveries made on this incredible journey to the
-          planets. Share your findings with the world and plan your next space adventure!
-        </p>
-      </div>
+  <div class="grid grid-cols-11 grid-rows-2 gap-8 ">
+    <div class="col-span-12 text-center">
+      <div class="my-20 text-xl text-white hover:bg-black/[0.05] divider animate-hidden"><strong class="text-6xl text-white underline decoration-primary">Check out our various trip plans!</strong></div>
       <br>
-      <a class="btn1 col-start-5 col-end-8" href="/booking/">Book your flight today!</a>
     </div>
+
+    <div class="col-span-9 col-start-2 flex flex-col xl:flex-row xl:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
+      <div class="inline-block card  w-full xl:px-0 xl:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 1">
+        <figure>
+          <img src="" alt="Shoes"
+            class="hidden md:flex object-cover" />
+          <img src="" alt="Shoes"
+            class="md:hidden object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Introduction
+          </h2>
+          <p>Earth to Earth Express is a groundbreaking concept poised to revolutionize the travel industry by offering lightning-fast transportation around the world. This innovative technology utilizes reusable rockets and spacecraft to enable people to travel between continents in under an hour. By eliminating the time-consuming hassles of conventional air travel, Earth to Earth Express promises to provide seamless exploration of new places and foster connections between diverse cultures.
+          </p>
+    
+          <br>
+          <div class="card-actions justify-center align-end">
+            <a href="earth_to_earth/"><button class="btn1 btn-large btn-wide  align-end">Groundbreaking!!!!!!</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="card xl:w-96 w-full xl:px-0 bg-base-300  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left" style="--order: 3">
+        <figure>
+          <img
+            src="https://e0.pxfuel.com/wallpapers/148/836/desktop-wallpaper-planet-earth-pro-and-background-on-picgaga-cool-earth-abstract.jpg"
+            alt="Mars spacewalk" class="hidden md:flex object-cover w-full" />
+          <img
+            src="https://e0.pxfuel.com/wallpapers/148/836/desktop-wallpaper-planet-earth-pro-and-background-on-picgaga-cool-earth-abstract.jpg"
+            alt="Earth to Earth express" class="md:hidden object-cover w-full " />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Speed and Effeciency
+          </h2>
+          <p>The core principle of Earth to Earth Express lies in its ability to propel passengers and goods at incredible speeds. Rockets equipped with cutting-edge propulsion systems will reach velocities of up to 18,000 miles per hour, allowing travelers to reach their destinations in a matter of minutes. This unprecedented speed drastically reduces travel time and opens up vast opportunities for global mobility.
+          </p>
+          <p class="hidden lg:font-bold lg:block"></p>
+          
+          <div class="card-actions justify-center mt-5">
+            <a href="speed/"><button class="btn1 btn-large btn-wide  justify-start">Read more</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="inline-block card  w-full xl:px-0 xl:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 2">
+        <figure>
+          <img src="https://m.media-amazon.com/images/I/716VgotHR6L.jpg" alt="Shoes"
+            class="hidden md:flex object-cover" />
+          <img src="https://m.media-amazon.com/images/I/716VgotHR6L.jpg" alt="Shoes"
+            class="md:hidden object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Comfort and Safety
+          </h2>
+          <p> </p>
+          <p class="hidden lg:font-bold lg:block">What's included:</p>
+          
+          <br>
+          <br>
+          <br>
+          <div class="card-actions justify-center align-end">
+            <a href="gas_giant/"><button class="btn1 btn-large btn-wide  align-end">Read More</button></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-span-9 col-start-2 flex flex-col xl:flex-row xl:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
+      <div class="inline-block card  w-full xl:px-0 xl:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 1">
+        <figure>
+          <img src="" alt="Shoes"
+            class="hidden md:flex object-cover" />
+          <img src="" alt="Shoes"
+            class="md:hidden object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Introduction
+          </h2>
+          <p>Earth to Earth Express is a groundbreaking concept poised to revolutionize the travel industry by offering lightning-fast transportation around the world. This innovative technology utilizes reusable rockets and spacecraft to enable people to travel between continents in under an hour. By eliminating the time-consuming hassles of conventional air travel, Earth to Earth Express promises to provide seamless exploration of new places and foster connections between diverse cultures.
+          </p>
+    
+          <br>
+          <div class="card-actions justify-center align-end">
+            <a href="earth_to_earth/"><button class="btn1 btn-large btn-wide  align-end">Groundbreaking!!!!!!</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="card xl:w-96 w-full xl:px-0 bg-base-300  shadow-2xl drop-shadow-2xl animate-hidden slide slide-left" style="--order: 3">
+        <figure>
+          <img
+            src="https://e0.pxfuel.com/wallpapers/148/836/desktop-wallpaper-planet-earth-pro-and-background-on-picgaga-cool-earth-abstract.jpg"
+            alt="Mars spacewalk" class="hidden md:flex object-cover w-full" />
+          <img
+            src="https://e0.pxfuel.com/wallpapers/148/836/desktop-wallpaper-planet-earth-pro-and-background-on-picgaga-cool-earth-abstract.jpg"
+            alt="Earth to Earth express" class="md:hidden object-cover w-full " />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Speed and Effeciency
+          </h2>
+          <p>The core principle of Earth to Earth Express lies in its ability to propel passengers and goods at incredible speeds. Rockets equipped with cutting-edge propulsion systems will reach velocities of up to 18,000 miles per hour, allowing travelers to reach their destinations in a matter of minutes. This unprecedented speed drastically reduces travel time and opens up vast opportunities for global mobility.
+          </p>
+          <p class="hidden lg:font-bold lg:block"></p>
+          
+          <div class="card-actions justify-center mt-5">
+            <a href="speed/"><button class="btn1 btn-large btn-wide  justify-start">Read more</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="inline-block card  w-full xl:px-0 xl:w-96 bg-base-100 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 2">
+        <figure>
+          <img src="https://m.media-amazon.com/images/I/716VgotHR6L.jpg" alt="Shoes"
+            class="hidden md:flex object-cover" />
+          <img src="https://m.media-amazon.com/images/I/716VgotHR6L.jpg" alt="Shoes"
+            class="md:hidden object-cover" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Comfort and Safety
+          </h2>
+          <p> </p>
+          <p class="hidden lg:font-bold lg:block">What's included:</p>
+          
+          <br>
+          <br>
+          <br>
+          <div class="card-actions justify-center align-end">
+            <a href="gas_giant/"><button class="btn1 btn-large btn-wide  align-end">Read More</button></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
   <footer-component></footer-component>
-  
   <script src="earth_to_earth.js" type="module"></script>
   <script type="module" defer src="../../loader.js" defer></script>
 </body>

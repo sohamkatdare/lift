@@ -157,42 +157,49 @@ class NavbarComponent extends HTMLElement {
             <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
             <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
           </a>
-          <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+          <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/booking/">
             <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
             <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
             <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
+            <span class="label text-white text-[2em] transition-transform duration-200">Booking</span>  
+          </a>
+          <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
+            <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
+            <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">10</span> 
+            <span class="lg:hidden index text-[0.8em] transition-transform duration-200">06</span> 
             <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
+          </a>  
+          <a class="link btn1 p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+            <span class="label text-white text-[2em] transition-transform duration-200" id="login">Login</span>  
           </a>
-          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
-            <span class="label text-white text-[2em] transition-transform duration-200" id="login_logout">Login</span>  
-          </a>
-          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+          <a class="link btn1 p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/signup/">
             <span class="label text-white text-[2em] transition-transform duration-200" id="signup">Signup</span>  
           </a>
-          <a class="link btn-1 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
+          
+          <a class="link btn1 p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/profile/"> 
             <span class="label text-white text-[2em] transition-transform duration-200" id="profile">Profile</span>  
+          </a>
+          <a class="link btn1 p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" id="logout">
+            <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
           </a>
           
         </div>
       </div>
       <script>
-        const login_logout = document.getElementById('login_logout');
-        const login_logout_text = login_logout.innerHTML;
         if (localStorage.getItem('user') != null) {
-          login_logout.innerHTML = 'Logout';
+          // Hide login and signup
+          document.getElementById('login').style.display = 'none';
+          document.getElementById('signup').style.display = 'none';
+          document.getElementById('logout').addEventListener('click', () => {
+            if (localStorage.getItem('user') != null) {
+              localStorage.removeItem('user');
+            }
+          });
         } else {
-          login_logout.innerHTML = 'Login';
+          // Hide profile and logout
+          document.getElementById('profile').style.display = 'none';
+          document.getElementById('logout').style.display = 'none';
         }
-
-        login_logout.addEventListener('click', () => {
-          if (localStorage.getItem('user') != null) {
-            localStorage.removeItem('user');
-            window.location.href = '/';
-          } else {
-            window.location.href = '/login/';
-          }
-        });
-
       </script>
     </header>
     `;
@@ -208,30 +215,30 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-      <footer class="footer items-center p-4 bg-neutral-900 text-white">
-        <div class="items-center grid-flow-col">
-          <img src="/logo.png" alt="logo" class="w-10 h-10">
-          <p>Copyright © 2022 - All rights reserved</p>
-        </div>
-        <div class="grid-flow-col gap-4 md:place-self-center">
-          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
-              <path
-                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
-              </path>
-            </svg>
-          </a>
-          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
-              <path
-                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
-              </path>
-            </svg></a>
-          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
-              <path
-                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
-              </path>
-            </svg></a>
-        </div>
-      </footer>
+    <footer class="footer items-center p-4 bg-neutral-900 text-white">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="/logo.png" alt="logo" class="w-10 h-10">
+      <p class="ml-2">Copyright © 2022 - All rights reserved</p>
+    </div>
+    <div class="flex space-x-4">
+      <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
+          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+        </svg>
+      </a>
+      <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+        </svg>
+      </a>
+      <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" class="fill-current">
+          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  
     `;
   }
 }

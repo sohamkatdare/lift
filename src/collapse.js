@@ -1,5 +1,4 @@
 const collapsible = document.querySelector(".collapsible");
-
 collapsible.addEventListener("click", (e) => {
   const activePanel = e.target.closest(".collapsible-panel");
   if (!activePanel) return;
@@ -8,11 +7,8 @@ collapsible.addEventListener("click", (e) => {
 
 function toggleCollapsible(collapsiblePanel) {
   const parent = collapsiblePanel.parentElement.parentElement;
-  console.log(parent)
   const buttons = parent.querySelectorAll("button");
-  console.log(buttons)
   const contents = parent.querySelectorAll(".collapsible-content");
-  console.log(contents)
 
   buttons.forEach((button) => {
     button.setAttribute("aria-expanded", false);
