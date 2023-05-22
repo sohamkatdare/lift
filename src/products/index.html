@@ -59,7 +59,7 @@
           <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
         </svg>
       </div>
-      <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <div id="menu-links" class="text-sm lg:text-md items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
         <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
           <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
           <span class="index text-[0.8em] transition-transform duration-200">01</span> 
@@ -113,17 +113,21 @@
           <span class="lg:hidden index text-[0.8em] transition-transform duration-200">06</span> 
           <span class="label text-white text-[2em] transition-transform duration-200">Booking</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
-          <span class="label text-white text-[2em] transition-transform duration-200" id="login">Login</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="loginBtn" style="text-decoration: none;" href="/login/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Login</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/signup/">
-          <span class="label text-white text-[2em] transition-transform duration-200" id="signup">Signup</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="signupBtn" style="text-decoration: none;" href="/signup/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Sign Up</span>  
         </a>
         
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/profile/"> 
-          <span class="label text-white text-[2em] transition-transform duration-200" id="profile">Profile</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="profileBtn" style="text-decoration: none;" href="/profile/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Profile</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" id="logout">
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="logoutBtn" style="text-decoration: none;">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
           <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
         </a>
         
@@ -134,39 +138,31 @@
       button.onclick = () => {
         document.getElementById('body-div').classList.toggle("menu-toggled");
       }
-      const login = document.getElementById("login");
-      const signup = document.getElementById("signup");
-      const profile = document.getElementById("profile");
-      const logout = document.getElementById("logout");
-
+      const login = document.getElementById("loginBtn");
+      const signup = document.getElementById("signupBtn");
+      const profile = document.getElementById("profileBtn");
+      const logout = document.getElementById("logoutBtn");
       if (localStorage.getItem('user') != null) {
         // Hide login and signup
         login.style.display = 'none';
         signup.style.display = 'none';
-        login.classList.remove("btn1") 
-        signup.classList.remove("btn1")
         
         profile.style.display = 'block';
         logout.style.display = 'block';
-        profile.classList.add("btn1") 
-        logout.classList.add("btn1")
         
-        document.getElementById('logout').addEventListener('click', () => {
+        logout.addEventListener('click', () => {
           if (localStorage.getItem('user') != null) {
             localStorage.removeItem('user');
+            window.location.href = '/';
           }
         });
       } else {
         // Hide profile and logout
         login.style.display = 'block';
         signup.style.display = 'block';
-        login.classList.add("btn1") 
-        signup.classList.add("btn1")
         
         profile.style.display = 'none';
         logout.style.display = 'none';
-        profile.classList.remove("btn1") 
-        logout.classList.remove("btn1");
       }
     </script>
   </header>
@@ -297,9 +293,9 @@
             <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Asteroid belt and Ceres flyby</li>
             <li class="animate-hidden slide slide-right opacity-100" style="--order: 5; --dist: 0.3;">Oort Cloud refuel stop</li>
           </ul>
-          <div class="card-actions justify-center">
-            <button class="btn  btn-disabled justify-center">Coming soon</button>
-          </div>
+          <div class="card-actions justify-center align-end">
+            <label for="my-modal-4" class="btn1">Premium content</label>
+        </div>
         </div>
       </div>
     </div>
@@ -837,6 +833,22 @@
   <script src="products.js" type="module"></script>
   <script type="module" defer src="../loader.js" defer></script>
   <script type="module" defer src="../collapse.js" defer></script>
+  <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box relative">
+        <label for="my-modal-4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <h3 class="text-lg font-bold">Introducing Lift Elite: Elevating the Travel Experience for Premium Users</h3>
+        <p> Lift is proud to present Lift Elite, an exclusive offering designed to elevate the travel experience for our discerning premium users. With Lift Elite, we redefine luxury, comfort, and convenience, ensuring an unparalleled journey for those seeking the utmost in personalized service. Here are the exceptional features and benefits of Lift Elite:<br>
+          Dedicated Concierge Service: Lift Elite members enjoy the dedicated assistance of a personal concierge, available 24/7. From booking reservations and managing travel itineraries to addressing special requests, your concierge ensures a seamless and tailored experience from start to finish.<br>
+          VIP Lounge Access: Experience luxury and exclusivity before your journey begins. As a Lift Elite member, you gain access to our private VIP lounges, providing a serene and elegant ambiance where you can relax, refresh, and indulge in premium amenities and services.<br>
+          Priority Boarding and Disembarkation: With Lift Elite, you have priority access to board and disembark from our spacecraft. Skip the lines and enjoy a seamless and expedited process, allowing you to maximize your time and minimize any waiting.<br>
+          Enhanced In-Flight Comfort: Lift Elite ensures a luxuriously comfortable in-flight experience. Enjoy spacious seating with extra legroom, plush amenities, and enhanced privacy. Our state-of-the-art cabins are designed to cocoon you in relaxation, ensuring a truly premium journey.,br>
+          Gourmet Dining and Beverage Selections: Indulge in a culinary journey curated by renowned chefs. Lift Elite members savor gourmet meals crafted from the finest ingredients, paired with an exquisite selection of wines and beverages to satisfy even the most discerning palate.<br>
+          Personalized Entertainment: Our elite passengers enjoy an extensive selection of entertainment options tailored to their preferences. Whether you prefer immersive movies, curated music playlists, or captivating documentaries, our in-flight entertainment system ensures a personalized and enriching experience.<br>
+          Exclusive Partnerships and Privileges: As a Lift Elite member, you gain access to a range of exclusive partnerships and privileges. From luxury hotel and resort collaborations to unique cultural experiences and events, we strive to enhance your overall journey and offer unforgettable memories.<br>
+          Enhanced Privacy and Security: Your privacy and security are of utmost importance to us. Lift Elite members benefit from enhanced security measures, ensuring a discreet and protected travel experience.<br>
+        </div>
+    </div>
 </body>
 
 <!-- </html>top-[4rem]

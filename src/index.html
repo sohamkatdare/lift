@@ -70,7 +70,7 @@
           <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
         </svg>
       </div>
-      <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <div id="menu-links" class="text-sm lg:text-md items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
         <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
           <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
           <span class="index text-[0.8em] transition-transform duration-200">01</span> 
@@ -137,7 +137,7 @@
           <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
           <span class="label text-white text-[2em] transition-transform duration-200">Profile</span>  
         </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="logoutBtn" style="text-decoration: none;" href="/logout/">
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="logoutBtn" style="text-decoration: none;">
           <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
           <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
         </a>
@@ -153,7 +153,6 @@
       const signup = document.getElementById("signupBtn");
       const profile = document.getElementById("profileBtn");
       const logout = document.getElementById("logoutBtn");
-
       if (localStorage.getItem('user') != null) {
         // Hide login and signup
         login.style.display = 'none';
@@ -162,9 +161,10 @@
         profile.style.display = 'block';
         logout.style.display = 'block';
         
-        document.getElementById('logout').addEventListener('click', () => {
+        logout.addEventListener('click', () => {
           if (localStorage.getItem('user') != null) {
             localStorage.removeItem('user');
+            window.location.href = '/';
           }
         });
       } else {
@@ -184,7 +184,7 @@
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Click on either side of the screen to switch planets.</span>
-          <button class="btn1  rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <button class="rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg></button>
         </div>

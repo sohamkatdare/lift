@@ -22,7 +22,7 @@
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
   </div>
-  <header id="body-div" >
+  <header id="body-div">
     <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
       <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
       <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
@@ -44,7 +44,7 @@
           <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
         </svg>
       </div>
-      <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
+      <div id="menu-links" class="text-sm lg:text-md items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
         <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
           <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
           <span class="index text-[0.8em] transition-transform duration-200">01</span> 
@@ -98,17 +98,21 @@
           <span class="lg:hidden index text-[0.8em] transition-transform duration-200">06</span> 
           <span class="label text-white text-[2em] transition-transform duration-200">Booking</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/login/">
-          <span class="label text-white text-[2em] transition-transform duration-200" id="login">Login</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="loginBtn" style="text-decoration: none;" href="/login/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Login</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/signup/">
-          <span class="label text-white text-[2em] transition-transform duration-200" id="signup">Signup</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="signupBtn" style="text-decoration: none;" href="/signup/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Sign Up</span>  
         </a>
         
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/profile/"> 
-          <span class="label text-white text-[2em] transition-transform duration-200" id="profile">Profile</span>  
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="profileBtn" style="text-decoration: none;" href="/profile/">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
+          <span class="label text-white text-[2em] transition-transform duration-200">Profile</span>  
         </a>
-        <a class="link p-2 items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" id="logout">
+        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="logoutBtn" style="text-decoration: none;">
+          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
           <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
         </a>
         
@@ -119,42 +123,34 @@
       button.onclick = () => {
         document.getElementById('body-div').classList.toggle("menu-toggled");
       }
-      const login = document.getElementById("login");
-      const signup = document.getElementById("signup");
-      const profile = document.getElementById("profile");
-      const logout = document.getElementById("logout");
-
+      const login = document.getElementById("loginBtn");
+      const signup = document.getElementById("signupBtn");
+      const profile = document.getElementById("profileBtn");
+      const logout = document.getElementById("logoutBtn");
       if (localStorage.getItem('user') != null) {
         // Hide login and signup
         login.style.display = 'none';
         signup.style.display = 'none';
-        login.classList.remove("btn1") 
-        signup.classList.remove("btn1")
         
         profile.style.display = 'block';
         logout.style.display = 'block';
-        profile.classList.add("btn1") 
-        logout.classList.add("btn1")
         
-        document.getElementById('logout').addEventListener('click', () => {
+        logout.addEventListener('click', () => {
           if (localStorage.getItem('user') != null) {
             localStorage.removeItem('user');
+            window.location.href = '/';
           }
         });
       } else {
         // Hide profile and logout
         login.style.display = 'block';
         signup.style.display = 'block';
-        login.classList.add("btn1") 
-        signup.classList.add("btn1")
         
         profile.style.display = 'none';
         logout.style.display = 'none';
-        profile.classList.remove("btn1") 
-        logout.classList.remove("btn1");
       }
     </script>
-  </header> 
+  </header>
   <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
 
     <div class="hero-overlay fixed bg-opacity-60">
@@ -210,7 +206,7 @@
           </div>
         </div>
         <div class="grid grid-rows-3 gap-y-4 mt-12">
-          <div class="divider"><button type="submit" class="btn1 " >Submit</button></div>
+          <div class="divider"><button type="submit" class="btn1" >Submit</button></div>
           <div class="divider"><a id="guest" class="btn1 " href="../login/" >Continue As Guest</a></div>
           <div class="divider"><p>Already have an account? Log in <a href="/login/" class="link link-primary text-lg">here.</a></p></div>
         </div>

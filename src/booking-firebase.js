@@ -15,13 +15,14 @@ export async function addBooking(trip) {
 export async function getAllBookings() {
   const docSnap = await getDoc(docRef);
 
+  const userInfo = docSnap.data()['firstName'] + " " + docSnap.data()['lastName'];
   const bookingsList = [];
   if (docSnap.exists()) {
     const bookings = docSnap.data()['bookings'];
     for (let i = 0; i < bookings.length; i++) {
       bookingsList.push(fromFirestore(JSON.parse(bookings[i])));
     }
-    return bookingsList;
+    return [userInfo, bookingsList];
   } else {
     // docSnap.data() will be undefined in this case
     console.log("No such document!");

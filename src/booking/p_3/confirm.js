@@ -2,7 +2,8 @@ import { Trip } from "../../trip.js";
 import { addBooking } from "../../booking-firebase.js";
 
 // Populate the confirm page with the data from the previous pages.
-document.getElementById("price").innerHTML = localStorage.getItem("type") === "Gas Giant Exploration" ? "$750k" : "$500k";
+let price = (localStorage.getItem("type") === "Gas Giant Exploration" ? 750 : 500) * (localStorage.getItem("tier") === "Standard" ? 1 : (localStorage.getItem("tier") === "Premium"  ? 2 : 3));
+document.getElementById("price").innerHTML = "$"+price+"k";
 document.getElementById("tier").innerHTML = localStorage.getItem("tier");
 document.getElementById("type").innerHTML = localStorage.getItem("type");
 document.getElementById("date").innerHTML = localStorage.getItem("date");

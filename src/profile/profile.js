@@ -1,8 +1,10 @@
 import { Trip } from "../trip.js";
 import { getAllBookings } from "../booking-firebase.js";
 
-async function getData(){
-    const all_bookings = await getAllBookings();
+async function getData() {
+    const [user, all_bookings] = await getAllBookings();
+
+    document.getElementById("name").innerHTML = user;
 
     // Iterate through all bookings and create cards for each
     let cards = "";

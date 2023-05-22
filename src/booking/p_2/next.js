@@ -10,7 +10,6 @@ document.getElementById("submit-btn").addEventListener("click", function() {
     var cardCVV = document.getElementById("floating_cvv").value;
 
     if(address == "" || zipcode == "" || state == "---" || cardNumber == "" || cardExpiry == "" || cardCVV == "") {
-        alert("Fill out all fields.")
         return false;
     }
 
