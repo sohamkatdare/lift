@@ -29,6 +29,7 @@ export default defineConfig({
                 info: resolve(__dirname, 'src/info/index.html'),
                 products: resolve(__dirname, 'src/products/index.html'),
                 terrestrial: resolve(__dirname, 'src/products/terrestrial/index.html'),
+                earth_to_earth: resolve(__dirname, 'src/products/earth_to_earth/index.html'),
                 gas_giant: resolve(__dirname, 'src/products/gas_giant/index.html'),
                 login: resolve(__dirname, 'src/login/index.html'),
                 reset_password: resolve(__dirname, 'src/login/reset_password/index.html'),
