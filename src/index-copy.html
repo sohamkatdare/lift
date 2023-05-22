@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="scroll-smooth">
+<html lang="en" data-theme="night" class=" overflow-x-hiddenscroll-smooth">
 
 <head> 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="./tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="./base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="./navbar.css" rel="stylesheet" >
@@ -43,11 +43,12 @@
 </head>
 
 <body class="cursor-none no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
-<div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
+  <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
   </div>
+  <navbar-component></navbar-component>
   <header id="body-div">
     <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
       <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
@@ -184,9 +185,6 @@
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Click on either side of the screen to switch planets.</span>
-          <button class="btn1  rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg></button>
         </div>
       </div>
     </div>

@@ -1,8 +1,11 @@
-const collapsible = document.querySelector(".collapsible");
-collapsible.addEventListener("click", (e) => {
-  const activePanel = e.target.closest(".collapsible-panel");
-  if (!activePanel) return;
-  toggleCollapsible(activePanel);
+
+const collapsibles = document.getElementsByClassName("collapsible");
+collapsibles.forEach((collapsible) => {
+  collapsible.addEventListener("click", (e) => {
+    const activePanel = e.target.closest(".collapsible-panel");
+    if (!activePanel) return;
+    toggleCollapsible(activePanel);
+  });
 });
 
 function toggleCollapsible(collapsiblePanel) {
