@@ -18,7 +18,7 @@
   <script defer src="../components.js" type="module"></script>
 </head>
 
-<body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden bg-black " id="main">
+<body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
   <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
@@ -158,11 +158,11 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <form id="p1Form" class="px-24 w-[50rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+      <form id="p1Form" class="md:px-24 md:w-[50rem] z-50 md:py-12 md:rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
         <h1 class="text-6xl mb-12 underline text-white decoration-blue-400">Book your trip today!</h1>  
         <h2 class="text-lg mb-12 text-white decoration-blue-400">We give full refunds upon cancellation within 2 months of the trip date. After that period passes, only partial refunds will be given until the last week leading up to the trip. After that date, no refunds will be given.</h2>   
         <div class="flex justify-start">
-          <div class="text-sm breadcrumbs">
+          <div class="text-sm hidden md:block breadcrumbs">
             <ul>
               <li>
                 <a class="animate-hidden slide slide-left" style="--order: 5">
