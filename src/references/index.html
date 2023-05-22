@@ -7,6 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="../tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="../navbar.css" rel="stylesheet" >
   <link href="../base.css" rel="stylesheet" >
   <meta name="description" content="Read our reputable sources and the design process we went through in order to design this website.">
 
@@ -28,7 +29,7 @@
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
-        <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[70px] cursor-pointer top-0 whitespace-nowrap">
+        <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
           <span class="word text-white cursor-pointer"><h1 class="text-3xl"><span><code>LIFT</code></h1></span>
         </div>
       </button>
@@ -120,6 +121,7 @@
     <script>
       const button = document.getElementById("menu-toggle");
       button.onclick = () => {
+        console.log("clicked");
         document.getElementById('body-div').classList.toggle("menu-toggled");
       }
       const login = document.getElementById("loginBtn");
