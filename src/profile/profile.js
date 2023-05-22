@@ -1,7 +1,7 @@
 import { Trip } from "../trip.js";
 import { getAllBookings } from "../booking-firebase.js";
 
-const all_bookings = await getAllBookings();
+const all_bookings = getAllBookings();
 
 // Iterate through all bookings and create cards for each
 let cards = "";

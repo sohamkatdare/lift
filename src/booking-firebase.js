@@ -12,8 +12,8 @@ export async function addBooking(trip) {
   });
 }
 
-export async function getAllBookings() {
-  const docSnap = await getDoc(docRef);
+export function getAllBookings() {
+  const docSnap = getDoc(docRef);
 
   const bookingsList = [];
   if (docSnap.exists()) {
