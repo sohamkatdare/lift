@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="overflow-x-hidden" class="scroll-smooth">
+<html lang="en" data-theme="night" class="scroll-smooth">
 
 <head> 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)"/>
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="./base.css" rel="stylesheet"  media="print" onload="this.media='all'">
   <link href="./navbar.css" rel="stylesheet" >
@@ -17,7 +17,18 @@
     button:hover {
       cursor: none;
     }    
-
+    . {
+      border: 0;
+      background: linear-gradient(to right, black 50%, white 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all 0.5s ease-out;
+    }
+    
+    .:hover {
+      color: white;
+      background-position: left bottom;
+    }
     h1, h2, h3, h4, h5, h6 {
       font-family: D-DIN;
     }
@@ -43,156 +54,12 @@
 </head>
 
 <body class="cursor-none no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
-  <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
+<div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
   </div>
-  <header id="body-div">
-    <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
-      <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
-      <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
-        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
-        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
-        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
-        <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
-          <span class="word text-white cursor-pointer"><h1 class="text-3xl"><span><code>LIFT</code></h1></span>
-        </div>
-      </button>
-      <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>
-      <div id="menu-gradient-blur" class="backdrop-blur-[1vmax] inset-0 absolute z-[2] opacity-0"></div>
-      <div id="menu-arcs-wrapper" class="min-h-[600px] h-[200vmax] max-h-[6000px] left-0 opacity-0 absolute top-0 min-w-[600px] w-[200vmax] max-w-[6000px] z-[3]">
-        <svg id="menu-arcs" class="h-full w-full top-0 left-0 absolute will-change-transform">
-          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="18%"></circle>
-          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="24%"></circle>
-          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="34%"></circle>
-          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="42%"></circle>
-          <circle class="menu-arc fill-none stroke-white/50 stroke-1" cx="50%" cy="50%" r="50%"></circle>
-        </svg>
-      </div>
-      <div id="menu-links" class="items-center flex flex-col gap-[30px] inset-0 justify-center absolute z-[4]">
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
-          <span class="index text-[0.8em] transition-transform duration-200">01</span> 
-          <span class="label text-white text-[2em] transition-transform duration-200">Home</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/info/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="index text-[0.8em] transition-transform duration-200">02</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Info</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="index text-[0.8em] transition-transform duration-200">03</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Launch</span>  
-        </a>
-        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/vehicles/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>
-          <span class="index text-[0.8em] transition-transform duration-200">04</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Vehicles</span>  
-        </a>
-        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/training/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="index text-[0.8em] transition-transform duration-200">05</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Training</span>  
-        </a>
-        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/safety/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="index text-[0.8em] transition-transform duration-200">06</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Safety</span>  
-        </a>
-        <a class="link items-center cursor-pointer hidden lg:block gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/launch/recovery/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="index text-[0.8em] transition-transform duration-200">07</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Recovery</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/products/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">08</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">04  </span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Products</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/references/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">09</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">05</span> 
-          <span class="label text-white text-[2em] transition-transform duration-200">References</span>  
-        </a>  
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" style="text-decoration: none;" href="/booking/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">10</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">06</span> 
-          <span class="label text-white text-[2em] transition-transform duration-200">Booking</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="login" style="text-decoration: none;" href="/products/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">11</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">07</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Login</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="signup" style="text-decoration: none;" href="/products/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">12</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">08</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Sign Up</span>  
-        </a>
-        
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="profile" style="text-decoration: none;" href="/products/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px] "></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">13</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">09</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Profile</span>  
-        </a>
-        <a class="link items-center cursor-pointer gap-[10px] opacity-0 relative no-underline transition-opacity duration-200 ease-in" id="logout" style="text-decoration: none;" href="/products/">
-          <span class="anchor bg-white min-h-[4px] h-[0.4vmax] max-h-[12px] left-0 absolute top-[50%] transition-transform duration-200 min-w-[4px] w-[0.4vmax] max-w-[12px]"></span>  
-          <span class="hidden lg:block index text-[0.8em] transition-transform duration-200">14</span> 
-          <span class="lg:hidden index text-[0.8em] transition-transform duration-200">10</span>  
-          <span class="label text-white text-[2em] transition-transform duration-200">Logout</span>  
-        </a>
-        
-      </div>
-    </div>
-    <script>
-      const button = document.getElementById("menu-toggle");
-      button.onclick = () => {
-        document.getElementById('body-div').classList.toggle("menu-toggled");
-      }
-      const login = document.getElementById("login");
-      const signup = document.getElementById("signup");
-      const profile = document.getElementById("profile");
-      const logout = document.getElementById("logout");
-
-      if (localStorage.getItem('user') != null) {
-        // Hide login and signup
-        login.style.display = 'none';
-        signup.style.display = 'none';
-        login.classList.remove("btn1") 
-        signup.classList.remove("btn1")
-        
-        profile.style.display = 'block';
-        logout.style.display = 'block';
-        profile.classList.add("btn1") 
-        logout.classList.add("btn1")
-        
-        document.getElementById('logout').addEventListener('click', () => {
-          if (localStorage.getItem('user') != null) {
-            localStorage.removeItem('user');
-          }
-        });
-      } else {
-        // Hide profile and logout
-        login.style.display = 'block';
-        signup.style.display = 'block';
-        login.classList.add("btn1") 
-        signup.classList.add("btn1")
-        
-        profile.style.display = 'none';
-        logout.style.display = 'none';
-        profile.classList.remove("btn1") 
-        logout.classList.remove("btn1");
-      }
-    </script>
-  </header>
+  <navbar-component></navbar-component>
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="hero min-h-screen bg-transparent select-none relative" id="section0">
     <div class="toast toast-top toast-end hidden md:block">
@@ -200,6 +67,9 @@
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Click on either side of the screen to switch planets.</span>
+          <button class="btn1  rounded-full" id="close-toast" onClick="closeToast()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg></button>
         </div>
       </div>
     </div>

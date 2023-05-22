@@ -280,17 +280,26 @@ link:hover > .label {
     left: 75vmax;
     top: 40.2vmax;
   }
+  /* new */
   #menu > #menu-links > .link:nth-of-type(10) {
     left: 15vmax;
     top: 40.2vmax;
   }
   #menu > #menu-links > .link:nth-of-type(11) {
     left: 5vmax;
-    top: 20.2vmax;
+    top: 7vmax;
   }
   #menu > #menu-links > .link:nth-of-type(12) {
     left: 15vmax;
-    top: 10.2vmax;
+    top: 7vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(13) {
+    left: 5vmax;
+    top: 12vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(14) {
+    left: 15vmax;
+    top: 12vmax;
   }
 }
 
@@ -332,6 +341,7 @@ link:hover > .label {
     left: 91vmax;
     top: 44vmax;
   }
+  /* new */
   #menu > #menu-links > .link:nth-of-type(10) {
     left: 11vmax;
     top: 44vmax;
@@ -344,6 +354,12 @@ link:hover > .label {
     left: 11vmax;
     top: 14vmax;
   }
-
-
+  #menu > #menu-links > .link:nth-of-type(13) {
+    left: 11vmax;
+    top: 14vmax;
+  }
+  #menu > #menu-links > .link:nth-of-type(14) {
+    left: 11vmax;
+    top: 14vmax;
+  }
 }

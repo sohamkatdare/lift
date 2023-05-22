@@ -37,7 +37,7 @@ const fadeEffect = () => {
 const loadFunction = () => {
   setTimeout(() => {
     fadeEffect();
-    // window.load(); // Assuming you have a function named "load" to be executed after the fade effect
+    window.load(); // Assuming you have a function named "load" to be executed after the fade effect
   }, 1100); // Delay the loadFunction by 2200 milliseconds (2.2 seconds)
   // bigger.play()
 };

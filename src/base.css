@@ -255,6 +255,7 @@ h1 > .magic > .magic-star > svg > path {
 }
 
 h1 > .magic > .magic-text {
+  font-family: Inter;
   animation: background-pan 3s linear infinite;
   background: linear-gradient(
     to right,
