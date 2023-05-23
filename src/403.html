@@ -6,10 +6,11 @@
   <link rel="icon" type="image/svg+xml" href="/favicon_dark.png" media="(prefers-color-scheme: dark)" />
   <link rel="icon" type="image/svg+xml" href="/favicon_light.png" media="(prefers-color-scheme: light)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="base.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="navbar.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="animate.css" rel="stylesheet">
+  <link href="./tailwind.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./base.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/base2.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./navbar.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="./animate.css" rel="stylesheet">
   <meta name="description" content="403 Error: Forbidden Page">
   <meta http-equiv="Refresh" content="10; url='/'" />
 
@@ -200,13 +201,23 @@
           <h1 class="mb-5 text-8xl font-bold ">403 Error</h1>
         </div>
         <p class="mb-5 text-xl animate-hidden">This page is forbidden to your user. <br> Wait <span
-            class="countdown inter text-4xl animate-hidden" id="countdown"><span></span></span> to be redirected to the
-          home or login in order to access this page</p>
-        <div class="grid grid-cols-2 py-14 gap-x-0">
-          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 5"><a href="/signup/"><button
-                class="btn1 ">Sign Up</button></a></div>
-          <div class="divider animate-hidden slide slide-left slide-quick" style="--order: 6"><a href="/"><button
-                class="btn1 ">Go Home</button></a></div>
+            class="countdown inter text-4xl" id="countdown"><span></span></span> to be redirected to the home or login in order to access this page</p>
+        <div class="grid grid-cols-3 py-14 gap-x-0">
+          <div class="divider animate-hidden slide slide-left" style="--order: 5">
+            <a href="/signup/">
+              <button class="btn1 ">Sign Up</button>
+            </a>
+          </div>
+          <div class="divider animate-hidden slide slide-left" style="--order: 6">
+            <a href="/login/">
+              <button class="btn1 ">Log In</button>
+            </a>
+          </div>
+          <div class="divider animate-hidden slide slide-left" style="--order: 7">
+            <a href="/">
+              <button class="btn1 ">Go Home</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -3,13 +3,6 @@ import * as rsc from './resources';
 import * as THREE from 'three'
 import { section } from './cursor';
 
-import Stats from 'three/examples/jsm/libs/stats.module'
-const stats = new Stats()
-document.body.appendChild(stats.dom)
-stats.dom.style.cssText = 'position: absolute; left: 0; bottom: 0; z-index: 10000; cursor: pointer; opacity: 0.9;';
-
-let index = 0,
-    interval = 1000;
 
 
 
