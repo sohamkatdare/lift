@@ -39,7 +39,7 @@ const moveCursor = (e) => {
     customCursor.animate({
         transform: `translate3d(${mouseX}px, ${mouseY}px, 100px)`
     }, {
-        duration: 1000,
+        duration: 500,
         fill: 'forwards'
     })
     // customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 100px)`;

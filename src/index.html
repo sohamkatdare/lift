@@ -50,8 +50,8 @@
   </div>
   <header id="body-div">
     <div id="menu" class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
-      <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
-      <button class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
+      <button class="toggle-area h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg" type="button" style="pointer-events: all;"></button>
+      <button class="toggle-area -translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
@@ -145,10 +145,13 @@
       </div>
     </div>
     <script>
-      const button = document.getElementById("menu-toggle");
-      button.onclick = () => {
-        document.getElementById('body-div').classList.toggle("menu-toggled");
-      }
+      const buttons = document.querySelectorAll(".toggle-area");
+      buttons.forEach((button) => {
+        button.onclick = () => {
+          document.getElementById('body-div').classList.toggle("menu-toggled");
+        }
+      })
+      
       const login = document.getElementById("loginBtn");
       const signup = document.getElementById("signupBtn");
       const profile = document.getElementById("profileBtn");
@@ -179,8 +182,8 @@
   </header>
   <canvas class="fixed top-0 left-0 bg-base-100" id="bg"></canvas>
   <div class="hero min-h-screen bg-transparent select-none relative" id="section0">
-    <div class="toast toast-top toast-end hidden md:block">
-      <div class="alert shadow-lg opacity-80">
+    <div class="toast toast-top toast-end hidden md:block z-[1000]">
+      <div class="alert shadow-lg opacity-100 bg-white/[0.05] backdrop-blur-sm" >
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Click on either side of the screen to switch planets.</span>
