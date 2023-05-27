@@ -51,7 +51,7 @@ function animate() {
     const offset = planetsOffsets[section];
     rsc.updateCameraPosition(camera, selectedPlanet, new THREE.Vector3(offset[0], offset[1], offset[2]), 0.05 * timeDelta, planetFOVs[section])
     renderer.render(scene, camera);
-    stats.update()
+    // stats.update()
   }
 
 }

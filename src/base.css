@@ -270,6 +270,22 @@ h1 > .magic > .magic-text {
   white-space: nowrap;
 }
 
+.magic-text {
+  font-family: Inter;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
 
 
 .btn1{

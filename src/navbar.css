@@ -1,12 +1,4 @@
-/* :root {
-  --background-light: rgba(236, 229, 220, 0.4);
-  --background-dark: rgba(20, 20, 20, 0.4);
-  
-  --gradient-color-1: rgba(178, 94, 82, 0.4);
-  --gradient-color-2: rgba(56, 33, 46, 0.4);
-  --gradient-color-3: rgba(42, 37, 51, 0.4);
-  --gradient-color-4: rgba(17, 30, 41, 0.4);
-} */
+
 @keyframes arc-rotation {
   from {
     transform: translate3d(-50%, -50%, 0px) rotate(0deg);
@@ -91,7 +83,9 @@
 
 
 #menu > #menu-toggle:hover > span:nth-of-type(2),
-#menu > #menu-toggle:hover > span:nth-of-type(3){
+#menu > #menu-toggle:hover > span:nth-of-type(3),
+#toggle-area:hover + #menu-toggle > span:nth-of-type(2),
+#toggle-area:hover + #menu-toggle > span:nth-of-type(3){
   transform: translate3d(0px, 0px, 0px);
 }
 
