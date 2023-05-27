@@ -29,18 +29,13 @@
   <header id="body-div">
     <div id="menu"
       class="h-screen w-screen top-0 left-0 overflow-hidden cursor-pointer pointer-events-none fixed z-[100]">
-      <div class="h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg"></div>
-      <button
-        class="-translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"
-        type="button" id="menu-toggle" style="pointer-events: all;">
+      <button class="toggle-area h-14 backdrop-blur-sm drop-shadow-2xl shadow-2xl cursor-pointer w-44 rounded-b-lg" type="button" style="pointer-events: all;"></button>
+      <button class="toggle-area -translate-y-6 -translate-x-4 items-center bg-transparent cursor-pointer border-none  flex flex-col gap-[5px] h-[50px] justify-center left-[30px] p-0 absolute top-[30px] w-[50px] z-[5]"  type="button" id="menu-toggle" style="pointer-events: all;">
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
         <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
-        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span>
-        <div id="menu-toggle-label"
-          class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
-          <span class="word text-white cursor-pointer">
-            <h1 class="text-3xl"><span><code>LIFT</code></h1>
-          </span>
+        <span class="bg-white block h-[3px] w-[24px] transition-transform duration-200  cursor-pointer"></span> 
+        <div id="menu-toggle-label" class="items-center flex absolute h-[50px] gap-[5px] -right-[20px] cursor-pointer top-0 whitespace-nowrap">
+          <span class="word text-white cursor-pointer"><h1 class="text-3xl"><span><code>LIFT</code></h1></span>
         </div>
       </button>
       <div id="menu-gradient" class="h-[300vmax] left-0 opacity-0 absolute top-0 w-[300vmax] z-[1]"></div>

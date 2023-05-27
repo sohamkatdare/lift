@@ -332,28 +332,28 @@ link:hover > .label {
   }
 
   #menu > #menu-links > .link:nth-of-type(9) {
-    left: 91vmax;
-    top: 44vmax;
+    left: 77.7vmax;
+    top: 35vmax;
   }
   /* new */
   #menu > #menu-links > .link:nth-of-type(10) {
-    left: 11vmax;
+    left: 91vmax;
     top: 44vmax;
   }
   #menu > #menu-links > .link:nth-of-type(11) {
-    left: 11vmax;
-    top: 44vmax;
+    left: 8vmax;
+    top: 14vmax;
   }
   #menu > #menu-links > .link:nth-of-type(12) {
-    left: 11vmax;
+    left: 18vmax;
     top: 14vmax;
   }
   #menu > #menu-links > .link:nth-of-type(13) {
-    left: 11vmax;
+    left: 8vmax;
     top: 14vmax;
   }
   #menu > #menu-links > .link:nth-of-type(14) {
-    left: 11vmax;
+    left: 18vmax;
     top: 14vmax;
   }
 }
