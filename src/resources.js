@@ -32,11 +32,11 @@ export function rendererSetup(scene, camera) {
     renderer.setPixelRatio(window.devicePixelRatio);
 
     if (isTouchDevice()) {
-        renderer.setSize(screen.width, screen.height);
+        renderer.setSize(window.outerWidth, window.outerHeight);
         // window.addEventListener("resize", () => {
         //     renderer.setSize(window.innerWidth, window.innerHeight);
         // });
-    } else renderer.setSize(window.innerWidth, window.innerHeight);
+    } else renderer.setSize(window.outerWidth, window.outerHeight);
 
     // Add post-processing settings
     const composer = new EffectComposer(renderer);
