@@ -215,7 +215,7 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-    <footer class="footer items-center p-4 bg-neutral-900 text-white">
+    <footer class="footer w-screen items-center p-4 bg-transparent text-white">
   <div class="flex items-center justify-between">
     <div class="flex items-center">
       <img src="/logo.png" alt="logo" class="w-10 h-10">
