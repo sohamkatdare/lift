@@ -54,13 +54,39 @@ let section = 0;
 let allowScrolling = false;
 
 function handleEvents(e) {
-  if (!allowScrolling) {
-    e.preventDefault();
-  }
+  if (!allowScrolling) e.preventDefault();
 }
 window.addEventListener('wheel', handleEvents, { passive: false });
 window.addEventListener('mousedown', handleEvents, { passive: false });
 window.addEventListener('mouseup', handleEvents, { passive: false });
+
+document.addEventListener('touchstart', handleTouchStart, { passive: false } );        
+document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+let xDown, yDown = null;                                                        
+                                                  
+function handleTouchStart(e) {
+    const firstTouch = e.touches[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;   
+};                                                
+                                                                         
+function handleTouchMove(e) {
+    if (!xDown || !yDown) return;
+    if (!allowScrolling) e.preventDefault();
+    let [xUp, yUp] = [e.touches[0].clientX, e.touches[0].clientY];                                    
+    let [xDiff, yDiff] = [xDown - xUp, yDown - yUp];   
+
+    if (Math.abs(xDiff) < Math.abs(yDiff)) {
+        if (yDiff > 0) {
+            scrollNext();
+        } else { 
+            scrollBefore();
+        }                                                                 
+    }
+    /* reset values */
+    xDown, yDown = null;                                        
+};
 
 window.addEventListener('load', () => {
     allowScrolling = false;
