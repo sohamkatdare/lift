@@ -81,7 +81,7 @@ function updatePlanets() {
     child.rotation.y += Math.random() * (0.02 - 0.01) + (0.01) * timeDelta;
   }
   stars.rotation.y += 0.0001 * timeDelta;
-  console.log(satelliteGroup.position);
+  // console.log(satelliteGroup.position);
 }
 animate();
 

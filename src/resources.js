@@ -28,16 +28,20 @@ export function isTouchDevice() {
 // renderer setup
 export function rendererSetup(scene, camera) {
     const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#bg"), antialias: true });
-
     renderer.setPixelRatio(window.devicePixelRatio);
 
-    if (isTouchDevice()) {
-        renderer.setSize(window.outerWidth, window.outerHeight);
-        // window.addEventListener("resize", () => {
-        //     renderer.setSize(window.innerWidth, window.innerHeight);
-        // });
-    } else renderer.setSize(window.outerWidth, window.outerHeight);
+    let resizeTimeout, oldWidth, oldHeight, newWidth, newHeight;
 
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    oldWidth, oldHeight = window.innerWidth, window.innerHeight;
+    window.addEventListener("resize", () => {
+        newWidth, newHeight = window.innerWidth, window.innerHeight;
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, 250);
+    });
     // Add post-processing settings
     const composer = new EffectComposer(renderer);
 
