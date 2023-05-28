@@ -183,14 +183,14 @@
       <canvas class="top-0 left-0" id="bg"></canvas>
     </div>
     <div class="hero-content text-white">
-      <div id="p1Form" class="text-sm md:text-md md:px-24 px-10 md:w-[50rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
-        <h1 class="text-6xl mb-12 underline text-center text-white decoration-blue-400">Confirm your booking</h1>
+      <div id="p1Form" class="text-sm md:text-md md:px-24 px-10 w-[80%] sm:w-[42rem] md:w-[52rem] xl:w-[86rem] z-50 py-12 rounded-lg bg-base-300/[0.05] backdrop-blur-lg mt-12 outline outline-1 outline-slate-700/[0.15]">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl mb-12 underline text-center text-white decoration-blue-400">Confirm your booking</h1>
         <div class="divider mb-12"></div>
         <div id="receipt-order">
           <div class="grid gap-5">
             <div class="bg-slate-900 animate-hidden slide slide-left rounded-lg pt-5 pl-5" style="--order: 1">
               <h3 class="text-3xl"><span id="price">$500k</span> each</h3>
-              <div class="flex ml-5 gap-5 my-5">
+              <div class="flex flex-wrap ml-5 gap-5 my-5">
                 <p><span class="text-gray-500 text-sm">Launches on:</span> <span id="date"></span></p>
                 <p><span class="text-gray-500 text-sm">Type: </span> <span id="type"></span></p>
                 <p><span class="text-gray-500 text-sm">Tier: </span> <span id="tier"></span></p>
@@ -250,7 +250,7 @@
          -->
         
         <div class="flex justify-between">
-          <div class="text-sm breadcrumbs">
+          <div class="text-sm hidden md:block breadcrumbs">
             <ul>
               <li>
                 <a class="animate-hidden slide slide-left" style="--order: 4">
@@ -286,7 +286,7 @@
               </li>  
             </ul>
           </div>
-          <button id="confirm-btn" class="m-0 ml-12 btn1 max-h-11 p-3 text-sm">Confirm
+          <button id="confirm-btn" class="m-0 md:ml-12 btn1 max-h-11 p-3 text-sm">Confirm
           </button>
         </div>
         
