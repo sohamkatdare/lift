@@ -178,15 +178,15 @@
   </header>
 
   <div class="hero min-h-screen relative " style="transform-style: inherit;">
-    <div class="hero-overlay brightness-90 z-[-1]">
-      <canvas class="top-0 left-0" id="bg"></canvas>
+    <div class="hero-overlay fixed z-[-1]">
+      <canvas class="top-0 fixed left-0" id="bg"></canvas>
     </div>
     <div class="hero-content select-none text-center text-neutral-content">
       <div class="max-w-lg text-white">
         <h1 class="text-4xl md:text-6xl font-light italic">Ready for launch!</h1>
       </div>
     </div>
-    <div class="grid justify-center p-5 relative top-60 z-10">
+    <div class="justify-center p-5 relative top-60 z-10">
       <div class="grid grid-cols-2 md:grid-cols-4 justify-center gap-y-5 gap-x-5">
         <div class="card col-start-1 col-end-1 bg-base-100/25 background-blur-md text-white animate-hidden slide slide-left" style="--order: 1">
             <div class="card-body">
@@ -227,15 +227,16 @@
                 </div>
             </div>
         </div>
+      </div>
+
     </div>
     
-    </div>
   </div>
+
   <br style="height:45px;">
   <br style="height:45px;">
 
   <footer-component></footer-component>
-
 
 
 
