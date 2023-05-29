@@ -21,7 +21,7 @@
 </head>
 
 <body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden bg-black" id="main">
-<div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
+  <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
@@ -188,7 +188,7 @@
   <br><br>
 
   <div class="wrapper mb-12 max-w-[100rem] h-fit mx-[clamp(5%,10%,20%)] px-4">
-    <div class="my-9 stats animate-hidden slide slide-left stats-vertical md:stats-horizontal shadow backdrop-blur bg-base-300 border border-base-300 mx-auto flex justify-center" style="--order: 1">
+    <div class="my-9 stats animate-hidden slide slide-left stats-horizontal   bg-transparent md:border md:border-base-300 rounded-lg hidden md:flex justify-center overflow-x-hidden no-scrollbar" style="--order: 1">
       <div class="stat">
         <div class="stat-title"><strong>Flights</strong></div>
         <div class="stat-value">27</div>
@@ -212,137 +212,137 @@
     </div>
     
     <div class="collapsible gap-[1rem]">
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
         <h2 id="panel1-heading">
           <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
-            <span class="collapsible-title" id="panel1-title">Concern 1: Travel without Gravity</span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Travel without Gravity</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap" id="panel1-title">Concern 1: </span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h2>
         <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             There are concerns that the absence of gravity will result in problems for humans, specifically muscle loss, bone loss, and other physiological changes. Additionally, mobility will be a little challenging possibly as the conditions to perform tasks are very different in space compared to Earth. Although, we do not have to worry about this problem at all! Due to our patented Bone Restore technology rockets, we have replicated the gravity conditions of Earth on our rocket which eliminates the lack of gravity concerns that you could have. Additionally, we partnered with SpaceX to develop specialized regen suits for the recovery process after space travel.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
         <h2 id="panel2-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
-            <span class="collapsible-title"> Concern 2: Radiation </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Radiation</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 2:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h2>
         <div role="region" aria-labelledby="panel2-title" aria-hidden="true" class="collapsible-content " id="panel2-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             High-energy particles in space can damage DNA and other cellular structures, which increase the risk of cancer and other diseases. Luckily, we have addressed this concern through our Radonite fabric that covers the interior of our rocket, maintaining CDC safety standards. We also partnered with Kjell Norwood Lindgren, a former astronaut on the ISS, to ensure the safety of all of us on board by providing research on space radiation exposure. We ensure that these harmful particles will not affect you during our travels.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 4">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 4">
         <h2 id="panel3-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
-            <span class="collapsible-title"> Concern 3: Meteoroids </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Meteoroids</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 3:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h3>
         <div role="region" aria-labelledby="panel3-title" aria-hidden="true" class="collapsible-content " id="panel3-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             Space is filled with small rocks and debris that could cause significant damage to our spacecraft and equipment, but through new technology, we ensure this threat will not affect our space tours. We have fortified our spacecraft with our proprietary AstroMesh metal alloys that will help ensure that foreign objects do not harm the exterior of the aircraft. We make sure that our spacecraft cannot be penetrated by meteorites and asteroids through our reinforced tungsten composite. These new advancements in technology make it nearly impossible for debris to cause damage. 
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 5">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 5">
         <h2 id="panel4-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
-            <span class="collapsible-title"> Concern 4: Temperature Extremes </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Temperature Extremes</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 4:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h2>
         <div role="region" aria-labelledby="panel4-title" aria-hidden="true" class="collapsible-content " id="panel4-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             The temperature in space can vary widely, from hundreds of degrees below freezing to hundreds of degrees above boiling. This can be a problem for spacecraft and humans, as extreme temperatures can damage equipment and systems. The way we have solved this issue is by partnering with other space agencies. We have put together <strong class="font-family: Nova;">Atmosynth</strong> radiators that will maintain human-like conditions in every aspect of your travels there. Your comfort is our top priority.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
         <h2 id="panel5-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
-            <span class="collapsible-title"> Concern 5: Who's flying me? </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Who's flying me?</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 5:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h5>
         <div role="region" aria-labelledby="panel5-title" aria-hidden="true" class="collapsible-content " id="panel5-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             When training astronauts, safety and well-being are top priorities. The selection process is rigorous and highly selective, followed by extensive training to prepare candidates for space exploration. Astronauts accumulate over 10,000 hours of flight training simulations, practicing emergency procedures, spacecraft operations, and mission-specific tasks. They also gain over 1,000 hours of in-flight experience in aircraft that replicate space conditions. This hands-on training familiarizes them with spaceflight sensations and challenges. The comprehensive training process spans five years, covering spacecraft functions, engineering, and troubleshooting. Additionally, astronauts undergo physical fitness training to mitigate the effects of microgravity and maintain their health during extended space missions.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
         <h2 id="panel6-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
-            <span class="collapsible-title"> Concern 6: Limited Living Space </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Limited Living Space</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 6:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h6>
         <div role="region" aria-labelledby="panel6-title" aria-hidden="true" class="collapsible-content " id="panel6-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             When training astronauts, safety and well-being are top priorities. The selection process is rigorous and highly selective, followed by extensive training to prepare candidates for space exploration. Astronauts accumulate over 10,000 hours of flight training simulations, practicing emergency procedures, spacecraft operations, and mission-specific tasks. They also gain over 1,000 hours of in-flight experience in aircraft that replicate space conditions. This hands-on training familiarizes them with spaceflight sensations and challenges. The comprehensive training process spans five years, covering spacecraft functions, engineering, and troubleshooting. Additionally, astronauts undergo physical fitness training to mitigate the effects of microgravity and maintain their health during extended space missions.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
         <h2 id="panel7-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel7-content" >
-            <span class="collapsible-title"> Concern 7: Psychological Stress </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Psychological Stress</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 7:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h7>
         <div role="region" aria-labelledby="panel7-title" aria-hidden="true" class="collapsible-content " id="panel7-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             When it comes to addressing the psychological stress that can arise from the isolation, confinement, and lack of social interaction in space travel, Lift provides comprehensive solutions..To help passengers combat feelings of isolation and maintain a connection with Earth, Lift offers virtual reality experiences that simulate natural environments. By immersing themselves in virtual forests, beaches, or other familiar landscapes, astronauts can alleviate stress and feel a sense of connection to the planet they temporarily left behind. These virtual environments provide a refreshing and calming escape from the confined spaces of spacecraft.In addition to virtual reality experiences, Lift Space Travel provides extensive support services to address the psychological well-being of space travelers. We offer counseling and mental health resources specifically tailored to the unique challenges of long-duration space missions. Our team of trained professionals is equipped to provide guidance, support, and strategies for managing stress, anxiety, and other psychological concerns that may arise during the journey.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
         <h2 id="panel8-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel8-content" >
-            <span class="collapsible-title"> Concern 8: Earth Communication </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Earth Communication</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 8:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h8>
         <div role="region" aria-labelledby="panel8-title" aria-hidden="true" class="collapsible-content " id="panel8-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             Efficient and reliable communication is crucial for space travelers, especially during emergencies. To address this, we collaborate with communication technology companies, developing advanced systems that revolutionize space communications. Our focus includes faster communication methods, reducing delays across vast distances. By harnessing AI, we optimize data transmission, adapt to changing conditions, and ensure uninterrupted communication. Alongside technological advancements, we establish robust infrastructure through partnerships, combining ground-based and satellite networks to support space travelers in all situations.
           </p>
         </div>
       </div>
-      <div class="collapsible-panel bg-slate-700/25 mx-24 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
+      <div class="collapsible-panel bg-slate-700/25 mx-0 sm:mx-8 md:mx-12 lg:mx-18 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;" style="--order: 1">
         <h2 id="panel9-title">
           <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel9-content" >
-            <span class="collapsible-title"> Concern 9: Limited Resources </span>
+            <span class="max-sm:hidden inline truncate font-bold text-lg md:text-2xl whitespace-nowrap">Limited Resources</span>
+            <span class="collapsible-title text-lg md:text-2xl whitespace-nowrap"> Concern 9:</span>
             <div aria-hidden="true" class="collapsible-icon">
             </div>
           </button>
         </h9>
         <div role="region" aria-labelledby="panel9-title" aria-hidden="true" class="collapsible-content " id="panel9-content" >
-          <p>
-            <br style="height:10px; visibility:hidden;" />
+          <p class="text-sm sm:text-base">
             At Lift, we are pioneers in sustainable space travel, employing various innovative solutions. Hydroponic farming allows us to cultivate crops in nutrient-rich water solutions using vertical farming and optimized LED lighting. This provides fresh food, reduces transportation needs, and promotes sustainability. We have also developed advanced water recycling systems that collect, filter, and purify water from multiple sources, ensuring a constant supply for drinking, cooking, and hygiene. Our spacecraft integrate cutting-edge air purification systems, actively monitoring and filtering the air to create a safe and breathable environment. By recycling resources, we save energy and extend space missions. These sustainable practices not only reduce costs but also pave the way for long-duration missions and future colonization efforts. At Lift, we are proud to lead the way in sustainable space travel, shaping a future where resources are efficiently managed to explore beyond Earth's boundaries.
           </p>
         </div>

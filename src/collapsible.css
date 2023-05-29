@@ -95,3 +95,8 @@
   z-index: 10;
   content: '+'
 }
+
+/* !Keep these at the bottom, so tailwind classes can override css classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
