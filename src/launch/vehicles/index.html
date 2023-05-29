@@ -19,7 +19,7 @@
 </head>
 
 <body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
-<div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
+  <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
     </svg>
@@ -199,9 +199,9 @@
     <div class="col-start-2 col-end-12 lg:col-start-2 lg:col-end-8 inline-block mt-5 pr-5">
       <h1 class="text-3xl text-white font-bold underline decoration-blue-400"><strong>Rocket Body</strong></h1>
       <br>
-      <div class="wrapper max-w-[70vw] h-fit w-[170%]">
+      <div class="wrapper max-w-[85vw] h-fit w-[170%]">
         <div class="collapsible">
-          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-b-none">
+          <div class="collapsible-panel bg-white/[0.05] backdrop-blur-sm rounded-box rounded-b-none">
             <h2 id="panel1-heading">
               <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
                 <span class="collapsible-title" id="panel1-title">Engine</span>
@@ -210,13 +210,13 @@
               </button>
             </h2>
             <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
-              <p>
+              <p class="text-sm sm:text-base">
                 <br style="height:10px; visibility:hidden;" />  
                 Our rocket requires an engine of great magnitude to launch from the ground against the force of gravity. We have the latest state-of-the-art engine that can provide the highest amount of upward lift possible. Our engineers have custom designed parts from all over the world, and this machinery is one of the most complex designs surpassing the complexity of other great machines. This engine has efficiently powered countless launches, allowing us to break Earth's atmosphere and journey through space. Our thrusters were designed based on Robert H. Goddard's principles and incorporate new breakthrough technology, resulting in a double-layered and robust final product.
               </p>
             </div>
           </div>
-          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-t-none rounded-b-none">
+          <div class="collapsible-panel bg-white/[0.05] backdrop-blur-sm rounded-box rounded-t-none rounded-b-none">
             <h2 id="panel2-heading">
               <button class="collapsible-trigger" aria-controls="panel2-content" aria-expanded="false" >
                 <span class="collapsible-title" id="panel2-title">Thrusters</span>
@@ -225,13 +225,13 @@
               </button>
             </h2>
             <div class="collapsible-content"  id="panel2-content"   aria-labelledby="panel2-heading"  aria-hidden="true"   role="region"  >
-              <p>
+              <p class="text-sm sm:text-base">
                 <br style="height:10px; visibility:hidden;" />  
                 Rocket thrusters are a crucial component of any space mission, as they provide the propulsion needed to launch a spacecraft into orbit and beyond. We are proud to say that our high-quality rocket thrusters have been proven reliable, powerful and efficient, making them essential for successful space launches. We believe that our manufactured rocket thrusters help to reduce our repair and maintenance costs. Additionally, these high-quality rockets improve the safety of our space missions as they reduce the risk of failure during different stages of flight. Our thrusters at Lift have been made using bleeding-edge technology, and have a proven track record. These thrusters have been used on countless flights, some of which have lasted for over two years long.
               </p>
             </div>
           </div>
-          <div class="collapsible-panel bg-slate-700/25 rounded-box rounded-t-none">
+          <div class="collapsible-panel bg-white/[0.05] backdrop-blur-sm rounded-box rounded-t-none">
             <h2 id="panel3-heading">
               <button class="collapsible-trigger" aria-controls="panel3-content" aria-expanded="false" >
                 <span class="collapsible-title" id="panel3-title">Orbiters</span>
@@ -240,7 +240,7 @@
               </button>
             </h2>
             <div class="collapsible-content"  id="panel3-content"   aria-labelledby="panel3-heading"  aria-hidden="true"   role="region"  >
-              <p>
+              <p class="text-sm sm:text-base">
                 <br style="height:10px; visibility:hidden;" />  
                 We also have orbiters which allow us to study planets and other celestial bodies from a stable and long-term perspective. With our high-quality orbiters, we can expand our scientific knowledge and understanding of space.our orbiters require less maintenance and costs in the long run, making it more efficient and reliable during critical stages of flight. Additionally, our orbiters have an excellent track record as they have been able to enter the orbit of every planet in our solar system. Overall, our orbiters have been essential piece of technology that help ensure that our space flights are successful.
               </p>
@@ -251,83 +251,79 @@
     </div>
     <div class="col-start-2 col-end-12 lg:col-start-3 lg:col-end-11 mt-10">
       <h1 class="text-3xl text-white font-bold underline decoration-blue-400 text-right mr-44 animate hidden"><strong>Lander</strong></h1>
-      <div class="lg:grid grid-cols-3 py-7">
-        <label for="rocket-modal" class="bg-contain group bg-center  w-full h-full bg-no-repeat transition-all duration-500 rounded-lg animate-hidden slide slide-left hover:scale-[1.05] hover:backdrop-brightness-[1.5]" style="background-image: url('/rocket.png')">
+      <div class="lg:grid grid-cols-6 py-7">
+        <label for="rocket-modal" class="bg-contain group bg-center lg:col-span-3  w-full h-full max-h-[46rem] bg-no-repeat transition-all duration-500 rounded-lg animate-hidden slide slide-left hover:scale-[1.05] hover:backdrop-brightness-[1.5]" style="background-image: url('/rocket.png')">
           <h1 class="hidden group-hover:block animate-hidden text-2xl text-white p-6">Click on me! I'm 3D!</h1>
         </label>
-        <div class="mt-4 lg:mt-0 lg:col-start-3 text-base-400">
+        <div class="mt-4 lg:mt-0 lg:col-start-5 col-span-2 text-base-400">
           <div class="animate-hidden slide slide-right" style="--order: 3">
-            <div class="card lg:card-side bg-slate-700/25">
+            <div class="card lg:card-side bg-white/[0.05] backdrop-blur-sm">
               <div class="card-body">
                 <h1 class="card-title text-4xl">Landers!</h1>
               </div>
             </div>
-            <div class="card lg:card-side bg-slate-700/25">
+            <div class="card lg:card-side bg-white/[0.05] backdrop-blur-sm">
               <div class="card-body">
                 <p>Our uniquely manufactured landers play a key role in our space exploration travels as they can allow any spacecraft to land on celestial bodies with minimal impact. It allows us to disembark and view the surfaces of other worlds in our space travel. Our landers allow for a safe and controlled landing that will allow you to easily view other worlds from close-up perspectives. Our space landers allow our passengers to experience the different surfaces of celestial bodies.</p>
               </div>
             </div>
-          <div class="card lg:card-side bg-slate-700/25">
-            <div class="card-body">
-              <p>Another great feature of our landers is that it also enables the deployment of other equipment and infrastructure that can support life in space such as habitats, rovers and other facilities. Our facilities that we build on celestial planets provide a safe and comfortable environment, allowing you to explore and experience the surface of the planets without needing bulky suits. We also can perform different scientific experiments and research through our landers to understand more about space. Overall, landers are really important as they will allow you to land on the celestial bodies and return home safely.</p>
+            <div class="card lg:card-side bg-white/[0.05] backdrop-blur-sm">
+              <div class="card-body">
+                <p>Another great feature of our landers is that it also enables the deployment of other equipment and infrastructure that can support life in space such as habitats, rovers and other facilities. Our facilities that we build on celestial planets provide a safe and comfortable environment, allowing you to explore and experience the surface of the planets without needing bulky suits. We also can perform different scientific experiments and research through our landers to understand more about space. Overall, landers are really important as they will allow you to land on the celestial bodies and return home safely.</p>
+              </div>
             </div>
+            <br><br>
           </div>
-          <br><br>
+          <div class="col-start-1">
+            <h2 class="text-3xl text-white font-bold underline decoration-blue-400 animate-hidden">Our Landers are:</h2>
+            <br>
+            <ul>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 1">
+               <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Sleek
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 2">
+               <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Efficient
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 3">
+               <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Versatile
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 4">
+               <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Reliable
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 5">
+               <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+               Innovative
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 6">
+                <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                Resilient
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 7">
+                <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            
+                Agile
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 8">
+                <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            
+                Futuristic
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 9">
+                <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            
+                Adaptable
+              </li>
+              <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 10">
+                <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            
+                Cutting-edge
+              </li>
+            </ul>
           </div>
-          <h2 class="text-3xl text-white font-bold underline decoration-blue-400 animate-hidden">Our Landers are:</h2>
-          <br>
-          <ul>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 1">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-
-             Sleek
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 2">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-
-             Efficient
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 3">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-
-             Versatile
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 4">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-
-             Reliable
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 5">
-             <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-
-             Innovative
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 6">
-              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
- 
-              Resilient
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 7">
-              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              
-              Agile
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 8">
-              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              
-              Futuristic
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 9">
-              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              
-              Adaptable
-            </li>
-            <li class="flex items-center text-xl animate-hidden slide slide-right" style="--order: 10">
-              <svg class="w-4 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              
-              Cutting-edge
-            </li>
-          </ul>
         </div>
         </div>
         
