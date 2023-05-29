@@ -1,6 +1,7 @@
 import {isTouchDevice} from './resources';
 import { switchPlanet } from './main';
 
+
 const customCursor = document.querySelector('#cursor');
 const customPointers = document.querySelectorAll('.pointer');
 const hoverTags = new Set(['BUTTON', 'A', 'CODE', 'LI', 'P', 'H1', 'H2', 'UL', 'NAV', 'ASIDE', 'SVG', 'G', 'SPAN']);
@@ -46,14 +47,18 @@ const moveCursor = (e) => {
     isLeft = mouseX <= window.innerWidth / 2;
     animateCursor();
 }
-
-document.addEventListener('mousemove', moveCursor, { passive: true });
+if (isTouchDevice()) {
+    customCursor.style.display = "none";   
+} else {
+    document.addEventListener('mousemove', moveCursor, { passive: true });
+}
 
 let section = 0;
 
 let allowScrolling = false;
 
 function handleEvents(e) {
+    console.log("handleEvents")
   if (!allowScrolling) e.preventDefault();
 }
 window.addEventListener('wheel', handleEvents, { passive: false });
@@ -75,9 +80,10 @@ function handleTouchMove(e) {
     if (!xDown || !yDown) return;
     if (!allowScrolling) e.preventDefault();
     let [xUp, yUp] = [e.touches[0].clientX, e.touches[0].clientY];                                    
-    let [xDiff, yDiff] = [xDown - xUp, yDown - yUp];   
+    let [xDiff, yDiff] = [xDown - xUp, yDown - yUp];  
+    // console.log(Math.abs(yDiff)) 
 
-    if (Math.abs(xDiff) < Math.abs(yDiff)) {
+    if (Math.abs(xDiff) < Math.abs(yDiff) && Math.abs(yDiff) > 5) {
         if (yDiff > 0) {
             scrollNext();
         } else { 
@@ -94,7 +100,6 @@ window.addEventListener('load', () => {
   
 window.onload = function() {
     window.scrollTo(0, 0);
-    // console.log(`section: ${section}`)
 }
 
 function scrollSection() {
@@ -126,20 +131,14 @@ document.addEventListener('click', clickHandler);
 
 function clickHandler (event) {
     // heroText.style.transition = 'all 0.5s ease-in-out';
+    
     const target = event.target;
-    if (target.tagName === 'BUTTON' || target.tagName === 'A') {
-        target.click();
-    } else {
-        if (isLeft) {
-            scrollBefore();
-        } else {
-            scrollNext();
-        }
-        // if(!isTouchDevice()) {
-        // }
-        // event.stopPropagation();
+    if (target.tagName === 'BUTTON' || target.tagName === 'A') target.click(); 
+    else {
+        if (isTouchDevice()) isLeft = event.clientX <= window.innerWidth / 2 ? true : false;
+        if (isLeft) scrollBefore();
+        else scrollNext();
     }
-    // console.log(section)
     
 }
 
