@@ -215,35 +215,35 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-    <footer class="footer w-screen p-10 bg-transparent text-base-content">
+    <footer class="footer w-screen max-md:gap-y-2 max-md:grid-flow-col p-10 bg-transparent text-base-content">
       <div>
         <img src="/logo-bloomier.png" alt="logo" class="w-60 h-30">
       </div> 
       <div>
-        <a class="font-bold  mb-2 text-white text-xl link link-hover" href="/products/" >Products</a> 
-        <a class="link link-hover" href="/products/earth_to_earth/" >Earth to Earth Express</a> 
-        <a class="link link-hover" href="/products/gas_giant/" >Terrestrial Exploration</a> 
-        <a class="link link-hover" href="/products/terrestrial/" >Gas Giant Exploration</a> 
-        <a class="link link-hover" href="/booking/" >Book a trip today!</a> 
+        <a class="font-bold  md:mb-2 text-white text-xl link link-hover" href="/products/" >Products</a> 
+        <a class="link hidden md:block link-hover" href="/products/earth_to_earth/" >Earth to Earth Express</a> 
+        <a class="link hidden md:block link-hover" href="/products/gas_giant/" >Terrestrial Exploration</a> 
+        <a class="link hidden md:block link-hover" href="/products/terrestrial/" >Gas Giant Exploration</a> 
+        <a class="link hidden md:block link-hover" href="/booking/" >Book a trip today!</a> 
       </div> 
       <div>
-        <a class="font-bold  mb-2 text-white text-xl link link-hover" href="/launch/">Launch</a> 
-        <a class="link link-hover" href="/launch/vehicles/">Vehicles</a> 
-        <a class="link link-hover" href="/launch/training/">Training</a> 
-        <a class="link link-hover" href="/launch/safety/">Safety</a>
-        <a class="link link-hover" href="/launch/recovery/">Recovery</a>
+        <a class="font-bold  md:mb-2 text-white text-xl link link-hover" href="/launch/">Launch</a> 
+        <a class="link hidden md:block link-hover" href="/launch/vehicles/">Vehicles</a> 
+        <a class="link hidden md:block link-hover" href="/launch/training/">Training</a> 
+        <a class="link hidden md:block link-hover" href="/launch/safety/">Safety</a>
+        <a class="link hidden md:block link-hover" href="/launch/recovery/">Recovery</a>
       </div>
       <div>
-        <a class="font-bold  mb-2 text-white text-xl link link-hover" href="/profile/" >Account</a> 
-        <a class="link link-hover" href="/login/">Login</a> 
-        <a class="link link-hover" href="/signup/">Sign Up</a>
-        <a class="link link-hover" href="/login/reset_password/">Reset Password</a>
-        <a class="link decoration-transparent">Logout</a> 
+        <a class="font-bold  md:mb-2 text-white text-xl link link-hover" href="/profile/" >Account</a> 
+        <a class="link hidden md:block link-hover" href="/login/">Login</a> 
+        <a class="link hidden md:block link-hover" href="/signup/">Sign Up</a>
+        <a class="link hidden md:block link-hover" href="/login/reset_password/">Reset Password</a>
+        <a class="link hidden md:block decoration-transparent">Logout</a> 
       </div>
       <div>
-        <a class="font-bold  mb-2 text-white text-xl link link-hover" href="/">Company</a> 
-        <a class="link link-hover" href="/info/" >About us</a> 
-        <a class="link link-hover" href="/references/" >References</a> 
+        <a class="font-bold hidden md:block md:mb-2 text-white text-xl link link-hover" href="/">Company</a> 
+        <a class="link  max-md:font-bold max-md:text-white max-md:text-xl link-hover" href="/info/" >About Us</a> 
+        <a class="link hidden md:block link-hover" href="/references/" >References</a> 
       </div> 
     </footer>
 
