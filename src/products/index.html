@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="overflow-x-hidden" class="scroll-smooth">
+<html lang="en" data-theme="night" class="overflow-x-hidden scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -186,7 +186,7 @@
 
 
 
-  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+  <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
 
     <div class="hero-overlay fixed bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
@@ -202,13 +202,13 @@
       </svg>
     </button>
   </div>
-  <div class="grid grid-cols-11 gap-x-8 ">
+  <div class="grid grid-cols-12 gap-x-8 ">
     <div class="col-span-12 text-center">
       <div class="my-20 text-xl text-white hover:bg-black/[0.05] divider animate-hidden"><strong class="text-6xl text-white underline decoration-primary">Check out our various trip plans!</strong></div>
       <br>
     </div>
 
-    <div class="col-span-9 col-start-2 flex flex-col xl:flex-row xl:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
+    <div class="col-end-12 col-start-2 flex flex-col xl:flex-row xl:gap-x-7 gap-y-20 place-content-center max-w-full overflow-x-hidden  ">
       <div class="inline-block card  w-full xl:px-0 xl:w-96 bg-base-300 shadow-2xl drop-shadow-2xl  animate-hidden slide slide-left" style="--order: 1">
         <figure>
           <img src="https://www.worldatlas.com/r/w768/upload/ce/eb/6b/shutterstock-1918580258.jpg" alt="Shoes"
@@ -348,10 +348,10 @@
 
 
 
-  <div class="grid grid-cols-12 gap-x-8 bg-base-300/25 backdrop-blur-md min-h-[24rem] py-12 justify-center items-center">
-    <button class="col-span-2 col-start-3 justify-center animate-hidden slide slide-right" style="--order: 1" onclick="showCard(1)">
+  <div class="grid md:grid-cols-12 grid-rows-12 gap-8 bg-base-300/25 backdrop-blur-md min-h-[24rem] py-12 justify-center items-center">
+    <button class="md:col-span-2 row-span-2 md:col-start-3 justify-center animate-hidden slide slide-right" style="--order: 1" id="click1" onclick="showCard(1)">
       <div class="flex flex-col items-center group " >
-        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary transition-all duration-300" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary group-click:w-2/3 group-click:fill-primary transition-all duration-300" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
           <g>
             <g>
               <path d="M210.16,276.71c-0.211,0.105-21.58,10.51-41.574,10.51c-20.07,0-41.4-10.425-41.613-10.53l-16.715,33.527
@@ -397,13 +397,13 @@
             </g>
           </g>
         </svg>
-        <p class="mt-8 text-2xl">Luxurious Leisure</p>
+        <p class="mt-8 text-xl">Luxurious Leisure</p>
       </div>
     </button>
     
-    <button class="col-span-2 justify-center  animate-hidden slide slide-right" style="--order: 2" id="menu" onclick="showCard(2)">
+    <button class="md:col-span-2 row-span-2 justify-center  animate-hidden slide slide-right" style="--order: 2" id="click2" onclick="showCard(2)">
       <div class="flex flex-col items-center group " >
-        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary transition-all duration-300" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.8 489.8" xml:space="preserve">
+        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary group-click:w-2/3 group-click:fill-primary transition-all duration-300" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.8 489.8" xml:space="preserve">
           <g>
             <g>
               <g>
@@ -422,7 +422,7 @@
       </div>
     </button>
     
-    <button class="col-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 3" onclick="showCard(3)">
+    <button class="md:col-span-2 row-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 3" id="click3" onclick="showCard(3)">
       <div class="flex flex-col group items-center " >
         <svg class="aspect-square w-1/2 group-hover:w-2/3  transition-all duration-300" version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 342.685 342.685" xml:space="preserve">
           <g>
@@ -458,9 +458,9 @@
       </div>
     </button>
     
-    <button class="col-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 4" onclick="showCard(4)">
+    <button class="md:col-span-2 row-span-2 justify-center svg-button animate-hidden slide slide-right" style="--order: 4" id="click4" onclick="showCard(4)">
       <div class="flex flex-col items-center group " >
-        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary transition-all duration-300" version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <svg fill="#ffffff" class="aspect-square w-1/2 group-hover:w-2/3 group-hover:fill-primary group-click:w-2/3 group-click:fill-primary transition-all duration-300" version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
           <g>
             <g>
               <g>
@@ -523,12 +523,12 @@
     </button>
   </div>
   
-  <div id="cardContainer" class="flex justify-center mt-8">
+  <div id="cardContainer" class="flex justify-center my-8 h-fit">
     <!-- Card content will be dynamically added here -->
-    <div class="w-[80rem] h-[40rem] bg-black-500 rounded-xl shadow-lg pt-10" id="btn-1">
+    <div class="w-[80rem] h-fit bg-black-500 rounded-xl shadow-lg pt-10 z-10" id="btn-1">
       <h2 class='text-2xl text-white font-bold mb-4'>Luxurious Leisure</h2>
       <div class="collapsible gap-[1rem]">
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel1-heading">
             <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
               <span class="collapsible-title" id="panel1-title"> Room Sizes: </span>
@@ -536,12 +536,13 @@
             </button>
           </h2>
           <div class="collapsible-content"  id="panel1-content"   aria-labelledby="panel1-heading"  aria-hidden="false"   role="region"  >
-            <p><br>
+            <p>
+              <br>
               We offer a range of room size options to cater to different preferences. From spacious standard rooms to opulent suites, guests can choose a size that suits their needs. The rooms are meticulously designed to maximize space utilization while maintaining an open and airy ambiance.
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
               <span class="collapsible-title"> Premium Comfort Beds </span>
@@ -554,7 +555,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
               <span class="collapsible-title"> Lavish Bathrooms </span>
@@ -567,7 +568,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
               <span class="collapsible-title"> Room Service: </span>
@@ -580,7 +581,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
               <span class="collapsible-title"> Technology: </span>
@@ -593,7 +594,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> Amenities: </span>
@@ -609,10 +610,10 @@
       </div>
     </div>
  
-    <div class="w-[80rem] h-[40rem] bg-black-500 rounded-xl shadow-lg pt-10" id="btn-2">
+    <div class="w-[80rem] h-fit bg-black-500 rounded-xl shadow-lg pt-10 z-10" id="btn-2">
       <h2 class='text-2xl text-white font-bold mb-4'>Interstellar Menu</h2>
       <div class="collapsible gap-[1rem]">
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel1-heading">
             <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
               <span class="collapsible-title" id="panel1-title"> ​​Breakfast: </span>
@@ -629,7 +630,7 @@
               </ol>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
               <span class="collapsible-title"> Lunch: </span>
@@ -637,7 +638,7 @@
             </button>
           </h2>
           <div role="region" aria-labelledby="panel2-title" aria-hidden="true" class="collapsible-content " id="panel2-content" >
-            <p>
+            <p><br>
             <ol class='list-decimal'>
               <li class='ml-10'>Interstellar Wrap: A multigrain tortilla filled with rehydrated grilled chicken, crisp lettuce, tangy dynamite sauce, and a variety of diced vegetables.</li>
               <li class='ml-10'>Meteor Burger: A juicy, plant-based patty topped with melted space cheese, fresh tomatoes, lettuce, and a tangy secret sauce, served with a side of cosmic fries.</li>
@@ -646,7 +647,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
               <span class="collapsible-title"> Dinner: </span>
@@ -663,7 +664,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
               <span class="collapsible-title"> Snacks: </span>
@@ -671,7 +672,7 @@
             </button>
           </h2>
           <div role="region" aria-labelledby="panel4-title" aria-hidden="true" class="collapsible-content " id="panel4-content" >
-            <p><br>
+            <p>
             <ol class='list-decimal'>
               <li class='ml-10'>Astro Trail Mix: A blend of dried fruits, nuts, and chocolate chunks, providing a quick energy boost during long space journeys.</li>
               <li class='ml-10'>Cosmic Energy Bars: Nutrient-dense bars packed with seeds, dried fruits, and a touch of honey, perfect for a quick and satisfying snack.</li>
@@ -680,7 +681,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
               <span class="collapsible-title"> Beverages: </span>
@@ -688,7 +689,7 @@
             </button>
           </h2>
           <div role="region" aria-labelledby="panel5-title" aria-hidden="true" class="collapsible-content " id="panel5-content" >
-            <p><br>
+            <p>
             <ol class='list-decimal'>
               <li class='ml-10'>Starstruck Lemonade: A refreshing blend of freshly squeezed lemons, sweetened with a touch of honey and garnished with a sprig of mint.</li>
               <li class='ml-10'>Meteorite Mocktail: A colorful and bubbly concoction made with a mix of fruit juices, sparkling water, and a dash of maple syrup.</li>
@@ -697,7 +698,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> Desserts: </span>
@@ -705,7 +706,7 @@
             </button>
           </h2>
           <div role="region" aria-labelledby="panel6-title" aria-hidden="true" class="collapsible-content " id="panel6-content" >
-            <p><br>
+            <p>
             <ol class='list-decimal'>
               <li class='ml-10'>Moonrock Cheesecake: A creamy and velvety cheesecake with a graham cracker crust, topped with a sprinkle of cinnamon.</li>
               <li class='ml-10'>Cosmic Chocolate Mousse: A light and airy chocolate mousse made from decadent milk chocolate, served with a dollop of whipped cream and a sprinkle of dark chocolate shavings.</li>
@@ -718,10 +719,10 @@
     </div>
 
 
-    <div class="w-[80rem] h-[40rem] bg-black-500 rounded-xl shadow-lg pt-10" id="btn-3">
+    <div class="w-[80rem] h-fit bg-black-500 rounded-xl shadow-lg pt-10 z-10" id="btn-3">
       <h2 class='text-2xl text-white font-bold mb-4'>Cosmic Entertainment</h2>
       <div class="collapsible gap-[1rem]">
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel1-heading">
             <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
               <span class="collapsible-title" id="panel1-title"> Zero-Gravity Yoga: </span>
@@ -734,7 +735,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
               <span class="collapsible-title"> Stellar Meditation Sessions </span>
@@ -747,7 +748,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
               <span class="collapsible-title"> Cosmic Spa Treatments </span>
@@ -760,7 +761,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
               <span class="collapsible-title"> Nebula Lounge: </span>
@@ -773,7 +774,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
               <span class="collapsible-title"> Celestial Sound Therapy: </span>
@@ -786,7 +787,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> Lunar Gardens: </span>
@@ -803,10 +804,10 @@
     </div>
 
     
-    <div class="w-[80rem] h-[50rem] bg-black-500 rounded-xl shadow-lg pt-10" id="btn-4">
+    <div class="w-[80rem] h-fit bg-black-500 rounded-xl shadow-lg pt-10 z-10" id="btn-4">
       <h2 class='text-2xl text-white font-bold mb-4'>Awe-Inspiring Views</h2>
       <div class="collapsible gap-[1rem]">
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel1-heading">
             <button class="collapsible-trigger" aria-controls="panel1-content" aria-expanded="true" >
               <span class="collapsible-title" id="panel1-title"> Earthrise: </span>
@@ -819,7 +820,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel2-content" >
               <span class="collapsible-title"> Lunar Landing: </span>
@@ -832,7 +833,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel3-content" >
               <span class="collapsible-title"> Martian Landscape: </span>
@@ -845,7 +846,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel4-content" >
               <span class="collapsible-title"> Rings of Saturn: </span>
@@ -858,7 +859,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel5-content" >
               <span class="collapsible-title"> Giant Gas Giants: </span>
@@ -871,7 +872,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> Stellar Nurseries: </span>
@@ -884,7 +885,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> Galactic Wonders: </span>
@@ -897,7 +898,7 @@
             </p>
           </div>
         </div>
-        <div class="collapsible-panel bg-slate-700/25 mx-10 rounded-box" style="--min: 12rem; --pref: calc(49rem-44vw); --max: 45rem;">
+        <div class="collapsible-panel collapsible-small bg-slate-700/25 mx-10 rounded-box" style="--min: 6rem; --pref: calc(9rem-20vw); --max: 8rem;">
           <h2 id="panel2-title">
             <button class="collapsible-trigger" aria-expanded="false" aria-controls="panel6-content" >
               <span class="collapsible-title"> The Pale Blue Dot: </span>
@@ -916,7 +917,7 @@
   
 
   <script>
-    function showCard(section) {
+    function showCard(section, e) {
       for (let i=1; i<=4; i++){
         if (i !== section) {
           document.getElementById("btn-"+i).style.display = "none";
@@ -925,13 +926,12 @@
         }
       }
     }
+    function showHover(buttonID) {
+
+    }
     showCard(1);
   </script>
 
-
-  <br><br><br><br> 
-<!-- code here -->
-  <br><br><br><br> 
   <div class="hidden md:grid md:grid-cols-3 mx-[11.5%]">
     <h1 class="text-6xl mb-12 underline text-white decoration-blue-400 animate-hidden slide slide-left col-span-1" style="--order: 1">Book a Lift Trip Today! </h1>
     <div class="btn-group col-span-2 text-center items-center justify-center">

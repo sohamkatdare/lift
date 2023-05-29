@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="overflow-x-hidden" class="scroll-smooth">
+<html lang="en" data-theme="night" class="overflow-x-hidden scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -18,7 +18,7 @@
   <script defer src="../../components.js" type="module"></script>
 </head>
 
-<body class="no-scrollbar scroll-smooth  max-w-screen overflow-x-hidden" id="main">
+<body class="no-scrollbar scroll-smooth bg-black  max-w-screen overflow-x-hidden" id="main">
   <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
@@ -178,7 +178,7 @@
     </script>
   </header>
 
-  <div class="hero min-h-screen select-none relative z-[-1] " style="transform-style: inherit;">
+  <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
 
     <div class="hero-overlay fixed ">
       <canvas class="top-0 left-0" id="bg"></canvas>
@@ -195,27 +195,27 @@
     </button>
   </div>
 
-  <div class="hidden md:block grid-cols-12 px-0 py-10 bg-black">
+  <div class="hidden md:block grid-cols-12 px-0 py-10 bg-black z-10">
     <div class="col-start-1 col-end-13 overflow-x-hidden text-center mx-auto  p-5 pt-0 ">
-      <div class="text-center text-4xl font-bold mb-8 text-white underline decoration-blue-500 animate-hidden">Steps on your way back to Earth</div>
+      <div class="text-center text-4xl font-bold mb-8 text-white  decoration-blue-500 animate-hidden">Steps on your way back to Earth</div>
       <ul class="steps">
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 1 ">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section1">Re-Entry</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section1">Re-Entry</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 2">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section2">Medical Evaluation</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section2">Medical Evaluation</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 3">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section3">Rest and Recovery</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section3">Rest and Recovery</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 4">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section4">Rehabilitation</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section4">Rehabilitation</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 5">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section5">Support and Guidance</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section5">Support and Guidance</a>
         </li>
         <li class="step step-primary mx-1 animate-hidden slide slide-left" style="--order: 6">
-          <a class="btn-link btn1 text-white font-xl no-underline hover:underline transition-all" href="#section6">Reintegration</a>
+          <a class="btn1 pt-2 bg-transparent backdrop-blur-sm text-white font-xl no-underline transition-all" href="#section6">Reintegration</a>
         </li>
       </ul>
       <br>
@@ -225,10 +225,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 w-full bg-black snap-proximity snap-y "></div>
 
-  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Outer-Space-HD-Wallpaper-Free-download.jpg');">
+  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Outer-Space-HD-Wallpaper-Free-download.jpg');" id="section1">
     <div class="col-start-1 py-10 px-8 col-end-12 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1] backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden slide slide-left" style="--order: 1;">
-      <h1 class="text-xl md:text-4xl text-base-400 w-full" id="section1"><strong>Step 1 : Re-Entry </strong></h1>
+      <h1 class="text-xl md:text-4xl text-base-400 w-full"><strong>Step 1 : Re-Entry </strong></h1>
       <br>
       <p class="text-md sm:text-lg md:text-2xl font-light animate-hidden slide slide-right " style="--order: 4; ">We understand that space travel can be a daunting experience, and that's why we've put together this recovery training to help you understand what to expect after coming back to Earth. We'll be with you through the process to ensure that you have a smooth and comfortable journey back to normalcy.</p>
       <br>
@@ -292,10 +291,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701892044.jpg');">
+  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701892044.jpg');" id="section2">
     <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-md  h-fit max-h-max outline-1 outline outline-white/25 outline-double animate-hidden slide slide-left" style="--order: 1">
-      <h1 class="text-2xl md:text-4xl text-base-400" id="section2"><strong>Step 2: Medical evaluation</strong></h1>
+      <h1 class="text-2xl md:text-4xl text-base-400"><strong>Step 2: Medical evaluation</strong></h1>
       <br>
       <p class="text-md md:text-2xl font-light ">Upon re-entry, we will conduct a comprehensive medical examination of all of our passengers to ensure that you are capable and ready to proceed to the next steps of recovery. Our team of medical professionals will assess your physical and mental health, check for any injuries or illnesses, and develop a customized plan for your recovery. This may include meditation, physical therapy, and other treatments as needed. We will also provide further assistance to passengers facing complex medical problems upon recovery through our wide array of health professionals and services.
     </div>
@@ -304,10 +302,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');">
+  <div class="grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Astronaut-Wallpaper-HD-Free-download.jpg');" id="section3">
     <div class="lg:col-start-1 py-10 px-8 col-span-5 lg:col-end-3 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden slide slide-left" style="--order: 1">
-      <h1 class="text-4xl text-base-400" id="section3"><strong>Step 3: Rest and recovery</strong>
+      <h1 class="text-4xl text-base-400"><strong>Step 3: Rest and recovery</strong>
         <br><br>
       </h1>
       <p class="lg:text-2xl sm:text-xl font-light ">Rest and recovery are essential components after reentry from space travel. After the medical examination, you will be given time to rest and recuperate in our comfortable facilities that include access to a variety of food cuisines, relaxation activities such as yoga and meditation, and spacious living quarters designed for your comfort. Our dedicated team will provide you with the care and attention you need to make a full and speedy recovery.</p>
@@ -334,10 +331,9 @@
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
-  <div class=" grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] w-full snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');">
+  <div class=" grid grid-cols-5 py-20 px-2 sm:px-8 md:px-16 lg:px-32 bg-cover min-h-[100vh] w-full snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/4K-Space-Wallpaper-HD-Free-download.jpg');" id="section4">
     <div class="lg:col-start-1 py-10 px-8 col-span-12 lg:col-end-3 inline-block text-left rounded-lg bg-black/[0.1]  backdrop-blur-sm h-min max-h-max outline-1 outline outline-white/25 outline-double animate-hidden slide slide-left" style="--order: 1">
-      <h1 class="text-2xl md:text-4xl text-base-400" id="section4"><strong>Step 4: Rehabilitation </strong></h1>
+      <h1 class="text-2xl md:text-4xl text-base-400"><strong>Step 4: Rehabilitation </strong></h1>
       <br>
       <p class="md:text-2xl font-light ">After you have had ample rest and feel prepared, you will embark on a comprehensive rehabilitation program. This program will encompass various exercises, physical therapy, and tailored activities to help you regain your strength and mobility. Our team of experienced rehabilitation professionals will collaborate with you to craft an individualized plan that aligns with your goals. We will equip you with specialized equipment, personalized coaching, and unwavering support to ensure you achieve your goals.</p>
     </div>
@@ -346,10 +342,9 @@
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
 
 
-  <div class="grid grid-cols-12 py-20 px-2 sm:px-8 md:px-16 lg:px-32 w-full bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://images4.alphacoders.com/936/936378.jpg');">
+  <div class="grid grid-cols-12 py-20 px-2 sm:px-8 md:px-16 lg:px-32 w-full bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://images4.alphacoders.com/936/936378.jpg');" id="section5">
     <div class="lg:col-start-8 col-start-1 py-20 px-10  col-end-13 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm h-fit outline-1 outline outline-white/25 outline-double animate-hidden slide slide-right" style="--order: 1">
-      <h1 class="text-2xl md:text-4xl text-base-400" id="section5"><strong>Step 5: Support and guidance </strong></h1>
+      <h1 class="text-2xl md:text-4xl text-base-400"><strong>Step 5: Support and guidance </strong></h1>
       <br><br>
       <p class="text-base-400 md:text-2xl font-light text-left"> Our experienced spaceflights experts are available to address any questions or concerns you may have, whether it’s about the technical aspects of the spacecraft, safety protocols, or the itinerary of your trip. We take pride in offering personalized assistance, tailoring our guidance to your specific needs and preferences. During the space travel itself, our attentive crew will be by your side, providing support and assistance as needed. They are trained to handle various situations that may arise in zero gravity environments and will ensure your comfort and well-being throughout the entire journey.
         <br><br>
@@ -359,10 +354,9 @@
 
 
   <div class="grid grid-cols-12 px-0 py-10 bg-black"></div>
-  <div class="grid grid-cols-12 py-20 px-2 sm:px-8 md:px-16 lg:px-32 w-full bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img"
-    style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701895579.jpg');">
+  <div class="grid grid-cols-12 py-20 px-2 sm:px-8 md:px-16 lg:px-32 w-full bg-cover min-h-[100vh] snap-start snap-always animate-hidden animate-hidden-img" style="background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701895579.jpg');" id="section6">
     <div class="lg:col-start-8 col-start-1 py-20 px-10 col-end-13 inline-block text-center rounded-lg bg-black/[0.1]  backdrop-blur-sm  h-fit outline-1 outline outline-white/25 outline-double animate-hidden slide slide-right" style="--order: 1">
-      <h1 class="text-2xl md:text-4xl text-base-400" id="section6"><strong>Step 6: Reintegration </strong></h1>
+      <h1 class="text-2xl md:text-4xl text-base-400"><strong>Step 6: Reintegration </strong></h1>
         <br><br>
         <p class="text-base-400 md:text-2xl font-light text-left"> As you approach the final stages of your recovery, our team is dedicated to ensuring a seamless and successful reintegration into your daily life. We will provide valuable tips and strategies to help you adjust to life on Earth, along with ongoing support and guidance to maintain your overall health and well-being. Rest assured, we are committed to your full and lasting recovery, offering unwavering support at every step of your journey.</p>
         <br><br>

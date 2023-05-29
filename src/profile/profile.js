@@ -10,10 +10,10 @@ async function getData() {
     let cards = "";
     all_bookings.forEach((booking) => {
         cards += `
-        <div class="card">
+        <div class="card bg-base-300 py-0 my-6 backdrop-blur-sm">
             <div class="card-body">
-                <h5 class="card-title">${booking.tripType} - ${booking.launchDate}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Tier: ${booking.tripTier}</h6>
+                <h5 class="card-title text-3xl">${booking.tripType} - ${booking.launchDate}</h5>
+                <h6 class="card-subtitle mb-2 text-slate-400">Tier: ${booking.tripTier}</h6>
                 <p class="card-text">Number of Travelers: ${booking.numOfTravellers}</p>
             </div>
         </div>

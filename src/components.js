@@ -215,7 +215,7 @@ class Footer extends HTMLElement {
   }
   connectedCallback() {
     this.innerHTML = `
-    <footer class="footer w-screen max-md:gap-y-2 max-md:grid-flow-col p-10 bg-transparent text-base-content">
+    <footer class="footer z-[11] relative w-screen max-md:gap-y-2 max-md:grid-flow-col p-10 bg-transparent text-base-content">
       <div>
         <img src="/logo-bloomier.png" alt="logo" class="w-60 h-30">
       </div> 

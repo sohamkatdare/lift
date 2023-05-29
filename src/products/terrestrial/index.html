@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night" class="overflow-x-hidden" class="scroll-smooth">
+<html lang="en" data-theme="night" class="overflow-x-hidden scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
   <script defer src="../../components.js" type="module"></script>
 </head>
 
-<body class="no-scrollbar scroll-smooth max-w-screen overflow-x-hidden " id="main">
+<body class="no-scrollbar scroll-smooth max-w-screen bg-black overflow-x-hidden " id="main">
   <div id="preloader" class="h-screen w-screen bg-black fixed z-[1000] flex place-content-center">
     <svg viewBox="0 0 512 512" class="w-60">
       <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" id="preloaderPath" stroke="white" fill="none" stroke-width="10"/>
@@ -184,7 +184,7 @@
 
 
 
-  <div class="hero min-h-screen select-none relative z-[-1]" style="transform-style: inherit;">
+  <div class="hero min-h-screen select-none relative" style="transform-style: inherit;">
 
     <div class="hero-overlay fixed bg-opacity-60">
       <canvas class="top-0 left-0" id="bg"></canvas>
@@ -201,16 +201,16 @@
       </svg>
     </button>
   </div>
-  <div class="grid grid-cols-11 gap-x-8 ">
+  <div class="grid grid-cols-11 gap-x-8 z-10">
     <div class="col-span-12 text-center pt-9">
         <div class="text-4xl divider">
-          <strong class="text-4xl text-orange-100" id="Terrestrial">Terrestrial Planet
+          <strong class="text-4xl text-orange-100 z-10" id="Terrestrial">Terrestrial Planet
             Exploration
           </strong>
         </div>
         <br>
       </div>
-      <div class="col-start-2 lg:col-end-7 col-end-12">
+      <div class="col-start-2 lg:col-end-7 col-end-12 z-10">
         <div class="divider text-2xl text-white underline decoration-blue-400 font-semibold">Day 1</div>
         <p class="text-xl text-white hover:bg-black/[0.05]">Depart Earth and begin the journey to Mercury, the planet closest to the sun. The trip will
           take about 3.5 months, so be sure to bring plenty of supplies and entertainment.
@@ -239,7 +239,7 @@
         </p>
         <br><br>
       </div>
-      <div class="col-start-2 lg:col-start-7 mb-5 col-end-12">
+      <div class="col-start-2 lg:col-start-7 mb-5 col-end-12 z-10">
         <img
           src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/01/artist_s_impression_of_ceres/13498472-1-eng-GB/Artist_s_impression_of_Ceres_pillars.jpg"
           class="rounded-lg drop-shadow-lg m-3 col-start-1 col-end-3 pb-9 pl-6">
@@ -269,7 +269,7 @@
         </p>
       </div>
       <br>
-      <a class="btn1 col-start-5 col-end-8" href="/booking/">Book your flight today!</a>
+      <a class="btn1 col-start-2 col-span-10  lg:col-start-4 lg:col-end-9 text-2xl" href="/booking/">Book your flight today!</a>
     </div>
   <footer-component></footer-component>
   

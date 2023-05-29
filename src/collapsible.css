@@ -32,6 +32,10 @@
     background-color: rgb(5, 3, 18);;
     border: 3px solid rgb(59 130 246 / 50%);
   }
+.collapsible-panel:has([aria-expanded="true"]).collapsible-small {
+    /* 12rem calc(49rem - 44vw)  45rem*/
+    flex-basis: clamp(9.5rem, calc(36rem - 31vw), 32rem);
+  }
 .collapsible-trigger {
   outline: 0;
 }
