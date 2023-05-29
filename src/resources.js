@@ -38,9 +38,9 @@ export function rendererSetup(scene, camera) {
     window.addEventListener("resize", () => {
         newWidth, newHeight = window.innerWidth, window.innerHeight;
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }, 250);
+        // resizeTimeout = setTimeout(() => {
+        //     renderer.setSize(window.innerWidth, window.innerHeight);
+        // }, 250);
     });
     // Add post-processing settings
     const composer = new EffectComposer(renderer);
