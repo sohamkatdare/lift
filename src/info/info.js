@@ -24,20 +24,20 @@ function addPlanet(mapTexture, size, detail) {
 let orientation = window.orientation;
 let resizeTimeout;
 
-function resize() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(function() {
-    if (!rsc.isTouchDevice()) {
-      setup();
-    } else {
-      if (orientation !== window.orientation) {
-        setup()
-      }
-      orientation = window.orientation;
-    }
-  }, 250); 
-}
-window.onresize = resize;
+// function resize() {
+//   clearTimeout(resizeTimeout);
+//   resizeTimeout = setTimeout(function() {
+//     if (!rsc.isTouchDevice()) {
+//       setup();
+//     } else {
+//       if (orientation !== window.orientation) {
+//         setup()
+//       }
+//       orientation = window.orientation;
+//     }
+//   }, 250); 
+// }
+// window.onresize = resize;
 
 
 function addToScene(planet, x, y, z) {
