@@ -240,9 +240,6 @@ function updatePlanets() {
   // rsc.neptuneOrbitLine.rotation.y -= 0.0001;
 
 }
-
-rsc.mobileRendererResize();
-
 init();
 
 
