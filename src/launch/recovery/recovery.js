@@ -66,7 +66,6 @@ window.onresize = resize;
 
 
 
-
 var timeDelta;
 let smoothDeltaTime = 0;
 const lerpFactor = 0.005;

@@ -35,6 +35,13 @@ export function rendererSetup(scene, camera) {
     
     renderer.setSize(window.innerWidth, window.innerHeight);
     oldWidth, oldHeight = window.innerWidth, window.innerHeight;
+
+    if (isTouchDevice()) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight)
+        })
+    }
     window.addEventListener("resize", () => {
         newWidth, newHeight = window.innerWidth, window.innerHeight;
         clearTimeout(resizeTimeout);
@@ -67,6 +74,7 @@ export function rendererSetup(scene, camera) {
 
     return composer;
 }
+
 // NEW Star Generation 
 export function starForge() {
 

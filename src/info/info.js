@@ -98,10 +98,6 @@ function handleScroll() {
 document.addEventListener('scroll', handleScroll);
 
 
-
-
-
-
 var timelineEvents = document.querySelectorAll('.timeline li');
 
 var observer = new IntersectionObserver(function(entries) {

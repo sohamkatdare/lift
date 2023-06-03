@@ -241,7 +241,7 @@ function updatePlanets() {
 
 }
 
-
+rsc.mobileRendererResize();
 
 init();
 
