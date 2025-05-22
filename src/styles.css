@@ -1,0 +1,315 @@
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Tabs */
+
+.tabbody {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tabbody.visible {
+  opacity: 1;
+}
+
+/* Remove text upon mobile */
+
+@media (max-width: 900px) {
+  .card-text-responsive {
+    display: none;
+  }
+}
+
+/* Quote */
+
+blockquote {
+    /* font-family: Georgia, serif; */
+    font-family: D-DIN;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+}
+
+blockquote::before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 6em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote::after {
+    font-family: Georgia, serif;
+    position: absolute;
+    float:right;
+    font-size:6em;
+    line-height: 1;
+    right:0;
+    bottom:-0.5em;
+    content: "\201D";
+}
+blockquote footer {
+    padding: 0 2em 0 0;
+    text-align:right;
+}
+blockquote cite::before {
+    content: "\2013";
+}
+
+
+
+
+/* span {  font-family: Nova;  } */
+h1, h2, h3, h4, h5, h6, a, span {
+  font-family: D-DIN;
+}
+
+p, .inter {
+  font-family: Inter;
+}
+@media (max-height: 1080px) and (max-width: 1920px) {
+  #quote {
+    display: none;	
+  }
+
+}
+
+
+/* Styling webkit elements */
+
+
+.scrollbar-minimalist::-webkit-scrollbar {
+  width: 20px;
+}
+
+.scrollbar-minimalist::-webkit-scrollbar-track {
+  background-color: black;
+	
+}
+
+.scrollbar-minimalist::-webkit-scrollbar-thumb {
+  background-color: #313131;
+  border-radius: 20px;
+  border: 7px solid transparent;
+  background-clip: content-box;
+}
+
+.scrollbar-minimalist::-webkit-scrollbar-thumb:hover {
+  background-color: #686f9a;
+}
+
+
+/* Webkit date input fields wrapper */
+input[type="date"]{
+  background-color: transparent;
+}
+
+/* Webkit date input text style */
+input[type="date"],
+input[type="date"],
+input[type="date"],
+input[type="date"] {
+  color: white;
+}
+
+/* Webkit inner spin button */
+input[type="date"] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Webkit calendar picker indicator */
+input[type="date"] {
+  background-color: transparent; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+  height: 20px;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Radio or Checkbox accordion */
+input[type="checkbox"], 
+input[type="radio"] {
+  display: none;
+}
+.accordion input[type="checkbox"]:checked + label + .content, 
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 40rem;
+  padding: 10px 10px 20px;
+}
+
+.accordion input[type="checkbox"]:checked + label::after, 
+.accordion input[type="radio"]:checked + label::after {
+  content: '-';
+}
+.accordion .content {
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+/* Timeline */
+
+.timeline li{
+	opacity:0;
+	transform: translateX(-10%);
+}
+
+.timeline li:nth-child(2n) {
+	align-self: flex-end;
+	text-align: left;
+	transform: translateX(10%);
+}
+.timeline li:nth-child(2n)::before {
+	left: 0;
+  transform: translate(-50%,-50%);
+}
+.timeline li.shown {
+	opacity:1;
+	transform:translateX(0);
+}
+
+:root {  
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+
+h1 > .magic {
+  display: inline-block;
+  position: relative;
+}
+
+h1 > .magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+h1 > .magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+h1 > .magic > .magic-star > svg > path {
+  fill: var(--violet);
+}
+
+h1 > .magic > .magic-text {
+  font-family: Inter;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.magic-text {
+  font-family: Inter;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+
+
+.btn1{
+  padding: 15px;
+  margin:10px 4px;
+  color: #fff;
+  background-color:rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  font-family: D-DIN;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  /* border-radius: 0.375rem; */
+}
+
+.btn1{
+  border-radius: 7px;
+  border:3px solid rgba(0, 0, 0, 0); 
+   -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+}
+
+.btn1::before {
+  content: '';
+  position: absolute;
+  left: -0.5%;
+  bottom:-1.5px;
+  z-index:10;
+  width: 0%;
+  height:3px;
+  background: white;
+  box-shadow: inset 0px 0px 0px white;
+  display: block;
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+}
+
+.btn1:hover::before {
+  width:101%;
+}
+
+.btn1::after {
+  content: '';
+  position: absolute;
+  right: -0.5%;
+  top:-1.5px;
+  z-index:-1;
+  width: 0%;
+  height:3px;
+  background: white;
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+}
+.btn1:hover::after {
+  width:101%;
+}
+.btn1:hover{
+  border-left:3px solid white;
+  border-right:3px solid white;
+  background-color: transparent;
+}
+
+

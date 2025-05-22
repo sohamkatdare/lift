@@ -179,7 +179,7 @@ function updatePlanets() {
   rsc.earthGroup.rotation.z = 59.5;
   rsc.moon.rotation.y += 0.01 * timeDelta
   rsc.earth.rotation.y += 0.01 * timeDelta
-  rsc.moonOrbitLine.rotation.y += 0.005 * timeDelta;
+  // rsc.moonOrbitLine.rotation.y += 0.005 * timeDelta;
 
   rsc.mars.rotation.y += 0.005 * timeDelta;
 
@@ -197,34 +197,34 @@ function updatePlanets() {
   rsc.neptune.rotation.y += 0.006 * timeDelta;
 
   rsc.mercuryRotationGroup.rotation.y += 0.008 * timeDelta;
-  rsc.mercuryOrbitLine.rotation.y -= 0.008 * timeDelta;
+  // rsc.mercuryOrbitLine.rotation.y -= 0.008 * timeDelta;
 
 
   rsc.venusRotationGroup.rotation.y += 0.001 * timeDelta;
-  rsc.venusOrbitLine.rotation.y -= 0.001 * timeDelta;
+  // rsc.venusOrbitLine.rotation.y -= 0.001 * timeDelta;
 
 
   rsc.earthRotationGroup.rotation.y += 0.0008 * timeDelta;
-  rsc.earthOrbitLine.rotation.y -= 0.0008 * timeDelta;
+  // rsc.earthOrbitLine.rotation.y -= 0.0008 * timeDelta;
 
   rsc.marsRotationGroup.rotation.y += 0.0006 * timeDelta;
-  rsc.marsOrbitLine.rotation.y -= 0.0006 * timeDelta;
+  // rsc.marsOrbitLine.rotation.y -= 0.0006 * timeDelta;
 
 
   rsc.jupiterRotationGroup.rotation.y += 0.0005 * timeDelta;
-  rsc.jupiterOrbitLine.rotation.y -= 0.0005 * timeDelta;
+  // rsc.jupiterOrbitLine.rotation.y -= 0.0005 * timeDelta;
 
 
   rsc.saturnRotationGroup.rotation.y += 0.0003 * timeDelta;
-  rsc.saturnOrbitLine.rotation.y -= 0.0003 * timeDelta;
+  // rsc.saturnOrbitLine.rotation.y -= 0.0003 * timeDelta;
 
 
   rsc.uranusRotationGroup.rotation.y += 0.0002 * timeDelta;
-  rsc.uranusOrbitLine.rotation.y -= 0.0002 * timeDelta;
+  // rsc.uranusOrbitLine.rotation.y -= 0.0002 * timeDelta;
 
 
   rsc.neptuneRotationGroup.rotation.y += 0.0001 * timeDelta;
-  rsc.neptuneOrbitLine.rotation.y -= 0.0001 * timeDelta;
+  // rsc.neptuneOrbitLine.rotation.y -= 0.0001 * timeDelta;
 
 
 

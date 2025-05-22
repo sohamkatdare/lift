@@ -302,24 +302,24 @@ export async function setup() {
     solarSystem.add(light);
 
     // Create the dashed orbit line
-    mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun, 0x999999);
-    mercuryRotationGroup.add(mercuryOrbitLine);
-    venusOrbitLine = createOrbitLine(venusDistanceFromSun, 0xfddca4);
-    venusRotationGroup.add(venusOrbitLine);
-    earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff, 2);
-    solarSystem.add(earthOrbitLine);
-    marsOrbitLine = createOrbitLine(marsDistanceFromSun, 0xfa9868);
-    marsRotationGroup.add(marsOrbitLine);
-    jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun, 0xd1cac2);
-    jupiterRotationGroup.add(jupiterOrbitLine);
-    saturnOrbitLine = createOrbitLine(saturnDistanceFromSun, 0xfee7c5);
-    saturnRotationGroup.add(saturnOrbitLine);
-    uranusOrbitLine = createOrbitLine(uranusDistanceFromSun, 0xaadce5);
-    uranusRotationGroup.add(uranusOrbitLine);
-    neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun, 0x7aa8fb);
-    neptuneRotationGroup.add(neptuneOrbitLine);
-    moonOrbitLine = createOrbitLine(4, 0x999999);
-    earthGroup.add(moonOrbitLine);
+    // mercuryOrbitLine = createOrbitLine(mercuryDistanceFromSun, 0x999999);
+    // mercuryRotationGroup.add(mercuryOrbitLine);
+    // venusOrbitLine = createOrbitLine(venusDistanceFromSun, 0xfddca4);
+    // venusRotationGroup.add(venusOrbitLine);
+    // earthOrbitLine = createOrbitLine(earthDistanceFromSun, 0x4583ff, 2);
+    // solarSystem.add(earthOrbitLine);
+    // marsOrbitLine = createOrbitLine(marsDistanceFromSun, 0xfa9868);
+    // marsRotationGroup.add(marsOrbitLine);
+    // jupiterOrbitLine = createOrbitLine(jupiterDistanceFromSun, 0xd1cac2);
+    // jupiterRotationGroup.add(jupiterOrbitLine);
+    // saturnOrbitLine = createOrbitLine(saturnDistanceFromSun, 0xfee7c5);
+    // saturnRotationGroup.add(saturnOrbitLine);
+    // uranusOrbitLine = createOrbitLine(uranusDistanceFromSun, 0xaadce5);
+    // uranusRotationGroup.add(uranusOrbitLine);
+    // neptuneOrbitLine = createOrbitLine(neptuneDistanceFromSun, 0x7aa8fb);
+    // neptuneRotationGroup.add(neptuneOrbitLine);
+    // moonOrbitLine = createOrbitLine(4, 0x999999);
+    // earthGroup.add(moonOrbitLine);
 
 
     // Debug Purposes
